@@ -50,7 +50,7 @@ export function Footer() {
   return (
     <footer
       className={`relative overflow-hidden mt-6 2md:mt-16 border-t-2 transition-all duration-500 backdrop-blur-3xl
-  md:rounded-t-[40px]
+  md:rounded-t-3xl
   ${
     theme === "dark"
       ? "bg-linear-to-b from-[#0a0a0a] via-[#111] to-[#0a0a0a] text-gray-300 border-white/10 shadow-[0_-10px_30px_rgba(255,255,255,0.05)]"
