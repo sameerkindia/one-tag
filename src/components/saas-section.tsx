@@ -28,7 +28,7 @@ function SaasSection() {
             </p>
           </div>
 
-          <div className="max-sm:hidden">
+          <div className="">
             <Image
               src="/electronics-shelf.webp"
               alt="one tag solution saas"
