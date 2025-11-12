@@ -81,7 +81,7 @@ export function FadeAnimation({
       duration: 600, // total animation duration (ms)
       easing: 'ease-out', // smoother animation
       once: !repeatOnScroll, // animate only once or every scroll
-      offset: 100, // trigger point
+      offset: 20, // trigger point
     });
 
     // refresh AOS when content changes
