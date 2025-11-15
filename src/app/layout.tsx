@@ -38,7 +38,7 @@ export default function RootLayout({
             <ScrollToTop />
             <main className="min-h-screen">{children}</main>
             <Footer />
-            {/* <PreferenceModalWrapper /> */}
+            <PreferenceModalWrapper />
 
           </LanguageProvider>
         </ThemeProvider>

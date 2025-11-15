@@ -30,9 +30,10 @@ function SaasSection() {
 
           <div className="">
             <Image
-              src="/electronics-shelf.webp"
+              // src="/electronics-shelf.webp"
+              src="/tags-bg.webp"
               alt="one tag solution saas"
-              className="rounded-3xl"
+              className="rounded-3xl aspect-6/3"
               height={600}
               width={600}
             />
@@ -42,7 +43,7 @@ function SaasSection() {
             <Image
               src="/SASS-img.webp"
               alt="one tag solution saas"
-              className="rounded-3xl"
+              className="rounded-3xl aspect-6/3"
               height={600}
               width={600}
             />

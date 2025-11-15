@@ -8,6 +8,8 @@ export function Hero() {
   const { t } = useLanguage();
   const { theme } = useTheme();
 
+  // console.log(theme === "dark", " this is theme");
+
   // const slides = [
   //   {
   //     type: "video",
@@ -21,52 +23,72 @@ export function Hero() {
   //   },
   // ];
 
+  if (!theme) return null;
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden sm:rounded-b-4xl">
+      {/* {theme === 'dark' ? <source src="/banner-video-dark.mp4" type="video/mp4"></source> : <source src={"/banner-video.mp4"} type="video/mp4"></source>} */}
       <div className="absolute inset-0 w-full h-full">
         <video
+          key={theme}
           autoPlay
           muted
           loop
-          className="absolute inset-0 w-full h-full object-cover"
+          className="inset-0 w-full h-full object-cover"
         >
-          <source src="/banner-video-animation.mp4" type="video/mp4"></source>
+          <source
+            src={
+              theme === "dark" ? "/banner-video-dark.mp4" : "/banner-video.mp4"
+            }
+            type="video/mp4"
+          />
         </video>
-        {/* <video autoPlay muted loop className="absolute inset-0 w-full h-full object-cover">
-            <source src="/hero-video.mp4" type="video/mp4"></source>
-        </video> */}
+      </div>
 
-        {/* Overlay */}
-        {/* <div className="absolute inset-0 bg-black/40"></div> */}
+      {/* Overlay */}
+      {/* <div className="absolute inset-0 bg-black/40"></div> */}
 
-
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 backdrop-blu r-sm">
-          <FadeAnimation direction="up">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 text-black">
-            
-              <FadeAnimation
-                direction="up"
-                staggerChildren={0.3}
-                className="flex flex-col"
-              >
-                <span className="">
-                  <span className="chroma-text chroma-text-animate text-nowrap mr-2 xs:mr-3">
-                    {t("hero.title.line1").split(" ").slice(0, 1).join(" ")}
-                  </span>{" "}
-                  {t("hero.title.line1").split(" ").slice(1).join(" ")}
-                </span>
-                <span>{t("hero.title.line2")}</span>
-              </FadeAnimation>
-            </h1>
-
-            <a
-              href="/contact"
-              className="inline-block mt-4 px-6 py-3 bg-black hover:bg-black/80 text-white rounded-2xl transition-all duration-300 min-w-[170px]"
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 backdrop-blu r-sm">
+        <FadeAnimation direction="up">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 text-black dark:text-white">
+            <FadeAnimation
+              direction="up"
+              staggerChildren={0.3}
+              className="flex flex-col"
             >
-              More Info
-            </a>
-          </FadeAnimation>
-        </div>
+              <span className="" key={theme}>
+                {theme === 'dark' ? (
+                  <span
+                    className={`chroma-text chroma-text-animate text-nowrap bg-gradient-dark`}
+                  >
+                    {t("hero.title.line1").split(" ").slice(0, 1).join(" ")}
+                  </span>
+                ) : (
+                  <span
+                    className={`chroma-text chroma-text-animate text-nowrap bg-gradient-light`}
+                  >
+                    {t("hero.title.line1").split(" ").slice(0, 1).join(" ")}
+                  </span>
+                )}
+                {/* <span
+                  className={`chroma-text chroma-text-animate text-nowrap bg-gradient-dark`}
+                >
+                  {t("hero.title.line1").split(" ").slice(0, 1).join(" ")}
+                </span> */}
+                {" "}
+                {t("hero.title.line1").split(" ").slice(1).join(" ")}
+              </span>
+              <span>{t("hero.title.line2")}</span>
+            </FadeAnimation>
+          </h1>
+
+          <a
+            href="/contact"
+            className="inline-block mt-4 px-6 py-3 bg-black dark:bg-white hover:bg-black/80 dark:hover:bg-white/80 text-white dark:text-black rounded-2xl transition-all duration-300 min-w-[170px]"
+          >
+            More Info
+          </a>
+        </FadeAnimation>
       </div>
     </section>
   );

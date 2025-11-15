@@ -100,7 +100,7 @@ export function Navbar() {
             scrolled
               ? "md-glass max-mmd:shadow-lg max-mmd:backdrop-blur-md"
               : theme === "dark"
-              ? "max-mmd:bg-[#003049]"
+              ? "bg-fill-tertiary"
               : "md-glass"
           } ${isOpen ? "rounded-b-none md:rounded-b-sm" : ""}`}
         >
@@ -129,7 +129,7 @@ export function Navbar() {
               scrolled
                 ? "glass shadow-lg backdrop-blur-md"
                 : theme === "dark"
-                ? "bg-[#003049]"
+                ? "bg-fill-tertiary"
                 : "bg-fill-tertiary"
             }`}
           >
@@ -154,7 +154,7 @@ export function Navbar() {
               scrolled
                 ? "glass bg-fill-tertiary shadow-lg backdrop-blur-md"
                 : theme === "dark"
-                ? "bg-[#003049]"
+                ? "bg-fill-tertiary"
                 : "bg-fill-tertiary"
             }`}
           >
