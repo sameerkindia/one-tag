@@ -6,7 +6,7 @@ function VideoSection() {
   return (
     <section className="py-3 sm:py-10 lg:py-20">
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <FadeAnimation className="mx-auto max-w-7xl relative rounded-3xl">
+        <FadeAnimation className="mx-auto max-w-7xl relative rounded-3xl overflow-hidden">
           <figure className="absolute h-full w-full top-0 left-0 aspect-1248/702">
             <video autoPlay muted loop>
               <source src="/hero-video.mp4" type="video/mp4"></source>

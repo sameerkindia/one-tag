@@ -39,7 +39,7 @@ function BrandMarquee() {
   const { theme } = useTheme();
 
   return (
-    <section className="py-12 sm:py-16 2md:py-20">
+    <section className="py-12 2md:py-16 lg::py-20">
       <div className="container mx-auto px-6 max-w-6xl">
         <FadeAnimation staggerChildren={0.3}>
           <FadeAnimation
@@ -64,7 +64,7 @@ function BrandMarquee() {
               Trusted by leading brands worldwide
             </p> */}
 
-            <div className="text-center mb-16">
+            <div className="text-center mb-12 3md:mb-16">
               <div
                 className={`inline-flex items-center gap-3 px-6 py-3 rounded-full bg-linear-to-r from-blue-100 to-purple-100 border border-blue-200 dark:bg-linear-to-r dark:from-blue-600/20 dark:to-purple-600/20 dark:border dark:border-blue-500/30 
             `}
@@ -130,15 +130,15 @@ function BrandMarquee() {
                 </div>
               </div>
             </div> */}
-            <div className="flex items-center justify-center flex-wrap gap-y-4 gap-8 lg:gap-12">
+            <div className="flex items-center justify-center flex-wrap gap-y-4 gap-4 2md:gap-8">
               {brands.map((brand) => (
                 <div
                   key={brand.name}
-                  className="group relative overflow-hidden rounded-2xl transition-all duration-500 bg-white p-4"
+                  className="group relative overflow-hidden rounded-2xl transition-all duration-500 bg-white p-3 2md:p-4"
                 >
                   <Image
                     src={brand.imgSrc}
-                    className="size-16 sm:si ze-20"
+                    className="size-14 2md:size-16"
                     height={80}
                     width={100}
                     alt={brand.name}

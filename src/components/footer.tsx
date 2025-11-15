@@ -65,7 +65,7 @@ export function Footer() {
         <div className="grid gap-6 sm:gap-12 sm:grid-cols-2 lg:grid-cols-5 mb-6">
           {/* Brand + Description */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block mb-6">
+            <Link href="/" className="inline-block mb-4">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
