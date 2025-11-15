@@ -5,7 +5,7 @@ import { FadeAnimation } from "../motion-animations/FadeAnimation";
 function SaasSection() {
   return (
     <section className="py-16 2md:py-20">
-      <div className="mx-auto px-4 max-w-7xl relative">
+      <div className="container mx-auto px-4 max-w-7xl relative">
         <FadeAnimation direction="up" staggerChildren={0.5} className="flex flex-col sm:!grid grid-cols-2 items-center gap-6 gap-y-10">
 
           {/* <div className="sm:hidden">

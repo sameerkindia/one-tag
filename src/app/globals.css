@@ -423,3 +423,7 @@
     filter: blur(0);
   }
 }
+
+.container{
+  @apply sm:max-w-[96%] 3md:max-w-[90%] mx-auto;
+}
