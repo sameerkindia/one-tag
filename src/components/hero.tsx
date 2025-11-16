@@ -23,18 +23,17 @@ export function Hero() {
   //   },
   // ];
 
-  if (!theme) return null;
+  // if (!theme) return null;
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden sm:rounded-b-4xl">
-      {/* {theme === 'dark' ? <source src="/banner-video-dark.mp4" type="video/mp4"></source> : <source src={"/banner-video.mp4"} type="video/mp4"></source>} */}
-      <div className="absolute inset-0 w-full h-full">
+      {/* <div className="absolute inset-0 w-full h-full">
         <video
           key={theme}
           autoPlay
           muted
           loop
-          className="inset-0 w-full h-full object-cover"
+          className="inset-0 w-full h-full object-fill"
         >
           <source
             src={
@@ -42,6 +41,33 @@ export function Hero() {
             }
             type="video/mp4"
           />
+        </video>
+      </div> */}
+      <div
+        className={`absolute inset-0 w-full h-full opacity-0 dark:opacity-100`}
+      >
+        <video
+          key={theme}
+          autoPlay
+          muted
+          loop
+          className="inset-0 w-full h-full object-fill"
+        >
+          <source src={"/banner-video-dark.mp4"} type="video/mp4" />
+        </video>
+      </div>
+
+      <div
+        className={`absolute inset-0 w-full h-full opacity-100 dark:opacity-0`}
+      >
+        <video
+          key={theme}
+          autoPlay
+          muted
+          loop
+          className="inset-0 w-full h-full object-fill"
+        >
+          <source src={"/banner-video.mp4"} type="video/mp4" />
         </video>
       </div>
 
@@ -57,25 +83,14 @@ export function Hero() {
               className="flex flex-col"
             >
               <span className="" key={theme}>
-                {theme === 'dark' ? (
-                  <span
-                    className={`chroma-text chroma-text-animate text-nowrap bg-gradient-dark`}
-                  >
-                    {t("hero.title.line1").split(" ").slice(0, 1).join(" ")}
-                  </span>
-                ) : (
-                  <span
-                    className={`chroma-text chroma-text-animate text-nowrap bg-gradient-light`}
-                  >
-                    {t("hero.title.line1").split(" ").slice(0, 1).join(" ")}
-                  </span>
-                )}
-                {/* <span
-                  className={`chroma-text chroma-text-animate text-nowrap bg-gradient-dark`}
+                <span
+                  key={theme}
+                  className={`chroma-text chroma-text-animate text-nowrap ${
+                    theme === "dark" ? "bg-gradient-dark" : "bg-gradient-light"
+                  }`}
                 >
                   {t("hero.title.line1").split(" ").slice(0, 1).join(" ")}
-                </span> */}
-                {" "}
+                </span>{" "}
                 {t("hero.title.line1").split(" ").slice(1).join(" ")}
               </span>
               <span>{t("hero.title.line2")}</span>
