@@ -1,8 +1,11 @@
+"use client"
 import Image from "next/image";
 import React from "react";
 import { FadeAnimation } from "../motion-animations/FadeAnimation";
+import { useLanguage } from "../contexts/language-context";
 
 function SaasSection() {
+  const { t } = useLanguage();
   return (
     <section className="py-16 2md:py-20">
       <div className="container mx-auto px-4 max-w-7xl relative">
@@ -20,11 +23,7 @@ function SaasSection() {
 
           <div>
             <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-600 dark:text-gray-300">
-              Electronic shelf label, is an electronic display device mainly
-              placed on the shelf-edge, to replaces the traditional paper price
-              label. Each electronic shelf label is connected to the merchant's
-              computer database through wireless network and displays the latest
-              price information of the items accurately in real time.
+              {t("ElectronicShelfLabel")}
             </p>
           </div>
 
@@ -50,12 +49,7 @@ function SaasSection() {
           </div>
           <div>
             <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-600 dark:text-gray-300">
-              The industry's first true cloud architecture, using the SaaS
-              model, solved the dilemma of centralized deployment and
-              application of smart hardware devices in shops, such as ESL, LCD,
-              AI cameras, etc. The combination of software and hardware makes
-              in-store management more efficient and intelligent, unleashing the
-              potential of smart retail.
+              {t("CloudeArchitecture")}
             </p>
           </div>
         </FadeAnimation>

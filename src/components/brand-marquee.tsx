@@ -3,6 +3,8 @@ import Image from "next/image";
 import React from "react";
 import { FadeAnimation } from "../motion-animations/FadeAnimation";
 import { useTheme } from "../contexts/theme-context";
+import { useLanguage } from "../contexts/language-context";
+import AnimationText from "./Animation-text";
 
 const brands = [
   {
@@ -37,6 +39,7 @@ const brands = [
 
 function BrandMarquee() {
   const { theme } = useTheme();
+  const {t} = useLanguage()
 
   return (
     <section className="py-12 2md:py-16 lg::py-20">
@@ -47,15 +50,15 @@ function BrandMarquee() {
             className="text-center mb-10 2md:mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mx-auto mb-6">
-              Brands We{" "}
+              <AnimationText>
+                {t("BrandsHeading").split(" ").slice(0,2).join(" ")}{" "}
+              </AnimationText>
               <span className="bg-linear-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
-                Collaborate With
+                {t("BrandsHeading").split(" ").slice(2).join(" ")}
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Drive store operation development by cutting-edge technology,
-              superior products and perfect services have brought us numerous
-              commendations.
+              {t("BrandsHeadingText")}
             </p>
           </FadeAnimation>
 
@@ -73,7 +76,7 @@ function BrandMarquee() {
                 <span
                   className={`text-sm font-semibold text-blue-700 dark:text-blue-300`}
                 >
-                  Trusted by leading brands worldwide
+                  {t("BrandsSubHeading")}
                 </span>
               </div>
             </div>

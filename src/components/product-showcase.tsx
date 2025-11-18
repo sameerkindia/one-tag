@@ -254,6 +254,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Sparkles } from "lucide-react";
 import { FadeAnimation } from "../motion-animations/FadeAnimation";
+import { useLanguage } from "../contexts/language-context";
+import AnimationText from "./Animation-text";
 
 const products = [
   {
@@ -280,6 +282,7 @@ const products = [
 ];
 
 export function ProductShowcase() {
+  const {t} = useLanguage()
   return (
     <section className="py-16 2md:py-20 relative overflow-hidden">
       {/* Background ambient motion */}
@@ -312,13 +315,16 @@ export function ProductShowcase() {
           className="text-center mb-10 2md:mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold max-w-3xl mx-auto mb-6">
-            Our{" "}
+            <AnimationText>
+              {t("ourProduct").split(" ").slice(0,1)}
+            </AnimationText>
+            {" "}
             <span className="bg-linear-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
-              Product Line
+              {t("ourProduct").split(" ").slice(1).join(" ")}
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Choose the perfect smart tag for your retail needs
+             {t("ourProductText")}
           </p>
         </FadeAnimation>
 

@@ -5,30 +5,199 @@ import { motion } from "framer-motion";
 import { Linkedin, Instagram } from "lucide-react";
 import { LiaTelegram } from "react-icons/lia";
 import { useTheme } from "@/src/contexts/theme-context";
+import { useLanguage } from "../contexts/language-context";
 
-interface FooterLinks {
-  product: { label: string; href: string }[];
-  company: { label: string; href: string }[];
-  legal: { label: string; href: string }[];
-  [key: string]: { label: string; href: string }[];
+// interface FooterLinks {
+//   product: { label: string; href: string }[];
+//   company: { label: string; href: string }[];
+//   legal: { label: string; href: string }[];
+//   [key: string]: { label: string; href: string }[];
+// }
+
+// const footerLinks: any = {
+//   product: [
+//     {
+//       label: { en: "Solutions", ru: "Решения", uz: "Yechimlar" },
+//       href: "/solutions",
+//     },
+//     {
+//       label: { en: "Case Studies", ru: "Кейсы", uz: "Muvaffaqiyat hikoyalari" },
+//       href: "/cases",
+//     },
+//     { label: { en: "Pricing", ru: "Цены", uz: "Narxlar" }, href: "/contact" },
+//   ],
+//   company: [
+//     {
+//       label: {
+//         en: "About Us",
+//         ru: "О компании",
+//         uz: "Biz haqimizda",
+//       },
+//       href: "/about",
+//     },
+//     {
+//       label: {
+//         en: "Contact",
+//         ru: "Контакты",
+//         uz: "Aloqa",
+//       },
+//       href: "/contact",
+//     },
+//     {
+//       label: {
+//         en: "Careers",
+//         ru: "Вакансии",
+//         uz: "Ish o‘rinlari",
+//       },
+//       href: "/about",
+//     },
+//   ],
+//   legal: [
+//     {
+//       label: {
+//         en: "Privacy Policy",
+//         ru: "Политика конфиденциальности",
+//         uz: "Maxfiylik siyosati",
+//       },
+//       href: "/legal/privacy",
+//     },
+//     {
+//       label: {
+//         en: "Terms of Service",
+//         ru: "Условия обслуживания",
+//         uz: "Xizmat ko‘rsatish shartlari",
+//       },
+//       href: "/legal/terms-of-service",
+//     },
+//   ],
+// };
+
+// Supported languages in your dataset
+type LanguageCode = "en" | "ru" | "uz";
+
+// Each translation entry
+interface Translation {
+  title: string;
 }
 
-const footerLinks: FooterLinks = {
-  product: [
-    { label: "Solutions", href: "/solutions" },
-    { label: "Case Studies", href: "/cases" },
-    { label: "Pricing", href: "/contact" },
-  ],
-  company: [
-    { label: "About Us", href: "/about" },
-    { label: "Contact", href: "/contact" },
-    { label: "Careers", href: "/about" },
-  ],
-  legal: [
-    { label: "Privacy Policy", href: "/legal/privacy" },
-    { label: "Terms of Service", href: "/legal/terms-of-service" },
-  ],
+// Translations object keyed by language
+type Translations = {
+  [lang in LanguageCode]: Translation;
 };
+
+// Child link inside a section
+interface FooterChild {
+  key: string;
+  translations: Translations;
+}
+
+// Top-level section (Product, Company, Legal)
+interface FooterSection {
+  key: string;
+  translations: Translations;
+  children: FooterChild[];
+}
+
+// The entire footerLinks array
+type FooterLinks = FooterSection[];
+
+
+const footerLinks: FooterLinks = [
+  {
+    key: "product",
+    translations: {
+      en: { title: "Product" },
+      ru: { title: "Продукт" },
+      uz: { title: "Mahsulot" },
+    },
+    children: [
+      {
+        key: "solutions",
+        translations: {
+          en: { title: "Solutions" },
+          ru: { title: "Решения" },
+          uz: { title: "Yechimlar" },
+        },
+      },
+      {
+        key: "caseStudies",
+        translations: {
+          en: { title: "Case Studies" },
+          ru: { title: "Кейсы" },
+          uz: { title: "Muvaffaqiyat hikoyalari" },
+        },
+      },
+      {
+        key: "pricing",
+        translations: {
+          en: { title: "Pricing" },
+          ru: { title: "Цены" },
+          uz: { title: "Narxlar" },
+        },
+      },
+    ],
+  },
+  {
+    key: "company",
+    translations: {
+      en: { title: "Company" },
+      ru: { title: "Компания" },
+      uz: { title: "Kompaniya" },
+    },
+    children: [
+      {
+        key: "aboutUs",
+        translations: {
+          en: { title: "About Us" },
+          ru: { title: "О компании" },
+          uz: { title: "Biz haqimizda" },
+        },
+      },
+      {
+        key: "contact",
+        translations: {
+          en: { title: "Contact" },
+          ru: { title: "Контакты" },
+          uz: { title: "Aloqa" },
+        },
+      },
+      {
+        key: "careers",
+        translations: {
+          en: { title: "Careers" },
+          ru: { title: "Вакансии" },
+          uz: { title: "Ish o‘rinlari" },
+        },
+      },
+    ],
+  },
+  {
+    key: "legal",
+    translations: {
+      en: { title: "Legal" },
+      ru: { title: "Юридическое" },
+      uz: { title: "Huquqiy" },
+    },
+    children: [
+      {
+        key: "privacyPolicy",
+        translations: {
+          en: { title: "Privacy Policy" },
+          ru: { title: "Политика конфиденциальности" },
+          uz: { title: "Maxfiylik siyosati" },
+        },
+      },
+      {
+        key: "termsOfService",
+        translations: {
+          en: { title: "Terms of Service" },
+          ru: { title: "Условия обслуживания" },
+          uz: { title: "Xizmat ko‘rsatish shartlari" },
+        },
+      },
+    ],
+  },
+];
 
 const socialLinks = [
   {
@@ -44,8 +213,35 @@ const socialLinks = [
   { icon: LiaTelegram, href: "https://t.me/onetag_uz", label: "Telegram" },
 ];
 
+const footerLabel = {
+  product: {
+    en: "Product",
+    ru: "Продукт",
+    uz: "Mahsulot",
+  },
+  company: {
+    en: "Company",
+    ru: "Компания",
+    uz: "Kompaniya",
+  },
+  legal: {
+    en: "Legal",
+    ru: "Юридическое",
+    uz: "Huquqiy",
+  },
+};
+
+const footerText = {
+  text: {
+    en: `Pioneering smart retail technology in Uzbekistan. Transform your store with intelligent price tags.`,
+    ru: `Мы — пионеры смарт-ретейл технологий в Узбекистане. Преобразуйте свой магазин с помощью интеллектуальных электронных ценников.`,
+    uz: `Biz — O‘zbekistonda smart retail texnologiyalarining yetakchisiz. Do‘koningizni aqlli elektron narx belgilar bilan zamonaviylashtiring.`,
+  },
+};
+
 export function Footer() {
   const { theme } = useTheme();
+  const { language } = useLanguage();
 
   return (
     <footer
@@ -94,8 +290,7 @@ export function Footer() {
                   : "text-gray-600 hover:text-gray-900"
               }`}
             >
-              Pioneering smart retail technology in Uzbekistan. Transform your
-              store with intelligent price tags.
+              {footerText.text[language]}
             </p>
 
             <div className="flex items-center gap-3 my-4">
@@ -181,7 +376,7 @@ export function Footer() {
           </div>
 
           {/* Footer Links */}
-          {["product", "company", "legal"].map((section) => (
+          {/* {["product", "company", "legal"].map((section) => (
             <div key={section}>
               <motion.h3
                 className={`font-medium mb-3 sm:mb-4 text-xl capitalize transition-colors ${
@@ -210,7 +405,42 @@ export function Footer() {
                 ))}
               </ul>
             </div>
-          ))}
+          ))} */}
+
+          {["product", "company", "legal"].map((sectionKey) => {
+            const section = footerLinks.find((s) => s.key === sectionKey);
+
+            return (
+              <div key={sectionKey}>
+                <motion.h3
+                  className={`font-medium mb-3 sm:mb-4 text-xl capitalize transition-colors ${
+                    theme === "dark" ? "text-white" : "text-gray-900"
+                  }`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {section?.translations[language].title}
+                </motion.h3>
+                <ul className="space-y-2 sm:space-y-3">
+                  {section?.children.map((link) => (
+                    <li key={link.key}>
+                      <Link
+                        href={`/${link.key}`} // adjust href logic as needed
+                        className={`transition-colors duration-300 text-md font-light hover:border-b-2 hover:border-blue-500 ${
+                          theme === "dark"
+                            ? "text-white/70 hover:text-white"
+                            : "text-gray-600 hover:text-gray-900"
+                        }`}
+                      >
+                        {link.translations[language].title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
         </div>
 
         {/* Bottom Bar */}

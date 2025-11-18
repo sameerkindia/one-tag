@@ -3,6 +3,7 @@
 import { useLanguage } from "@/src/contexts/language-context";
 import { useTheme } from "../contexts/theme-context";
 import { FadeAnimation } from "../motion-animations/FadeAnimation";
+import AnimationText from "./Animation-text";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -76,32 +77,34 @@ export function Hero() {
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 backdrop-blu r-sm">
         <FadeAnimation direction="up">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 text-black dark:text-white">
-            <FadeAnimation
-              direction="up"
-              staggerChildren={0.3}
-              className="flex flex-col"
-            >
-              <span className="" key={theme}>
-                <span
+          <FadeAnimation
+            direction="up"
+            staggerChildren={0.1}
+            className="flex flex-col"
+          >
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold leading-tight mb-6 text-black dark:text-white text-balance max-w-[1400px] mx-auto">
+              {/* <span
                   key={theme}
                   className={`chroma-text chroma-text-animate text-nowrap ${
                     theme === "dark" ? "bg-gradient-dark" : "bg-gradient-light"
                   }`}
                 >
                   {t("hero.title.line1").split(" ").slice(0, 1).join(" ")}
-                </span>{" "}
-                {t("hero.title.line1").split(" ").slice(1).join(" ")}
-              </span>
-              <span>{t("hero.title.line2")}</span>
-            </FadeAnimation>
-          </h1>
+                </span> */}
+              <AnimationText>
+                {t("hero.title.line1").split(" ").slice(0, 2).join(" ")}
+              </AnimationText>{" "}
+              {t("hero.title.line1").split(" ").slice(2).join(" ")}
+              {/* <span>{t("hero.title.line2")}</span> */}
+            </h1>
+          </FadeAnimation>
 
           <a
             href="/contact"
             className="inline-block mt-4 px-6 py-3 bg-black dark:bg-white hover:bg-black/80 dark:hover:bg-white/80 text-white dark:text-black rounded-2xl transition-all duration-300 min-w-[170px]"
           >
-            More Info
+            {/* More Info */}
+            {t("hero.moreInfo")}
           </a>
         </FadeAnimation>
       </div>

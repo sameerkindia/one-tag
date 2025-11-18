@@ -89,9 +89,9 @@ export function Navbar() {
 
   return (
     <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeInOut" }}
+      // initial={{ y: -100, opacity: 0 }}
+      // animate={{ y: 0, opacity: 1 }}
+      // transition={{ duration: 0.6, ease: "easeInOut" }}
       className={`fixed h-12 lg:h-16 top-0 left-0 right-0 z-50 transition-all duration-500 blue-nav mt-2`}
     >
       <div className="container mx-auto max-w-344 h-full px-4">
@@ -167,7 +167,7 @@ export function Navbar() {
                   <motion.div
                     layoutId="navbar-indicator"
                     className="absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-primary to-transparent"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    // transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
                 <motion.div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
