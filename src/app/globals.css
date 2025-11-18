@@ -425,5 +425,5 @@
 }
 
 .container{
-  @apply sm:max-w-[96%] 3md:max-w-[90%] mx-auto;
+  @apply sm:w-[96%] 3md:w-[90%] mx-auto;
 }

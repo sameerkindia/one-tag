@@ -48,12 +48,41 @@
 
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { FadeAnimation } from "../motion-animations/FadeAnimation";
+import { useLanguage } from "../contexts/language-context";
+import AnimationText from "./Animation-text";
+
+// const ctaContent = [{ heading: { en: ``, ru: ``, uz: `` },
+//  text: { en: ``, ru: ``, uz: `` },
+// btnText: { en: ``, ru: ``, uz: `` },
+// }];
+
+const ctaContent = {
+  heading: {
+    en: `Ready to Transform Your Retail Operations?`,
+    ru: `Готовы преобразовать свои розничные операции?`,
+    uz: `Chakana savdo jarayonlaringizni o‘zgartirishga tayyormisiz?`,
+  },
+  text: {
+    en: `Join leading retailers across Uzbekistan who trust Onetag for their smart pricing needs.`,
+    ru: `Присоединяйтесь к ведущим ритейлерам Узбекистана, которые доверяют Onetag для
+управления своими умными ценниками`,
+    uz: `Aqlli narxlash yechimlari uchun Onetag’ga ishongan O‘zbekistonning yetakchi chakana
+tarmoqlariga qo‘shiling.
+`,
+  },
+  btnText: {
+    en: `Schedule a Demo`,
+    ru: `Заказать демо`,
+    uz: `Demo uchun ro‘yxatdan o‘ting`,
+  },
+};
 
 export function CTASection() {
+  const { language } = useLanguage();
+
   return (
     <section className="py-16 2md:py-20 relative">
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
@@ -85,9 +114,11 @@ export function CTASection() {
                 text-gray-900 dark:text-white
               "
             >
-              Ready to Transform Your
+              <AnimationText>
+                {ctaContent.heading[language].split(" ").slice(0, -2).join(" ")}
+              </AnimationText>{" "}
               <span className="block text-blue-600 dark:text-blue-400 font-semibold">
-                Retail Operations?
+                {ctaContent.heading[language].split(" ").slice(-2).join(" ")}
               </span>
             </h2>
 
@@ -97,11 +128,13 @@ export function CTASection() {
                 text-gray-600 dark:text-gray-300
               "
             >
-              Join leading retailers across Uzbekistan who trust{" "}
+              {ctaContent.text[language].split("Onetag").slice(0).join(" ")}{" "}
               <span className="text-blue-600 dark:text-blue-400 font-medium">
-                OneTag
+                Onetag
               </span>{" "}
-              for their smart pricing needs.
+              {ctaContent.text[language].split("Onetag").slice(1).join(" ")}
+              {/* Join leading retailers across Uzbekistan who trust{" "}
+              for their smart pricing needs. */}
             </p>
 
             <div>
@@ -115,8 +148,8 @@ export function CTASection() {
                   hover:shadow-blue-500/40
                 "
               >
-                Schedule a Demo
-                <ArrowRight className="w-5 h-5" />
+                {ctaContent.btnText[language]}
+                <ArrowRight className="size-5" />
               </Link>
             </div>
           </FadeAnimation>
