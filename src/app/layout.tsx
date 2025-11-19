@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <Head>
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/onetag.ico" />
       </Head>
       <body className="font-sans antialiased tran sition-colors dura tion-300">
         <ThemeProvider>

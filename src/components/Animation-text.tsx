@@ -11,7 +11,7 @@ export default function AnimationText({
   return (
     <span
       key={theme}
-      className={`chroma-text chroma-text-animate text-nowrap ${
+      className={`chroma-text chroma-text-animate ${
         theme === "dark" ? "bg-gradient-dark" : "bg-gradient-light"
       }`}
     >
