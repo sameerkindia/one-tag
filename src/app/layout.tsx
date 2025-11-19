@@ -1,4 +1,3 @@
-"use client"
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
@@ -20,10 +19,10 @@ const inter = Inter({
   variable: "--font-inter",
 })
 
-// export const metadata: Metadata = {
-//   title: "OneTag Smart Solutions - Smart Retail Technology",
-//   description: "Bluetooth and Wi-Fi powered smart price tags for modern retail stores",
-// }
+export const metadata: Metadata = {
+  title: "OneTag Smart Solutions - Smart Retail Technology",
+  description: "Bluetooth and Wi-Fi powered smart price tags for modern retail stores",
+}
 
 
 
@@ -35,10 +34,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
-      <body className="font-sans antialiased transition-colors duration-300">
+      <Head>
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+      <body className="font-sans antialiased tran sition-colors dura tion-300">
         <ThemeProvider>
           <LanguageProvider>
-            <DynamicHead />
+            {/* <DynamicHead /> */}
             <Navbar />
             <ScrollToTop />
             <main className="min-h-screen">{children}</main>

@@ -110,7 +110,7 @@ const features = [
 
 export function FeaturesGrid() {
   const { t, language } = useLanguage();
-  console.log(language , " this is language")
+  // console.log(language , " this is language")
   return (
     <section className="py-16 2md:py-20 relative overflow-hidden">
       {/* Smooth background animation */}
