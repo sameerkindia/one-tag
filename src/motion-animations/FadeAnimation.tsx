@@ -99,8 +99,8 @@ export function FadeAnimation({
       {React.Children.map(children, (child, index) =>
         React.isValidElement(child) ? (
           <div
-            data-aos={directionMap[direction]}
-            data-aos-delay={index * staggerChildren * 100} // add delay for stagger
+            // data-aos={directionMap[direction]}
+            // data-aos-delay={index * staggerChildren * 100} // add delay for stagger
           >
             {child}
           </div>

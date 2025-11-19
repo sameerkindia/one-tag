@@ -15,7 +15,7 @@ function VideoSection() {
               <source src="/hero-video.mp4" type="video/mp4"></source>
             </video>
           </figure>
-          <div className="aspect-1248/702 flex items-start bg-black/30">
+          <div className="relative aspect-1248/702 flex items-start bg-black/30">
             <div className="max-w-[450px] lg:max-w-[600px] xl:max-w-[700px] m-3.5 min-[380px]:m-5 sm:m-10">
               <h3 className="text-2xl sm:!text-3xl md:!text-4xl lg:!text-5xl xl:!text-6xl font-bold text-white leading-snug text-pretty">
                 {t("CuttingEdge")}
