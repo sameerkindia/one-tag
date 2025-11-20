@@ -12,19 +12,9 @@ function SaasSection() {
         <FadeAnimation
           direction="up"
           staggerChildren={0.5}
-          className="flex flex-col items-center gap-6 gap-y-10"
+          className="flex flex-col items-center gap-6 gap-y-16"
         >
-          {/* <div className="sm:hidden">
-            <Image
-              src="/electronics-shelf.webp"
-              alt="one tag solution saas"
-              className="rounded-3xl"
-              height={600}
-              width={600}
-            />
-          </div> */}
-
-          <div className="grid sm:grid-cols-2 justify-between items-center gap-6">
+          <div className="grid sm:grid-cols-2 justify-between items-center gap-8">
             <div>
               <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-600 dark:text-gray-300">
                 {t("ElectronicShelfLabel")}
@@ -43,7 +33,7 @@ function SaasSection() {
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-2 justify-between items-center gap-6">
+          <div className="grid sm:grid-cols-2 justify-between items-center gap-8">
             <div className="sm:order-1">
               <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-600 dark:text-gray-300">
                 {t("CloudeArchitecture")}
