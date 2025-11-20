@@ -4,51 +4,25 @@ import { useLanguage } from "@/src/contexts/language-context";
 import { useTheme } from "../contexts/theme-context";
 import { FadeAnimation } from "../motion-animations/FadeAnimation";
 import AnimationText from "./Animation-text";
+import { useEffect, useState } from "react";
 
 export function Hero() {
   const { t } = useLanguage();
   const { theme } = useTheme();
-
-  // console.log(theme === "dark", " this is theme");
-
-  // const slides = [
-  //   {
-  //     type: "video",
-  //     src: "/hero-video.mp4",
-  //   },
-  //   {
-  //     type: "image",
-  //     src: "/banner.webp",
-  //     title1: t("hero.title.line1"),
-  //     title2: t("hero.title.line2"),
-  //   },
-  // ];
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  if (!mounted || !theme) return <div className="min-h-screen"></div>;
 
   // if (!theme) return null;
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden sm:rounded-b-4xl">
-      {/* <div className="absolute inset-0 w-full h-full">
-        <video
-          key={theme}
-          autoPlay
-          muted
-          loop
-          className="inset-0 w-full h-full object-fill"
-        >
-          <source
-            src={
-              theme === "dark" ? "/banner-video-dark.mp4" : "/banner-video.mp4"
-            }
-            type="video/mp4"
-          />
-        </video>
-      </div> */}
       <div
         className={`absolute inset-0 w-full h-full opacity-0 dark:opacity-100`}
       >
         <video
           key={theme}
+          preload="auto"
           autoPlay
           muted
           loop
@@ -63,6 +37,7 @@ export function Hero() {
       >
         <video
           key={theme}
+          preload="auto"
           autoPlay
           muted
           loop
@@ -83,19 +58,10 @@ export function Hero() {
             className="flex flex-col"
           >
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold leading-tight mb-6 text-black dark:text-white text-balance max-w-[1400px] mx-auto">
-              {/* <span
-                  key={theme}
-                  className={`chroma-text chroma-text-animate text-nowrap ${
-                    theme === "dark" ? "bg-gradient-dark" : "bg-gradient-light"
-                  }`}
-                >
-                  {t("hero.title.line1").split(" ").slice(0, 1).join(" ")}
-                </span> */}
               <AnimationText>
                 {t("hero.title.line1").split(" ").slice(0, 2).join(" ")}
               </AnimationText>{" "}
               {t("hero.title.line1").split(" ").slice(2).join(" ")}
-              {/* <span>{t("hero.title.line2")}</span> */}
             </h1>
           </FadeAnimation>
 

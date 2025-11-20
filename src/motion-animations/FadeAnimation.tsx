@@ -78,10 +78,10 @@ export function FadeAnimation({
 }) {
   useEffect(() => {
     AOS.init({
-      duration: 600, // total animation duration (ms)
+      duration: 400, // total animation duration (ms)
       easing: 'ease-out', // smoother animation
       once: !repeatOnScroll, // animate only once or every scroll
-      offset: 20, // trigger point
+      offset: 15, // trigger point
     });
 
     // refresh AOS when content changes
@@ -99,8 +99,8 @@ export function FadeAnimation({
       {React.Children.map(children, (child, index) =>
         React.isValidElement(child) ? (
           <div
-            // data-aos={directionMap[direction]}
-            // data-aos-delay={index * staggerChildren * 100} // add delay for stagger
+            data-aos={directionMap[direction]}
+            data-aos-delay={index * staggerChildren * 100} // add delay for stagger
           >
             {child}
           </div>
