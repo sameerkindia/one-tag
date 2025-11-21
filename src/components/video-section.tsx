@@ -17,9 +17,9 @@ function VideoSection() {
           </figure>
           <div className="relative aspect-1248/702 flex items-start bg-black/30">
             <div className="max-w-[450px] lg:max-w-[600px] xl:max-w-[700px] m-3.5 min-[380px]:m-5 sm:m-10">
-              <h3 className="text-2xl sm:!text-3xl md:!text-4xl lg:!text-5xl xl:!text-6xl font-bold text-white leading-snug text-pretty">
+              <h2 className="text-2xl sm:!text-3xl md:!text-4xl lg:!text-5xl xl:!text-6xl font-bold text-white leading-snug text-pretty">
                 {t("CuttingEdge")}
-              </h3>
+              </h2>
               <hr className="border-t-[3] lg:border-t-4 w-2/4 sm:w-3/4 border-white" />
               <p className="!text-xl sm:!text-2xl md:!text-3xl lg:!text-4xl xl:!text-5xl font-semibold text-white">
                 {t("PoweredCloud")}
