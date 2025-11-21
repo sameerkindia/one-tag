@@ -58,7 +58,7 @@ export function Hero() {
             className="flex flex-col"
           >
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold leading-tight mb-6 text-black dark:text-white text-balance max-w-[1400px] mx-auto">
-              <AnimationText>
+              <AnimationText onRepeat={true}>
                 {t("hero.title.line1").split(" ").slice(0, 2).join(" ")}
               </AnimationText>{" "}
               {t("hero.title.line1").split(" ").slice(2).join(" ")}
@@ -67,10 +67,11 @@ export function Hero() {
 
           <a
             href="/contact"
+            aria-label="more info about one tag"
             className="inline-block mt-4 px-6 py-3 bg-black dark:bg-white hover:bg-black/80 dark:hover:bg-white/80 text-white dark:text-black rounded-2xl transition-all duration-300 min-w-[170px]"
           >
             {/* More Info */}
-            {t("hero.moreInfo")}
+            {t("hero.moreInfo")} <span className="sr-only"> about one tag </span>
           </a>
         </FadeAnimation>
       </div>

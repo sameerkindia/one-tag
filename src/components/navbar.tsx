@@ -184,6 +184,7 @@ export function Navbar() {
                     setShowAccessibility(!showAccessibility);
                     setShowLangMenu(false);
                   }}
+                  aria-label="setting for page"
                   className="p-2 lg:p-2.5 rounded-xl hover:bg-primary/10 transition-all cursor-pointer"
                 >
                   <Settings className="w-5 h-5 text-muted-foreground" />
@@ -283,6 +284,7 @@ export function Navbar() {
                   setShowAccessibility(!showAccessibility);
                   setShowLangMenu(false);
                 }}
+                aria-label="setting for page"
                 className="p-2 lg:p-2.5 rounded-xl hover:bg-primary/10 transition-all cursor-pointer"
               >
                 <Settings className="w-5 h-5" />

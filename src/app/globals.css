@@ -409,8 +409,12 @@
 
 .chroma-text-animate {
   /* animation: chroma-sweep .9s ease-in-out .1s forwards infinite; */
-  animation: chroma-sweep 2s ease-in-out 0.1s forwards infinite;
+  animation: chroma-sweep 2s ease-in-out 0.1s forwards;
   filter: blur(1px);
+}
+
+.chroma-text-animate.repeat {
+    animation-iteration-count: infinite;
 }
 
 @keyframes chroma-sweep {
