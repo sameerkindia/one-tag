@@ -160,7 +160,7 @@ export function Navbar() {
           >
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} className="relative group">
-                <span className="text-sm font-light text-foreground/70 hover:text-foreground transition-all duration-300">
+                <span className="text-sm 2md:text-base font-light text-foreground/70 hover:text-foreground transition-all duration-300">
                   {t(link.label)}
                 </span>
                 {pathname === link.href && (
