@@ -416,6 +416,10 @@
 .chroma-text-animate.repeat {
     animation-iteration-count: infinite;
 }
+/* .chroma-text-animate.repeat.aos-animate {
+  animation-iteration-count: infinite;
+} */
+
 
 @keyframes chroma-sweep {
   0% {
