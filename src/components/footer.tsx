@@ -1,11 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-// import { Linkedin, Instagram } from "lucide-react";
-// import { LiaTelegram } from "react-icons/lia";
 import { useTheme } from "@/src/contexts/theme-context";
 import { useLanguage } from "../contexts/language-context";
+import { FadeAnimation } from "../motion-animations/FadeAnimation";
 
 // interface FooterLinks {
 //   product: { label: string; href: string }[];
@@ -314,11 +312,7 @@ export function Footer() {
           {/* Brand + Description */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-4">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="w-40"
-              >
+              <div className="w-40 transition-all duration-300 hover:scale-105">
                 {theme === "dark" ? (
                   <img
                     src="/logo2.svg"
@@ -332,7 +326,7 @@ export function Footer() {
                     className="w-full h-auto"
                   />
                 )}
-              </motion.div>
+              </div>
             </Link>
 
             <p
@@ -396,7 +390,7 @@ export function Footer() {
             {/* Social Links */}
             <div className="flex items-center gap-5 flex-wrap">
               {socialLinks.map((social, index) => (
-                <motion.a
+                <a
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
@@ -431,7 +425,7 @@ export function Footer() {
                           : "from-blue-400/15 to-purple-400/15"
                       }`}
                   />
-                </motion.a>
+                </a>
               ))}
             </div>
           </div>
@@ -473,16 +467,15 @@ export function Footer() {
 
             return (
               <div key={sectionKey}>
-                <motion.h3
+                <h3
                   className={`font-medium mb-3 sm:mb-4 text-xl capitalize transition-colors ${
                     theme === "dark" ? "text-white" : "text-gray-900"
                   }`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
                 >
-                  {section?.translations[language].title}
-                </motion.h3>
+                  <FadeAnimation>
+                    {section?.translations[language].title}
+                  </FadeAnimation>
+                </h3>
                 <ul className="space-y-2 sm:space-y-3">
                   {section?.children.map((link) => (
                     <li key={link.key}>
