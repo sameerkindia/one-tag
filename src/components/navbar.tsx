@@ -10,8 +10,39 @@ import { useTheme } from "@/src/contexts/theme-context";
 import Image from "next/image";
 import { AccessibilityToolbar } from "./accessibility-toolbar";
 
+// const navLinks = [
+//   { href: "/solutions", label: "nav.solutions", subLink : [
+//     {href: "/a", label: "nav.solutions"},
+//     {href: "/b", label: "nav.solutions"},
+//     {href: "/c", label: "nav.solutions" , subLink : [
+//       {href: "/ca", label: "nav.solutions"},
+//       {href: "/cb", label: "nav.solutions"},
+//       {href: "/cc", label: "nav.solutions"},
+//     ]}
+//   ] },
+//   { href: "/cases", label: "nav.cases" },
+//   { href: "/about", label: "nav.about" },
+//   { href: "/contact", label: "nav.contact" },
+// ];
+
 const navLinks = [
-  { href: "/solutions", label: "nav.solutions" },
+  {
+    href: "/solutions",
+    label: "nav.solutions",
+    subLinks: [
+      {
+        href: "/electronic-shelf-labels",
+        label: "nav.electronicShelfLabels",
+        subLinks: [
+          { href: "/essence-series-ESL", label: "nav.EssenceSeriesESL" },
+          { href: "/cb", label: "nav.solutions" },
+          { href: "/cc", label: "nav.solutions" },
+        ],
+      },
+      { href: "/a", label: "nav.solutions" },
+      { href: "/essence-series-ESL", label: "nav.EssenceSeriesESL" },
+    ],
+  },
   { href: "/cases", label: "nav.cases" },
   { href: "/about", label: "nav.about" },
   { href: "/contact", label: "nav.contact" },
@@ -158,7 +189,7 @@ export function Navbar() {
                 : "bg-fill-tertiary"
             }`}
           >
-            {navLinks.map((link) => (
+            {/* {navLinks.map((link) => (
               <Link key={link.href} href={link.href} className="relative group">
                 <span className="text-sm 2md:text-base font-light text-foreground/70 hover:text-foreground transition-all duration-300">
                   {t(link.label)}
@@ -172,6 +203,9 @@ export function Navbar() {
                 )}
                 <motion.div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
+            ))} */}
+            {navLinks.map((item) => (
+              <NavItem key={item.href} item={item} t={t} />
             ))}
 
             <div className="flex items-center gap-2">
@@ -401,5 +435,98 @@ export function Navbar() {
         )}
       </AnimatePresence>
     </motion.nav>
+  );
+}
+
+function NavItem({ item, level = 1, t }: any) {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  const hasSub = Array.isArray(item?.subLinks) && item.subLinks.length > 0;
+
+  // show on hover (desktop) and click (touch)
+  const onEnter = () => setOpen(true);
+  const onLeave = () => setOpen(false);
+  const onToggle = (e: React.MouseEvent) => {
+    // prevent Link navigation when toggling top-level menu
+    if (hasSub && level === 1) {
+      e.preventDefault();
+      setOpen((v) => !v);
+    }
+  };
+
+  return (
+    <div className="relative" onMouseEnter={onEnter} onMouseLeave={onLeave}>
+      <Link
+        href={item.href ?? "#"}
+        onClick={onToggle}
+        className={`inline-flex items-center gap-2 px-2 py-1 ${
+          pathname === item.href
+            ? "text-primary"
+            : "text-foreground/70 hover:text-foreground"
+        } text-sm 2md:text-base font-light transition-all`}
+        aria-haspopup={hasSub ? "menu" : undefined}
+        aria-expanded={hasSub ? open : undefined}
+      >
+        {t ? t(item.label) : item.label}
+        {/* optional arrow indicator for items with submenu */}
+        {hasSub && (
+          <span
+            aria-hidden
+            className={`transition-transform ${open ? "rotate-90" : ""}`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="size-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+          </span>
+        )}
+      </Link>
+
+      {/* submenu */}
+      <AnimatePresence>
+        {hasSub && open && (
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 6 }}
+            transition={{ duration: 0.15 }}
+            className={`absolute z-40 mt-2 ${
+              level === 1
+                ? "left-0 min-w-[200px]"
+                : "left-full top-0 ml-2 min-w-[200px]"
+            } bg-background shadow-lg rounded-md p-2`}
+            role="menu"
+          >
+            {item.subLinks.map((sub: any) => (
+              <FlyoutItem
+                key={`${sub.href ?? sub.label}`}
+                item={sub}
+                level={level + 1}
+                t={t}
+              />
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+/* FlyoutItem - reuses NavItem behavior for recursion */
+function FlyoutItem({ item, level = 2, t }: any) {
+  return (
+    <div className="relative" role="none">
+      <NavItem item={item} level={level} t={t} />
+    </div>
   );
 }
