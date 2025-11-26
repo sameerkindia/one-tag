@@ -34,13 +34,13 @@ const navLinks = [
         href: "/electronic-shelf-labels",
         label: "nav.electronicShelfLabels",
         subLinks: [
+          { href: "/shield-series-ESL", label: "nav.ShieldSeriesESL" },
+          { href: "/valley-series-ESL", label: "nav.ValleySeriesESL" },
           { href: "/essence-series-ESL", label: "nav.EssenceSeriesESL" },
-          { href: "/cb", label: "nav.solutions" },
-          { href: "/cc", label: "nav.solutions" },
         ],
       },
-      { href: "/a", label: "nav.solutions" },
-      { href: "/essence-series-ESL", label: "nav.EssenceSeriesESL" },
+      { href: "/esl-cloud-platform", label: "nav.ESLCloudPlatform" },
+      { href: "/esl-accessories", label: "nav.eslAccessories" },
     ],
   },
   { href: "/cases", label: "nav.cases" },
@@ -472,7 +472,7 @@ function NavItem({ item, level = 1, t }: any) {
         {hasSub && (
           <span
             aria-hidden
-            className={`transition-transform ${open ? "rotate-90" : ""}`}
+            className={`!transition-all duration-300 ${open ? "rotate-180" : ""}`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -480,7 +480,7 @@ function NavItem({ item, level = 1, t }: any) {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="size-6"
+              className="size-4"
             >
               <path
                 strokeLinecap="round"
