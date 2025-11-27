@@ -34,7 +34,7 @@ const navLinks = [
         href: "/electronic-shelf-labels",
         label: "nav.electronicShelfLabels",
         subLinks: [
-          { href: "/shield-series-ESL", label: "nav.ShieldSeriesESL" },
+          { href: "/esl-shield-series", label: "nav.ShieldSeriesESL" },
           { href: "/valley-series-ESL", label: "nav.ValleySeriesESL" },
           { href: "/essence-series-ESL", label: "nav.EssenceSeriesESL" },
         ],
