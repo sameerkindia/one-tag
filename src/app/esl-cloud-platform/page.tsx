@@ -17,6 +17,7 @@ import { useTheme } from "@/src/contexts/theme-context";
 import AnimationText from "@/src/components/Animation-text";
 import { FadeAnimation } from "@/src/motion-animations/FadeAnimation";
 import Image from "next/image";
+import Link from "next/link";
 // import CloudBanner from "./Cloudbanner";
 // import { useTheme } from "next-themes";
 
@@ -55,11 +56,11 @@ export default function ZKONGPlatform() {
         </FadeAnimation>
       </section>
 
-      <section>
+      <section className="py-20 bg-slate-200 dark:bg-[#3b434c]">
         <div className="container mx-auto px-4 max-w-7xl relative">
           <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10 mb-10">
             <h2 className="text-black dark:text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6">
-              <AnimationText onRepeat={true}>The Revolutionary</AnimationText>
+              <AnimationText>The Revolutionary</AnimationText>{" "}
               Retail Cloud Platform
             </h2>
             <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-4xl mx-auto">
@@ -69,7 +70,7 @@ export default function ZKONGPlatform() {
             <a
               href="/"
               aria-label="Get More Info about our product us"
-              className="inline-block mt-4 px-6 py-3 border-2 border-black dark:border-white hover:bg-black/80 dark:hover:bg-white/80 text-black dark:text-white rounded-lg transition-all duration-300 min-w-[170px] cursor-pointer"
+              className="inline-block mt-4 px-6 py-3 border-2 border-black dark:border-white hover:bg-black dark:hover:bg-white text-black dark:text-white hover:text-white dark:hover:text-black rounded-lg transition-all duration-300 min-w-[170px] cursor-pointer"
             >
               Get More Info
             </a>
@@ -86,7 +87,7 @@ export default function ZKONGPlatform() {
       </section>
 
       {/* Platform Architecture Diagram */}
-      <section className="px-6 py-16 max-w-7xl mx-auto">
+      {/* <section className="px-6 py-16 max-w-7xl mx-auto">
         <div className="rounded-2xl p-8 border bg-gray-50/60 border-gray-200 dark:bg-gray-800/60 dark:border-gray-700">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
             ESL Integration Architecture
@@ -159,13 +160,13 @@ export default function ZKONGPlatform() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Platform Advantages */}
-      <section className="px-6 py-16 max-w-7xl mx-auto">
+      <section className="px-6 py-20 max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
-          ZKONG ESL Retail Cloud Platform{" "}
-          <span className="text-blue-600 dark:text-blue-400">Advantages</span>
+          <AnimationText>ZKONG ESL Retail Cloud</AnimationText>{" "}
+          <span className="text-blue-600 dark:text-blue-400">Platform Advantages</span>
         </h2>
 
         <div className="space-y-12">
@@ -179,13 +180,19 @@ export default function ZKONGPlatform() {
 
             <div>
               <h3 className="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-300">
-                Rapid Deployment
+                SaaS system, no local installation required
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                No need for on-premise servers or complex infrastructure. Our
-                cloud-based solution enables quick deployment with minimal setup
-                time, reducing your time-to-market and operational complexity.
-              </p>
+              <ul className="cloud-platform-ul">
+                <li>
+                 - Support unlimited accounts on the same server
+                </li>
+                <li>
+                 - Computing capacity can be infinitely superimposed through server expansion
+                </li>
+                <li>
+                 - Reduce the cost of software and hardware due to the increasement of local server
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -193,14 +200,22 @@ export default function ZKONGPlatform() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="order-2 md:order-1">
               <h3 className="text-2xl font-bold mb-4 text-purple-600 dark:text-purple-300">
-                Cost-Effective Solution
+               Comes with a template editor
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Eliminate expensive hardware investments and maintenance costs.
-                Pay only for what you use with our flexible pricing model,
-                making enterprise-grade ESL technology accessible to businesses
-                of all sizes.
-              </p>
+              <ul className="cloud-platform-ul">
+                <li>
+                 - Cloud-based templates, browser operation
+                </li>
+                <li>
+                 - Visual and free editing, real-time preview
+                </li>
+                <li>
+                 - huge template library, unlimited fonts, multi-language text
+                </li>
+                <li>
+                 - Flexible triggering
+                </li>
+              </ul>
             </div>
 
             <div className="order-1 md:order-2 p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30">
@@ -224,13 +239,19 @@ export default function ZKONGPlatform() {
 
             <div>
               <h3 className="text-2xl font-bold mb-4 text-cyan-600 dark:text-cyan-300">
-                High Availability & Security
+                Unlimited expansion
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Built on enterprise-grade cloud infrastructure with 99.9% uptime
-                guarantee. Advanced encryption and security protocols protect
-                your data with military-grade security standards.
-              </p>
+              <ul className="cloud-platform-ul">
+                <li>
+                 - integrated a variety of intelligent devices such as EPD, LCD and AI cameras with one system
+                </li>
+                <li>
+                 - Billions of information processing
+                </li>
+                <li>
+                 - A single system supports millions of <Link href="/">electronic shelf labels</Link>
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -238,13 +259,16 @@ export default function ZKONGPlatform() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="order-2 md:order-1">
               <h3 className="text-2xl font-bold mb-4 text-pink-600 dark:text-pink-300">
-                Scalability & Flexibility
+                Flexible deployment
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Easily scale from a single store to thousands of locations. Our
-                platform grows with your business, handling millions of ESL
-                updates simultaneously without performance degradation.
-              </p>
+              <ul className="cloud-platform-ul">
+                <li>
+                 - Flexible options for SaaS public, private and local deployments
+                </li>
+                <li>
+                 - Support globally distributed deployment and cluster deployment
+                </li>
+              </ul>
             </div>
 
             <div className="order-1 md:order-2 p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/30 dark:to-pink-800/30">
@@ -264,13 +288,16 @@ export default function ZKONGPlatform() {
 
             <div>
               <h3 className="text-2xl font-bold mb-4 text-green-600 dark:text-green-300">
-                Real-Time Updates
+                Interface opened
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Instant price and product information updates across all your
-                locations. Respond to market changes in real-time and maintain
-                pricing accuracy across your entire retail network.
-              </p>
+              <ul className="cloud-platform-ul">
+                <li>
+                 - 200+ API interfaces (the most open interface)
+                </li>
+                <li>
+                 - Support different types of ERP, API and customized development with specific needs
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -278,13 +305,16 @@ export default function ZKONGPlatform() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="order-2 md:order-1">
               <h3 className="text-2xl font-bold mb-4 text-orange-600 dark:text-orange-300">
-                Enhanced Management
+                Extensiveness
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Centralized dashboard for complete control over all ESL devices.
-                Monitor performance, track battery levels, and manage updates
-                from a single intuitive interface accessible anywhere.
-              </p>
+              <ul className="cloud-platform-ul">
+                <li>
+                 - Supports Windows / Mac OS / Android / iOS and many other major system
+                </li>
+                <li>
+                 - Built on a wide area network with global reach
+                </li>
+              </ul>
             </div>
 
             <div className="order-1 md:order-2 p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/30 dark:to-orange-800/30">
@@ -304,13 +334,19 @@ export default function ZKONGPlatform() {
 
             <div>
               <h3 className="text-2xl font-bold mb-4 text-indigo-600 dark:text-indigo-300">
-                Data Privacy
+                Data security
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Complete data sovereignty with GDPR compliance and local data
-                storage options. Your sensitive business information remains
-                secure and under your control at all times.
-              </p>
+              <ul className="cloud-platform-ul">
+                <li>
+                 - Data storage records in the cloud
+                </li>
+                <li>
+                 - Professional AES 128-bit encryption in the cloud
+                </li>
+                <li>
+                 - Automatic detection and early warning mechanism
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -318,14 +354,19 @@ export default function ZKONGPlatform() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="order-2 md:order-1">
               <h3 className="text-2xl font-bold mb-4 text-yellow-600 dark:text-yellow-300">
-                API Integration
+                Second development
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Seamless integration with existing retail systems including POS,
-                ERP, and inventory management. Our RESTful APIs and
-                comprehensive documentation make integration straightforward and
-                efficient.
-              </p>
+              <ul className="cloud-platform-ul">
+                <li>
+                 - Secondary development gives new features to software and hardware
+                </li>
+                <li>
+                - Private server build
+                </li>
+                <li>
+                 - APP/mini app development
+                </li>
+              </ul>
             </div>
 
             <div className="order-1 md:order-2 p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-900/30 dark:to-yellow-800/30">
@@ -338,11 +379,12 @@ export default function ZKONGPlatform() {
       </section>
 
       {/* ESL Platform Superior System */}
-      <section className="px-6 py-16 max-w-7xl mx-auto">
+      <section className="px-6 py-20 max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
-          ZKONG Retail Cloud ESL Platform{" "}
+          <AnimationText>ZKONG Retail Cloud ESL</AnimationText>
+          {" "}
           <span className="text-blue-600 dark:text-blue-400">
-            Superior System
+            Platform Superior System
           </span>
         </h2>
 
@@ -355,24 +397,28 @@ export default function ZKONGPlatform() {
               </div>
             </div>
             <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
-              Big Data Platform
+              Shop Management
             </h3>
             <ul className="space-y-3 text-gray-700 dark:text-gray-300">
               <li className="flex items-start">
                 <span className="text-blue-400 mr-2">•</span>
-                <span>Real-time data collection and analysis</span>
+                <span>Data interfacing</span>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-400 mr-2">•</span>
-                <span>Advanced analytics and insights</span>
+                <span>Staff account</span>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-400 mr-2">•</span>
-                <span>Predictive maintenance algorithms</span>
+                <span>Marketing management</span>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-400 mr-2">•</span>
-                <span>Customer behavior tracking</span>
+                <span>Product binding management</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-400 mr-2">•</span>
+                <span>Permission settings</span>
               </li>
             </ul>
           </div>
@@ -385,24 +431,28 @@ export default function ZKONGPlatform() {
               </div>
             </div>
             <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
-              Tag Label Management
+              Facilities Management
             </h3>
             <ul className="space-y-3 text-gray-700 dark:text-gray-300">
               <li className="flex items-start">
                 <span className="text-purple-400 mr-2">•</span>
-                <span>Template design and customization</span>
+                <span>Data upgrading</span>
               </li>
               <li className="flex items-start">
                 <span className="text-purple-400 mr-2">•</span>
-                <span>Multi-language support</span>
+                <span>Task management</span>
               </li>
               <li className="flex items-start">
                 <span className="text-purple-400 mr-2">•</span>
-                <span>Dynamic content updates</span>
+                <span>Equipment scheduling</span>
               </li>
               <li className="flex items-start">
                 <span className="text-purple-400 mr-2">•</span>
-                <span>Bulk operations and scheduling</span>
+                <span>People-Goods interaction</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-purple-400 mr-2">•</span>
+                <span>Data security</span>
               </li>
             </ul>
           </div>
@@ -415,24 +465,20 @@ export default function ZKONGPlatform() {
               </div>
             </div>
             <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
-              Store Management
+              Tools Management
             </h3>
             <ul className="space-y-3 text-gray-700 dark:text-gray-300">
               <li className="flex items-start">
                 <span className="text-cyan-400 mr-2">•</span>
-                <span>Multi-store hierarchy management</span>
+                <span>Template</span>
               </li>
               <li className="flex items-start">
                 <span className="text-cyan-400 mr-2">•</span>
-                <span>Device monitoring and control</span>
+                <span>Monitoring and warning</span>
               </li>
               <li className="flex items-start">
                 <span className="text-cyan-400 mr-2">•</span>
-                <span>Role-based access control</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-cyan-400 mr-2">•</span>
-                <span>Performance metrics dashboard</span>
+                <span>Journal Management</span>
               </li>
             </ul>
           </div>
@@ -445,24 +491,24 @@ export default function ZKONGPlatform() {
               </div>
             </div>
             <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
-              AI-Powered Analytics
+              Application Solutions
             </h3>
             <ul className="space-y-3 text-gray-700 dark:text-gray-300">
               <li className="flex items-start">
                 <span className="text-pink-400 mr-2">•</span>
-                <span>Intelligent pricing recommendations</span>
+                <span>Smart Picking</span>
               </li>
               <li className="flex items-start">
                 <span className="text-pink-400 mr-2">•</span>
-                <span>Demand forecasting</span>
+                <span>Passenger flow monitoring</span>
               </li>
               <li className="flex items-start">
                 <span className="text-pink-400 mr-2">•</span>
-                <span>Automated anomaly detection</span>
+                <span>Display/inventory monitoring</span>
               </li>
               <li className="flex items-start">
                 <span className="text-pink-400 mr-2">•</span>
-                <span>Machine learning optimization</span>
+                <span>Analysis of consumer behavior</span>
               </li>
             </ul>
           </div>
@@ -470,7 +516,7 @@ export default function ZKONGPlatform() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-20 max-w-6xl mx-auto text-center">
+      {/* <section className="px-6 py-20 max-w-6xl mx-auto text-center">
         <div className="p-12 rounded-3xl border dark:border-gray-700 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 shadow-lg">
           <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">
             Ready to Transform Your{" "}
@@ -486,10 +532,10 @@ export default function ZKONGPlatform() {
             Schedule a Demo
           </button>
         </div>
-      </section>
+      </section> */}
 
       {/* Latest Innovations Section */}
-      <section className="px-6 py-16 max-w-7xl mx-auto mb-20">
+      {/* <section className="px-6 py-16 max-w-7xl mx-auto mb-20">
         <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
           Latest Innovations and Trends in the{" "}
           <span className="text-blue-600 dark:text-blue-400">Retail IoT</span>
@@ -535,7 +581,7 @@ export default function ZKONGPlatform() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
