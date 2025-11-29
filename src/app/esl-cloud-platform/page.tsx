@@ -28,7 +28,7 @@ export default function ZKONGPlatform() {
   //   const theme = theme === "system" ? resolvedTheme : theme;
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 transition-colors duration-300 dark:bg-gray-900 dark:text-white">
+    <div className="min-h-screen text-gray-900 transition-colors duration-300 dark:text-white">
       {/* Hero Section */}
       <section className="min-h-[70vh] flex items-center relative px-6 py-20 overflow-hidden">
         {/* subtle light/dark background shapes */}
@@ -60,8 +60,8 @@ export default function ZKONGPlatform() {
         <div className="container mx-auto px-4 max-w-7xl relative">
           <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10 mb-10">
             <h2 className="text-black dark:text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6">
-              <AnimationText>The Revolutionary</AnimationText>{" "}
-              Retail Cloud Platform
+              <AnimationText>The Revolutionary</AnimationText> Retail Cloud
+              Platform
             </h2>
             <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-4xl mx-auto">
               Renew Your Business Model with the Revolutionary Cloud Electronic
@@ -164,355 +164,350 @@ export default function ZKONGPlatform() {
 
       {/* Platform Advantages */}
       <section className="px-6 py-20 max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
-          <AnimationText>ZKONG ESL Retail Cloud</AnimationText>{" "}
-          <span className="text-blue-600 dark:text-blue-400">Platform Advantages</span>
-        </h2>
+        <FadeAnimation>
+          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+            <AnimationText>ZKONG ESL Retail Cloud</AnimationText>{" "}
+            <span className="text-blue-600 dark:text-blue-400">
+              Platform Advantages
+            </span>
+          </h2>
+        </FadeAnimation>
 
-        <div className="space-y-12">
-          {/* Advantage 1 */}
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30">
-              <div className="flex items-center justify-center h-48">
-                <Cloud className="w-32 h-32 text-blue-500 dark:text-blue-300" />
+        <FadeAnimation>
+          <div className="space-y-12">
+            {/* Advantage 1 */}
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30">
+                <div className="flex items-center justify-center h-48">
+                  <Cloud className="w-32 h-32 text-blue-500 dark:text-blue-300" />
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-300">
+                  SaaS system, no local installation required
+                </h3>
+                <ul className="cloud-platform-ul">
+                  <li>- Support unlimited accounts on the same server</li>
+                  <li>
+                    - Computing capacity can be infinitely superimposed through
+                    server expansion
+                  </li>
+                  <li>
+                    - Reduce the cost of software and hardware due to the
+                    increasement of local server
+                  </li>
+                </ul>
               </div>
             </div>
 
-            <div>
-              <h3 className="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-300">
-                SaaS system, no local installation required
-              </h3>
-              <ul className="cloud-platform-ul">
-                <li>
-                 - Support unlimited accounts on the same server
-                </li>
-                <li>
-                 - Computing capacity can be infinitely superimposed through server expansion
-                </li>
-                <li>
-                 - Reduce the cost of software and hardware due to the increasement of local server
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Advantage 2 */}
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="order-2 md:order-1">
-              <h3 className="text-2xl font-bold mb-4 text-purple-600 dark:text-purple-300">
-               Comes with a template editor
-              </h3>
-              <ul className="cloud-platform-ul">
-                <li>
-                 - Cloud-based templates, browser operation
-                </li>
-                <li>
-                 - Visual and free editing, real-time preview
-                </li>
-                <li>
-                 - huge template library, unlimited fonts, multi-language text
-                </li>
-                <li>
-                 - Flexible triggering
-                </li>
-              </ul>
-            </div>
-
-            <div className="order-1 md:order-2 p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30">
-              <div className="flex items-center justify-center h-48">
-                <img
-                  src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=400&h=300&fit=crop"
-                  alt="Retail pricing"
-                  className="rounded-lg w-full h-full object-cover"
-                />
+            {/* Advantage 2 */}
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="order-2 md:order-1">
+                <h3 className="text-2xl font-bold mb-4 text-purple-600 dark:text-purple-300">
+                  Comes with a template editor
+                </h3>
+                <ul className="cloud-platform-ul">
+                  <li>- Cloud-based templates, browser operation</li>
+                  <li>- Visual and free editing, real-time preview</li>
+                  <li>
+                    - huge template library, unlimited fonts, multi-language
+                    text
+                  </li>
+                  <li>- Flexible triggering</li>
+                </ul>
               </div>
-            </div>
-          </div>
 
-          {/* Advantage 3 */}
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-900/30 dark:to-cyan-800/30">
-              <div className="flex items-center justify-center h-48">
-                <Shield className="w-32 h-32 text-cyan-500 dark:text-cyan-300" />
+              <div className="order-1 md:order-2 p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30">
+                <div className="flex items-center justify-center h-48">
+                  <img
+                    src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=400&h=300&fit=crop"
+                    alt="Retail pricing"
+                    className="rounded-lg w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
 
-            <div>
-              <h3 className="text-2xl font-bold mb-4 text-cyan-600 dark:text-cyan-300">
-                Unlimited expansion
-              </h3>
-              <ul className="cloud-platform-ul">
-                <li>
-                 - integrated a variety of intelligent devices such as EPD, LCD and AI cameras with one system
-                </li>
-                <li>
-                 - Billions of information processing
-                </li>
-                <li>
-                 - A single system supports millions of <Link href="/">electronic shelf labels</Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Advantage 4 */}
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="order-2 md:order-1">
-              <h3 className="text-2xl font-bold mb-4 text-pink-600 dark:text-pink-300">
-                Flexible deployment
-              </h3>
-              <ul className="cloud-platform-ul">
-                <li>
-                 - Flexible options for SaaS public, private and local deployments
-                </li>
-                <li>
-                 - Support globally distributed deployment and cluster deployment
-                </li>
-              </ul>
-            </div>
-
-            <div className="order-1 md:order-2 p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/30 dark:to-pink-800/30">
-              <div className="flex items-center justify-center h-48">
-                <Layers className="w-32 h-32 text-pink-500 dark:text-pink-300" />
+            {/* Advantage 3 */}
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-900/30 dark:to-cyan-800/30">
+                <div className="flex items-center justify-center h-48">
+                  <Shield className="w-32 h-32 text-cyan-500 dark:text-cyan-300" />
+                </div>
               </div>
-            </div>
-          </div>
 
-          {/* Advantage 5 */}
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30">
-              <div className="flex items-center justify-center h-48">
-                <Zap className="w-32 h-32 text-green-500 dark:text-green-300" />
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-cyan-600 dark:text-cyan-300">
+                  Unlimited expansion
+                </h3>
+                <ul className="cloud-platform-ul">
+                  <li>
+                    - integrated a variety of intelligent devices such as EPD,
+                    LCD and AI cameras with one system
+                  </li>
+                  <li>- Billions of information processing</li>
+                  <li>
+                    - A single system supports millions of{" "}
+                    <Link href="/">electronic shelf labels</Link>
+                  </li>
+                </ul>
               </div>
             </div>
 
-            <div>
-              <h3 className="text-2xl font-bold mb-4 text-green-600 dark:text-green-300">
-                Interface opened
-              </h3>
-              <ul className="cloud-platform-ul">
-                <li>
-                 - 200+ API interfaces (the most open interface)
-                </li>
-                <li>
-                 - Support different types of ERP, API and customized development with specific needs
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Advantage 6 */}
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="order-2 md:order-1">
-              <h3 className="text-2xl font-bold mb-4 text-orange-600 dark:text-orange-300">
-                Extensiveness
-              </h3>
-              <ul className="cloud-platform-ul">
-                <li>
-                 - Supports Windows / Mac OS / Android / iOS and many other major system
-                </li>
-                <li>
-                 - Built on a wide area network with global reach
-                </li>
-              </ul>
-            </div>
-
-            <div className="order-1 md:order-2 p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/30 dark:to-orange-800/30">
-              <div className="flex items-center justify-center h-48">
-                <Server className="w-32 h-32 text-orange-500 dark:text-orange-300" />
+            {/* Advantage 4 */}
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="order-2 md:order-1">
+                <h3 className="text-2xl font-bold mb-4 text-pink-600 dark:text-pink-300">
+                  Flexible deployment
+                </h3>
+                <ul className="cloud-platform-ul">
+                  <li>
+                    - Flexible options for SaaS public, private and local
+                    deployments
+                  </li>
+                  <li>
+                    - Support globally distributed deployment and cluster
+                    deployment
+                  </li>
+                </ul>
               </div>
-            </div>
-          </div>
 
-          {/* Advantage 7 */}
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-900/30 dark:to-indigo-800/30">
-              <div className="flex items-center justify-center h-48">
-                <Lock className="w-32 h-32 text-indigo-500 dark:text-indigo-300" />
+              <div className="order-1 md:order-2 p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/30 dark:to-pink-800/30">
+                <div className="flex items-center justify-center h-48">
+                  <Layers className="w-32 h-32 text-pink-500 dark:text-pink-300" />
+                </div>
               </div>
             </div>
 
-            <div>
-              <h3 className="text-2xl font-bold mb-4 text-indigo-600 dark:text-indigo-300">
-                Data security
-              </h3>
-              <ul className="cloud-platform-ul">
-                <li>
-                 - Data storage records in the cloud
-                </li>
-                <li>
-                 - Professional AES 128-bit encryption in the cloud
-                </li>
-                <li>
-                 - Automatic detection and early warning mechanism
-                </li>
-              </ul>
-            </div>
-          </div>
+            {/* Advantage 5 */}
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30">
+                <div className="flex items-center justify-center h-48">
+                  <Zap className="w-32 h-32 text-green-500 dark:text-green-300" />
+                </div>
+              </div>
 
-          {/* Advantage 8 */}
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="order-2 md:order-1">
-              <h3 className="text-2xl font-bold mb-4 text-yellow-600 dark:text-yellow-300">
-                Second development
-              </h3>
-              <ul className="cloud-platform-ul">
-                <li>
-                 - Secondary development gives new features to software and hardware
-                </li>
-                <li>
-                - Private server build
-                </li>
-                <li>
-                 - APP/mini app development
-                </li>
-              </ul>
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-green-600 dark:text-green-300">
+                  Interface opened
+                </h3>
+                <ul className="cloud-platform-ul">
+                  <li>- 200+ API interfaces (the most open interface)</li>
+                  <li>
+                    - Support different types of ERP, API and customized
+                    development with specific needs
+                  </li>
+                </ul>
+              </div>
             </div>
 
-            <div className="order-1 md:order-2 p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-900/30 dark:to-yellow-800/30">
-              <div className="flex items-center justify-center h-48">
-                <Database className="w-32 h-32 text-yellow-500 dark:text-yellow-300" />
+            {/* Advantage 6 */}
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="order-2 md:order-1">
+                <h3 className="text-2xl font-bold mb-4 text-orange-600 dark:text-orange-300">
+                  Extensiveness
+                </h3>
+                <ul className="cloud-platform-ul">
+                  <li>
+                    - Supports Windows / Mac OS / Android / iOS and many other
+                    major system
+                  </li>
+                  <li>- Built on a wide area network with global reach</li>
+                </ul>
+              </div>
+
+              <div className="order-1 md:order-2 p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/30 dark:to-orange-800/30">
+                <div className="flex items-center justify-center h-48">
+                  <Server className="w-32 h-32 text-orange-500 dark:text-orange-300" />
+                </div>
+              </div>
+            </div>
+
+            {/* Advantage 7 */}
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-900/30 dark:to-indigo-800/30">
+                <div className="flex items-center justify-center h-48">
+                  <Lock className="w-32 h-32 text-indigo-500 dark:text-indigo-300" />
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-indigo-600 dark:text-indigo-300">
+                  Data security
+                </h3>
+                <ul className="cloud-platform-ul">
+                  <li>- Data storage records in the cloud</li>
+                  <li>- Professional AES 128-bit encryption in the cloud</li>
+                  <li>- Automatic detection and early warning mechanism</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Advantage 8 */}
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="order-2 md:order-1">
+                <h3 className="text-2xl font-bold mb-4 text-yellow-600 dark:text-yellow-300">
+                  Second development
+                </h3>
+                <ul className="cloud-platform-ul">
+                  <li>
+                    - Secondary development gives new features to software and
+                    hardware
+                  </li>
+                  <li>- Private server build</li>
+                  <li>- APP/mini app development</li>
+                </ul>
+              </div>
+
+              <div className="order-1 md:order-2 p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-900/30 dark:to-yellow-800/30">
+                <div className="flex items-center justify-center h-48">
+                  <Database className="w-32 h-32 text-yellow-500 dark:text-yellow-300" />
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </FadeAnimation>
       </section>
 
       {/* ESL Platform Superior System */}
       <section className="px-6 py-20 max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
-          <AnimationText>ZKONG Retail Cloud ESL</AnimationText>
-          {" "}
-          <span className="text-blue-600 dark:text-blue-400">
-            Platform Superior System
-          </span>
-        </h2>
+        <FadeAnimation>
+          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+            <AnimationText>ZKONG Retail Cloud ESL</AnimationText>{" "}
+            <span className="text-blue-600 dark:text-blue-400">
+              Platform Superior System
+            </span>
+          </h2>
+        </FadeAnimation>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Big Data Platform */}
-          <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 hover:border-blue-500 transition-all">
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center">
-                <Database className="w-10 h-10 text-white" />
+        <FadeAnimation>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Big Data Platform */}
+            <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 hover:border-blue-500 transition-all">
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center">
+                  <Database className="w-10 h-10 text-white" />
+                </div>
               </div>
+              <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+                Shop Management
+              </h3>
+              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                <li className="flex items-start">
+                  <span className="text-blue-400 mr-2">•</span>
+                  <span>Data interfacing</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-400 mr-2">•</span>
+                  <span>Staff account</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-400 mr-2">•</span>
+                  <span>Marketing management</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-400 mr-2">•</span>
+                  <span>Product binding management</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-400 mr-2">•</span>
+                  <span>Permission settings</span>
+                </li>
+              </ul>
             </div>
-            <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
-              Shop Management
-            </h3>
-            <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-              <li className="flex items-start">
-                <span className="text-blue-400 mr-2">•</span>
-                <span>Data interfacing</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-blue-400 mr-2">•</span>
-                <span>Staff account</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-blue-400 mr-2">•</span>
-                <span>Marketing management</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-blue-400 mr-2">•</span>
-                <span>Product binding management</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-blue-400 mr-2">•</span>
-                <span>Permission settings</span>
-              </li>
-            </ul>
-          </div>
 
-          {/* Tag Label Management */}
-          <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 hover:border-purple-500 transition-all">
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center">
-                <Layers className="w-10 h-10 text-white" />
+            {/* Tag Label Management */}
+            <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 hover:border-purple-500 transition-all">
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center">
+                  <Layers className="w-10 h-10 text-white" />
+                </div>
               </div>
+              <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+                Facilities Management
+              </h3>
+              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                <li className="flex items-start">
+                  <span className="text-purple-400 mr-2">•</span>
+                  <span>Data upgrading</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-purple-400 mr-2">•</span>
+                  <span>Task management</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-purple-400 mr-2">•</span>
+                  <span>Equipment scheduling</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-purple-400 mr-2">•</span>
+                  <span>People-Goods interaction</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-purple-400 mr-2">•</span>
+                  <span>Data security</span>
+                </li>
+              </ul>
             </div>
-            <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
-              Facilities Management
-            </h3>
-            <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-              <li className="flex items-start">
-                <span className="text-purple-400 mr-2">•</span>
-                <span>Data upgrading</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-400 mr-2">•</span>
-                <span>Task management</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-400 mr-2">•</span>
-                <span>Equipment scheduling</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-400 mr-2">•</span>
-                <span>People-Goods interaction</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-400 mr-2">•</span>
-                <span>Data security</span>
-              </li>
-            </ul>
-          </div>
 
-          {/* Store Management */}
-          <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-900/30 dark:to-cyan-800/30 hover:border-cyan-500 transition-all">
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center">
-                <Server className="w-10 h-10 text-white" />
+            {/* Store Management */}
+            <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-900/30 dark:to-cyan-800/30 hover:border-cyan-500 transition-all">
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center">
+                  <Server className="w-10 h-10 text-white" />
+                </div>
               </div>
+              <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+                Tools Management
+              </h3>
+              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                <li className="flex items-start">
+                  <span className="text-cyan-400 mr-2">•</span>
+                  <span>Template</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-cyan-400 mr-2">•</span>
+                  <span>Monitoring and warning</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-cyan-400 mr-2">•</span>
+                  <span>Journal Management</span>
+                </li>
+              </ul>
             </div>
-            <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
-              Tools Management
-            </h3>
-            <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-              <li className="flex items-start">
-                <span className="text-cyan-400 mr-2">•</span>
-                <span>Template</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-cyan-400 mr-2">•</span>
-                <span>Monitoring and warning</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-cyan-400 mr-2">•</span>
-                <span>Journal Management</span>
-              </li>
-            </ul>
-          </div>
 
-          {/* AI-Powered Analytics */}
-          <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/30 dark:to-pink-800/30 hover:border-pink-500 transition-all">
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-20 h-20 bg-pink-600 rounded-full flex items-center justify-center">
-                <Zap className="w-10 h-10 text-white" />
+            {/* AI-Powered Analytics */}
+            <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/30 dark:to-pink-800/30 hover:border-pink-500 transition-all">
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-20 h-20 bg-pink-600 rounded-full flex items-center justify-center">
+                  <Zap className="w-10 h-10 text-white" />
+                </div>
               </div>
+              <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+                Application Solutions
+              </h3>
+              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                <li className="flex items-start">
+                  <span className="text-pink-400 mr-2">•</span>
+                  <span>Smart Picking</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-pink-400 mr-2">•</span>
+                  <span>Passenger flow monitoring</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-pink-400 mr-2">•</span>
+                  <span>Display/inventory monitoring</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-pink-400 mr-2">•</span>
+                  <span>Analysis of consumer behavior</span>
+                </li>
+              </ul>
             </div>
-            <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
-              Application Solutions
-            </h3>
-            <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-              <li className="flex items-start">
-                <span className="text-pink-400 mr-2">•</span>
-                <span>Smart Picking</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-pink-400 mr-2">•</span>
-                <span>Passenger flow monitoring</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-pink-400 mr-2">•</span>
-                <span>Display/inventory monitoring</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-pink-400 mr-2">•</span>
-                <span>Analysis of consumer behavior</span>
-              </li>
-            </ul>
           </div>
-        </div>
+        </FadeAnimation>
       </section>
 
       {/* CTA Section */}

@@ -436,3 +436,7 @@
 .container{
   @apply sm:w-[96%] 3md:w-[90%] mx-auto;
 }
+
+.cloud-platform-ul li {
+    @apply text-gray-700 dark:text-gray-300 leading-relaxed;
+}
