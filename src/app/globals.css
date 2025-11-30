@@ -440,3 +440,11 @@
 .cloud-platform-ul li {
     @apply text-gray-700 dark:text-gray-300 leading-relaxed;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
