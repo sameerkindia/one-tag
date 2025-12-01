@@ -4,9 +4,10 @@ import { ChevronRight, ChevronLeft } from "lucide-react";
 interface SliderCarouselProps<T> {
   data: T[];
   renderCard: (item: T, index: number) => React.ReactNode;
+  containerClass ?: string;
 }
 
-function SliderCarousel<T>({ data, renderCard }: SliderCarouselProps<T>) {
+function SliderCarousel<T>({ data, renderCard,containerClass="" }: SliderCarouselProps<T>) {
   const holderRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
@@ -49,7 +50,7 @@ function SliderCarousel<T>({ data, renderCard }: SliderCarouselProps<T>) {
   };
 
   return (
-    <div className="relative flex items-center w-full">
+    <div className={`relative flex items-center w-full p-4 ${containerClass}`}>
       {/* LEFT ARROW */}
       {canScrollLeft && (
         <button
