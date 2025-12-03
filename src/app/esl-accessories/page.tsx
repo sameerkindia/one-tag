@@ -5,17 +5,7 @@ import Image from "next/image";
 import SliderCarousel from "@/src/components/SliderCarousel";
 import { FadeAnimation } from "@/src/motion-animations/FadeAnimation";
 import AnimationText from "@/src/components/Animation-text";
-// import { useLanguage } from "@/src/contexts/language-context";
-// import { useLanguage } from "@/context/LanguageContext";
 
-const sampleData = [
-  { id: 1, name: "Laptop", price: "$999", color: "Silver" },
-  { id: 2, name: "Phone", price: "$699", color: "Black" },
-  { id: 3, name: "Headphones", price: "$199", color: "White" },
-  { id: 4, name: "Smartwatch", price: "$299", color: "Gray" },
-  // { id: 5, name: "Tablet", price: "$499", color: "Gold" },
-  // { id: 6, name: "Tablet", price: "$499", color: "Gold" },
-];
 
 const accessoriesData = [
   {
