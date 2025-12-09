@@ -15,12 +15,14 @@ interface SliderCarouselProps<T> {
   responsive?: ResponsiveConfig;
   infinite?: boolean;
   containerClass?: string;
+  sliderCardClass?: string;
 }
 
 function SliderCarousel<T>({
   data,
   renderCard,
   containerClass = "",
+  sliderCardClass="",
   columns = 4,
   responsive,
   infinite = false,
@@ -224,7 +226,7 @@ const scrollByCard = (dir: "left" | "right") => {
       {showLeftArrow && (
         <button
           onClick={() => scrollByCard("left")}
-          className="absolute left-0 z-10 bg-gray-800/60 hover:bg-gray-900 text-white p-2 rounded-full"
+          className="absolute left-0 z-10 bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-full ml-8 cursor-pointer"
           aria-label="Scroll left"
         >
           <ChevronLeft />
@@ -239,7 +241,7 @@ const scrollByCard = (dir: "left" | "right") => {
         {finalData.map((item, i) => (
           <div
             key={i}
-            className="shrink-0 px-2 snap-start"
+            className={`shrink-0 px-2 snap-start ${sliderCardClass}`}
             style={{ width: `${100 / currentCols}%` }}
           >
             {renderCard(item, i % data.length)}
@@ -251,7 +253,7 @@ const scrollByCard = (dir: "left" | "right") => {
       {showRightArrow && (
         <button
           onClick={() => scrollByCard("right")}
-          className="absolute right-0 z-10 bg-gray-800/60 hover:bg-gray-900 text-white p-2 rounded-full"
+          className="absolute right-0 z-10 bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-full mr-8 cursor-pointer"
           aria-label="Scroll right"
         >
           <ChevronRight />

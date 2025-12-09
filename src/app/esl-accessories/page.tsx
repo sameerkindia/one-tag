@@ -6,76 +6,85 @@ import SliderCarousel from "@/src/components/SliderCarousel";
 import { FadeAnimation } from "@/src/motion-animations/FadeAnimation";
 import AnimationText from "@/src/components/Animation-text";
 
-
 const accessoriesData = [
   {
     title: "ZKONG Holder",
     decs: "any display holder",
     products: [
-      { id: 1, name: "Laptop", price: "$999", color: "Silver" },
-      { id: 2, name: "Phone", price: "$699", color: "Black" },
-      { id: 3, name: "Headphones", price: "$199", color: "White" },
-      { id: 4, name: "Smartwatch", price: "$299", color: "Gray" },
+      { id: 1, name: "Holder 1#", src: '/esl-accessories/products/holder/electronic-shelf.webp' },
+      { id: 2, name: "3.7 Inch & 4.2 Inch Holder", src: '/esl-accessories/products/holder/iot-cloud-platform-open-source.webp' },
+      { id: 3, name: "5.8 Inch &7.5 Inch Holder", src: '/esl-accessories/products/holder/iot-cloud-providers.webp' },
+      { id: 4, name: "10.2 Inch & 11.6 Inch & 13.3 Inch Holder", src: '/esl-accessories/products/holder/iot-cloud-server.webp' },
     ],
   },
   {
     title: "ZKONG Wall Mounting Kit/Rail End Cap/Rail Incline Spacer",
     decs: "",
     products: [
-      { id: 1, name: "Laptop", price: "$999", color: "Silver" },
-      { id: 2, name: "Phone", price: "$699", color: "Black" },
-      { id: 3, name: "Headphones", price: "$199", color: "White" },
-      { id: 4, name: "Smartwatch", price: "$299", color: "Gray" },
+      { id: 1, name: "Wall Mounting Kit", src: '/esl-accessories/products/wall/iot-cloud-services.webp' },
+      { id: 2, name: "Wall Mounting Kit 2", src: '/esl-accessories/products/wall/iot-cloud-solutions.webp' },
+      { id: 3, name: "Rail End Cap", src: '/esl-accessories/products/wall/rail-end-cap.webp' },
+      { id: 4, name: "Rail Incline Spacer", src: '/esl-accessories/products/wall/rail-incline-spacer.webp' },
     ],
   },
-  {
+    {
     title: "ZKONG Ice Pin/Floor Stand/Card Holder",
     decs: "",
-    products: [
-      { id: 1, name: "Laptop", price: "$999", color: "Silver" },
-      { id: 2, name: "Phone", price: "$699", color: "Black" },
-      { id: 3, name: "Headphones", price: "$199", color: "White" },
-      { id: 4, name: "Smartwatch", price: "$299", color: "Gray" },
+        products: [
+      { id: 1, name: "Ice Pin", src: '/esl-accessories/products/ice/ice-pin.webp' },
+      { id: 2, name: "Floor Stand 30", src: '/esl-accessories/products/ice/floor-stand-30.webp' },
+      { id: 3, name: "Floor Stand 301", src: '/esl-accessories/products/ice/floor-stand-301.webp' },
+      { id: 4, name: "Card Holder", src: '/esl-accessories/products/ice/card-holder.webp' },
     ],
   },
   {
     title: "ZKONG Rail",
     decs: "all standard shelves",
     products: [
-      { id: 1, name: "Laptop", price: "$999", color: "Silver" },
-      { id: 2, name: "Phone", price: "$699", color: "Black" },
-      { id: 3, name: "Headphones", price: "$199", color: "White" },
-      { id: 4, name: "Smartwatch", price: "$299", color: "Gray" },
+      { id: 1, name: "Rail #1", src: '/esl-accessories/products/rail/esl-rail-1_1717746526.webp' },
+      { id: 2, name: "Rail #2", src: '/esl-accessories/products/rail/remote-iot-platform.webp' },
+      { id: 3, name: "Rail #3", src: '/esl-accessories/products/rail/saas-iot-platform.webp' },
+      { id: 4, name: "Rail #4", src: '/esl-accessories/products/rail/industrial-iot-cloud_1707187845.webp' },
+      { id: 5, name: "Rail #5", src: '/esl-accessories/products/rail/internet-of-things-cloud-service.webp' },
+      { id: 6, name: "Rail #6", src: '/esl-accessories/products/rail/esl-rail-6_1717746752.webp' },
+      { id: 7, name: "Rail #7", src: '/esl-accessories/products/rail/esl-rail-7.webp' },
+      { id: 8, name: "Rail #10", src: '/esl-accessories/products/rail/iot-cloud-applications.webp' },
+      { id: 9, name: "Rail #12", src: '/esl-accessories/products/rail/esl-rail-12.webp' },
+      { id: 10, name: "Rail #13", src: '/esl-accessories/products/rail/esl-rail-13.webp' },
+      { id: 11, name: "Rail #14", src: '/esl-accessories/products/rail/iot-cloud-based-data-collection-storage-and-computing-services.webp' },
+      { id: 12, name: "Rail #15", src: '/esl-accessories/products/rail/esl-rail-15.webp' },
+      { id: 13, name: "Rail #16", src: '/esl-accessories/products/rail/esl-rail-16.webp' },
     ],
   },
   {
     title: "ZKONG Clamp",
     decs: "fruit and vegetable area",
     products: [
-      { id: 1, name: "Laptop", price: "$999", color: "Silver" },
-      { id: 2, name: "Phone", price: "$699", color: "Black" },
-      { id: 3, name: "Headphones", price: "$199", color: "White" },
-      { id: 4, name: "Smartwatch", price: "$299", color: "Gray" },
+      { id: 1, name: "4.2_Clamp", src: '/esl-accessories/products/clamp/iot-platform-on-premise.webp' },
+      { id: 2, name: "Clamp2#2", src: '/esl-accessories/products/clamp/iot-to-cloud.webp' },
+      { id: 3, name: "Clamp1#", src: '/esl-accessories/products/clamp/meta-iot-cloud.webp' },
+      { id: 4, name: "Clamp 2# 2", src: '/esl-accessories/products/clamp/on-premise-iot-platform.webp' },
+      { id: 5, name: "Clamp 2# 3", src: '/esl-accessories/products/clamp/paas-in-iot.webp' },
     ],
   },
   {
     title: "ZKONG Hook",
     decs: "",
     products: [
-      { id: 1, name: "Laptop", price: "$999", color: "Silver" },
-      { id: 2, name: "Phone", price: "$699", color: "Black" },
-      { id: 3, name: "Headphones", price: "$199", color: "White" },
-      { id: 4, name: "Smartwatch", price: "$299", color: "Gray" },
+      { id: 1, name: "Adjustable T Hook", src: '/esl-accessories/products/Hook/adjustable-t-hook.webp' },
+      { id: 2, name: "S Hook", src: '/esl-accessories/products/Hook/s-hook.webp' },
+      { id: 3, name: "7.5 Inch Hanging Kit", src: '/esl-accessories/products/Hook/iot-cloud-storage.webp' },
+      { id: 4, name: "Round Ring", src: '/esl-accessories/products/Hook/iot-paas-providers.webp' },
     ],
   },
   {
     title: "Vertical Clamp/T Mount/Remove Tool",
     decs: "",
     products: [
-      { id: 1, name: "Laptop", price: "$999", color: "Silver" },
-      { id: 2, name: "Phone", price: "$699", color: "Black" },
-      { id: 3, name: "Headphones", price: "$199", color: "White" },
-      { id: 4, name: "Smartwatch", price: "$299", color: "Gray" },
+      { id: 1, name: "Vertical Clamp 2#", src: '/esl-accessories/products/Vertical-Clamp/vertical-clamp-2.webp' },
+      { id: 2, name: "Vertical Clamp 1#", src: '/esl-accessories/products/Vertical-Clamp/vertical-clamp-1.webp' },
+      { id: 2, name: "T Mount 4#", src: '/esl-accessories/products/Vertical-Clamp/t-mount-4.webp' },
+      { id: 2, name: "Remove Tool", src: '/esl-accessories/products/Vertical-Clamp/remove-tool.webp' },
     ],
   },
 ];
@@ -127,20 +136,28 @@ export default function ESLAccessoriesPage() {
 
         {/* ITEM BLOCK (you will replace images accordingly) */}
         <div className="flex flex-col gap-6">
-          {accessoriesData.map((accessorie,index) => (
-            <div key={index} className="flex even:flex-row-reverse bg-white dark:bg-gray-800 p-0 rounded-xl shadow overflow-hidden">
+          {accessoriesData.map((accessorie, index) => (
+            <div
+              key={index}
+              className="flex even:flex-row-reverse bg-white dark:bg-gray-800 p-0 rounded-xl shadow overflow-hidden"
+            >
               <div className="col-span-3 bg-blue-600 text-white p-6 rounde d-l-lg font-semibold min-h-[140px] flex flex-col items-center justify-center w-64">
                 <p className="text-center text-base">{accessorie.title}</p>
-                {accessorie.decs && <p className="text-xs">{accessorie.decs}</p>}
+                {accessorie.decs && (
+                  <p className="text-xs">{accessorie.decs}</p>
+                )}
               </div>
 
               <SliderCarousel
                 data={accessorie.products}
+                sliderCardClass="!px-0"
+                containerClass="!p-0"
                 renderCard={(item, i) => (
-                  <div className="h-40 bg-green-200 dark:bg-green-700 rounded-lg flex flex-col items-center justify-center p-4">
-                    <h3 className="font-bold">{item.name}</h3>
-                    <p>{item.price}</p>
-                    <span className="text-sm text-gray-600">{item.color}</span>
+                  <div className="h-60 flex flex-col items-center justify-between p-4 gap-6 transition-all duration-300 hover:bg-neutral-800">
+                    <h3 className="text-sm font-bold text-center text-white">{item.name}</h3>
+                    <Image src={item.src} alt={item.name} height={60} width={40} quality={100} className="max-h-40 object-contain w-30" />
+                    {/* <p>{item.price}</p>
+                    <span className="text-sm text-gray-600">{item.color}</span> */}
                   </div>
                 )}
               />
