@@ -33,11 +33,11 @@ const navLinks = [
       {
         href: "/electronic-shelf-labels",
         label: "nav.electronicShelfLabels",
-        subLinks: [
-          { href: "/esl-shield-series", label: "nav.ShieldSeriesESL" },
-          { href: "/valley-series-ESL", label: "nav.ValleySeriesESL" },
-          { href: "/essence-series-ESL", label: "nav.EssenceSeriesESL" },
-        ],
+        // subLinks: [
+        //   { href: "/esl-shield-series", label: "nav.ShieldSeriesESL" },
+        //   { href: "/valley-series-ESL", label: "nav.ValleySeriesESL" },
+        //   { href: "/essence-series-ESL", label: "nav.EssenceSeriesESL" },
+        // ],
       },
       { href: "/esl-cloud-platform", label: "nav.ESLCloudPlatform" },
       { href: "/esl-accessories", label: "nav.eslAccessories" },
