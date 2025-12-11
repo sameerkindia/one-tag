@@ -933,8 +933,8 @@ const carouselData = {
         </div>
       </section> */}
 
-      <EslBanner hero={hero[language]} />
-      <EslVideoComponent videoData={video[language]} videoId="XaCATK6Cr9o?si=4LUhFvz9wzzTcnRn" />
+      {/* <EslBanner hero={hero[language]} />
+      <EslVideoComponent videoData={video[language]} videoId="XaCATK6Cr9o?si=4LUhFvz9wzzTcnRn" /> */}
 
       {/* ===== 2. YouTube Video ===== */}
       {/* <section className="py-14">
@@ -1029,7 +1029,7 @@ const carouselData = {
         </div>
       </section> */}
 
-      <EslHorizontalTab sectionData={modalSection[language]} />
+      {/* <EslHorizontalTab sectionData={modalSection[language]} /> */}
       {/* ===== 4. Vertical Tabs (Features) - hover & click ===== */}
       {/* <section className="py-12">
         <div className="container mx-auto px-4 max-w-7xl relative">
@@ -1088,7 +1088,7 @@ const carouselData = {
         </div>
       </section> */}
 
-      <EslVerticalTab featureData={featuresSection[language]} />
+      {/* <EslVerticalTab featureData={featuresSection[language]} /> */}
 
       {/* ===== 5. Text Left / Image Right ===== */}
       <section className="py-12">
@@ -1186,7 +1186,7 @@ const carouselData = {
         </div>
       </section> */}
 
-      <EslCarousel carouselData={carouselData[language]} />
+      {/* <EslCarousel carouselData={carouselData[language]} /> */}
 
       {/* ===== 7. Three Simple Cards ===== */}
     </div>
