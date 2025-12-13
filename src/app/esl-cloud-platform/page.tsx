@@ -13,13 +13,88 @@ import {
   Sun,
   Moon,
 } from "lucide-react";
-import { useTheme } from "@/src/contexts/theme-context";
 import AnimationText from "@/src/components/Animation-text";
 import { FadeAnimation } from "@/src/motion-animations/FadeAnimation";
 import Image from "next/image";
 import Link from "next/link";
-// import CloudBanner from "./Cloudbanner";
-// import { useTheme } from "next-themes";
+
+const advantagesSection = {
+  en: {
+    title: "ZKONG ESL Retail Cloud Platform Advantages",
+    advantages: [
+      {
+        imgSrc: "/public/esl-cloud-platform/esl-cloud-sass.webp",
+        heading: "SaaS system, no local installation required",
+        data: [
+          "Support unlimited accounts on the same server",
+          "Computing capacity can be infinitely superimposed through server expansion",
+          "Reduce the cost of software and hardware due to the increasement of local server",
+        ],
+      },
+      {
+        imgSrc: "/public/esl-cloud-platform/esl-cloud-template.webp",
+        heading: " Comes with a template editor",
+        data: [
+          "Cloud-based templates, browser operation",
+          "Visual and free editing, real-time preview",
+          "huge template library, unlimited fonts, multi-language text",
+          "Flexible triggering",
+        ],
+      },
+      {
+        imgSrc: "/public/esl-cloud-platform/esl-cloud-expansion.webp",
+        heading: "Unlimited expansion",
+        data: [
+          "integrated a variety of intelligent devices such as EPD, LCD and AI cameras with one system",
+          "Billions of information processing",
+          "A single system supports millions of electronic shelf labels",
+        ],
+      },
+      {
+        imgSrc: "/public/esl-cloud-platform/esl-cloud-deployment.webp",
+        heading: "Flexible deployment",
+        data: [
+          "Flexible options for SaaS public, private and local deployments",
+          " Support globally distributed deployment and cluster deployment",
+        ],
+      },
+      {
+        imgSrc: "/public/esl-cloud-platform/esl-cloud-interface.webp",
+        heading: "Interface opened",
+        data: [
+          "200+ API interfaces (the most open interface)",
+          "Support different types of ERP, API and customized development with specific needs",
+        ],
+      },
+      {
+        imgSrc: "/public/esl-cloud-platform/esl-cloud-extensiveness.webp",
+        heading: "Extensiveness",
+        data: [
+          "Supports Windows / Mac OS / Android / iOS and many other major system",
+          "Built on a wide area network with global reach",
+        ],
+      },
+      {
+        imgSrc: "/public/esl-cloud-platform/esl-cloud-security.webp",
+        heading: "Data security",
+        data: [
+          "Data storage records in the cloud",
+          "Professional AES 128-bit encryption in the cloud",
+          "Automatic detection and early warning mechanism",
+        ],
+      },
+      {
+        imgSrc: "/public/esl-cloud-platform/esl-cloud-plans.webp",
+        heading: "Second development",
+        data: [
+          "Secondary development gives new features to software and hardware",
+          "Private server build",
+          "APP/mini app development",
+        ],
+      },
+    ],
+  },
+};
 
 export default function ZKONGPlatform() {
   // const { theme } = useTheme();
