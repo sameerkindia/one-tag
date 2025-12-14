@@ -1,29 +1,59 @@
 "use client";
 
 import React from "react";
-import {
-  Server,
-  Shield,
-  Cloud,
-  Zap,
-  Lock,
-  Layers,
-  MonitorPlay,
-  Database,
-  Sun,
-  Moon,
-} from "lucide-react";
 import AnimationText from "@/src/components/Animation-text";
 import { FadeAnimation } from "@/src/motion-animations/FadeAnimation";
 import Image from "next/image";
-import Link from "next/link";
+import { useLanguage } from "@/src/contexts/language-context";
+
+const bannerSection = {
+  en: {
+    title: "ZKONG ESL Retail Cloud Platform",
+    description:
+      "The leading retail IoT Cloud platform to manage your IoT, access your store and manage your labels as well as your items anytime, anywhere, thanks to our web interface available through a simple internet connection from your PC, Smartphone or Tablet.",
+    cta: "Contact Us",
+  },
+  uz: {
+    title: "ZKONG ESL Retail Cloud Platform",
+    description:
+      "The leading retail IoT Cloud platform to manage your IoT, access your store and manage your labels as well as your items anytime, anywhere, thanks to our web interface available through a simple internet connection from your PC, Smartphone or Tablet.",
+    cta: "Contact Us",
+  },
+  ru: {
+    title: "ZKONG ESL Retail Cloud Platform",
+    description:
+      "The leading retail IoT Cloud platform to manage your IoT, access your store and manage your labels as well as your items anytime, anywhere, thanks to our web interface available through a simple internet connection from your PC, Smartphone or Tablet.",
+    cta: "Contact Us",
+  },
+};
+
+const revolutionarySection = {
+  en: {
+    title: "The Revolutionary Retail Cloud Platform",
+    description:
+      "Renew Your Business Model with the Revolutionary Cloud Electronic Shelf Labels System",
+    cta: "Get More Info",
+  },
+  uz: {
+    title: "The Revolutionary Retail Cloud Platform",
+    description:
+      "Renew Your Business Model with the Revolutionary Cloud Electronic Shelf Labels System",
+    cta: "Get More Info",
+  },
+  ru: {
+    title: "The Revolutionary Retail Cloud Platform",
+    description:
+      "Renew Your Business Model with the Revolutionary Cloud Electronic Shelf Labels System",
+    cta: "Get More Info",
+  },
+};
 
 const advantagesSection = {
   en: {
     title: "ZKONG ESL Retail Cloud Platform Advantages",
     advantages: [
       {
-        imgSrc: "/public/esl-cloud-platform/esl-cloud-sass.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-sass.webp",
         heading: "SaaS system, no local installation required",
         data: [
           "Support unlimited accounts on the same server",
@@ -32,7 +62,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/public/esl-cloud-platform/esl-cloud-template.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-template.webp",
         heading: " Comes with a template editor",
         data: [
           "Cloud-based templates, browser operation",
@@ -42,7 +72,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/public/esl-cloud-platform/esl-cloud-expansion.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-expansion.webp",
         heading: "Unlimited expansion",
         data: [
           "integrated a variety of intelligent devices such as EPD, LCD and AI cameras with one system",
@@ -51,7 +81,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/public/esl-cloud-platform/esl-cloud-deployment.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-deployment.webp",
         heading: "Flexible deployment",
         data: [
           "Flexible options for SaaS public, private and local deployments",
@@ -59,7 +89,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/public/esl-cloud-platform/esl-cloud-interface.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-interface.webp",
         heading: "Interface opened",
         data: [
           "200+ API interfaces (the most open interface)",
@@ -67,7 +97,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/public/esl-cloud-platform/esl-cloud-extensiveness.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-extensiveness.webp",
         heading: "Extensiveness",
         data: [
           "Supports Windows / Mac OS / Android / iOS and many other major system",
@@ -75,7 +105,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/public/esl-cloud-platform/esl-cloud-security.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-security.webp",
         heading: "Data security",
         data: [
           "Data storage records in the cloud",
@@ -84,7 +114,157 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/public/esl-cloud-platform/esl-cloud-plans.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-plans.webp",
+        heading: "Second development",
+        data: [
+          "Secondary development gives new features to software and hardware",
+          "Private server build",
+          "APP/mini app development",
+        ],
+      },
+    ],
+  },
+  uz: {
+    title: "ZKONG ESL Retail Cloud Platform Advantages",
+    advantages: [
+      {
+        imgSrc: "/esl-cloud-platform/esl-cloud-sass.webp",
+        heading: "SaaS system, no local installation required",
+        data: [
+          "Support unlimited accounts on the same server",
+          "Computing capacity can be infinitely superimposed through server expansion",
+          "Reduce the cost of software and hardware due to the increasement of local server",
+        ],
+      },
+      {
+        imgSrc: "/esl-cloud-platform/esl-cloud-template.webp",
+        heading: " Comes with a template editor",
+        data: [
+          "Cloud-based templates, browser operation",
+          "Visual and free editing, real-time preview",
+          "huge template library, unlimited fonts, multi-language text",
+          "Flexible triggering",
+        ],
+      },
+      {
+        imgSrc: "/esl-cloud-platform/esl-cloud-expansion.webp",
+        heading: "Unlimited expansion",
+        data: [
+          "integrated a variety of intelligent devices such as EPD, LCD and AI cameras with one system",
+          "Billions of information processing",
+          "A single system supports millions of electronic shelf labels",
+        ],
+      },
+      {
+        imgSrc: "/esl-cloud-platform/esl-cloud-deployment.webp",
+        heading: "Flexible deployment",
+        data: [
+          "Flexible options for SaaS public, private and local deployments",
+          " Support globally distributed deployment and cluster deployment",
+        ],
+      },
+      {
+        imgSrc: "/esl-cloud-platform/esl-cloud-interface.webp",
+        heading: "Interface opened",
+        data: [
+          "200+ API interfaces (the most open interface)",
+          "Support different types of ERP, API and customized development with specific needs",
+        ],
+      },
+      {
+        imgSrc: "/esl-cloud-platform/esl-cloud-extensiveness.webp",
+        heading: "Extensiveness",
+        data: [
+          "Supports Windows / Mac OS / Android / iOS and many other major system",
+          "Built on a wide area network with global reach",
+        ],
+      },
+      {
+        imgSrc: "/esl-cloud-platform/esl-cloud-security.webp",
+        heading: "Data security",
+        data: [
+          "Data storage records in the cloud",
+          "Professional AES 128-bit encryption in the cloud",
+          "Automatic detection and early warning mechanism",
+        ],
+      },
+      {
+        imgSrc: "/esl-cloud-platform/esl-cloud-plans.webp",
+        heading: "Second development",
+        data: [
+          "Secondary development gives new features to software and hardware",
+          "Private server build",
+          "APP/mini app development",
+        ],
+      },
+    ],
+  },
+  ru: {
+    title: "ZKONG ESL Retail Cloud Platform Advantages",
+    advantages: [
+      {
+        imgSrc: "/esl-cloud-platform/esl-cloud-sass.webp",
+        heading: "SaaS system, no local installation required",
+        data: [
+          "Support unlimited accounts on the same server",
+          "Computing capacity can be infinitely superimposed through server expansion",
+          "Reduce the cost of software and hardware due to the increasement of local server",
+        ],
+      },
+      {
+        imgSrc: "/esl-cloud-platform/esl-cloud-template.webp",
+        heading: " Comes with a template editor",
+        data: [
+          "Cloud-based templates, browser operation",
+          "Visual and free editing, real-time preview",
+          "huge template library, unlimited fonts, multi-language text",
+          "Flexible triggering",
+        ],
+      },
+      {
+        imgSrc: "/esl-cloud-platform/esl-cloud-expansion.webp",
+        heading: "Unlimited expansion",
+        data: [
+          "integrated a variety of intelligent devices such as EPD, LCD and AI cameras with one system",
+          "Billions of information processing",
+          "A single system supports millions of electronic shelf labels",
+        ],
+      },
+      {
+        imgSrc: "/esl-cloud-platform/esl-cloud-deployment.webp",
+        heading: "Flexible deployment",
+        data: [
+          "Flexible options for SaaS public, private and local deployments",
+          " Support globally distributed deployment and cluster deployment",
+        ],
+      },
+      {
+        imgSrc: "/esl-cloud-platform/esl-cloud-interface.webp",
+        heading: "Interface opened",
+        data: [
+          "200+ API interfaces (the most open interface)",
+          "Support different types of ERP, API and customized development with specific needs",
+        ],
+      },
+      {
+        imgSrc: "/esl-cloud-platform/esl-cloud-extensiveness.webp",
+        heading: "Extensiveness",
+        data: [
+          "Supports Windows / Mac OS / Android / iOS and many other major system",
+          "Built on a wide area network with global reach",
+        ],
+      },
+      {
+        imgSrc: "/esl-cloud-platform/esl-cloud-security.webp",
+        heading: "Data security",
+        data: [
+          "Data storage records in the cloud",
+          "Professional AES 128-bit encryption in the cloud",
+          "Automatic detection and early warning mechanism",
+        ],
+      },
+      {
+        imgSrc: "/esl-cloud-platform/esl-cloud-plans.webp",
         heading: "Second development",
         data: [
           "Secondary development gives new features to software and hardware",
@@ -96,11 +276,138 @@ const advantagesSection = {
   },
 };
 
+const superiorSystemSection = {
+  en: {
+    title: "ZKONG Retail Cloud ESL Platform Superior system",
+    cardData: [
+      {
+        heading: "Shop Management",
+        imgSrc: "/esl-cloud-platform/superior/shop-management.webp",
+        data: [
+          "Data interfacing",
+          "Staff account",
+          "Marketing management",
+          "Product binding management",
+          "Permission settings",
+        ],
+      },
+      {
+        heading: "Facilities Management",
+        imgSrc: "/esl-cloud-platform/superior/facilities-management.webp",
+        data: [
+          "Data upgrading",
+          "Task management",
+          "Equipment scheduling",
+          "People-Goods interaction",
+          "Data security",
+        ],
+      },
+      {
+        heading: "Tools Management",
+        imgSrc: "/esl-cloud-platform/superior/tools-management.webp",
+        data: ["Template", "Monitoring and warning", "Journal Management"],
+      },
+      {
+        heading: "Application Solutions",
+        imgSrc: "/esl-cloud-platform/superior/application-solutions.webp",
+        data: [
+          "Smart Picking",
+          "Passenger flow monitoring",
+          "Display/inventory monitoring",
+          "Analysis of consumer behavior",
+        ],
+      },
+    ],
+  },
+  uz: {
+    title: "ZKONG Retail Cloud ESL Platform Superior system",
+    cardData: [
+      {
+        heading: "Shop Management",
+        imgSrc: "/esl-cloud-platform/superior/shop-management.webp",
+        data: [
+          "Data interfacing",
+          "Staff account",
+          "Marketing management",
+          "Product binding management",
+          "Permission settings",
+        ],
+      },
+      {
+        heading: "Facilities Management",
+        imgSrc: "/esl-cloud-platform/superior/facilities-management.webp",
+        data: [
+          "Data upgrading",
+          "Task management",
+          "Equipment scheduling",
+          "People-Goods interaction",
+          "Data security",
+        ],
+      },
+      {
+        heading: "Tools Management",
+        imgSrc: "/esl-cloud-platform/superior/tools-management.webp",
+        data: ["Template", "Monitoring and warning", "Journal Management"],
+      },
+      {
+        heading: "Application Solutions",
+        imgSrc: "/esl-cloud-platform/superior/application-solutions.webp",
+        data: [
+          "Smart Picking",
+          "Passenger flow monitoring",
+          "Display/inventory monitoring",
+          "Analysis of consumer behavior",
+        ],
+      },
+    ],
+  },
+  ru: {
+    title: "ZKONG Retail Cloud ESL Platform Superior system",
+    cardData: [
+      {
+        heading: "Shop Management",
+        imgSrc: "/esl-cloud-platform/superior/shop-management.webp",
+        data: [
+          "Data interfacing",
+          "Staff account",
+          "Marketing management",
+          "Product binding management",
+          "Permission settings",
+        ],
+      },
+      {
+        heading: "Facilities Management",
+        imgSrc: "/esl-cloud-platform/superior/facilities-management.webp",
+        data: [
+          "Data upgrading",
+          "Task management",
+          "Equipment scheduling",
+          "People-Goods interaction",
+          "Data security",
+        ],
+      },
+      {
+        heading: "Tools Management",
+        imgSrc: "/esl-cloud-platform/superior/tools-management.webp",
+        data: ["Template", "Monitoring and warning", "Journal Management"],
+      },
+      {
+        heading: "Application Solutions",
+        imgSrc: "/esl-cloud-platform/superior/application-solutions.webp",
+        data: [
+          "Smart Picking",
+          "Passenger flow monitoring",
+          "Display/inventory monitoring",
+          "Analysis of consumer behavior",
+        ],
+      },
+    ],
+  },
+};
+
 export default function ZKONGPlatform() {
   // const { theme } = useTheme();
-
-  // helper to show theme effective theme (system fallback)
-  //   const theme = theme === "system" ? resolvedTheme : theme;
+  const { language } = useLanguage();
 
   return (
     <div className="min-h-screen text-gray-900 transition-colors duration-300 dark:text-white">
@@ -113,20 +420,21 @@ export default function ZKONGPlatform() {
 
         <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10">
           <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold mb-6">
-            <AnimationText onRepeat={true}>ZKONG ESL</AnimationText> Retail
-            Cloud Platform
+            <AnimationText>
+              {bannerSection[language].title.split(" ").slice(0, 2).join(" ")}
+            </AnimationText>{" "}
+            <span className="text-blue-600 dark:text-blue-400">
+              {bannerSection[language].title.split(" ").slice(2).join(" ")}
+            </span>
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-4xl mx-auto">
-            The leading retail IoT Cloud platform to manage your IoT, access
-            your store and manage your labels as well as your items anytime,
-            anywhere, thanks to our web interface available through a simple
-            internet connection from your PC, Smartphone or Tablet.
+            {bannerSection[language].description}
           </p>
           <button
             aria-label="get started with us"
             className="inline-block mt-4 px-6 py-3 bg-black dark:bg-white hover:bg-black/80 dark:hover:bg-white/80 text-white dark:text-black rounded-2xl transition-all duration-300 min-w-[170px]"
           >
-            Get Started
+            {bannerSection[language].cta}
           </button>
         </FadeAnimation>
       </section>
@@ -135,19 +443,28 @@ export default function ZKONGPlatform() {
         <div className="container mx-auto px-4 max-w-7xl relative">
           <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10 mb-10">
             <h2 className="text-black dark:text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6">
-              <AnimationText>The Revolutionary</AnimationText> Retail Cloud
-              Platform
+              <AnimationText>
+                {revolutionarySection[language].title
+                  .split(" ")
+                  .slice(0, 2)
+                  .join(" ")}
+              </AnimationText>{" "}
+              <span className="text-blue-600 dark:text-blue-400">
+                {revolutionarySection[language].title
+                  .split(" ")
+                  .slice(2)
+                  .join(" ")}
+              </span>
             </h2>
             <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-4xl mx-auto">
-              Renew Your Business Model with the Revolutionary Cloud Electronic
-              Shelf Labels System
+              {revolutionarySection[language].description}
             </p>
             <a
               href="/"
               aria-label="Get More Info about our product us"
               className="inline-block mt-4 px-6 py-3 border-2 border-black dark:border-white hover:bg-black dark:hover:bg-white text-black dark:text-white hover:text-white dark:hover:text-black rounded-lg transition-all duration-300 min-w-[170px] cursor-pointer"
             >
-              Get More Info
+              {revolutionarySection[language].cta}
             </a>
           </FadeAnimation>
           <FadeAnimation className="dark:bg-white p-4">
@@ -241,206 +558,56 @@ export default function ZKONGPlatform() {
       <section className="px-6 py-20 max-w-7xl mx-auto">
         <FadeAnimation>
           <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
-            <AnimationText>ZKONG ESL Retail Cloud</AnimationText>{" "}
+            <AnimationText>
+              {advantagesSection[language].title
+                .split(" ")
+                .slice(0, 4)
+                .join(" ")}
+            </AnimationText>{" "}
             <span className="text-blue-600 dark:text-blue-400">
-              Platform Advantages
+              {advantagesSection[language].title.split(" ").slice(4).join(" ")}
             </span>
           </h2>
         </FadeAnimation>
 
         <FadeAnimation>
           <div className="space-y-12">
-            {/* Advantage 1 */}
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30">
-                <div className="flex items-center justify-center h-48">
-                  <Cloud className="w-32 h-32 text-blue-500 dark:text-blue-300" />
+            {advantagesSection[language].advantages.map((advantage, index) => (
+              <div
+                key={index}
+                className="grid md:grid-cols-2 gap-8 items-center"
+              >
+                {/* Image Section */}
+                <div
+                  className={`rounded-2xl border dark:border-gray-700 bg-linear-to-br 
+        from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 
+        overflow-hidden 
+        ${index % 2 === 1 ? "md:order-2" : "md:order-1"}`}
+                >
+                  <div className="relative flex items-center justify-center h-48">
+                    <Image
+                      src={advantage.imgSrc}
+                      alt={advantage.heading}
+                      fill
+                    />
+                  </div>
+                </div>
+
+                {/* Text Section */}
+                <div
+                  className={`${index % 2 === 1 ? "md:order-1" : "md:order-2"}`}
+                >
+                  <h3 className="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-300">
+                    {advantage.heading}
+                  </h3>
+                  <ul className="cloud-platform-ul">
+                    {advantage.data.map((item, i) => (
+                      <li key={i}>- {item}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-
-              <div>
-                <h3 className="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-300">
-                  SaaS system, no local installation required
-                </h3>
-                <ul className="cloud-platform-ul">
-                  <li>- Support unlimited accounts on the same server</li>
-                  <li>
-                    - Computing capacity can be infinitely superimposed through
-                    server expansion
-                  </li>
-                  <li>
-                    - Reduce the cost of software and hardware due to the
-                    increasement of local server
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Advantage 2 */}
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="order-2 md:order-1">
-                <h3 className="text-2xl font-bold mb-4 text-purple-600 dark:text-purple-300">
-                  Comes with a template editor
-                </h3>
-                <ul className="cloud-platform-ul">
-                  <li>- Cloud-based templates, browser operation</li>
-                  <li>- Visual and free editing, real-time preview</li>
-                  <li>
-                    - huge template library, unlimited fonts, multi-language
-                    text
-                  </li>
-                  <li>- Flexible triggering</li>
-                </ul>
-              </div>
-
-              <div className="order-1 md:order-2 p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30">
-                <div className="flex items-center justify-center h-48">
-                  <img
-                    src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=400&h=300&fit=crop"
-                    alt="Retail pricing"
-                    className="rounded-lg w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Advantage 3 */}
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-900/30 dark:to-cyan-800/30">
-                <div className="flex items-center justify-center h-48">
-                  <Shield className="w-32 h-32 text-cyan-500 dark:text-cyan-300" />
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold mb-4 text-cyan-600 dark:text-cyan-300">
-                  Unlimited expansion
-                </h3>
-                <ul className="cloud-platform-ul">
-                  <li>
-                    - integrated a variety of intelligent devices such as EPD,
-                    LCD and AI cameras with one system
-                  </li>
-                  <li>- Billions of information processing</li>
-                  <li>
-                    - A single system supports millions of{" "}
-                    <Link href="/">electronic shelf labels</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Advantage 4 */}
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="order-2 md:order-1">
-                <h3 className="text-2xl font-bold mb-4 text-pink-600 dark:text-pink-300">
-                  Flexible deployment
-                </h3>
-                <ul className="cloud-platform-ul">
-                  <li>
-                    - Flexible options for SaaS public, private and local
-                    deployments
-                  </li>
-                  <li>
-                    - Support globally distributed deployment and cluster
-                    deployment
-                  </li>
-                </ul>
-              </div>
-
-              <div className="order-1 md:order-2 p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/30 dark:to-pink-800/30">
-                <div className="flex items-center justify-center h-48">
-                  <Layers className="w-32 h-32 text-pink-500 dark:text-pink-300" />
-                </div>
-              </div>
-            </div>
-
-            {/* Advantage 5 */}
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30">
-                <div className="flex items-center justify-center h-48">
-                  <Zap className="w-32 h-32 text-green-500 dark:text-green-300" />
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold mb-4 text-green-600 dark:text-green-300">
-                  Interface opened
-                </h3>
-                <ul className="cloud-platform-ul">
-                  <li>- 200+ API interfaces (the most open interface)</li>
-                  <li>
-                    - Support different types of ERP, API and customized
-                    development with specific needs
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Advantage 6 */}
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="order-2 md:order-1">
-                <h3 className="text-2xl font-bold mb-4 text-orange-600 dark:text-orange-300">
-                  Extensiveness
-                </h3>
-                <ul className="cloud-platform-ul">
-                  <li>
-                    - Supports Windows / Mac OS / Android / iOS and many other
-                    major system
-                  </li>
-                  <li>- Built on a wide area network with global reach</li>
-                </ul>
-              </div>
-
-              <div className="order-1 md:order-2 p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/30 dark:to-orange-800/30">
-                <div className="flex items-center justify-center h-48">
-                  <Server className="w-32 h-32 text-orange-500 dark:text-orange-300" />
-                </div>
-              </div>
-            </div>
-
-            {/* Advantage 7 */}
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-900/30 dark:to-indigo-800/30">
-                <div className="flex items-center justify-center h-48">
-                  <Lock className="w-32 h-32 text-indigo-500 dark:text-indigo-300" />
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold mb-4 text-indigo-600 dark:text-indigo-300">
-                  Data security
-                </h3>
-                <ul className="cloud-platform-ul">
-                  <li>- Data storage records in the cloud</li>
-                  <li>- Professional AES 128-bit encryption in the cloud</li>
-                  <li>- Automatic detection and early warning mechanism</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Advantage 8 */}
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="order-2 md:order-1">
-                <h3 className="text-2xl font-bold mb-4 text-yellow-600 dark:text-yellow-300">
-                  Second development
-                </h3>
-                <ul className="cloud-platform-ul">
-                  <li>
-                    - Secondary development gives new features to software and
-                    hardware
-                  </li>
-                  <li>- Private server build</li>
-                  <li>- APP/mini app development</li>
-                </ul>
-              </div>
-
-              <div className="order-1 md:order-2 p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-900/30 dark:to-yellow-800/30">
-                <div className="flex items-center justify-center h-48">
-                  <Database className="w-32 h-32 text-yellow-500 dark:text-yellow-300" />
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </FadeAnimation>
       </section>
@@ -449,138 +616,47 @@ export default function ZKONGPlatform() {
       <section className="px-6 py-20 max-w-7xl mx-auto">
         <FadeAnimation>
           <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
-            <AnimationText>ZKONG Retail Cloud ESL</AnimationText>{" "}
+            <AnimationText>
+              {superiorSystemSection[language].title
+                .split(" ")
+                .slice(0, 4)
+                .join(" ")}
+            </AnimationText>{" "}
             <span className="text-blue-600 dark:text-blue-400">
-              Platform Superior System
+              {superiorSystemSection[language].title
+                .split(" ")
+                .slice(4)
+                .join(" ")}
             </span>
           </h2>
         </FadeAnimation>
 
         <FadeAnimation>
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Big Data Platform */}
-            <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 hover:border-blue-500 transition-all">
-              <div className="flex items-center justify-center mb-6">
-                <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center">
-                  <Database className="w-10 h-10 text-white" />
+            {superiorSystemSection[language].cardData.map((card, index) => (
+              <div
+                key={index}
+                className="rounded-2xl border dark:border-gray-700 bg-linear-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 hover:border-blue-500 transition-all overflow-hidden"
+              >
+                <div className="flex items-center justify-center mb-6">
+                  <div className="relative w-full h-40 rounded-full flex items-center justify-center">
+                    <Image src={card.imgSrc} alt={card.heading} fill />
+                  </div>
+                </div>
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+                    {card.heading}
+                  </h3>
+                  <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                    {card.data.map((item, index) => (
+                      <li className="flex items-start">
+                        <span key={index}>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
-                Shop Management
-              </h3>
-              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-                <li className="flex items-start">
-                  <span className="text-blue-400 mr-2">•</span>
-                  <span>Data interfacing</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-400 mr-2">•</span>
-                  <span>Staff account</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-400 mr-2">•</span>
-                  <span>Marketing management</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-400 mr-2">•</span>
-                  <span>Product binding management</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-400 mr-2">•</span>
-                  <span>Permission settings</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Tag Label Management */}
-            <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 hover:border-purple-500 transition-all">
-              <div className="flex items-center justify-center mb-6">
-                <div className="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center">
-                  <Layers className="w-10 h-10 text-white" />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
-                Facilities Management
-              </h3>
-              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-                <li className="flex items-start">
-                  <span className="text-purple-400 mr-2">•</span>
-                  <span>Data upgrading</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-400 mr-2">•</span>
-                  <span>Task management</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-400 mr-2">•</span>
-                  <span>Equipment scheduling</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-400 mr-2">•</span>
-                  <span>People-Goods interaction</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-400 mr-2">•</span>
-                  <span>Data security</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Store Management */}
-            <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-900/30 dark:to-cyan-800/30 hover:border-cyan-500 transition-all">
-              <div className="flex items-center justify-center mb-6">
-                <div className="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center">
-                  <Server className="w-10 h-10 text-white" />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
-                Tools Management
-              </h3>
-              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-                <li className="flex items-start">
-                  <span className="text-cyan-400 mr-2">•</span>
-                  <span>Template</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-cyan-400 mr-2">•</span>
-                  <span>Monitoring and warning</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-cyan-400 mr-2">•</span>
-                  <span>Journal Management</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* AI-Powered Analytics */}
-            <div className="p-8 rounded-2xl border dark:border-gray-700 bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/30 dark:to-pink-800/30 hover:border-pink-500 transition-all">
-              <div className="flex items-center justify-center mb-6">
-                <div className="w-20 h-20 bg-pink-600 rounded-full flex items-center justify-center">
-                  <Zap className="w-10 h-10 text-white" />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
-                Application Solutions
-              </h3>
-              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-                <li className="flex items-start">
-                  <span className="text-pink-400 mr-2">•</span>
-                  <span>Smart Picking</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-pink-400 mr-2">•</span>
-                  <span>Passenger flow monitoring</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-pink-400 mr-2">•</span>
-                  <span>Display/inventory monitoring</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-pink-400 mr-2">•</span>
-                  <span>Analysis of consumer behavior</span>
-                </li>
-              </ul>
-            </div>
+            ))}
           </div>
         </FadeAnimation>
       </section>
