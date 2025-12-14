@@ -3,20 +3,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-// type EslVerticalTab = {
-//   featureData: {
-//     title: string;
-//     features: [
-//       {
-//         id: string;
-//         title: string;
-//         body: string;
-//         img: string;
-//       }
-//     ];
-//   };
-// };
-
 type Feature = {
   id: string;
   title: string;
@@ -24,29 +10,28 @@ type Feature = {
   img: string;
 };
 
-type FeatureData = {
-  features: Feature[];
-};
-
 interface EslVerticalTabProps {
-  position ?: 'left' | 'right'
-  featureData: FeatureData;
+  position?: "left" | "right";
+  featureData: Feature[];
 }
 
-function EslVerticalTab({ position="left" , featureData }: EslVerticalTabProps) {
+function EslVerticalTab({ position = "left", featureData }: EslVerticalTabProps) {
   const [activeFeatureIndex, setActiveFeatureIndex] = useState(0);
   const [isFeaturesHovered, setIsFeaturesHovered] = useState(false);
+
   const onFeatureLeave = () => setIsFeaturesHovered(false);
 
   const onFeatureHover = (index: number) => {
     setActiveFeatureIndex(index);
     setIsFeaturesHovered(true);
   };
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-      <div className={`lg:col-span-4 ${position=== "left" ? '' : 'order-1'}`}>
+      {/* Tabs */}
+      <div className={`lg:col-span-4 ${position === "left" ? "" : "order-1"}`}>
         <div className="space-y-3">
-          {featureData.features.map((f, i) => (
+          {featureData.map((f, i) => (
             <button
               key={f.id}
               onMouseEnter={() => onFeatureHover(i)}
@@ -65,23 +50,23 @@ function EslVerticalTab({ position="left" , featureData }: EslVerticalTabProps) 
         </div>
       </div>
 
-      {/* preview */}
+      {/* Preview */}
       <div className="lg:col-span-8">
         <div className="rounded-xl bg-gray-50 dark:bg-gray-700 p-6">
           <div className="grid md:grid-cols-2 gap-6 items-center">
-            <div>
+            <div className={`${position === "left" ? "" : "order-1"}`}>
               <h3 className="text-xl font-semibold">
-                {featureData.features[activeFeatureIndex].title}
+                {featureData[activeFeatureIndex].title}
               </h3>
               <p className="mt-3 text-gray-600 dark:text-gray-300">
-                {featureData.features[activeFeatureIndex].body}
+                {featureData[activeFeatureIndex].body}
               </p>
             </div>
 
             <div className="w-full h-48 relative rounded overflow-hidden bg-gray-100 dark:bg-gray-600">
               <Image
-                src={featureData.features[activeFeatureIndex].img}
-                alt={featureData.features[activeFeatureIndex].title}
+                src={featureData[activeFeatureIndex].img}
+                alt={featureData[activeFeatureIndex].title}
                 fill
                 className="object-cover"
               />
@@ -90,12 +75,6 @@ function EslVerticalTab({ position="left" , featureData }: EslVerticalTabProps) 
         </div>
       </div>
     </div>
-    // <section className="py-12">
-    //   <div className="container mx-auto px-4 max-w-7xl relative">
-    //     <div className="bg-white dark:bg-gray-800 rounded-xl shadow p-4">
-    //     </div>
-    //   </div>
-    // </section>
   );
 }
 
