@@ -448,3 +448,8 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+.transition-all{
+    transition-property: all !important;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function) /* cubic-bezier(0.4, 0, 0.2, 1) */) !important;
+    transition-duration: var(--tw-duration, var(--default-transition-duration) /* 150ms */) !important;
+}
