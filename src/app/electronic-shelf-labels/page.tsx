@@ -8,6 +8,8 @@ import EslVideoComponent from "@/src/components/esl-components/EslVideoComponent
 import EslHorizontalTab from "@/src/components/esl-components/EslhorizontalTab";
 import EslVerticalTab from "@/src/components/esl-components/EslVerticalTab";
 import EslCarousel from "@/src/components/esl-components/EslCarousel";
+import SliderCarousel from "@/src/components/SliderCarousel";
+import InfiniteMarquee from "@/src/components/InfiniteRunningMarquee";
 
 const hero = {
   en: {
@@ -1676,72 +1678,75 @@ const whyChooseSection = {
 
 const eslSystemSection = {
   en: {
-    title: 'Electronic Shelf Label System',
+    title: "Electronic Shelf Label System",
     description: `ZKONG Intelligent Retail Cloud Platform is an Internet of Things cloud platform based on safety monitoring and management of Bluetooth devices. The intelligent electronic shelf label system can access a variety of offline application scenarios, provide API interface to docking various application systems, and realize intelligent upgrading.`,
     cards: [
       {
         id: 1,
-        heading: 'Multi-device Support',
-        data : ['PC','Mobile']
+        heading: "Multi-device Support",
+        data: ["PC", "Mobile"],
       },
       {
         id: 2,
-        heading: 'Customized Freedom',
-        data : ['API interface','SDK', 'Firmware']
+        heading: "Customized Freedom",
+        data: ["API interface", "SDK", "Firmware"],
       },
       {
         id: 3,
-        heading: 'Functional Integration',
-        data : ['Traffic statistics','Transducers', 'Information Display']
+        heading: "Functional Integration",
+        data: ["Traffic statistics", "Transducers", "Information Display"],
       },
-    ]
+    ],
   },
   uz: {
-    title: 'Electronic Shelf Label System',
+    title: "Electronic Shelf Label System",
     description: `ZKONG Intelligent Retail Cloud Platform is an Internet of Things cloud platform based on safety monitoring and management of Bluetooth devices. The intelligent electronic shelf label system can access a variety of offline application scenarios, provide API interface to docking various application systems, and realize intelligent upgrading.`,
     cards: [
       {
         id: 1,
-        heading: 'Multi-device Support',
-        data : ['PC','Mobile']
+        heading: "Multi-device Support",
+        data: ["PC", "Mobile"],
       },
       {
         id: 2,
-        heading: 'Customized Freedom',
-        data : ['API interface','SDK', 'Firmware']
+        heading: "Customized Freedom",
+        data: ["API interface", "SDK", "Firmware"],
       },
       {
         id: 3,
-        heading: 'Functional Integration',
-        data : ['Traffic statistics','Transducers', 'Information Display']
+        heading: "Functional Integration",
+        data: ["Traffic statistics", "Transducers", "Information Display"],
       },
-    ]
+    ],
   },
   ru: {
-    title: 'Electronic Shelf Label System',
+    title: "Electronic Shelf Label System",
     description: `ZKONG Intelligent Retail Cloud Platform is an Internet of Things cloud platform based on safety monitoring and management of Bluetooth devices. The intelligent electronic shelf label system can access a variety of offline application scenarios, provide API interface to docking various application systems, and realize intelligent upgrading.`,
     cards: [
       {
         id: 1,
-        heading: 'Multi-device Support',
-        data : ['PC','Mobile']
+        heading: "Multi-device Support",
+        data: ["PC", "Mobile"],
       },
       {
         id: 2,
-        heading: 'Customized Freedom',
-        data : ['API interface','SDK', 'Firmware']
+        heading: "Customized Freedom",
+        data: ["API interface", "SDK", "Firmware"],
       },
       {
         id: 3,
-        heading: 'Functional Integration',
-        data : ['Traffic statistics','Transducers', 'Information Display']
+        heading: "Functional Integration",
+        data: ["Traffic statistics", "Transducers", "Information Display"],
       },
-    ]
+    ],
   },
-}
+};
 
 const carouselData = {
   en: {
+    title: "Electronic Shelf Labels Application Scenarios",
+    description1: `1. suitable for environment which requires perfect display of products' details`,
+    description2: `2. large-size versions perfectly for poster display, promotion notification and other scenarios`,
     imageData: [
       {
         name: "Fresh Food",
@@ -1779,6 +1784,102 @@ const carouselData = {
         src: "/ESL/carouselmages/electronics.webp",
       },
     ],
+  },
+  uz: {
+    title: "Electronic Shelf Labels Application Scenarios",
+    description1: `1. suitable for environment which requires perfect display of products' details`,
+    description2: `2. large-size versions perfectly for poster display, promotion notification and other scenarios`,
+    imageData: [
+      {
+        name: "Fresh Food",
+        description: `Keep your fresh food section up-to-date with ZKONG electronic shelf tags. These digital shelf edge labels allow for quick price adjustments and real-time updates, ensuring compliance with market changes. The electronic price tag display helps maintain freshness and transparency, improving customer confidence in your products.`,
+        src: "/ESL/carouselmages/fresh-food.webp",
+      },
+      {
+        name: "Pharmacy",
+        description: `Streamline your pharmacy operations with ZKONG electronic pricing labels. These digital shelf edge labels offer accurate and timely price updates, reducing manual errors. The LCD price tag ensures that customers receive the most current information on medications and health products, enhancing their shopping experience.`,
+        src: "/ESL/carouselmages/pharmacy.webp",
+      },
+      {
+        name: "Smart Office",
+        description: `Transform your smart office with ZKONG Digital Name Plate. The E-ink Nameplate saves time, money and manual labor by replacing paper nameplates thanks to the E Ink technology for optimal legibility and minimal eye strain.`,
+        src: "/ESL/carouselmages/smart-office.webp",
+      },
+      {
+        name: "Supermarket",
+        description: `Enhance your supermarket's efficiency with ZKONG electronic shelf labels. These digital shelf edge labels provide real-time pricing updates, ensuring accuracy and saving labor costs. With electronic price tag displays, you can easily manage promotions and stock levels, offering a seamless shopping experience for your customers.`,
+        src: "/ESL/carouselmages/supermarket.webp",
+      },
+      {
+        name: "Warehouse",
+        description: `Improve your warehouse management with ZKONG electronic shelf labels and digital signage warehouse. These digital shelf edge labels offer real-time inventory tracking and dynamic pricing updates, streamlining operations and reducing errors. The digital shelf label ensures accurate stock information, enhancing efficiency and productivity in your warehouse environment.`,
+        src: "/ESL/carouselmages/warehouse.webp",
+      },
+      {
+        name: "Cosmetics",
+        description: `Upgrade your cosmetics section with ZKONG electronic shelf edge labels. These digital price labels offer dynamic pricing and instant updates, perfect for fast-paced retail environments. The sleek electronic price tag display complements the aesthetic of your products, while ensuring accurate and up-to-date information for shoppers.`,
+        src: "/ESL/carouselmages/cosmetics.webp",
+      },
+      {
+        name: "Electronics",
+        description: `Optimize your electronics store with ZKONG electronic shelf price tags. These digital shelf labelling solutions provide precise and real-time pricing, enhancing customer trust and satisfaction. The electronic price tag display is ideal for showcasing detailed product information, helping customers make informed purchasing decisions.`,
+        src: "/ESL/carouselmages/electronics.webp",
+      },
+    ],
+  },
+  ru: {
+    title: "Electronic Shelf Labels Application Scenarios",
+    description1: `1. suitable for environment which requires perfect display of products' details`,
+    description2: `2. large-size versions perfectly for poster display, promotion notification and other scenarios`,
+    imageData: [
+      {
+        name: "Fresh Food",
+        description: `Keep your fresh food section up-to-date with ZKONG electronic shelf tags. These digital shelf edge labels allow for quick price adjustments and real-time updates, ensuring compliance with market changes. The electronic price tag display helps maintain freshness and transparency, improving customer confidence in your products.`,
+        src: "/ESL/carouselmages/fresh-food.webp",
+      },
+      {
+        name: "Pharmacy",
+        description: `Streamline your pharmacy operations with ZKONG electronic pricing labels. These digital shelf edge labels offer accurate and timely price updates, reducing manual errors. The LCD price tag ensures that customers receive the most current information on medications and health products, enhancing their shopping experience.`,
+        src: "/ESL/carouselmages/pharmacy.webp",
+      },
+      {
+        name: "Smart Office",
+        description: `Transform your smart office with ZKONG Digital Name Plate. The E-ink Nameplate saves time, money and manual labor by replacing paper nameplates thanks to the E Ink technology for optimal legibility and minimal eye strain.`,
+        src: "/ESL/carouselmages/smart-office.webp",
+      },
+      {
+        name: "Supermarket",
+        description: `Enhance your supermarket's efficiency with ZKONG electronic shelf labels. These digital shelf edge labels provide real-time pricing updates, ensuring accuracy and saving labor costs. With electronic price tag displays, you can easily manage promotions and stock levels, offering a seamless shopping experience for your customers.`,
+        src: "/ESL/carouselmages/supermarket.webp",
+      },
+      {
+        name: "Warehouse",
+        description: `Improve your warehouse management with ZKONG electronic shelf labels and digital signage warehouse. These digital shelf edge labels offer real-time inventory tracking and dynamic pricing updates, streamlining operations and reducing errors. The digital shelf label ensures accurate stock information, enhancing efficiency and productivity in your warehouse environment.`,
+        src: "/ESL/carouselmages/warehouse.webp",
+      },
+      {
+        name: "Cosmetics",
+        description: `Upgrade your cosmetics section with ZKONG electronic shelf edge labels. These digital price labels offer dynamic pricing and instant updates, perfect for fast-paced retail environments. The sleek electronic price tag display complements the aesthetic of your products, while ensuring accurate and up-to-date information for shoppers.`,
+        src: "/ESL/carouselmages/cosmetics.webp",
+      },
+      {
+        name: "Electronics",
+        description: `Optimize your electronics store with ZKONG electronic shelf price tags. These digital shelf labelling solutions provide precise and real-time pricing, enhancing customer trust and satisfaction. The electronic price tag display is ideal for showcasing detailed product information, helping customers make informed purchasing decisions.`,
+        src: "/ESL/carouselmages/electronics.webp",
+      },
+    ],
+  },
+};
+
+const gallerysection = {
+  en: {
+    title: "Gallery of ZKONG Electronic Shelf Labels",
+  },
+  uz: {
+    title: "Gallery of ZKONG Electronic Shelf Labels",
+  },
+  ru: {
+    title: "Gallery of ZKONG Electronic Shelf Labels",
   },
 };
 
@@ -2888,10 +2989,10 @@ export default function ZkongShieldRebuilt() {
       <section className="relative w-full py-24">
         <div className="container mx-auto px-4 max-w-7xl relative w-full">
           <div className="text-center">
-            <h2 className="text-3xl font-semibold text-white md:text-4xl">
+            <h2 className="text-3xl font-semibold text-slate-600 dark:text-blue-200 md:text-4xl">
               {eslSystemSection[language].title}
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-white/90 md:text-base">
+            <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-blue-200 md:text-base">
               {eslSystemSection[language].description}
             </p>
           </div>
@@ -2899,37 +3000,84 @@ export default function ZkongShieldRebuilt() {
           {/* Cards */}
           <div className="mt-16 grid gap-8 md:grid-cols-3">
             {eslSystemSection[language].cards.map((card) => (
-              <div key={card.id} className="rounded-2xl bg-white p-8 shadow-lg dark:bg-white/5 dark:backdrop-blur">
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                {card.heading}
-              </h3>
-              <div className="mt-3 h-px w-full bg-slate-200 dark:bg-white/10" />
-              <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                {card.data.map((item, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-blue-400" />
-                  {item}
-                </li>
-                ))}
-              </ul>
-            </div>
+              <div
+                key={card.id}
+                className="rounded-2xl bg-white p-8 shadow-lg dark:bg-white/5 dark:backdrop-blur"
+              >
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  {card.heading}
+                </h3>
+                <div className="mt-3 h-px w-full bg-slate-200 dark:bg-white/10" />
+                <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                  {card.data.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-blue-400" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
       </section>
-{/* 
+
       <section className="relative w-full py-24">
         <div className="container mx-auto px-4 max-w-7xl relative w-full">
-          <div className="mb-6">
-          <h2 className="text-2xl font-semibold text-center mb-4">
-            Dummy data
-          </h2>
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-slate-600 dark:text-blue-200 md:text-4xl">
+              {gallerysection[language].title}
+            </h2>
+          </div>
 
-          <p className="text-xl text-muted-foreground mx-auto text-center">just text</p>
+          <InfiniteMarquee />
         </div>
-          <EslCarousel />
+      </section>
+
+      <section className="relative w-full py-24">
+        <div className="container mx-auto px-4 max-w-7xl relative w-full">
+          <div className="mb-6 text-center">
+            <h2 className="text-2xl font-semibold text-center mb-4">
+              {carouselData[language].title}
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-blue-200 md:text-base">
+              {carouselData[language].description1}
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-blue-200 md:text-base">
+              {carouselData[language].description2}
+            </p>
+          </div>
+          <SliderCarousel
+            data={carouselData[language].imageData}
+            renderCard={(item, i) => (
+              <div className="group relative h-[500px] rounded-lg flex flex-col items-center justify-center overflow-hidden shadow-lg">
+                <Image
+                  src={item.src}
+                  alt={item.name}
+                  fill
+                  className="opacity-75"
+                />
+                <div className="z-1 flex flex-col justify-between h-full w-full">
+                  <div className="bg-white dark:bg-slate-700 h-1/2 w-full p-2 opacity-0 group-hover:opacity-100">
+                    <p className="text-slate-600 dark:text-slate-300 select-none">
+                      {item.description}
+                    </p>
+                  </div>
+                  <h3
+                    className="font-bold p-4 text-right text-white
+                  
+                  "
+                  >
+                    {item.name}
+                  </h3>
+                </div>
+              </div>
+            )}
+            columns={3}
+            infinite
+          />
         </div>
-      </section> */}
+      </section>
 
       {/* ---------- 5. Text Left / Image Right ---------- */}
       {/* <section className="max-w-7xl mx-auto px-6 py-12">
