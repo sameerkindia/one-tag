@@ -8,16 +8,16 @@ type EslHero = {
 function EslBanner({ hero, language }: EslHero) {
   return (
     <section
-      className={`relative py-24 bg-linear-to-r from-gray-200 to-gray-500 dark:from-gray-800 dark:to-gray-700 min-h-[35vw]`}
+      className={`relative py-24 bg-linear-to-r from-gray-200 to-gray-500 dark:from-gray-800 dark:to-gray-700`}
     >
-      <div className="max-w-5xl mx-auto px-6 text-center">
+      <div className="max-w-5xl flex items-center justify-center flex-col mx-auto px-6 text-center min-h-[28vw]">
         <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] mb-4">
           {hero.title}
         </h1>
         {hero.subtitle1 && <p className="mt-3 mb-6 text-base md:text-lg xl:text-xl">
           {hero.subtitle1}
         </p>}
-        {hero.subtitle1 && <p className="mt-3 mb-6 text-base md:text-lg xl:text-xl">
+        {hero.subtitle2 && <p className="mt-3 mb-6 text-base md:text-lg xl:text-xl">
           {hero.subtitle2}
         </p>}
         <div className="mt-6 flex justify-center">
