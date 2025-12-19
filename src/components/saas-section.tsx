@@ -27,7 +27,7 @@ function SaasSection() {
                 src="/tags-bg.webp"
                 alt="one tag solution saas"
                 className="rounded-3xl aspect-6/3"
-                quality={80}
+                // quality={80}
                 height={600}
                 width={600}
               />
@@ -46,7 +46,7 @@ function SaasSection() {
                 src="/SaaS-img.png"
                 alt="one tag solution saas"
                 className="rounded-3xl aspect-6/3"
-                quality={80}
+                // quality={80}
                 height={600}
                 width={600}
               />
