@@ -39,7 +39,9 @@ function SliderCarousel<T>({
   // ----------------------------
   // RESPONSIVE COLUMNS
   // ----------------------------
+
   const updateColumns = () => {
+    if (typeof window === "undefined") return;
     const w = window.innerWidth;
     let newCols = columns;
 
@@ -55,9 +57,12 @@ function SliderCarousel<T>({
   };
 
   useEffect(() => {
-    updateColumns();
-    window.addEventListener("resize", updateColumns);
-    return () => window.removeEventListener("resize", updateColumns);
+    if (typeof window !== "undefined") {
+      updateColumns();
+      window.addEventListener("resize", updateColumns);
+      return () => window.removeEventListener("resize", updateColumns);
+    }
+    return undefined;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [columns, responsive]);
 
