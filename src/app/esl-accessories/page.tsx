@@ -8,6 +8,7 @@ import AnimationText from "@/src/components/Animation-text";
 import FloatingParticles from "@/src/components/FloatingParticles";
 import { useLanguage } from "@/src/contexts/language-context";
 
+
 const bannerSection = {
   en: {
     title: "Wireless Base Station & ESL Accessories",
@@ -1140,7 +1141,7 @@ export default function ESLAccessoriesPage() {
                   data={accessorie.products}
                   sliderCardClass="!px-0"
                   containerClass="!p-0"
-                  renderCard={(item, i) => (
+                  renderCard={(item:any, i) => (
                     <div className="h-60 flex flex-col items-center justify-between p-4 gap-6 transition-all duration-300 hover:bg-neutral-800">
                       <h3 className="text-sm font-bold text-center text-white">
                         {item.name}
