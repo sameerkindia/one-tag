@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useRef, useState, useEffect } from "react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 
@@ -39,7 +41,9 @@ function SliderCarousel<T>({
   // ----------------------------
   // RESPONSIVE COLUMNS
   // ----------------------------
+
   const updateColumns = () => {
+    if (typeof window === "undefined") return;
     const w = window.innerWidth;
     let newCols = columns;
 
@@ -55,9 +59,12 @@ function SliderCarousel<T>({
   };
 
   useEffect(() => {
-    updateColumns();
-    window.addEventListener("resize", updateColumns);
-    return () => window.removeEventListener("resize", updateColumns);
+    if (typeof window !== "undefined") {
+      updateColumns();
+      window.addEventListener("resize", updateColumns);
+      return () => window.removeEventListener("resize", updateColumns);
+    }
+    return undefined;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [columns, responsive]);
 
@@ -264,3 +271,243 @@ const scrollByCard = (dir: "left" | "right") => {
 }
 
 export default SliderCarousel;
+
+
+
+// "use client";
+
+// import React, { useRef, useState, useEffect } from "react";
+// import { ChevronLeft, ChevronRight } from "lucide-react";
+
+// interface ResponsiveConfig {
+//   sm?: number;
+//   md?: number;
+//   lg?: number;
+//   xl?: number;
+// }
+
+// interface SliderCarouselProps<T> {
+//   data: T[];
+//   renderCard: (item: T, index: number) => React.ReactNode;
+//   columns?: number;
+//   responsive?: ResponsiveConfig;
+//   infinite?: boolean;
+//   containerClass?: string;
+//   sliderCardClass?: string;
+// }
+
+// function SliderCarousel<T>({
+//   data,
+//   renderCard,
+//   columns = 4,
+//   responsive,
+//   infinite = false,
+//   containerClass = "",
+//   sliderCardClass = "",
+// }: SliderCarouselProps<T>) {
+//   const holderRef = useRef<HTMLDivElement>(null);
+//   const isJumpingRef = useRef(false);
+
+//   const isBrowser = typeof window !== "undefined";
+
+//   const [currentCols, setCurrentCols] = useState(columns);
+//   const [canScrollLeft, setCanScrollLeft] = useState(false);
+//   const [canScrollRight, setCanScrollRight] = useState(false);
+
+//   const finalData = infinite ? [...data, ...data, ...data] : data;
+//   const middleIndex = infinite ? data.length : 0;
+
+//   /* -----------------------------
+//      RESPONSIVE COLUMNS
+//   ----------------------------- */
+//   const updateColumns = () => {
+//     if (!isBrowser) return;
+
+//     const w = window.innerWidth;
+//     let newCols = columns;
+
+//     if (responsive) {
+//       if (w < 640 && responsive.sm) newCols = responsive.sm;
+//       else if (w < 768 && responsive.md) newCols = responsive.md;
+//       else if (w < 1024 && responsive.lg) newCols = responsive.lg;
+//       else if (w < 1280 && responsive.xl) newCols = responsive.xl;
+//     }
+
+//     setCurrentCols(newCols);
+//   };
+
+//   useEffect(() => {
+//     if (!isBrowser) return;
+
+//     updateColumns();
+//     window.addEventListener("resize", updateColumns);
+
+//     return () => window.removeEventListener("resize", updateColumns);
+//     // eslint-disable-next-line react-hooks/exhaustive-deps
+//   }, [columns, responsive]);
+
+//   /* -----------------------------
+//      UPDATE ARROWS (NON-INFINITE)
+//   ----------------------------- */
+//   const updateScrollButtons = () => {
+//     if (!holderRef.current || infinite) return;
+
+//     const { scrollLeft, scrollWidth, clientWidth } = holderRef.current;
+//     const maxScroll = scrollWidth - clientWidth;
+
+//     setCanScrollLeft(scrollLeft > 0);
+//     setCanScrollRight(scrollLeft < maxScroll - 1);
+//   };
+
+//   /* -----------------------------
+//      INFINITE SCROLL HANDLER
+//   ----------------------------- */
+//   const handleInfiniteScroll = () => {
+//     if (!holderRef.current || !infinite || isJumpingRef.current) return;
+
+//     const el = holderRef.current;
+//     const cardWidth = el.clientWidth / currentCols;
+//     const chunkWidth = cardWidth * data.length;
+
+//     // Jump forward
+//     if (el.scrollLeft < chunkWidth * 0.5) {
+//       isJumpingRef.current = true;
+//       const prev = el.style.scrollBehavior;
+
+//       el.style.scrollBehavior = "auto";
+//       el.scrollLeft += chunkWidth;
+//       el.offsetHeight;
+
+//       setTimeout(() => {
+//         el.style.scrollBehavior = prev || "";
+//         isJumpingRef.current = false;
+//       }, 0);
+//     }
+
+//     // Jump backward
+//     if (el.scrollLeft > chunkWidth * 1.5) {
+//       isJumpingRef.current = true;
+//       const prev = el.style.scrollBehavior;
+
+//       el.style.scrollBehavior = "auto";
+//       el.scrollLeft -= chunkWidth;
+//       el.offsetHeight;
+
+//       setTimeout(() => {
+//         el.style.scrollBehavior = prev || "";
+//         isJumpingRef.current = false;
+//       }, 0);
+//     }
+//   };
+
+//   /* -----------------------------
+//      EVENT LISTENERS
+//   ----------------------------- */
+//   useEffect(() => {
+//     if (!isBrowser) return;
+
+//     const el = holderRef.current;
+//     if (!el) return;
+
+//     updateScrollButtons();
+
+//     el.addEventListener("scroll", handleInfiniteScroll);
+//     el.addEventListener("scroll", updateScrollButtons);
+//     window.addEventListener("resize", updateScrollButtons);
+
+//     return () => {
+//       el.removeEventListener("scroll", handleInfiniteScroll);
+//       el.removeEventListener("scroll", updateScrollButtons);
+//       window.removeEventListener("resize", updateScrollButtons);
+//     };
+//     // eslint-disable-next-line react-hooks/exhaustive-deps
+//   }, [currentCols, infinite, data.length]);
+
+//   /* -----------------------------
+//      INITIAL INFINITE POSITION
+//   ----------------------------- */
+//   useEffect(() => {
+//     if (!isBrowser || !infinite || !holderRef.current) return;
+
+//     const el = holderRef.current;
+//     const prev = el.style.scrollBehavior;
+
+//     el.style.scrollBehavior = "auto";
+
+//     window.requestAnimationFrame(() => {
+//       const cardWidth = el.clientWidth / currentCols;
+//       el.scrollLeft = middleIndex * cardWidth;
+//       el.offsetHeight;
+
+//       setTimeout(() => {
+//         el.style.scrollBehavior = prev || "";
+//       }, 0);
+//     });
+//     // eslint-disable-next-line react-hooks/exhaustive-deps
+//   }, [currentCols, infinite, data.length]);
+
+//   /* -----------------------------
+//      SCROLL BY CARD
+//   ----------------------------- */
+//   const scrollByCard = (dir: "left" | "right") => {
+//     const el = holderRef.current;
+//     if (!el) return;
+
+//     const cardWidth = el.clientWidth / currentCols;
+//     const chunkWidth = cardWidth * data.length;
+
+//     if (infinite) {
+//       if (el.scrollLeft < chunkWidth * 0.5) el.scrollLeft += chunkWidth;
+//       if (el.scrollLeft > chunkWidth * 1.5) el.scrollLeft -= chunkWidth;
+//     }
+
+//     el.scrollBy({
+//       left: dir === "left" ? -cardWidth : cardWidth,
+//       behavior: "smooth",
+//     });
+//   };
+
+//   const showLeftArrow = infinite || canScrollLeft;
+//   const showRightArrow = infinite || canScrollRight;
+
+//   return (
+//     <div className={`relative w-full p-4 ${containerClass}`}>
+//       {showLeftArrow && (
+//         <button
+//           onClick={() => scrollByCard("left")}
+//           className="absolute left-0 z-10 p-2 bg-blue-500 hover:bg-blue-600 text-white rounded-full ml-6"
+//           aria-label="Scroll left"
+//         >
+//           <ChevronLeft />
+//         </button>
+//       )}
+
+//       <div
+//         ref={holderRef}
+//         className="flex overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory"
+//       >
+//         {finalData.map((item, i) => (
+//           <div
+//             key={i}
+//             className={`shrink-0 snap-start px-2 ${sliderCardClass}`}
+//             style={{ width: `${100 / currentCols}%` }}
+//           >
+//             {renderCard(item, i % data.length)}
+//           </div>
+//         ))}
+//       </div>
+
+//       {showRightArrow && (
+//         <button
+//           onClick={() => scrollByCard("right")}
+//           className="absolute right-0 z-10 p-2 bg-blue-500 hover:bg-blue-600 text-white rounded-full mr-6"
+//           aria-label="Scroll right"
+//         >
+//           <ChevronRight />
+//         </button>
+//       )}
+//     </div>
+//   );
+// }
+
+// export default SliderCarousel;
