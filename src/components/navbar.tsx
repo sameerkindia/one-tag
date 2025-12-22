@@ -504,7 +504,12 @@ function NavItem({ item, level = 1, t }: any) {
               level === 1
                 ? "left-0 min-w-[200px]"
                 : "left-full top-0 ml-2 min-w-[200px]"
-            } bg-background shadow-lg rounded-md p-2`}
+            } absolute right-0 mt-3.5 w-52 glass rounded-2xl shadow-xl border border-border/50 overflow-hidden backdrop-blur-xl z-50 p-4`}
+            // className={`absolute z-40 mt-2 ${
+            //   level === 1
+            //     ? "left-0 min-w-[200px]"
+            //     : "left-full top-0 ml-2 min-w-[200px]"
+            // } bg-background shadow-lg rounded-md p-2`}
             role="menu"
           >
             {item.subLinks.map((sub: any) => (

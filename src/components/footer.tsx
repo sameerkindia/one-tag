@@ -289,6 +289,18 @@ const footerText = {
   },
 };
 
+const copyrightText = {
+  en: {
+    text: "Copyright © 2025 Onetag LLC. All rights reserved.",
+  },
+  uz: {
+    text: "Mualliflik huquqi © 2025 Onetag MCHJ. Barcha huquqlar himoyalangan.",
+  },
+  ru: {
+    text: "Авторские права © 2025 Onetag ООО. Все права защищены. (Ru)",
+  },
+};
+
 export function Footer() {
   const { theme } = useTheme();
   const { language } = useLanguage();
@@ -342,7 +354,7 @@ export function Footer() {
             <div className="flex items-center gap-3 my-4">
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=info@onetag.uz&su=Hello%20OneTag"
-                className={`flex items-center gap-2 text-md font-light !transition-all duration-300 cursor-pointer ${
+                className={`flex items-center gap-2 text-md font-light transition-all duration-300 cursor-pointer ${
                   theme === "dark"
                     ? "text-gray-400 hover:text-gray-200"
                     : "text-gray-600 hover:text-gray-900"
@@ -365,7 +377,7 @@ export function Footer() {
               </a>
               <a
                 href="tel:+998999178111"
-                className={`flex items-center gap-2 text-md font-light !transition-all duration-300 cursor-pointer ${
+                className={`flex items-center gap-2 text-md font-light transition-all duration-300 cursor-pointer ${
                   theme === "dark"
                     ? "text-gray-400 hover:text-gray-200"
                     : "text-gray-600 hover:text-gray-900"
@@ -510,8 +522,12 @@ export function Footer() {
                 : "text-gray-600 hover:text-gray-900"
             }`}
           >
-            Copyright © {new Date().getFullYear()} Onetag LLC. All rights
-            reserved.
+            {language === "en"
+              ? `Copyright © ${new Date().getFullYear()} Onetag LLC. All rights
+            reserved.`
+              : language === "ru"
+              ? `Авторские права © ${new Date().getFullYear()} Onetag ООО. Все права защищены.`
+              : `Mualliflik huquqi © ${new Date().getFullYear()} Onetag MCHJ. Barcha huquqlar himoyalangan.`}
           </p>
         </div>
       </div>
