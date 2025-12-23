@@ -3,8 +3,9 @@ import Image from "next/image";
 import React from "react";
 import { FadeAnimation } from "../motion-animations/FadeAnimation";
 import { useLanguage } from "../contexts/language-context";
+import SubHeading from "./SubHeading";
 
-const se = {
+const sassSection = {
   en: {
     esl: {
       heading: "What is an Electronic Shelf Label (ESL)?",
@@ -38,19 +39,20 @@ const se = {
 };
 
 function SaasSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   return (
     <section className="py-16 2md:py-20">
       <div className="container mx-auto px-4 max-w-7xl relative">
         <FadeAnimation
           direction="up"
           staggerChildren={0.5}
-          className="flex flex-col items-center gap-6 gap-y-16"
+          className="flex flex-col items-center gap-6 gap-y-10 3md:gap-y-16"
         >
           <div className="grid sm:grid-cols-2 justify-between items-center gap-8">
             <div>
-              <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-600 dark:text-gray-300">
-                {t("ElectronicShelfLabel")}
+              <SubHeading headingText={sassSection[language].esl.heading} lastIndex={3} customHeadingClass="!leading-[1.3] !text-[26px] 3md:!text-[28px] xxl:!text-3xl !mb-4 2lg:!mb-6 text-pretty" />
+              <p className="text-base 2md:text-lg 2lg:text-xl leading-relaxed text-gray-600 dark:text-gray-300">
+                {sassSection[language].esl.description}
               </p>
             </div>
 
@@ -69,8 +71,9 @@ function SaasSection() {
 
           <div className="grid sm:grid-cols-2 justify-between items-center gap-8">
             <div className="sm:order-1">
-              <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-600 dark:text-gray-300">
-                {t("CloudeArchitecture")}
+              <SubHeading headingText={sassSection[language].smartRetail.heading} lastIndex={2} customHeadingClass="!leading-[1.3] !text-[26px] 3md:!text-[28px] xxl:!text-3xl !mb-4 2lg:!mb-6 text-pretty" />
+              <p className="text-base 2md:text-lg 2lg:text-xl leading-relaxed text-gray-600 dark:text-gray-300">
+                {sassSection[language].smartRetail.description}
               </p>
             </div>
 

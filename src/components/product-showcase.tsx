@@ -256,6 +256,22 @@ import { Sparkles } from "lucide-react";
 import { FadeAnimation } from "../motion-animations/FadeAnimation";
 import { useLanguage } from "../contexts/language-context";
 import AnimationText from "./Animation-text";
+import SubHeading from "./SubHeading";
+
+const productsText = {
+  en: {
+    title: `Our Product Line`,
+    description: `Choose the perfect smart tag for your retail needs`
+  },
+  uz: {
+    title: `Mahsulotlarimiz liniyasi`,
+    description: `Chakana savdo ehtiyojlaringiz uchun mukammal aqlli narx belgisini tanlang`
+  },
+  ru: {
+    title: `Наша линейка продуктов`,
+    description: `Выберите идеальный умный ценник для нужд вашего магазина.`
+  },
+}
 
 const products = [
   {
@@ -282,7 +298,7 @@ const products = [
 ];
 
 export function ProductShowcase() {
-  const {t} = useLanguage()
+  const {t, language} = useLanguage()
   return (
     <section className="py-16 2md:py-20 relative overflow-hidden">
       {/* Background ambient motion */}
@@ -314,7 +330,7 @@ export function ProductShowcase() {
           staggerChildren={0.3}
           className="text-center mb-10 2md:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold max-w-3xl mx-auto mb-6">
+          {/* <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold max-w-3xl mx-auto mb-6">
             <AnimationText>
               {t("ourProduct").split(" ").slice(0,1)}
             </AnimationText>
@@ -322,9 +338,10 @@ export function ProductShowcase() {
             <span className="bg-linear-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
               {t("ourProduct").split(" ").slice(1).join(" ")}
             </span>
-          </h2>
+          </h2> */}
+          <SubHeading headingText={productsText[language].title} lastIndex={1} />
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-             {t("ourProductText")}
+             {productsText[language].description}
           </p>
         </FadeAnimation>
 
@@ -337,7 +354,7 @@ export function ProductShowcase() {
           {products.map((product, index) => (
             <div
               key={product.name}
-              className={`flex flex-col group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl bg-white/5 backdrop-blur-md border border-white/10 !transition-all duration-300 hover:-translate-y-1.5 cursor-pointer h-full ${index === products.length -1 ? 'sm:col-span-2 3md:col-span-1' : ''}`}
+              className={`flex flex-col group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl bg-white/5 backdrop-blur-md border border-white/10 transition-all duration-300 hover:-translate-y-1.5 cursor-pointer h-full ${index === products.length -1 ? 'sm:col-span-2 3md:col-span-1' : ''}`}
             >
               {/* Hover overlay */}
               <motion.div
