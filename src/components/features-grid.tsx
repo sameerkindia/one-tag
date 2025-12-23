@@ -172,7 +172,7 @@ export function FeaturesGrid() {
           {features.map((feature, index) => (
             <div
               key={feature.translations[language].title}
-              className="group relative h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 xl:p-8 shadow-xl hover:shadow-2xl !transition-all duration-500 overflow-hidden cursor-pointer hover:-translate-y-2.5 hover:scale-105 max-sm:text-center"
+              className="group relative h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 xl:p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer hover:-translate-y-2.5 hover:scale-105 max-sm:text-center"
             >
               {/* linear overlay */}
               <div
