@@ -45,6 +45,7 @@ import SaasSection from "../components/saas-section";
 import VideoSection from "../components/video-section";
 import BrandMarquee from "../components/brand-marquee";
 import dynamic from "next/dynamic";
+import GradientBackground from "../motion-animations/GradientBackground";
 // import FloatingParticles from "../components/FloatingParticles";
 
 const FloatingParticles = dynamic(() => import("../components/FloatingParticles"), {
@@ -62,8 +63,8 @@ export default function Home() {
 
   return (
     <div className="relative overflow-hidden">
-      {/* 🌌 Animated gradient background */}
-      <motion.div
+      {/* Animated gradient background */}
+      {/* <motion.div
         animate={{
           background:
             theme === "dark"
@@ -82,12 +83,14 @@ export default function Home() {
           ease: "easeInOut",
         }}
         className="fixed inset-0 -z-10 bg-size-[200%_200%] bg-linear-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"
-      />
+      /> */}
 
-      {/* ✨ Floating 3D Particles (only after client render) */}
+      <GradientBackground />
+
+      {/* Floating 3D Particles (only after client render) */}
       <FloatingParticles /> 
 
-      {/* 🧩 Content Sections */}
+      {/* Content Sections */}
       <Hero />
       <SaasSection />
       <VideoSection />
