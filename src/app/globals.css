@@ -465,7 +465,3 @@ xl	80rem (1280px)	@media (width >= 80rem) { ... }
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function) /* cubic-bezier(0.4, 0, 0.2, 1) */) !important;
     transition-duration: var(--tw-duration, var(--default-transition-duration) /* 150ms */) !important;
 }
-
-/* .sub-heading {
-  @apply text-base! md:text-lg! lg:text-xl! 2lg:text-2xl! ;
-} */
