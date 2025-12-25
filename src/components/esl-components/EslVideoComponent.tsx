@@ -1,4 +1,5 @@
 import React from "react";
+import SubHeading from "../SubHeading";
 
 type EslVideoComponent = {
   videoData: { title: string; description: string; cta?: string };
@@ -9,32 +10,32 @@ function EslVideoComponent({ videoData, videoId }: EslVideoComponent) {
   return (
     <section className="py-14">
       <div className="container mx-auto px-4 max-w-7xl relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div>
-            {/* <h2 className="text-xl font-semibold">Product Video</h2> */}
-            <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold">
-              {videoData.title}
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-600 dark:text-gray-300 my-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 3md:gap-8 items-center">
+          <div className="order-1 md:order-0">
+            <SubHeading headingText={videoData.title} lastIndex={3} customHeadingClass="!hidden md:!block !leading-[1.3] !text-[26px] 3md:!text-[28px] xxl:!text-3xl !mb-2.5 2lg:!mb-4 2xl:!mb-6 text-pretty"  />
+            <p className="text-base 2lg:text-lg xxl:text-xl leading-relaxed text-gray-600 dark:text-gray-300 mb-5 2xl:mb-6 text-pretty">
               {videoData.description}
             </p>
 
             {videoData.cta && (
               <a
                 href="/"
-                className="inline-block mt-4 px-6 py-3 border-2 hover:bg-blue-700 border-blue-600 dark:border-white dark:hover:bg-white text-blue-600 dark:text-white hover:text-white dark:hover:text-black rounded-lg transition-all duration-300 min-w-[170px] cursor-pointer"
+                className="inline-block px-6 py-3 border-2 hover:bg-blue-700 border-blue-600 dark:border-white dark:hover:bg-white text-blue-600 dark:text-white hover:text-white dark:hover:text-black rounded-lg transition-all duration-300 min-w-[170px] cursor-pointer"
               >
                 {videoData.cta}
               </a>
             )}
           </div>
 
-          <div className="w-full aspect-video rounded-xl overflow-hidden">
-            <figure className="flex h-full w-full">
+          <div className="mb-4 md:mb-0">
+            <SubHeading headingText={videoData.title} lastIndex={3} customHeadingClass="!block md:!hidden !leading-[1.3] !text-[20px] sm:!text-[26px] 3md:!text-[28px] xxl:!text-3xl !mb-4 md:!mb-2.5 2lg:!mb-4 2xl:!mb-6 text-pretty" />
+          <div className="w-full px-4 md:px-0">
+            <figure className="flex h-full w-full rounded-xl overflow-hidden">
               <video autoPlay muted loop>
                 <source src="/tag-video.mp4" type="video/mp4"></source>
               </video>
             </figure>
+          </div>
           </div>
 
             {/* YouTube embed */}
