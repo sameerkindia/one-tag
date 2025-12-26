@@ -349,7 +349,7 @@ export function ProductShowcase() {
         <FadeAnimation
           direction="up"
           staggerChildren={0.5}
-          className="grid sm:grid-cols-2 3md:!grid-cols-3 gap-6 xl:gap-10"
+          className="grid sm:grid-cols-2 3md:grid-cols-3! gap-6 xl:gap-10"
         >
           {products.map((product, index) => (
             <div
