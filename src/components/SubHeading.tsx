@@ -5,18 +5,28 @@ type SubHeading = {
   headingText: string;
   firstIndex?: number;
   lastIndex: number;
-  customHeadingClass? : string;
-}
+  customHeadingClass?: string;
+  textSize?: "sm" | "md" | "lg";
+};
 
 function SubHeading({
   headingText,
   firstIndex = 0,
   lastIndex,
-  customHeadingClass=""
+  customHeadingClass = "",
+  textSize='lg',
 }: SubHeading) {
   return (
     <>
-      <h2 className={`text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold max-w-3xl mx-auto mb-6 ${customHeadingClass}`}>
+      <h2
+        className={`font-bold mx-auto mb-6 ${
+          textSize === "lg"
+            ? "text-3xl md:text-4xl lg:text-[45px] xl:text-[50px]"
+            : textSize === "md"
+            ? "leading-[1.3] text-[26px] 3md:text-[28px] xxl:text-3xl"
+            : ""
+        } ${customHeadingClass}`}
+      >
         <AnimationText>
           {headingText.split(" ").slice(firstIndex, lastIndex).join(" ")}{" "}
         </AnimationText>
