@@ -21,7 +21,7 @@ function SubHeading({
       <h2
         className={`font-bold mx-auto mb-6 ${
           textSize === "lg"
-            ? "text-3xl md:text-4xl lg:text-[45px] xl:text-[50px]"
+            ? "text-3xl md:text-4xl 2lg:text-[40px] xxl:text-[42px] 2xl:text-[46px] 3xl:text-[50px]"
             : textSize === "md"
             ? "leading-[1.3] text-[26px] 3md:text-[28px] xxl:text-3xl"
             : ""
