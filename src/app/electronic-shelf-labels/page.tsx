@@ -10,6 +10,9 @@ import EslVerticalTab from "@/src/components/esl-components/EslVerticalTab";
 import EslCarousel from "@/src/components/esl-components/EslCarousel";
 import SliderCarousel from "@/src/components/SliderCarousel";
 import InfiniteMarquee from "@/src/components/InfiniteRunningMarquee";
+import GradientBackground from "@/src/motion-animations/GradientBackground";
+import FloatingParticles from "@/src/components/FloatingParticles";
+import SubHeading from "@/src/components/SubHeading";
 
 const hero = {
   en: {
@@ -2623,17 +2626,21 @@ export default function ZkongShieldRebuilt() {
   /* ---------------- Render ---------------- */
 
   return (
-    <div className="w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+    <div className="w-full text-gray-900 dark:text-white">
       {/* ---------- 1. Hero Banner ---------- */}
+      <GradientBackground />
+      <FloatingParticles />
+      
       <EslBanner hero={hero[language]} />
       <EslVideoComponent videoData={videoData[language]} />
 
-      <section className="py-12">
+      <section className="secondary-background py-20">
         <div className="container mx-auto px-4 max-w-7xl relative">
-          <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-center mb-6">
+          <SubHeading headingText={eslFunctionSection[language].title} lastIndex={3} customHeadingClass="text-center mb-12" />
+          {/* <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-center mb-6">
             {eslFunctionSection[language].title}
-          </h2>
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow p-4">
+          </h2> */}
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow p-4 mb-8">
             <EslVerticalTab featureData={eslFunctionSection[language].data1} />
           </div>
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow p-4">
@@ -2645,11 +2652,12 @@ export default function ZkongShieldRebuilt() {
         </div>
       </section>
 
-      <section className="py-12">
+      <section className="py-20">
         <div className="container mx-auto px-4 max-w-7xl relative">
-          <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-center mb-6">
+          <SubHeading headingText={modalsSection[language].title} lastIndex={3} customHeadingClass="text-center mb-12 text-pretty" />
+          {/* <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-center mb-6">
             {modalsSection[language].title}
-          </h2>
+          </h2> */}
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow p-4">
             <div className="flex border-b border-gray-200 mb-8">
               {modalsSection[language].allModels.map((tab) => (
@@ -2674,6 +2682,194 @@ export default function ZkongShieldRebuilt() {
           </div>
         </div>
       </section>
+
+      <section className="secondary-background py-20">
+        <div className="container mx-auto px-4 max-w-7xl relative w-full flex items-center justify-center p-10 bg-cover bg-center">
+          <div className="relative flex w-full aspect-5/2 overflow-hidden rounded">
+            <Image
+              src={"/ESL/zkong-electronic-shelf-labels-advantage.webp"}
+              alt="zkong-electronic-shelf-labels-advantage"
+              fill
+            />
+
+            {advantagesSection[language].cards.map((item, index) => {
+              const current = hover ?? active; // single source of truth for visuals
+              const isCurrent = index === current;
+
+              return (
+                <div
+                  key={index}
+                  onMouseEnter={() => setHover(index)}
+                  onMouseLeave={() => setHover(null)} // clear hover, DON'T set active here
+                  onClick={() => setActive(index)} // set active only on click
+                  className={`relative flex items-center justify-center
+          transition-all duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] cursor-pointer
+          ${getWidth(index)} ${isCurrent ? "bg-white" : "bg-transparent"}`}
+                >
+                  <span
+                    className={`size-6 bg-white rounded-full text-base font-bold transition-colors duration-300 text-black text-center
+                    ${isCurrent ? "hidden" : "block"}`}
+                  >
+                    {index + 1}
+                  </span>
+
+                  {/* Extra text appears when current (hover or active) */}
+                  <div
+                    className={`absolute bottom-4 flex flex-col items-center justify-center w-full text-lg font-medium transition-opacity duration-300 p-4 text-center h-full overflow-hidden
+                    ${isCurrent ? "opacity-100 text-gray-500" : "opacity-0"}`}
+                  >
+                    <h6 className="font-semibold">{item.title}</h6>
+                    <p className="font-normal">{item.description}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 overflow-hidden">
+        <div className="relative max-w-7xl mx-auto px-6 text-center">
+          <SubHeading headingText={whyChooseSection[language].heading} lastIndex={2} />
+          {/* <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+            {whyChooseSection[language].heading}
+          </h2> */}
+          <p className="text-base 2lg:text-lg xxl:text-xl leading-relaxed text-slate-600 dark:text-blue-200 mb-2">
+            {whyChooseSection[language].subheading}
+          </p>
+          <p className="text-base 2lg:text-lg xxl:text-xl leading-relaxed text-slate-600 dark:text-gray-300 mb-16 max-w-3xl mx-auto">
+            {whyChooseSection[language].description}
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {whyChooseSection[language].cards.map((card, i) => (
+              <div
+                key={i}
+                className="relative bg-white dark:bg-white/5 backdrop-blur border border-slate-200 dark:border-white/10 rounded-xl p-6 text-left hover:bg-slate-50 dark:hover:bg-white/10 transition"
+              >
+                <card.icon className="w-8 h-8 mb-4 text-blue-600 dark:text-blue-400" />
+                <h3 className="text-lg font-semibold mb-3">{card.title}</h3>
+                <p className="text-sm text-slate-600 dark:text-gray-300 leading-relaxed">
+                  {card.text}
+                </p>
+                <div className="absolute bottom-4 right-6 text-xl text-slate-400 dark:text-white/40">
+                  {card.index}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="secondary-background relative w-full py-24">
+        <div className="container mx-auto px-4 max-w-7xl relative w-full">
+          <div className="text-center">
+            <SubHeading headingText={eslSystemSection[language].title} lastIndex={3} />
+            {/* <h2 className="text-3xl font-semibold text-slate-600 dark:text-blue-200 md:text-4xl">
+              {eslSystemSection[language].title}
+            </h2> */}
+            <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-blue-200 md:text-base">
+              {eslSystemSection[language].description}
+            </p>
+          </div>
+
+          {/* Cards */}
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
+            {eslSystemSection[language].cards.map((card) => (
+              <div
+                key={card.id}
+                className="rounded-2xl bg-white p-8 shadow-lg dark:bg-white/5 dark:backdrop-blur"
+              >
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  {card.heading}
+                </h3>
+                <div className="mt-3 h-px w-full bg-slate-200 dark:bg-white/10" />
+                <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                  {card.data.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-blue-400" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 max-w-7xl relative w-full mt-24">
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-slate-600 dark:text-blue-200 md:text-4xl">
+              {gallerysection[language].title}
+            </h2>
+          </div>
+
+          <InfiniteMarquee />
+        </div>
+      </section>
+
+      {/* <section className="secondary-background relative w-full py-24">
+        <div className="container mx-auto px-4 max-w-7xl relative w-full">
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-slate-600 dark:text-blue-200 md:text-4xl">
+              {gallerysection[language].title}
+            </h2>
+          </div>
+
+          <InfiniteMarquee />
+        </div>
+      </section> */}
+
+      <section className="relative w-full py-24">
+        <div className="container mx-auto px-4 max-w-7xl relative w-full">
+          <div className="mb-6 text-center">
+            <SubHeading headingText={carouselData[language].title} lastIndex={3} />
+            {/* <h2 className="text-2xl font-semibold text-center mb-4">
+              {carouselData[language].title}
+            </h2> */}
+            <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-blue-200 md:text-base">
+              {carouselData[language].description1}
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-blue-200 md:text-base">
+              {carouselData[language].description2}
+            </p>
+          </div>
+          <SliderCarousel
+            data={carouselData[language].imageData}
+            renderCard={(item, i) => (
+              <div className="group relative h-[500px] rounded-lg flex flex-col items-center justify-center overflow-hidden shadow-lg">
+                <Image
+                  src={item.src}
+                  alt={item.name}
+                  fill
+                  className="opacity-75"
+                />
+                <div className="z-1 flex flex-col justify-between h-full w-full">
+                  <div className="bg-white dark:bg-slate-700 h-1/2 w-full p-2 opacity-0 group-hover:opacity-100">
+                    <p className="text-slate-600 dark:text-slate-300 select-none">
+                      {item.description}
+                    </p>
+                  </div>
+                  <h3
+                    className="font-bold p-4 text-right text-white
+                  "
+                  >
+                    {item.name}
+                  </h3>
+                </div>
+              </div>
+            )}
+            columns={3}
+            infinite
+          />
+        </div>
+      </section>
+    </div>
+  );
+}
+
+
+
 
       {/* ---------- 3. Horizontal Tabs (Models) ---------- */}
       {/* <section className="max-w-7xl mx-auto px-6 py-12">
@@ -2909,177 +3105,8 @@ export default function ZkongShieldRebuilt() {
         </div>
       </section> */}
 
-      <section className="py-12">
-        <div className="container mx-auto px-4 max-w-7xl relative w-full flex items-center justify-center p-10 bg-cover bg-center">
-          <div className="relative flex w-full aspect-5/2 overflow-hidden rounded">
-            <Image
-              src={"/ESL/zkong-electronic-shelf-labels-advantage.webp"}
-              alt="zkong-electronic-shelf-labels-advantage"
-              fill
-            />
 
-            {advantagesSection[language].cards.map((item, index) => {
-              const current = hover ?? active; // single source of truth for visuals
-              const isCurrent = index === current;
-
-              return (
-                <div
-                  key={index}
-                  onMouseEnter={() => setHover(index)}
-                  onMouseLeave={() => setHover(null)} // clear hover, DON'T set active here
-                  onClick={() => setActive(index)} // set active only on click
-                  className={`relative flex items-center justify-center
-          transition-all duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] cursor-pointer
-          ${getWidth(index)} ${isCurrent ? "bg-white" : "bg-transparent"}`}
-                >
-                  <span
-                    className={`size-6 bg-white rounded-full text-base font-bold transition-colors duration-300 text-black text-center
-                    ${isCurrent ? "hidden" : "block"}`}
-                  >
-                    {index + 1}
-                  </span>
-
-                  {/* Extra text appears when current (hover or active) */}
-                  <div
-                    className={`absolute bottom-4 flex flex-col items-center justify-center w-full text-lg font-medium transition-opacity duration-300 p-4 text-center h-full overflow-hidden
-                    ${isCurrent ? "opacity-100 text-gray-500" : "opacity-0"}`}
-                  >
-                    <h6 className="font-semibold">{item.title}</h6>
-                    <p className="font-normal">{item.description}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative py-24 bg-linear-to-b from-slate-100 to-white dark:from-[#0b1320] dark:to-[#020617] text-slate-900 dark:text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-            {whyChooseSection[language].heading}
-          </h2>
-          <p className="text-sm text-slate-600 dark:text-blue-200 mb-2">
-            {whyChooseSection[language].subheading}
-          </p>
-          <p className="max-w-3xl mx-auto text-sm text-slate-600 dark:text-gray-300 mb-16">
-            {whyChooseSection[language].description}
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyChooseSection[language].cards.map((card, i) => (
-              <div
-                key={i}
-                className="relative bg-white dark:bg-white/5 backdrop-blur border border-slate-200 dark:border-white/10 rounded-xl p-6 text-left hover:bg-slate-50 dark:hover:bg-white/10 transition"
-              >
-                <card.icon className="w-8 h-8 mb-4 text-blue-600 dark:text-blue-400" />
-                <h3 className="text-lg font-semibold mb-3">{card.title}</h3>
-                <p className="text-sm text-slate-600 dark:text-gray-300 leading-relaxed">
-                  {card.text}
-                </p>
-                <div className="absolute bottom-4 right-6 text-xl text-slate-400 dark:text-white/40">
-                  {card.index}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative w-full py-24">
-        <div className="container mx-auto px-4 max-w-7xl relative w-full">
-          <div className="text-center">
-            <h2 className="text-3xl font-semibold text-slate-600 dark:text-blue-200 md:text-4xl">
-              {eslSystemSection[language].title}
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-blue-200 md:text-base">
-              {eslSystemSection[language].description}
-            </p>
-          </div>
-
-          {/* Cards */}
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
-            {eslSystemSection[language].cards.map((card) => (
-              <div
-                key={card.id}
-                className="rounded-2xl bg-white p-8 shadow-lg dark:bg-white/5 dark:backdrop-blur"
-              >
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                  {card.heading}
-                </h3>
-                <div className="mt-3 h-px w-full bg-slate-200 dark:bg-white/10" />
-                <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                  {card.data.map((item, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-blue-400" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative w-full py-24">
-        <div className="container mx-auto px-4 max-w-7xl relative w-full">
-          <div className="text-center">
-            <h2 className="text-3xl font-semibold text-slate-600 dark:text-blue-200 md:text-4xl">
-              {gallerysection[language].title}
-            </h2>
-          </div>
-
-          <InfiniteMarquee />
-        </div>
-      </section>
-
-      <section className="relative w-full py-24">
-        <div className="container mx-auto px-4 max-w-7xl relative w-full">
-          <div className="mb-6 text-center">
-            <h2 className="text-2xl font-semibold text-center mb-4">
-              {carouselData[language].title}
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-blue-200 md:text-base">
-              {carouselData[language].description1}
-            </p>
-            <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-blue-200 md:text-base">
-              {carouselData[language].description2}
-            </p>
-          </div>
-          <SliderCarousel
-            data={carouselData[language].imageData}
-            renderCard={(item, i) => (
-              <div className="group relative h-[500px] rounded-lg flex flex-col items-center justify-center overflow-hidden shadow-lg">
-                <Image
-                  src={item.src}
-                  alt={item.name}
-                  fill
-                  className="opacity-75"
-                />
-                <div className="z-1 flex flex-col justify-between h-full w-full">
-                  <div className="bg-white dark:bg-slate-700 h-1/2 w-full p-2 opacity-0 group-hover:opacity-100">
-                    <p className="text-slate-600 dark:text-slate-300 select-none">
-                      {item.description}
-                    </p>
-                  </div>
-                  <h3
-                    className="font-bold p-4 text-right text-white
-                  
-                  "
-                  >
-                    {item.name}
-                  </h3>
-                </div>
-              </div>
-            )}
-            columns={3}
-            infinite
-          />
-        </div>
-      </section>
-
-      {/* ---------- 5. Text Left / Image Right ---------- */}
+            {/* ---------- 5. Text Left / Image Right ---------- */}
       {/* <section className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
@@ -3247,6 +3274,3 @@ export default function ZkongShieldRebuilt() {
           ))}
         </div>
       </section> */}
-    </div>
-  );
-}
