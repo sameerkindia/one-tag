@@ -86,7 +86,7 @@ export default function InfiniteMarquee() {
   };
 
   return (
-    <div className="w-full overflow-hidden py-8 sm:py-10">
+    <div className="w-full overflow-hidden pt-8 sm:pt-10">
       {/* Marquee */}
       <div className="relative">
         <div
