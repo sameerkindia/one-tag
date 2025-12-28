@@ -70,7 +70,7 @@ xl	80rem (1280px)	@media (width >= 80rem) { ... }
   --breakpoint-sm: 640px;
   --breakpoint-mmd: 767px;
   --breakpoint-md: 768px;
-  --breakpoint-2md: 780px;
+  --breakpoint-2md: 800px;
   --breakpoint-3md: 992px;
   --breakpoint-lg: 1024px;
   --breakpoint-2lg: 1100px;
