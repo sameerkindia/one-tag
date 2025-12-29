@@ -2684,7 +2684,7 @@ export default function ZkongShieldRebuilt() {
       </section>
 
       <section className="secondary-background py-20">
-        <div className="container mx-auto px-4 max-w-7xl relative w-full flex items-center justify-center p-10 bg-cover bg-center">
+        <div className="container mx-auto px-4 max-w-7xl relative w-full flex items-center justify-center bg-cover bg-center">
           <div className="relative flex w-full aspect-5/2 overflow-hidden rounded">
             <Image
               src={"/ESL/zkong-electronic-shelf-labels-advantage.webp"}
@@ -2715,7 +2715,7 @@ export default function ZkongShieldRebuilt() {
 
                   {/* Extra text appears when current (hover or active) */}
                   <div
-                    className={`absolute bottom-4 flex flex-col items-center justify-center w-full text-lg font-medium transition-opacity duration-300 p-4 text-center h-full overflow-hidden
+                    className={`absolute bottom-4 flex flex-col items-center justify-center w-full text-base 2lg:text-lg font-medium transition-opacity duration-300 p-4 text-center h-full overflow-hidden
                     ${isCurrent ? "opacity-100 text-gray-500" : "opacity-0"}`}
                   >
                     <h6 className="font-semibold">{item.title}</h6>
@@ -2728,7 +2728,7 @@ export default function ZkongShieldRebuilt() {
         </div>
       </section>
 
-      <section className="py-24 overflow-hidden">
+      <section className="py-20 overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-6 text-center">
           <SubHeading headingText={whyChooseSection[language].heading} lastIndex={2} />
           {/* <h2 className="text-3xl md:text-4xl font-semibold mb-4">
@@ -2741,14 +2741,14 @@ export default function ZkongShieldRebuilt() {
             {whyChooseSection[language].description}
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 2lg:gap-6">
             {whyChooseSection[language].cards.map((card, i) => (
               <div
                 key={i}
-                className="relative bg-white dark:bg-white/5 backdrop-blur border border-slate-200 dark:border-white/10 rounded-xl p-6 text-left hover:bg-slate-50 dark:hover:bg-white/10 transition"
+                className="relative bg-white dark:bg-white/5 backdrop-blur border border-slate-200 dark:border-white/10 rounded-xl px-4 2lg:px-6 py-6 text-left hover:bg-slate-50 dark:hover:bg-white/10 transition"
               >
                 <card.icon className="w-8 h-8 mb-4 text-blue-600 dark:text-blue-400" />
-                <h3 className="text-lg font-semibold mb-3">{card.title}</h3>
+                <h3 className="text-base 2lg:text-lg font-semibold mb-3">{card.title}</h3>
                 <p className="text-sm text-slate-600 dark:text-gray-300 leading-relaxed">
                   {card.text}
                 </p>
@@ -2761,7 +2761,7 @@ export default function ZkongShieldRebuilt() {
         </div>
       </section>
 
-      <section className="secondary-background relative w-full py-24">
+      <section className="secondary-background relative w-full py-20">
         <div className="container mx-auto px-4 max-w-7xl relative w-full">
           <div className="text-center">
             <SubHeading headingText={eslSystemSection[language].title} lastIndex={3} />
@@ -2799,7 +2799,7 @@ export default function ZkongShieldRebuilt() {
 
         <div className="container mx-auto px-4 max-w-7xl relative w-full mt-24">
           <div className="text-center">
-            <h2 className="text-3xl font-semibold text-slate-600 dark:text-blue-200 md:text-4xl">
+            <h2 className="text-3xl 2lg:text-4xl font-semibold text-slate-600 dark:text-blue-200">
               {gallerysection[language].title}
             </h2>
           </div>
