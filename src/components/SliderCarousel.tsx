@@ -50,7 +50,7 @@ function SliderCarousel<T>({
     if (responsive) {
       if (w < 640 && responsive.sm) newCols = responsive.sm;
       else if (w < 768 && responsive.md) newCols = responsive.md;
-      else if (w < 1024 && responsive.lg) newCols = responsive.lg;
+      else if (w < 1000 && responsive.lg) newCols = responsive.lg;
       else if (w < 1280 && responsive.xl) newCols = responsive.xl;
       else newCols = columns;
     }
