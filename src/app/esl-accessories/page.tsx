@@ -1090,7 +1090,7 @@ export default function ESLAccessoriesPage() {
       <GradientBackground />
       <FloatingParticles />
       {/* HERO SECTION */}
-      <section className="relative w-full min-h-[35vw] flex items-center justify-center bg-linear-to-r from-gray-200 to-gray-500 dark:from-gray-800 dark:to-gray-700 overflow-hidden">
+      <section className="relative w-full min-h-[35vw] flex items-center justify-center bg-linear-to-r from-gray-200 to-gray-500 dark:from-gray-800 dark:to-gray-700 overflow-hidden py-28">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -left-20 -top-32 w-96 h-96 rounded-full blur-3xl bg-linear-to-br from-blue-200/30 to-purple-300/30 dark:from-blue-900/20 dark:to-purple-900/20"></div>
         </div>

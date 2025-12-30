@@ -25,6 +25,12 @@ import { AccessibilityToolbar } from "./accessibility-toolbar";
 //   { href: "/contact", label: "nav.contact" },
 // ];
 
+// subLinks: [
+//   { href: "/esl-shield-series", label: "nav.ShieldSeriesESL" },
+//   { href: "/valley-series-ESL", label: "nav.ValleySeriesESL" },
+//   { href: "/essence-series-ESL", label: "nav.EssenceSeriesESL" },
+// ],
+
 const navLinks = [
   {
     href: "/solutions",
@@ -33,11 +39,6 @@ const navLinks = [
       {
         href: "/electronic-shelf-labels",
         label: "nav.electronicShelfLabels",
-        // subLinks: [
-        //   { href: "/esl-shield-series", label: "nav.ShieldSeriesESL" },
-        //   { href: "/valley-series-ESL", label: "nav.ValleySeriesESL" },
-        //   { href: "/essence-series-ESL", label: "nav.EssenceSeriesESL" },
-        // ],
       },
       { href: "/esl-cloud-platform", label: "nav.ESLCloudPlatform" },
       { href: "/esl-accessories", label: "nav.eslAccessories" },
@@ -205,7 +206,13 @@ export function Navbar() {
               </Link>
             ))} */}
             {navLinks.map((item) => (
-              <NavItem key={item.href} item={item} t={t} />
+              <NavItem
+                key={item.href}
+                item={item}
+                t={t}
+                scrolled={scrolled}
+                theme={theme}
+              />
             ))}
 
             <div className="flex items-center gap-2">
@@ -360,17 +367,17 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            className={`md:hidden glass backdrop-blur-md !border-t-0 border-border/50 rounded-b-sm mx-4 ${
+            className={`md:hidden glass backdrop-blur-md border-t-0! border-border/50 rounded-b-sm mx-4 ${
               theme === "dark" ? "bg-gray-900/80" : "bg-white/70"
             }`}
           >
-            <div className="container mx-auto px-6 py-6 space-y-4">
-              {navLinks.map((link) => (
+            <div className="container mx-auto px-6 pt-2 pb-6 space-y-2.5">
+              {/* {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`block py-2 text-lg font-medium transition-colors duration-300 ${
+                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
                     pathname === link.href
                       ? "text-primary"
                       : "text-foreground/70 hover:text-foreground"
@@ -378,7 +385,46 @@ export function Navbar() {
                 >
                   {t(link.label)}
                 </Link>
-              ))}
+              ))} */}
+
+              <ul>
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                        pathname === link.href
+                          ? "text-primary"
+                          : "text-foreground/70 hover:text-foreground"
+                      }`}
+                    >
+                      {t(link.label)}
+                    </Link>
+
+                    {/* Render subLinks if they exist */}
+                    {link.subLinks && (
+                      <ul className="ml-2">
+                        {link.subLinks.map((subLink) => (
+                          <li key={subLink.href}>
+                            <Link
+                              href={subLink.href}
+                              onClick={() => setIsOpen(false)}
+                              className={`block py-1 text-sm transition-colors duration-300 ${
+                                pathname === subLink.href
+                                  ? "text-primary"
+                                  : "text-foreground/70 hover:text-foreground"
+                              }`}
+                            >
+                              {t(subLink.label)}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
 
               {/* Theme + Language Switcher */}
               <div className="flex items-center justify-between pt-4 border-t border-border/40">
@@ -438,7 +484,7 @@ export function Navbar() {
   );
 }
 
-function NavItem({ item, level = 1, t }: any) {
+function NavItem({ item, level = 1, t, scrolled, theme }: any) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const hasSub = Array.isArray(item?.subLinks) && item.subLinks.length > 0;
@@ -472,7 +518,9 @@ function NavItem({ item, level = 1, t }: any) {
         {hasSub && (
           <span
             aria-hidden
-            className={`!transition-all duration-300 ${open ? "rotate-180" : ""}`}
+            className={`transition-all! duration-300 ${
+              open ? "rotate-180" : ""
+            }`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -504,7 +552,13 @@ function NavItem({ item, level = 1, t }: any) {
               level === 1
                 ? "left-0 min-w-[200px]"
                 : "left-full top-0 ml-2 min-w-[200px]"
-            } absolute right-0 mt-3.5 w-52 glass rounded-2xl shadow-xl border border-border/50 overflow-hidden backdrop-blur-xl z-50 p-4`}
+            } absolute right-0 mt-3.5 w-52 glass rounded-2xl shadow-xl border border-border/50 overflow-hidden backdrop-blur-x l z-50 p-4 backdrop-blur-md! ${
+              scrolled
+                ? "md-glass shadow-lg backdrop-blur-md"
+                : theme === "dark"
+                ? "bg-fill-tertiary"
+                : "md-glass"
+            }`}
             // className={`absolute z-40 mt-2 ${
             //   level === 1
             //     ? "left-0 min-w-[200px]"
