@@ -413,20 +413,26 @@ export default function ZKONGPlatform() {
   return (
     <div className="min-h-screen text-gray-900 transition-colors duration-300 dark:text-white">
       {/* Hero Section */}
-      <section className="min-h-[60vh] sm:min-h-[70vh] flex items-center relative px-6 pt-12 pb-6 sm:py-16 2m:py-20 overflow-hidden">
+      <section className="min-h-[60vh] sm:min-h-[70vh] flex items-center relative px-6 pt-12 pb-6 sm:py-16 2m:py-20 overflow-hidden bg-linear-to-r from-gray-200 to-gray-500 dark:from-gray-800 dark:to-gray-700">
         {/* subtle light/dark background shapes */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -left-20 -top-32 w-96 h-96 rounded-full blur-3xl bg-linear-to-br from-blue-200/30 to-purple-300/30 dark:from-blue-900/20 dark:to-purple-900/20"></div>
         </div>
 
         <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10">
-          <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold mb-6">
+          {/* <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold mb-6">
             <AnimationText>
               {bannerSection[language].title.split(" ").slice(0, 2).join(" ")}
             </AnimationText>{" "}
             <span className="text-blue-600 dark:text-blue-400">
               {bannerSection[language].title.split(" ").slice(2).join(" ")}
             </span>
+          </h1> */}
+          <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty mb-6">
+            <AnimationText onRepeat>
+              {bannerSection[language].title.split(" ").slice(0, 2).join(" ")}
+            </AnimationText>{" "}
+            {bannerSection[language].title.split(" ").slice(2).join(" ")}
           </h1>
           <p className="text-base sm:text-lg 2md:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-4xl mx-auto">
             {bannerSection[language].description}
@@ -443,7 +449,11 @@ export default function ZKONGPlatform() {
       <section className="py-12 sm:py-16 2m:py-20 bg-slate-200 dark:bg-[#3b434c]">
         <div className="container mx-auto px-4 max-w-7xl relative">
           <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10 mb-10">
-            <SubHeading headingText={revolutionarySection[language].title} lastIndex={2} customHeadingClass="text-center mb-6" />
+            <SubHeading
+              headingText={revolutionarySection[language].title}
+              lastIndex={2}
+              customHeadingClass="text-center mb-6"
+            />
             {/* <h2 className="text-black dark:text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6">
               <AnimationText>
                 {revolutionarySection[language].title
@@ -559,7 +569,11 @@ export default function ZKONGPlatform() {
       {/* Platform Advantages */}
       <section className="px-6 py-12 sm:py-16 2m:py-20 max-w-7xl mx-auto">
         <FadeAnimation>
-          <SubHeading headingText={advantagesSection[language].title} lastIndex={4} customHeadingClass="text-center mb-10 sm:mb-16" />
+          <SubHeading
+            headingText={advantagesSection[language].title}
+            lastIndex={4}
+            customHeadingClass="text-center mb-10 sm:mb-16"
+          />
           {/* <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
             <AnimationText>
               {advantagesSection[language].title
@@ -618,7 +632,11 @@ export default function ZKONGPlatform() {
       {/* ESL Platform Superior System */}
       <section className="px-6 py-12 sm:py-16 2m:py-20 max-w-7xl mx-auto">
         <FadeAnimation>
-          <SubHeading headingText={superiorSystemSection[language].title} lastIndex={4} customHeadingClass="text-center mb-10 sm:mb-16" />
+          <SubHeading
+            headingText={superiorSystemSection[language].title}
+            lastIndex={4}
+            customHeadingClass="text-center mb-10 sm:mb-16"
+          />
           {/* <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
             <AnimationText>
               {superiorSystemSection[language].title

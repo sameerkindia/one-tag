@@ -8,9 +8,13 @@ type EslHero = {
 
 function EslBanner({ hero, language }: EslHero) {
   return (
-    <section
-      className={`relative pt-30 pb-16 sm:py-24 bg-linear-to-r from-gray-200 to-gray-500 dark:from-gray-800 dark:to-gray-700`}
-    >
+    // <section
+    //   className={`relative pt-30 pb-16 sm:py-24 bg-linear-to-r from-gray-200 to-gray-500 dark:from-gray-800 dark:to-gray-700`}
+    // >
+    <section className="relative w-full min-h-[35vw] flex items-center justify-center bg-linear-to-r from-gray-200 to-gray-500 dark:from-gray-800 dark:to-gray-700 overflow-hidden py-28">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -left-20 -top-32 w-96 h-96 rounded-full blur-3xl bg-linear-to-br from-blue-200/30 to-purple-300/30 dark:from-blue-900/20 dark:to-purple-900/20"></div>
+      </div>
       <div className="max-w-5xl flex items-center justify-center flex-col mx-auto px-4 sm:px-6 text-center min-h-[28vw]">
         <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] mb-4 font-bold text-pretty">
           <AnimationText onRepeat>
