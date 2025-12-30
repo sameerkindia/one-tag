@@ -5,6 +5,7 @@ import AnimationText from "@/src/components/Animation-text";
 import { FadeAnimation } from "@/src/motion-animations/FadeAnimation";
 import Image from "next/image";
 import { useLanguage } from "@/src/contexts/language-context";
+import SubHeading from "@/src/components/SubHeading";
 
 const bannerSection = {
   en: {
@@ -412,7 +413,7 @@ export default function ZKONGPlatform() {
   return (
     <div className="min-h-screen text-gray-900 transition-colors duration-300 dark:text-white">
       {/* Hero Section */}
-      <section className="min-h-[70vh] flex items-center relative px-6 py-20 overflow-hidden">
+      <section className="min-h-[60vh] sm:min-h-[70vh] flex items-center relative px-6 pt-12 pb-6 sm:py-16 2m:py-20 overflow-hidden">
         {/* subtle light/dark background shapes */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -left-20 -top-32 w-96 h-96 rounded-full blur-3xl bg-linear-to-br from-blue-200/30 to-purple-300/30 dark:from-blue-900/20 dark:to-purple-900/20"></div>
@@ -427,7 +428,7 @@ export default function ZKONGPlatform() {
               {bannerSection[language].title.split(" ").slice(2).join(" ")}
             </span>
           </h1>
-          <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-4xl mx-auto">
+          <p className="text-base sm:text-lg 2md:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-4xl mx-auto">
             {bannerSection[language].description}
           </p>
           <button
@@ -439,10 +440,11 @@ export default function ZKONGPlatform() {
         </FadeAnimation>
       </section>
 
-      <section className="py-20 bg-slate-200 dark:bg-[#3b434c]">
+      <section className="py-12 sm:py-16 2m:py-20 bg-slate-200 dark:bg-[#3b434c]">
         <div className="container mx-auto px-4 max-w-7xl relative">
           <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10 mb-10">
-            <h2 className="text-black dark:text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6">
+            <SubHeading headingText={revolutionarySection[language].title} lastIndex={2} customHeadingClass="text-center mb-6" />
+            {/* <h2 className="text-black dark:text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6">
               <AnimationText>
                 {revolutionarySection[language].title
                   .split(" ")
@@ -455,8 +457,8 @@ export default function ZKONGPlatform() {
                   .slice(2)
                   .join(" ")}
               </span>
-            </h2>
-            <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-4xl mx-auto">
+            </h2> */}
+            <p className="text-base sm:text-lg 2md:text-xl text-gray-700 dark:text-gray-300 mb-4 sm:mb-8 max-w-4xl mx-auto">
               {revolutionarySection[language].description}
             </p>
             <a
@@ -555,9 +557,10 @@ export default function ZKONGPlatform() {
       </section> */}
 
       {/* Platform Advantages */}
-      <section className="px-6 py-20 max-w-7xl mx-auto">
+      <section className="px-6 py-12 sm:py-16 2m:py-20 max-w-7xl mx-auto">
         <FadeAnimation>
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+          <SubHeading headingText={advantagesSection[language].title} lastIndex={4} customHeadingClass="text-center mb-10 sm:mb-16" />
+          {/* <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
             <AnimationText>
               {advantagesSection[language].title
                 .split(" ")
@@ -567,7 +570,7 @@ export default function ZKONGPlatform() {
             <span className="text-blue-600 dark:text-blue-400">
               {advantagesSection[language].title.split(" ").slice(4).join(" ")}
             </span>
-          </h2>
+          </h2> */}
         </FadeAnimation>
 
         <FadeAnimation>
@@ -575,7 +578,7 @@ export default function ZKONGPlatform() {
             {advantagesSection[language].advantages.map((advantage, index) => (
               <div
                 key={index}
-                className="grid md:grid-cols-2 gap-8 items-center"
+                className="grid md:grid-cols-2 gap-4 sm:gap-8 items-center"
               >
                 {/* Image Section */}
                 <div
@@ -597,7 +600,7 @@ export default function ZKONGPlatform() {
                 <div
                   className={`${index % 2 === 1 ? "md:order-1" : "md:order-2"}`}
                 >
-                  <h3 className="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-300">
+                  <h3 className="text-lg sm:text-xl 2md:text-2xl font-bold mb-2.5 sm:mb-4 text-blue-600 dark:text-blue-300">
                     {advantage.heading}
                   </h3>
                   <ul className="cloud-platform-ul">
@@ -613,9 +616,10 @@ export default function ZKONGPlatform() {
       </section>
 
       {/* ESL Platform Superior System */}
-      <section className="px-6 py-20 max-w-7xl mx-auto">
+      <section className="px-6 py-12 sm:py-16 2m:py-20 max-w-7xl mx-auto">
         <FadeAnimation>
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+          <SubHeading headingText={superiorSystemSection[language].title} lastIndex={4} customHeadingClass="text-center mb-10 sm:mb-16" />
+          {/* <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
             <AnimationText>
               {superiorSystemSection[language].title
                 .split(" ")
@@ -628,7 +632,7 @@ export default function ZKONGPlatform() {
                 .slice(4)
                 .join(" ")}
             </span>
-          </h2>
+          </h2> */}
         </FadeAnimation>
 
         <FadeAnimation>
@@ -638,13 +642,13 @@ export default function ZKONGPlatform() {
                 key={index}
                 className="rounded-2xl border dark:border-gray-700 bg-linear-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 hover:border-blue-500 transition-all overflow-hidden"
               >
-                <div className="flex items-center justify-center mb-6">
+                <div className="flex items-center justify-center mb-2 sm:mb-6">
                   <div className="relative w-full h-40 rounded-full flex items-center justify-center">
                     <Image src={card.imgSrc} alt={card.heading} fill />
                   </div>
                 </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+                <div className="p-4 sm:p-8">
+                  <h3 className="text-xl 2lg:text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
                     {card.heading}
                   </h3>
                   <ul className="space-y-3 text-gray-700 dark:text-gray-300">
@@ -662,7 +666,7 @@ export default function ZKONGPlatform() {
       </section>
 
       {/* CTA Section */}
-      {/* <section className="px-6 py-20 max-w-6xl mx-auto text-center">
+      {/* <section className="px-6 py-12 sm:py-16 2m:py-20 max-w-6xl mx-auto text-center">
         <div className="p-12 rounded-3xl border dark:border-gray-700 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 shadow-lg">
           <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">
             Ready to Transform Your{" "}

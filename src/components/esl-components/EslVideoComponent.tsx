@@ -12,8 +12,8 @@ function EslVideoComponent({ videoData, videoId }: EslVideoComponent) {
       <div className="container mx-auto px-4 max-w-7xl relative">
         <div className="grid grid-cols-1 3md:grid-cols-2 gap-8 items-center">
           <div className="text-center 3md:text-left">
-            <SubHeading headingText={videoData.title} lastIndex={3} customHeadingClass="!hidden !3md:block !mb-2.5 2lg:!mb-4 2xl:!mb-6 text-pretty" />
-            <SubHeading headingText={videoData.title} lastIndex={3} customHeadingClass="!block !3md:hidden !mb-2.5 2lg:!mb-4 2xl:!mb-6 text-pretty" textSize="md" />
+            <SubHeading headingText={videoData.title} lastIndex={3} customHeadingClass="!hidden 3md:!block !mb-2.5 2lg:!mb-4 2xl:!mb-6 text-pretty" />
+            <SubHeading headingText={videoData.title} lastIndex={3} customHeadingClass="!block 3md:!hidden !mb-2.5 2lg:!mb-4 2xl:!mb-6 text-pretty" textSize="md" />
             {/* !hidden md:!block */}
             <p className="text-base 2lg:text-lg xxl:text-xl leading-relaxed text-gray-600 dark:text-gray-300 mb-5 2xl:mb-6 text-pretty">
               {videoData.description}
