@@ -727,6 +727,243 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, Zap, Sparkles } from "lucide-react";
 import { useTheme } from "@/src/contexts/theme-context";
 import { FadeAnimation } from "@/src/motion-animations/FadeAnimation";
+import FloatingParticles from "@/src/components/FloatingParticles";
+import { useLanguage } from "@/src/contexts/language-context";
+import AnimationText from "@/src/components/Animation-text";
+
+const heroSection = {
+  en: {
+    title: " Get in Touch",
+    description: `Ready to transform your retail operations? Let’s discuss how we can meet your needs.`,
+  },
+  ru: {
+    title: "Свяжитесь с нами",
+    description: `Готовы трансформировать ваши розничные процессы? Давайте обсудим ваши потребности.`,
+  },
+  uz: {
+    title: "Biz bilan bog‘laning",
+    description: ` Chakana savdo jarayonlaringizni o‘zgartirishga tayyormisiz? Keling, ehtiyojlaringiz haqida gaplashamiz.`,
+  },
+};
+
+const formSection = {
+  en: {
+    title: "Send us a message",
+    fields: ["Full Name", "Email Address", "Company Name"],
+    message: "Message",
+    messagePlaceholder: "Tell us about your project...",
+    button: "Send Message",
+  },
+  ru: {
+    title: "Отправьте нам сообщение",
+    fields: ["Полное имя", "Адрес электронной почты", "Название компании"],
+    message: "Сообщение",
+    messagePlaceholder: "Расскажите нам о вашем проекте…",
+    button: "Отправить сообщение",
+  },
+  uz: {
+    title: "Bizga xabar yuboring",
+    fields: ["To‘liq ism", "Elektron pochta manzili", "Kompaniya nomi"],
+    message: "Xabar",
+    messagePlaceholder: "Loyihangiz haqida bizga aytib bering…",
+    button: "Xabar yuborish",
+  },
+};
+
+const contactSection = {
+  en: {
+    title: "Contact Information:",
+    fields1: {
+      email: "Email",
+      phone: "Phone",
+      office: "Office",
+      address: `Republic of Uzbekistan, Tashkent region, Chirchik city, Sharof Rashidov Street 4`,
+      street: "Amir Temur Street, 100",
+      country: "Uzbekistan",
+    },
+    fields: [
+      {
+        icon: Mail,
+        title: "Email",
+        gradient: "from-blue-400 to-cyan-500",
+        content: (
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=info@onetag.uz&su=Hello%20OneTag"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors font-medium"
+          >
+            info@onetag.uz
+          </a>
+        ),
+      },
+      {
+        icon: Phone,
+        title: "Phone",
+        gradient: "from-purple-400 to-pink-500",
+        content: (
+          <a
+            href="tel:+998999178111"
+            className="text-muted-foreground hover:text-primary transition-colors font-medium"
+          >
+            +998999178111
+          </a>
+        ),
+      },
+      {
+        icon: MapPin,
+        title: "Office",
+        gradient: "from-indigo-400 to-violet-500",
+        content: (
+          <p className="text-muted-foreground">
+            Republic of Uzbekistan, Tashkent region, Chirchik city, Sharof
+            Rashidov Street 4<br />
+            Amir Temur Street, 100
+            <br />
+            Uzbekistan
+          </p>
+        ),
+      },
+    ],
+  },
+  ru: {
+    title: "Контактная информация:",
+    fields1: {
+      email: "Email",
+      phone: "Телефон",
+      office: "Офис",
+      address: `Республика Узбекистан, Ташкентская область, город Чирчик, улица Шароф Рашидов 4`,
+      street: "улица Амира Темура, 100",
+      country: "Узбекистан",
+    },
+    fields: [
+      {
+        icon: Mail,
+        title: "Email",
+        gradient: "from-blue-400 to-cyan-500",
+        content: (
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=info@onetag.uz&su=Hello%20OneTag"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors font-medium"
+          >
+            info@onetag.uz
+          </a>
+        ),
+      },
+      {
+        icon: Phone,
+        title: "Телефон",
+        gradient: "from-purple-400 to-pink-500",
+        content: (
+          <a
+            href="tel:+998999178111"
+            className="text-muted-foreground hover:text-primary transition-colors font-medium"
+          >
+            +998999178111
+          </a>
+        ),
+      },
+      {
+        icon: MapPin,
+        title: "Офис",
+        gradient: "from-indigo-400 to-violet-500",
+        content: (
+          <p className="text-muted-foreground">
+            Республика Узбекистан, Ташкентская область, город Чирчик, улица Шароф Рашидов 4
+            улица Амира Темура, 100<br />
+            Amir Temur Street, 100
+            <br />
+            Узбекистан
+          </p>
+        ),
+      },
+    ],
+  },
+  uz: {
+    title: "Aloqa ma’lumotlari:",
+    fields1: {
+      email: "Email",
+      phone: "Telefon",
+      office: "Ofis",
+      address: `O‘zbekiston Respublikasi, Toshkent viloyati, Chirchiq shahri, Sharof Rashidov ko‘chasi 4`,
+      street: "Amir Temur ko‘chasi, 100",
+      country: "O‘zbekiston",
+    },
+    fields: [
+      {
+        icon: Mail,
+        title: "Email",
+        gradient: "from-blue-400 to-cyan-500",
+        content: (
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=info@onetag.uz&su=Hello%20OneTag"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors font-medium"
+          >
+            info@onetag.uz
+          </a>
+        ),
+      },
+      {
+        icon: Phone,
+        title: "Telefon",
+        gradient: "from-purple-400 to-pink-500",
+        content: (
+          <a
+            href="tel:+998999178111"
+            className="text-muted-foreground hover:text-primary transition-colors font-medium"
+          >
+            +998999178111
+          </a>
+        ),
+      },
+      {
+        icon: MapPin,
+        title: "Ofis",
+        gradient: "from-indigo-400 to-violet-500",
+        content: (
+          <p className="text-muted-foreground">
+            O‘zbekiston Respublikasi, Toshkent viloyati, Chirchiq shahri, Sharof Rashidov ko‘chasi 4
+            Amir Temur ko‘chasi, 100<br />
+            Amir Temur Street, 100
+            <br />
+            O‘zbekiston
+          </p>
+        ),
+      },
+    ],
+  },
+};
+
+const businessSection = {
+  en: {
+    title: "Business Hours:",
+    weekdays: [
+      { day: "Monday – Friday", time: "9:00 AM - 6:00 PM" },
+      { day: "Saturday", time: "10:00 AM - 4:00 PM" },
+      { day: "Sunday", time: "Closed" },
+    ],
+  },
+  ru: {
+    title: "Часы работы:",
+    weekdays: [
+      { day: "Понедельник – Пятница", time: "9:00 – 18:00" },
+      { day: "Суббота", time: "10:00 – 16:00" },
+      { day: "Воскресенье", time: "Закрыто" },
+    ],
+  },
+  uz: {
+    title: "Ish vaqti:",
+    weekdays: [
+      { day: "Dushanba – Juma", time: "9:00 – 18:00" },
+      { day: "Shanba", time: "10:00 – 16:00" },
+      { day: "Yakshanba", time: "Yopiq" },
+    ],
+  },
+};
 
 export default function ContactPage() {
   const { theme } = useTheme();
@@ -739,6 +976,7 @@ export default function ContactPage() {
   });
   const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 });
   const [mounted, setMounted] = useState(false);
+  const { language } = useLanguage();
 
   useEffect(() => {
     setMounted(true);
@@ -807,31 +1045,7 @@ export default function ContactPage() {
       />
 
       {/* Floating particles */}
-      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-primary/20 rounded-full blur-sm"
-            initial={{
-              x: Math.random() * dimensions.width,
-              y: Math.random() * dimensions.height,
-              opacity: 0,
-            }}
-            animate={{
-              x: [null, Math.random() * dimensions.width],
-              y: [null, Math.random() * dimensions.height],
-              opacity: [0, 0.5, 0],
-              scale: [0, 1, 0],
-            }}
-            transition={{
-              duration: 6 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 3,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
+      <FloatingParticles />
 
       {/* Background decorations */}
       <motion.div
@@ -866,8 +1080,17 @@ export default function ContactPage() {
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         {/* Enhanced Header */}
-        <FadeAnimation staggerChildren={0.3} className="text-center mb-10 sm:mb-20">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-6 text-balance">
+        <FadeAnimation
+          staggerChildren={0.3}
+          className="text-center mb-10 sm:mb-20"
+        >
+          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold leading-tight mb-6 text-black dark:text-white text-balance max-w-[1400px] mx-auto">
+            <AnimationText onRepeat={true}>
+              {heroSection[language].title.split(" ").slice(0, 2).join(" ")}
+            </AnimationText>{" "}
+            {heroSection[language].title.split(" ").slice(2).join(" ")}
+          </h1>
+          {/* <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-6 text-balance">
             <span className="block">
               Get in{" "}
               <span
@@ -884,10 +1107,9 @@ export default function ContactPage() {
                 Touch
               </span>
             </span>
-          </h1>
+          </h1> */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Ready to transform your retail operations? Let's talk about your
-            needs.
+            {heroSection[language].description}
           </p>
         </FadeAnimation>
 
@@ -925,7 +1147,7 @@ export default function ContactPage() {
                 viewport={{ once: true }}
                 className="text-2xl 3md:text-3xl xl:text-4xl font-bold mb-6 sm:mb-8 bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-transparent"
               >
-                Send us a message
+                {formSection[language].title}
               </motion.h2>
 
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
@@ -986,7 +1208,7 @@ export default function ContactPage() {
                     htmlFor="message"
                     className="block text-sm font-bold mb-2 text-foreground/80"
                   >
-                    Message
+                    {formSection[language].message}
                   </label>
                   <motion.textarea
                     id="message"
@@ -1002,7 +1224,7 @@ export default function ContactPage() {
                         ? "bg-gray-800/50 backdrop-blur-sm border border-primary/20"
                         : "bg-white/80 backdrop-blur-sm border border-primary/20"
                     } focus:ring-2 focus:ring-primary/50 focus:border-primary/50 outline-none transition-all resize-none shadow-lg hover:shadow-xl group-hover/input:border-primary/30`}
-                    placeholder="Tell us about your project..."
+                    placeholder={formSection[language].messagePlaceholder}
                     required
                   />
                 </motion.div>
@@ -1013,7 +1235,7 @@ export default function ContactPage() {
                   disabled={isSubmitting}
                   // whileHover={!isSubmitting ? { scale: 1.05, y: -2 } : {}}
                   whileTap={!isSubmitting ? { scale: 0.95 } : {}}
-                  className={`relative w-full px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg flex items-center justify-center gap-3 overflow-hidden hover:scale-105 hover:-translate-0.5 cursor-pointer !transition-all duration-300 group/btn ${
+                  className={`relative w-full px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg flex items-center justify-center gap-3 overflow-hidden hover:scale-105 hover:-translate-0.5 cursor-pointer transition-all! duration-300 group/btn ${
                     isSubmitting
                       ? "bg-primary/60 text-white cursor-not-allowed"
                       : "bg-linear-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white shadow-xl hover:shadow-2xl shadow-primary/30"
@@ -1061,8 +1283,8 @@ export default function ContactPage() {
                       </>
                     ) : (
                       <>
-                        <Send className="w-5 h-5 group-hover/btn:translate-x-1 !transition-transform duration-300" />
-                        <span>Send Message</span>
+                        <Send className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform! duration-300" />
+                        <span>{formSection[language].button}</span>
                         <Sparkles className="w-4 h-4 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
                       </>
                     )}
@@ -1110,61 +1332,18 @@ export default function ContactPage() {
                 viewport={{ once: true }}
                 className="text-2xl 3md:text-3xl xl:text-4xl font-bold mb-6 sm:mb-8 bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-transparent"
               >
-                Contact Information
+                {contactSection[language].title}
               </motion.h2>
 
               <div className="space-y-6 relative z-10">
-                {[
-                  {
-                    icon: Mail,
-                    title: "Email",
-                    gradient: "from-blue-400 to-cyan-500",
-                    content: (
-                      <a
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=info@onetag.uz&su=Hello%20OneTag"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors font-medium"
-                      >
-                        info@onetag.uz
-                      </a>
-                    ),
-                  },
-                  {
-                    icon: Phone,
-                    title: "Phone",
-                    gradient: "from-purple-400 to-pink-500",
-                    content: (
-                      <a
-                        href="tel:+998999178111"
-                        className="text-muted-foreground hover:text-primary transition-colors font-medium"
-                      >
-                        +998999178111
-                      </a>
-                    ),
-                  },
-                  {
-                    icon: MapPin,
-                    title: "Office",
-                    gradient: "from-indigo-400 to-violet-500",
-                    content: (
-                      <p className="text-muted-foreground">
-                        Republic of Uzbekistan, Tashkent region, Chirchik city,
-                        Sharof Rashidov Street 4<br />
-                        Amir Temur Street, 100
-                        <br />
-                        Uzbekistan
-                      </p>
-                    ),
-                  },
-                ].map((item, i) => (
+                {contactSection[language].fields.map((item, i) => (
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.15 }}
-                    className="flex items-start gap-4 group/item hover:translate-x-2 !transition-transform duration-300"
+                    className="flex items-start gap-4 group/item hover:translate-x-2 transition-transform! duration-300"
                   >
                     <motion.div
                       className={`size-12 3md:size-14 rounded-xl bg-linear-to-br ${item.gradient} opacity-40 flex items-center justify-center shrink-0 group-hover/item:opacity-60 transition-all duration-300 ring-2 ring-primary/20 group-hover/item:ring-primary/40 shadow-xl shadow-primary/20`}
@@ -1211,14 +1390,10 @@ export default function ContactPage() {
                 viewport={{ once: true }}
                 className="text-2xl md:text-3xl font-bold mb-6 bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-transparent relative z-10"
               >
-                Business Hours
+                {businessSection[language].title}
               </motion.h3>
               <div className="space-y-3 text-muted-foreground relative z-10">
-                {[
-                  { day: "Monday - Friday", time: "9:00 AM - 6:00 PM" },
-                  { day: "Saturday", time: "10:00 AM - 4:00 PM" },
-                  { day: "Sunday", time: "Closed" },
-                ].map((schedule, index) => (
+                {businessSection[language].weekdays.map((schedule, index) => (
                   <motion.div
                     key={schedule.day}
                     initial={{ opacity: 0, x: -20 }}
