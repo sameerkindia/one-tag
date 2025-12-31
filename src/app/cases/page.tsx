@@ -6,6 +6,147 @@ import { useEffect, useState } from "react";
 import { useTheme } from "@/src/contexts/theme-context";
 import { CheckCircle2, MapPin, Building2, TrendingUp } from "lucide-react";
 import { FadeAnimation } from "@/src/motion-animations/FadeAnimation";
+import AnimationText from "@/src/components/Animation-text";
+import { useLanguage } from "@/src/contexts/language-context";
+import FloatingParticles from "@/src/components/FloatingParticles";
+
+const bannerSection = {
+  en: {
+    title: "Success Stories From Our Clients",
+    description: `See how Onetag is transforming retail across Uzbekistan.`,
+  },
+  ru: {
+    title: "Истории успеха наших клиентов",
+    description: ` Узнайте, как Onetag трансформирует розничную торговлю по всему Узбекистану.`,
+  },
+  uz: {
+    title: "Mijozlarimizning muvaffaqiyat hikoyalari",
+    description: `Onetag butun O‘zbekiston bo‘ylab chakana savdoni qanday o‘zgartirayotganini ko‘ring.`,
+  },
+};
+
+const casesSection = {
+  en: {
+    cases: [
+      {
+        title: "Retail Chain Transformation",
+        client: "Major Supermarket Chain",
+        location: "Tashkent, Uzbekistan",
+        results: [
+          "40% faster price updates",
+          "25% reduction in labor costs",
+          "99.9% accuracy",
+        ],
+        image: "/modern-supermarket-with-digital-price-tags.jpg",
+        gradient: "from-blue-400 to-cyan-500",
+      },
+      {
+        title: "Electronics Store Modernization",
+        client: "Electronics Retailer",
+        location: "Samarkand, Uzbekistan",
+        results: [
+          "Real-time promotions",
+          "Increased customer engagement",
+          "Seamless integration",
+        ],
+        image: "/electronics-store-with-smart-displays.jpg",
+        gradient: "from-purple-400 to-pink-500",
+      },
+      {
+        title: "Fashion Retail Innovation",
+        client: "Fashion Boutique Chain",
+        location: "Bukhara, Uzbekistan",
+        results: [
+          "Dynamic seasonal pricing",
+          "Enhanced brand image",
+          "Improved efficiency",
+        ],
+        image: "/modern-fashion-retail-store-interior.jpg",
+        gradient: "from-indigo-400 to-violet-500",
+      },
+    ],
+  },
+  ru: {
+    cases: [
+      {
+        title: "Трансформация розничной сети",
+        client: " Крупная сеть супермаркетов",
+        location: " Ташкент, Узбекистан",
+        results: [
+          "Обновление цен на 40% быстрее",
+          "Снижение затрат на персонал на 25%",
+          "Точность 99.9%",
+        ],
+        image: "/modern-supermarket-with-digital-price-tags.jpg",
+        gradient: "from-blue-400 to-cyan-500",
+      },
+      {
+        title: "Модернизация магазина электроники",
+        client: "Ритейлер электроники",
+        location: " Самарканд, Узбекистан",
+        results: [
+          "Акции и предложения в реальном времени",
+          "Рост вовлеченности клиентов",
+          "Бесшовная интеграция систем",
+        ],
+        image: "/electronics-store-with-smart-displays.jpg",
+        gradient: "from-purple-400 to-pink-500",
+      },
+      {
+        title: "Инновации в fashion-ритейле",
+        client: "Сеть fashion-бутиков",
+        location: "Бухара, Узбекистан",
+        results: [
+          "Динамическое сезонное ценообразование",
+          "Улучшение имиджа бренда",
+          "Повышение эффективности работы",
+        ],
+        image: "/modern-fashion-retail-store-interior.jpg",
+        gradient: "from-indigo-400 to-violet-500",
+      },
+    ],
+  },
+  uz: {
+    cases: [
+      {
+        title: "Chakana savdo tarmog‘ini modernizatsiya qilish",
+        client: "Yirik supermarketlar tarmog‘i",
+        location: "Toshkent, O‘zbekiston",
+        results: [
+          "Narxlarni yangilash 40% tezlashdi",
+          "Mehnat xarajatlari 25% ga kamaydi",
+          "99.9% aniqlik",
+        ],
+        image: "/modern-supermarket-with-digital-price-tags.jpg",
+        gradient: "from-blue-400 to-cyan-500",
+      },
+      {
+        title: "Elektronika do‘konini modernizatsiya qilish",
+        client: "Elektronika chakana savdosi",
+        location: "Samarqand, O‘zbekiston",
+        results: [
+          "Real vaqt rejimidagi aksiyalar",
+          "Mijozlar faolligining oshishi",
+          "Silliq va muammosiz integratsiya",
+        ],
+        image: "/electronics-store-with-smart-displays.jpg",
+        gradient: "from-purple-400 to-pink-500",
+      },
+      {
+        title: "Fashion chakana savdosida innovatsiyalar",
+        client: "Fashion butiklar tarmog‘i",
+        location: "Buxoro, O‘zbekiston",
+        results: [
+          "Mavsumiy dinamik narxlash",
+          "Brend imidjining kuchayishi",
+          "Samaradorlikning oshishi",
+        ],
+        image: "/modern-fashion-retail-store-interior.jpg",
+        gradient: "from-indigo-400 to-violet-500",
+      },
+    ],
+  },
+};
 
 const cases = [
   {
@@ -50,6 +191,7 @@ export default function CasesPage() {
   const { theme } = useTheme();
   const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 });
   const [mounted, setMounted] = useState(false);
+  const { language } = useLanguage();
 
   useEffect(() => {
     setMounted(true);
@@ -64,12 +206,12 @@ export default function CasesPage() {
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
 
-  if (!mounted) return null
-    // return (
-    //   <div className="min-h-screen flex items-center justify-center bg-red-400">
-    //     <p>Loading...</p>
-    //   </div>
-    // );
+  if (!mounted) return null;
+  // return (
+  //   <div className="min-h-screen flex items-center justify-center bg-red-400">
+  //     <p>Loading...</p>
+  //   </div>
+  // );
 
   return (
     <main className="relative min-h-screen pt-32 pb-14 sm:pb-20 overflow-hidden">
@@ -98,31 +240,7 @@ export default function CasesPage() {
       />
 
       {/* Floating particles */}
-      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        {[...Array(22)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-primary/20 rounded-full blur-sm"
-            initial={{
-              x: Math.random() * dimensions.width,
-              y: Math.random() * dimensions.height,
-              opacity: 0,
-            }}
-            animate={{
-              x: [null, Math.random() * dimensions.width],
-              y: [null, Math.random() * dimensions.height],
-              opacity: [0, 0.5, 0],
-              scale: [0, 1, 0],
-            }}
-            transition={{
-              duration: 6 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 3,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
+      <FloatingParticles />
 
       {/* Background decoration */}
       <motion.div
@@ -159,7 +277,15 @@ export default function CasesPage() {
         <FadeAnimation staggerChildren={0.3}>
           {/* Enhanced Header */}
           <FadeAnimation className="text-center mb-16 3md:mb-20">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 3md:mb-6 text-balance">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold leading-tight mb-6 text-black dark:text-white text-balance max-w-[1400px] mx-auto">
+              <AnimationText onRepeat={true}>
+                {bannerSection[language].title.split(" ").slice(0, 2).join(" ")}
+              </AnimationText>{" "}
+              <span className="block">
+                {bannerSection[language].title.split(" ").slice(2).join(" ")}
+              </span>
+            </h1>
+            {/* <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 3md:mb-6 text-balance">
               <span className="block">
                 Success{" "}
                 <span
@@ -177,18 +303,21 @@ export default function CasesPage() {
                 </span>
               </span>
               <span className="block text-primary mt-2">From Our Clients</span>
-            </h1>
-            <motion.p className="text-xl 2md:text-[22px] text-muted-foreground max-w-2xl mx-auto text-pretty">
-              See how OneTag is transforming retail across Uzbekistan
-            </motion.p>
+            </h1> */}
+            <p className="text-xl 2md:text-[22px] text-muted-foreground max-w-2xl mx-auto text-pretty">
+              {bannerSection[language].description}
+            </p>
           </FadeAnimation>
 
           {/* Cases Grid */}
-          <FadeAnimation staggerChildren={0.2} className="space-y-8 sm:space-y-12 3md:space-y-16">
-            {cases.map((caseStudy, index) => (
+          <FadeAnimation
+            staggerChildren={0.2}
+            className="space-y-8 sm:space-y-12 3md:space-y-16"
+          >
+            {casesSection[language].cases.map((caseStudy, index) => (
               <div
                 key={caseStudy.title}
-                className="relative group !transition-all duration-500 hover:-translate-y-1.5"
+                className="relative group transition-all! duration-500 hover:-translate-y-1.5"
               >
                 {/* Card container with glass effect */}
                 <div className="glass rounded-3xl overflow-hidden shadow-2xl border border-primary/10 relative group-hover:shadow-[0_25px_50px_-12px_rgba(76,158,255,0.25)] transition-all duration-300 group-hover:border-primary/20">
@@ -274,7 +403,7 @@ export default function CasesPage() {
 
                         {/* Title */}
                         <h2
-                          className={`text-2xl 2md:text-3xl 2lg:text-4xl font-bold mb-4 bg-linear-to-r ${caseStudy.gradient} bg-clip-text text-transparent group-hover:scale-105 !transition-transform duration-300`}
+                          className={`text-2xl 2md:text-3xl 2lg:text-4xl font-bold mb-4 bg-linear-to-r ${caseStudy.gradient} bg-clip-text text-transparent group-hover:scale-105 transition-transform! duration-300`}
                         >
                           {caseStudy.title}
                         </h2>

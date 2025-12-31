@@ -26,9 +26,6 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.home": "Home",
     "nav.solutions": "Solutions",
     "nav.electronicShelfLabels": "Electronic Shelf Labels",
-    "nav.ShieldSeriesESL": "Shield Series ESL",
-    "nav.ValleySeriesESL": "Valley Series ESL",
-    "nav.EssenceSeriesESL": "Essence Series ESL",
     "nav.ESLCloudPlatform": "Cloud Platform",
     "nav.eslAccessories": "ESL Accessories",
     "nav.cases": "Cases",
@@ -47,17 +44,10 @@ const translations: Record<Language, Record<string, string>> = {
 traditional paper price tags.
 Each electronic shelf label is connected to the merchant’s computer database through a wireless
 network and displays the latest price information of the items accurately in real time.`,
-    CloudeArchitecture: `The industry’s first fully developed cloud architecture based on the SaaS model has solved the
-challenge of centralized deployment and application of smart devices in stores, such as ESL price
-tags and LCD screens.
-The combination of software and hardware makes store management more efficient and intelligent,
-unlocking the full potential of smart retail.`,
     CuttingEdge: `Cutting-edge technlogy for retail`,
     PoweredCloud: `Powered by Cloud & IoT`,
     WhyUs: `Why Choose Onetag`,
     WhyUsText: `Everything you need to modernize your retail pricing.`,
-    ourProduct: `Our Product Line`,
-    ourProductText: `Choose the perfect smart tag for your retail needs`,
     BrandsHeading: `Brands We Collaborate With`,
     BrandsHeadingText: `Drive store operation development by cutting-edge technology, superior products and perfect services have brought us numerous commendations.`,
     BrandsSubHeading: `Trusted by leading brands worldwide`,
@@ -67,12 +57,9 @@ unlocking the full potential of smart retail.`,
     "main.title": "Onetag – Aqlli narx belgilar va savdo avtomatizatsiyasi",
     "nav.home": "Bosh sahifa",
     "nav.solutions": "Yechimlar",
-    "nav.electronicShelfLabels": "Electronic Shelf Labels",
-    "nav.ShieldSeriesESL": "Shield Series ESL",
-    "nav.ValleySeriesESL": "Valley Series ESL",
-    "nav.EssenceSeriesESL": "Essence Series ESL",
-    "nav.ESLCloudPlatform": "Cloud Platform",
-    "nav.eslAccessories": "ESL Accessories",
+    "nav.electronicShelfLabels": "Elektron narx belgilari",
+    "nav.ESLCloudPlatform": "Bulutli platforma",
+    "nav.eslAccessories": "ESL aksessuarlari",
     "nav.cases": "Misollar",
     "nav.about": "Biz haqimizda",
     "nav.contact": "Aloqa",
@@ -89,10 +76,6 @@ unlocking the full potential of smart retail.`,
 almashtiradigan elektron displey qurilmasidir.
 Har bir elektron narx belgisi sotuvchining kompyuter bazasiga simli bo‘lmagan tarmoq orqali ulanadi
 va tovarlarning eng so‘nggi narxlarini real vaqt rejimida ko‘rsatadi.`,
-    CloudeArchitecture: `SaaS modeli asosidagi sanoatdagi birinchi to‘liq bulutli arxitektura do‘konlarda ESL narx belgisi, LCD
-ekranlar kabi aqlli qurilmalarni markazlashgan tarzda joriy etish muammosini hal qildi.
-Dasturiy ta’minot va apparat uyg‘unligi do‘kon boshqaruvini yanada samarali va aqlli qiladi hamda
-aqlli chakana savdoning salohiyatini ochib beradi.`,
     CuttingEdge: `Chakana savdo uchun ilg‘or texnologiyalar`,
     PoweredCloud: `Cloud va IoT asosida ishlaydi`,
     WhyUs: `Nega aynan Onetag`,
@@ -109,12 +92,9 @@ orqali rivojlantirish bizga ko‘plab tavsiyalarni olib keldi.
     "main.title": "Onetag – Умные ценники и автоматизация торговли",
     "nav.home": "Главная",
     "nav.solutions": "Решения",
-    "nav.electronicShelfLabels": "Electronic Shelf Labels",
-    "nav.ShieldSeriesESL": "Shield Series ESL",
-    "nav.ValleySeriesESL": "Valley Series ESL",
-    "nav.EssenceSeriesESL": "Essence Series ESL",
-    "nav.ESLCloudPlatform": "Cloud Platform",
-    "nav.eslAccessories": "ESL Accessories",
+    "nav.electronicShelfLabels": "Электронные ценники",
+    "nav.ESLCloudPlatform": "Облачная платформа",
+    "nav.eslAccessories": "Аксессуары для ESL",
     "nav.cases": "Кейсы",
     "nav.about": "О нас",
     "nav.contact": "Контакты",
@@ -132,11 +112,6 @@ orqali rivojlantirish bizga ko‘plab tavsiyalarni olib keldi.
 Каждая электронная ценник-табличка подключена к компьютерной базе данных продавца
 через беспроводную сеть и отображает актуальную информацию о ценах на товары в режиме
 реального времени.`,
-    CloudeArchitecture: `Первая в отрасли полноценная облачная архитектура, основанная на модели SaaS, решила
-проблему централизованного развертывания и применения умных устройств в магазинах,
-таких как ESL-ценники, LCD-экраны. Комбинация программного обеспечения и оборудования
-делает управление магазином более эффективным и интеллектуальным, раскрывая потенциал
-умной розничной торговли.(переведи это на узбекский и английский.`,
     CuttingEdge: `Передовые технологии для розницы
 `,
     PoweredCloud: `Работает на базе облачных и IoT-решений
