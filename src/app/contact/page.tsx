@@ -1177,8 +1177,6 @@ export default function ContactPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, [field]: e.target.value })
                       }
-                      // whileFocus={{ scale: 1.02 }}
-                      // transition={{ duration: 0.2 }}
                       className={`w-full px-5 py-4 rounded-xl ${
                         theme === "dark"
                           ? "bg-gray-800/50 backdrop-blur-sm border border-primary/20"

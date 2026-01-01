@@ -9,22 +9,28 @@ import SubHeading from "@/src/components/SubHeading";
 
 const bannerSection = {
   en: {
-    title: "ZKONG ESL Retail Cloud Platform",
+    // title: "ZKONG ESL Retail Cloud Platform",
+    title: "Cloud Platform",
     description:
-      "The leading retail IoT Cloud platform to manage your IoT, access your store and manage your labels as well as your items anytime, anywhere, thanks to our web interface available through a simple internet connection from your PC, Smartphone or Tablet.",
-    cta: "Contact Us",
+      "The leading retail IoT Cloud platform to manage your IoT, access your store and manage your labels as well as your items anytime, anywhere, thanks to our web interface available through a simple internet connection from your PC, Smartphone or Tablet",
+    // cta: "Contact Us",
   },
   uz: {
-    title: "ZKONG ESL Retail Cloud Platform",
-    description:
-      "The leading retail IoT Cloud platform to manage your IoT, access your store and manage your labels as well as your items anytime, anywhere, thanks to our web interface available through a simple internet connection from your PC, Smartphone or Tablet.",
-    cta: "Contact Us",
+    title: "Bulut platformasi",
+    description: `
+    Yetakchi IoT bulut platformasi bo‘lib, u IoT qurilmalarini boshqarish, do‘konga masofadan
+kirish, elektron narx yorliqlari va mahsulotlarni istalgan payt va istalgan joydan boshqarish imkonini
+beradi. Buning barchasi oddiy internet ulanishi orqali kompyuter, smartfon yoki planshetdan webinterfeys yordamida amalga oshiriladi.`,
+    // cta: "Contact Us",
   },
   ru: {
-    title: "ZKONG ESL Retail Cloud Platform",
-    description:
-      "The leading retail IoT Cloud platform to manage your IoT, access your store and manage your labels as well as your items anytime, anywhere, thanks to our web interface available through a simple internet connection from your PC, Smartphone or Tablet.",
-    cta: "Contact Us",
+    title: "Облачная платформа",
+    description: `
+    Передовая облачная IoT-платформа для розничной торговли, которая позволяет
+управлять IoT-устройствами, получать доступ к магазину, управлять электронными ценниками
+и товарами в любое время и из любого места благодаря веб-интерфейсу через простое
+интернет-подключение с ПК, смартфона или планшета.`,
+    // cta: "Contact Us",
   },
 };
 
@@ -36,22 +42,22 @@ const revolutionarySection = {
     cta: "Get More Info",
   },
   uz: {
-    title: "The Revolutionary Retail Cloud Platform",
+    title: "Inqilobiy chakana savdo uchun bulut platformasi",
     description:
-      "Renew Your Business Model with the Revolutionary Cloud Electronic Shelf Labels System",
+      "Bulut texnologiyasiga asoslangan inqilobiy elektron narx yorliqlari tizimi bilan biznes modelingizni yangilang",
     cta: "Get More Info",
   },
   ru: {
-    title: "The Revolutionary Retail Cloud Platform",
+    title: "Революционная облачная платформа для ритейла",
     description:
-      "Renew Your Business Model with the Revolutionary Cloud Electronic Shelf Labels System",
+      "Обновите свою бизнес-модель с помощью революционной облачной системы электронных ценников",
     cta: "Get More Info",
   },
 };
 
 const advantagesSection = {
   en: {
-    title: "ZKONG ESL Retail Cloud Platform Advantages",
+    title: "Cloud Platform Advantages",
     advantages: [
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-sass.webp",
@@ -64,7 +70,7 @@ const advantagesSection = {
       },
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-template.webp",
-        heading: " Comes with a template editor",
+        heading: "Comes with a template editor",
         data: [
           "Cloud-based templates, browser operation",
           "Visual and free editing, real-time preview",
@@ -126,151 +132,151 @@ const advantagesSection = {
     ],
   },
   uz: {
-    title: "ZKONG ESL Retail Cloud Platform Advantages",
+    title: "Bulut platformasining afzalliklari",
     advantages: [
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-sass.webp",
-        heading: "SaaS system, no local installation required",
+        heading: "SaaS tizimi — mahalliy o‘rnatish talab qilinmaydi",
         data: [
-          "Support unlimited accounts on the same server",
-          "Computing capacity can be infinitely superimposed through server expansion",
-          "Reduce the cost of software and hardware due to the increasement of local server",
+          "Bitta serverda cheksiz hisoblarni qo‘llab-quvvatlaydi",
+          "Serverlarni kengaytirish orqali hisoblash quvvati cheksiz oshirilishi mumkin",
+          "Mahalliy serverlarni kengaytirishga ehtiyoj qolmagani sabab dasturiy ta’minot va uskuna xarajatlari kamayadi",
         ],
       },
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-template.webp",
-        heading: " Comes with a template editor",
+        heading: " Shablon muharriri bilan birga keladi",
         data: [
-          "Cloud-based templates, browser operation",
-          "Visual and free editing, real-time preview",
-          "huge template library, unlimited fonts, multi-language text",
-          "Flexible triggering",
+          "Bulut asosidagi shablonlar, brauzer orqali boshqaruv",
+          "Vizual va erkin tahrirlash, real vaqt rejimida ko‘rish",
+          "Katta shablon kutubxonasi, cheksiz shriftlar, ko‘p tilli matn qo‘llab-quvvatlashi",
+          "Moslashuvchan ishga tushirish imkoniyatlari",
         ],
       },
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-expansion.webp",
-        heading: "Unlimited expansion",
+        heading: "Cheksiz kengaytirish imkoniyati",
         data: [
-          "integrated a variety of intelligent devices such as EPD, LCD and AI cameras with one system",
-          "Billions of information processing",
-          "A single system supports millions of electronic shelf labels",
+          "EPD, LCD va AI kameralar kabi turli aqlli qurilmalarni bitta tizimga integratsiya qilish",
+          "Milliardlab ma’lumotlarni qayta ishlash imkoniyat",
+          "Bitta tizim millionlab elektron narx yorliqlarini qo‘llab-quvvatlay oladi",
         ],
       },
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-deployment.webp",
-        heading: "Flexible deployment",
+        heading: "Moslashuvchan joriy etish (deploy) imkoniyati",
         data: [
-          "Flexible options for SaaS public, private and local deployments",
-          " Support globally distributed deployment and cluster deployment",
+          "SaaS’ni umumiy (public), xususiy (private) va lokal shaklda joriy etish uchun moslashuvchan variantlar",
+          "Global miqyosda taqsimlangan tizimlarni va klasterli joriy etishni qo‘llab-quvvatlaydi",
         ],
       },
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-interface.webp",
-        heading: "Interface opened",
+        heading: "Ochiq interfeys",
         data: [
-          "200+ API interfaces (the most open interface)",
-          "Support different types of ERP, API and customized development with specific needs",
+          "200+ ta API interfeyslari (eng ochiq integratsiya imkoniyatlari)",
+          "Turli ERP tizimlari, API va maxsus ehtiyojlar uchun moslashtirilgan ishlab chiqishni qo‘llabquvvatlaydi",
         ],
       },
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-extensiveness.webp",
-        heading: "Extensiveness",
+        heading: "Keng qamrovli imkoniyatlar",
         data: [
-          "Supports Windows / Mac OS / Android / iOS and many other major system",
-          "Built on a wide area network with global reach",
+          "Windows / Mac OS / Android / iOS va boshqa ko‘plab asosiy tizimlarni qo‘llab-quvvatlaydi",
+          "Keng qamrovli global tarmoq asosida qurilgan",
         ],
       },
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-security.webp",
-        heading: "Data security",
+        heading: "Ma’lumotlar xavfsizlig",
         data: [
-          "Data storage records in the cloud",
-          "Professional AES 128-bit encryption in the cloud",
-          "Automatic detection and early warning mechanism",
+          "Ma’lumotlarni bulutda saqlash",
+          "Bulutda professional AES 128-bit shifrlash",
+          "Avtomatik aniqlash va erta ogohlantirish mexanizmi",
         ],
       },
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-plans.webp",
-        heading: "Second development",
+        heading: "Ikkinchi darajali rivojlantirish",
         data: [
-          "Secondary development gives new features to software and hardware",
-          "Private server build",
-          "APP/mini app development",
+          "Ikkinchi darajali rivojlantirish dasturiy ta’minot va uskuna uchun yangi funksiyalar qo‘shadi",
+          "Shaxsiy serverni yaratish",
+          "Ilova / mini-ilova ishlab chiqish",
         ],
       },
     ],
   },
   ru: {
-    title: "ZKONG ESL Retail Cloud Platform Advantages",
+    title: "Преимущества облачной платформы",
     advantages: [
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-sass.webp",
-        heading: "SaaS system, no local installation required",
+        heading: "SaaS-система, не требует локальной установки",
         data: [
-          "Support unlimited accounts on the same server",
-          "Computing capacity can be infinitely superimposed through server expansion",
-          "Reduce the cost of software and hardware due to the increasement of local server",
+          "Поддержка неограниченного количества аккаунтов на одном сервере",
+          "Вычислительные мощности могут бесконечно расширяться за счет масштабирования серверов",
+          "Снижение затрат на ПО и оборудование за счет отсутствия необходимости увеличиватьлокальные серверы",
         ],
       },
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-template.webp",
-        heading: " Comes with a template editor",
+        heading: "Встроенный редактор шаблонов",
         data: [
-          "Cloud-based templates, browser operation",
-          "Visual and free editing, real-time preview",
-          "huge template library, unlimited fonts, multi-language text",
-          "Flexible triggering",
+          "Облачные шаблоны, работа через браузер",
+          "Визуальное и свободное редактирование, предпросмотр в реальном времени",
+          "Огромная библиотека шаблонов, неограниченные шрифты, поддержка многоязычного текста",
+          "Гибкие варианты запуска и применения",
         ],
       },
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-expansion.webp",
-        heading: "Unlimited expansion",
+        heading: "Неограниченное масштабирование",
         data: [
-          "integrated a variety of intelligent devices such as EPD, LCD and AI cameras with one system",
-          "Billions of information processing",
-          "A single system supports millions of electronic shelf labels",
+          "Интеграция различных интеллектуальных устройств (EPD, LCD, AI-камеры) в единую систему",
+          "Обработка миллиардов информационных операций",
+          "Одна система может поддерживать миллионы электронных ценников",
         ],
       },
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-deployment.webp",
-        heading: "Flexible deployment",
+        heading: "Гибкое развертывание",
         data: [
-          "Flexible options for SaaS public, private and local deployments",
-          " Support globally distributed deployment and cluster deployment",
+          "Гибкие варианты публичного, частного и локального развертывания SaaS",
+          "Поддержка глобально распределенного развертывания и кластерных решений",
         ],
       },
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-interface.webp",
-        heading: "Interface opened",
+        heading: "Открытый интерфейс",
         data: [
-          "200+ API interfaces (the most open interface)",
-          "Support different types of ERP, API and customized development with specific needs",
+          "Более 200 API-интерфейсов (максимально открытая интеграция)",
+          "Поддержка различных типов ERP, API и кастомной разработки под конкретные требования",
         ],
       },
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-extensiveness.webp",
-        heading: "Extensiveness",
+        heading: " Широкие возможности",
         data: [
-          "Supports Windows / Mac OS / Android / iOS and many other major system",
-          "Built on a wide area network with global reach",
+          "Поддерживает Windows / Mac OS / Android / iOS и многие другие основные системы",
+          "Построена на глобальной сети с широким покрытием по всему миру",
         ],
       },
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-security.webp",
-        heading: "Data security",
+        heading: "Безопасность данных",
         data: [
-          "Data storage records in the cloud",
-          "Professional AES 128-bit encryption in the cloud",
-          "Automatic detection and early warning mechanism",
+          "Хранение данных в облаке",
+          "Профессиональное облачное шифрование AES 128-бит",
+          "Автоматическое обнаружение и ранняя система предупреждений",
         ],
       },
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-plans.webp",
-        heading: "Second development",
+        heading: "Вторичная разработка",
         data: [
-          "Secondary development gives new features to software and hardware",
-          "Private server build",
-          "APP/mini app development",
+          "Вторичная разработка добавляет новые функции программному обеспечению и оборудованию",
+          "Развёртывание частного сервера",
+          "Разработка приложений / мини-приложений",
         ],
       },
     ],
@@ -420,35 +426,27 @@ export default function ZKONGPlatform() {
         </div>
 
         <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10">
-          {/* <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold mb-6">
-            <AnimationText>
-              {bannerSection[language].title.split(" ").slice(0, 2).join(" ")}
-            </AnimationText>{" "}
-            <span className="text-blue-600 dark:text-blue-400">
-              {bannerSection[language].title.split(" ").slice(2).join(" ")}
-            </span>
-          </h1> */}
           <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty mb-6">
             <AnimationText onRepeat>
-              {bannerSection[language].title.split(" ").slice(0, 2).join(" ")}
+              {bannerSection[language].title.split(" ").slice(0, 1).join(" ")}
             </AnimationText>{" "}
-            {bannerSection[language].title.split(" ").slice(2).join(" ")}
+            {bannerSection[language].title.split(" ").slice(1).join(" ")}
           </h1>
           <p className="text-base sm:text-lg 2md:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-4xl mx-auto">
             {bannerSection[language].description}
           </p>
-          <button
+          {/* <button
             aria-label="get started with us"
             className="inline-block mt-4 px-6 py-3 bg-black dark:bg-white hover:bg-black/80 dark:hover:bg-white/80 text-white dark:text-black rounded-2xl transition-all duration-300 min-w-[170px]"
           >
             {bannerSection[language].cta}
-          </button>
+          </button> */}
         </FadeAnimation>
       </section>
 
       <section className="py-12 sm:py-16 2m:py-20 bg-slate-200 dark:bg-[#3b434c]">
         <div className="container mx-auto px-4 max-w-7xl relative">
-          <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10 mb-10">
+          <FadeAnimation className="text-center relative z-10 mb-10">
             <SubHeading
               headingText={revolutionarySection[language].title}
               lastIndex={2}
@@ -468,20 +466,20 @@ export default function ZKONGPlatform() {
                   .join(" ")}
               </span>
             </h2> */}
-            <p className="text-base sm:text-lg 2md:text-xl text-gray-700 dark:text-gray-300 mb-4 sm:mb-8 max-w-4xl mx-auto">
+            <p className="text-base sm:text-lg 2md:text-xl text-gray-700 dark:text-gray-300 mb-4 sm:mb-8 max-w-4xl mx-auto text-pretty">
               {revolutionarySection[language].description}
             </p>
-            <a
+            {/* <a
               href="/"
               aria-label="Get More Info about our product us"
               className="inline-block mt-4 px-6 py-3 border-2 border-black dark:border-white hover:bg-black dark:hover:bg-white text-black dark:text-white hover:text-white dark:hover:text-black rounded-lg transition-all duration-300 min-w-[170px] cursor-pointer"
             >
               {revolutionarySection[language].cta}
-            </a>
+            </a> */}
           </FadeAnimation>
           <FadeAnimation className="dark:bg-white p-4">
             <Image
-              src="/esl-cloud-platform/retail-cloud-platform.webp"
+              src={`/esl-cloud-platform/retail-cloud-platform-${language}.webp`}
               alt="cloud platform"
               width={1200}
               height={800}
@@ -630,27 +628,13 @@ export default function ZKONGPlatform() {
       </section>
 
       {/* ESL Platform Superior System */}
-      <section className="px-6 py-12 sm:py-16 2m:py-20 max-w-7xl mx-auto">
+      {/* <section className="px-6 py-12 sm:py-16 2m:py-20 max-w-7xl mx-auto">
         <FadeAnimation>
           <SubHeading
             headingText={superiorSystemSection[language].title}
             lastIndex={4}
             customHeadingClass="text-center mb-10 sm:mb-16"
           />
-          {/* <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
-            <AnimationText>
-              {superiorSystemSection[language].title
-                .split(" ")
-                .slice(0, 4)
-                .join(" ")}
-            </AnimationText>{" "}
-            <span className="text-blue-600 dark:text-blue-400">
-              {superiorSystemSection[language].title
-                .split(" ")
-                .slice(4)
-                .join(" ")}
-            </span>
-          </h2> */}
         </FadeAnimation>
 
         <FadeAnimation>
@@ -681,7 +665,7 @@ export default function ZKONGPlatform() {
             ))}
           </div>
         </FadeAnimation>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       {/* <section className="px-6 py-12 sm:py-16 2m:py-20 max-w-6xl mx-auto text-center">

@@ -17,13 +17,13 @@ const bannerSection = {
     ctaText: "Contact Us",
   },
   uz: {
-    title: "Wireless Base Station & ESL Accessories",
-    subtext: "For easier and seamless integration",
+    title: " Simsiz bazaviy stansiya va ESL aksessuarlari",
+    subtext: " Oson va muammosiz integratsiya uchun",
     ctaText: "Contact Us",
   },
   ru: {
-    title: "Wireless Base Station & ESL Accessories",
-    subtext: "For easier and seamless integration",
+    title: "Беспроводная базовая станция и аксессуары для ESL",
+    subtext: "Для более простой и бесшовной интеграции",
     ctaText: "Contact Us",
   },
 };
@@ -33,7 +33,7 @@ const accessoriesSection = {
     title: "ESL Accessories",
     accessoriesData: [
       {
-        title: "ZKONG Holder",
+        title: "Holder",
         decs: "any display holder",
         products: [
           {
@@ -59,7 +59,7 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "ZKONG Wall Mounting Kit/Rail End Cap/Rail Incline Spacer",
+        title: "Wall Mounting Kit/Rail End Cap/Rail Incline Spacer",
         decs: "",
         products: [
           {
@@ -85,7 +85,7 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "ZKONG Ice Pin/Floor Stand/Card Holder",
+        title: "Ice Pin/Floor Stand/Card Holder",
         decs: "",
         products: [
           {
@@ -111,7 +111,7 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "ZKONG Rail",
+        title: "Rail",
         decs: "all standard shelves",
         products: [
           {
@@ -182,7 +182,7 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "ZKONG Clamp",
+        title: "Clamp",
         decs: "fruit and vegetable area",
         products: [
           {
@@ -213,7 +213,7 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "ZKONG Hook",
+        title: "Hook",
         decs: "",
         products: [
           {
@@ -267,11 +267,11 @@ const accessoriesSection = {
     ],
   },
   uz: {
-    title: "ESL Accessories",
+    title: "ESL aksessuarlari",
     accessoriesData: [
       {
-        title: "ZKONG Holder",
-        decs: "any display holder",
+        title: "Ushlagich",
+        decs: "turli displey ushlagichlari",
         products: [
           {
             id: 1,
@@ -296,7 +296,7 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "ZKONG Wall Mounting Kit/Rail End Cap/Rail Incline Spacer",
+        title: "Devor o‘rnatish to‘plami / rels uch qopqog‘i / rels burchak moslamasi",
         decs: "",
         products: [
           {
@@ -322,7 +322,7 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "ZKONG Ice Pin/Floor Stand/Card Holder",
+        title: "Muzlatkich vitrinasi uchun mahkamlash pinni / pol stendi / karta ushlagichi",
         decs: "",
         products: [
           {
@@ -348,8 +348,8 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "ZKONG Rail",
-        decs: "all standard shelves",
+        title: "Rels",
+        decs: " barcha standart javonlar uchun",
         products: [
           {
             id: 1,
@@ -419,8 +419,8 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "ZKONG Clamp",
-        decs: "fruit and vegetable area",
+        title: "Qisqich",
+        decs: "meva-sabzavot bo‘limi uchun",
         products: [
           {
             id: 1,
@@ -450,7 +450,7 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "ZKONG Hook",
+        title: "Ilgak",
         decs: "",
         products: [
           {
@@ -476,7 +476,7 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "Vertical Clamp/T Mount/Remove Tool",
+        title: "Vertikal qisqich / T-o‘rnatkich / o‘rnatish va yechish asbobi",
         decs: "",
         products: [
           {
@@ -504,11 +504,11 @@ const accessoriesSection = {
     ],
   },
   ru: {
-    title: "ESL Accessories",
+    title: "Аксессуары для ESL",
     accessoriesData: [
       {
-        title: "ZKONG Holder",
-        decs: "any display holder",
+        title: "Держатель",
+        decs: "любые держатели дисплеев",
         products: [
           {
             id: 1,
@@ -533,7 +533,7 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "ZKONG Wall Mounting Kit/Rail End Cap/Rail Incline Spacer",
+        title: "Набор для настенного крепления / торцевая заглушка рейки / наклонный адаптер рейки",
         decs: "",
         products: [
           {
@@ -559,7 +559,7 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "ZKONG Ice Pin/Floor Stand/Card Holder",
+        title: "Крепёж для морозильных витрин / напольная стойка / держатель карточек",
         decs: "",
         products: [
           {
@@ -585,8 +585,8 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "ZKONG Rail",
-        decs: "all standard shelves",
+        title: "Рейка",
+        decs: "для всех стандартных полок",
         products: [
           {
             id: 1,
@@ -656,8 +656,8 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "ZKONG Clamp",
-        decs: "fruit and vegetable area",
+        title: "Зажим",
+        decs: "для отдела фруктов и овощей",
         products: [
           {
             id: 1,
@@ -687,7 +687,7 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "ZKONG Hook",
+        title: "Крючок",
         decs: "",
         products: [
           {
@@ -713,7 +713,7 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "Vertical Clamp/T Mount/Remove Tool",
+        title: "Вертикальный зажим / Т-крепление / инструмент для установки и снятия",
         decs: "",
         products: [
           {
@@ -778,69 +778,69 @@ const wirelessSection = {
     ],
   },
   uz: {
-    title: "Wireless Base Station",
-    description: "Bluetooth + WiFi Base Transmission System Equipment",
+    title: "Simsiz bazaviy stansiya",
+    description: "Bluetooth + WiFi uzatish tizimi uskunasi",
     equipmentData: [
       {
-        heading: "ZAP - C (Ceiling)",
+        heading: "ZAP-C (shiftga o‘rnatiladigan)",
         imgSrc: "/esl-accessories/ZAP-C.webp",
-        subHeading: "Electronic shelf label transmission system equipment",
+        subHeading: "Elektron narx yorlig‘i uzatish tizimi uskunasi",
         features: [
-          "Size: 180*180*33mm",
-          "Operate temperature: -10°~60℃",
-          "Power: 48V POE",
-          "Weight: 500g",
-          "Frequency: 2.4GHz+5GHz",
-          "Wi-Fi Speed: 1167Mbps",
-          "Coverage: Indoor 30m radius",
+          "O‘lchami: 180×180×33 mm",
+          "Ishlash harorati: −10° ~ 60°C",
+          "Quvvat: 48V POE",
+          "Vazn: 500 g",
+          "Chastota: 2.4GHz + 5GHz",
+          "Wi-Fi tezligi: 1167 Mbps",
+          "Qamrov: yopiq joyda 30 m radius",
         ],
       },
       {
-        heading: "ZAP - DX (Ceiling)",
+        heading: "ZAP-DX (shiftga o‘rnatiladigan)",
         imgSrc: "/esl-accessories/ZAP-DX.webp",
-        subHeading: "BLE / Wi-Fi dual module wireless base station",
+        subHeading: "BLE / Wi-Fi ikkita modulga ega simsiz bazaviy stansiya",
         features: [
-          "Size: 215*215*39mm",
-          "Operate temperature: -10°~60℃",
-          "Power: 48V POE",
-          "Weight: 500g",
-          "Frequency: 2.4GHz+5GHz",
-          "Wi-Fi Speed: 1167Mbps",
-          "Coverage: Indoor 30m radius",
+          "O‘lchami: 215×215×39 mm",
+          "Ishlash harorati: −10° ~ 60°C",
+          "Quvvat: 48V POE",
+          "Vazn: 500 g",
+          "Chastota: 2.4GHz + 5GHz",
+          "Wi-Fi tezligi: 1167 Mbps",
+          "Qamrov: yopiq joyda 30 m radius",
         ],
       },
     ],
   },
   ru: {
-    title: "Wireless Base Station",
-    description: "Bluetooth + WiFi Base Transmission System Equipment",
+    title: "Беспроводная базовая станция",
+    description: "Оборудование базовой системы передачи Bluetooth + WiFi",
     equipmentData: [
       {
-        heading: "ZAP - C (Ceiling)",
+        heading: "ZAP-C (потолочная)",
         imgSrc: "/esl-accessories/ZAP-C.webp",
-        subHeading: "Electronic shelf label transmission system equipment",
+        subHeading: "Оборудование системы передачи для электронных ценников",
         features: [
-          "Size: 180*180*33mm",
-          "Operate temperature: -10°~60℃",
-          "Power: 48V POE",
-          "Weight: 500g",
-          "Frequency: 2.4GHz+5GHz",
-          "Wi-Fi Speed: 1167Mbps",
-          "Coverage: Indoor 30m radius",
+          "Размер: 180×180×33 мм",
+          "Рабочая температура: −10° ~ 60°C",
+          "Питание: 48V POE",
+          "Вес: 500 г",
+          "Частота: 2.4GHz + 5GHz",
+          "Скорость Wi-Fi: 1167 Mbps",
+          "Зона покрытия: до 30 м внутри помещения",
         ],
       },
       {
-        heading: "ZAP - DX (Ceiling)",
+        heading: "ZAP-DX (потолочная)",
         imgSrc: "/esl-accessories/ZAP-DX.webp",
-        subHeading: "BLE / Wi-Fi dual module wireless base station",
+        subHeading: "Двухмодульная беспроводная базовая станция BLE / Wi-Fi",
         features: [
-          "Size: 215*215*39mm",
-          "Operate temperature: -10°~60℃",
-          "Power: 48V POE",
-          "Weight: 500g",
-          "Frequency: 2.4GHz+5GHz",
-          "Wi-Fi Speed: 1167Mbps",
-          "Coverage: Indoor 30m radius",
+          "Размер: 215×215×39 мм",
+          "Рабочая температура: −10° ~ 60°C",
+          "Питание: 48V POE",
+          "Вес: 500 г",
+          "Частота: 2.4GHz + 5GHz",
+          "Скорость Wi-Fi: 1167 Mbps",
+          "Зона покрытия: до 30 м внутри помещения",
         ],
       },
     ],
@@ -1094,6 +1094,7 @@ export default function ESLAccessoriesPage() {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -left-20 -top-32 w-96 h-96 rounded-full blur-3xl bg-linear-to-br from-blue-200/30 to-purple-300/30 dark:from-blue-900/20 dark:to-purple-900/20"></div>
         </div>
+
         <div className="relative z-10 text-center px-6">
           <FadeAnimation staggerChildren={0.3}>
             <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] mb-4 font-bold">
@@ -1105,9 +1106,9 @@ export default function ESLAccessoriesPage() {
             <p className="mb-6 text-base md:text-lg xl:text-xl">
               {bannerSection[language].subtext}
             </p>
-            <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            {/* <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
               {bannerSection[language].ctaText}
-            </button>
+            </button> */}
           </FadeAnimation>
         </div>
       </section>

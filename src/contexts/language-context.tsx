@@ -29,7 +29,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.ESLCloudPlatform": "Cloud Platform",
     "nav.eslAccessories": "ESL Accessories",
     "nav.cases": "Cases",
-    "nav.about": "About",
+    "nav.about": "About Us",
     "nav.contact": "Contact",
     "hero.badge": "Introducing Smart Retail Technology",
     "hero.title.line1":
@@ -57,7 +57,7 @@ network and displays the latest price information of the items accurately in rea
     "main.title": "Onetag – Aqlli narx belgilar va savdo avtomatizatsiyasi",
     "nav.home": "Bosh sahifa",
     "nav.solutions": "Yechimlar",
-    "nav.electronicShelfLabels": "Elektron narx belgilari",
+    "nav.electronicShelfLabels": "Elektron narx yorliqlari (ESL)",
     "nav.ESLCloudPlatform": "Bulutli platforma",
     "nav.eslAccessories": "ESL aksessuarlari",
     "nav.cases": "Misollar",
