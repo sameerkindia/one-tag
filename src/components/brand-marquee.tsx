@@ -35,6 +35,34 @@ const brands = [
     imgSrc: "/brands/walmart.svg",
     name: "walmart",
   },
+  {
+    imgSrc: "/brands/Dr-Max.svg",
+    name: "Dr Max",
+  },
+  {
+    imgSrc: "/brands/hp.svg",
+    name: "HP",
+  },
+  {
+    imgSrc: "/brands/hyatt.svg",
+    name: "Hyatt",
+  },
+  {
+    imgSrc: "/brands/magnit.svg",
+    name: "Magnit",
+  },
+  {
+    imgSrc: "/brands/mercedes-benz.svg",
+    name: "Mercedes Benz",
+  },
+  {
+    imgSrc: "/brands/midea.svg",
+    name: "Midea",
+  },
+  {
+    imgSrc: "/brands/orange.svg",
+    name: "Orange",
+  },
 ];
 
 function BrandMarquee() {

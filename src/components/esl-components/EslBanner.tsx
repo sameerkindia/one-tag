@@ -2,7 +2,7 @@ import React from "react";
 import AnimationText from "../Animation-text";
 
 type EslHero = {
-  hero: { title: string; subtitle1?: string; subtitle2?: string; cta: string };
+  hero: { title: string; subtitle1?: string; subtitle2?: string; cta?: string };
   language?: string;
 };
 
@@ -32,14 +32,16 @@ function EslBanner({ hero, language }: EslHero) {
             {hero.subtitle2}
           </p>
         )}
-        <div className="mt-3 sm:mt-6 flex justify-center">
-          <a
-            href="/"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-md"
-          >
-            {hero.cta}
-          </a>
-        </div>
+        {hero.cta && (
+          <div className="mt-3 sm:mt-6 flex justify-center">
+            <a
+              href="/"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-md"
+            >
+              {hero.cta}
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );
