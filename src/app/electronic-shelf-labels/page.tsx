@@ -207,21 +207,17 @@ export default function ZkongShieldRebuilt() {
       </section>
 
       <section className="secondary-background relative w-full py-20">
-        <div className="container mx-auto px-4 max-w-7xl relative w-full">
+        {/* <div className="container mx-auto px-4 max-w-7xl relative w-full">
           <div className="text-center">
             <SubHeading
               headingText={eslSystemSection[language].title}
               lastIndex={3}
             />
-            {/* <h2 className="text-3xl font-semibold text-slate-600 dark:text-blue-200 md:text-4xl">
-              {eslSystemSection[language].title}
-            </h2> */}
             <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-blue-200 md:text-base">
               {eslSystemSection[language].description}
             </p>
           </div>
 
-          {/* Cards */}
           <div className="mt-16 grid gap-4 2md:gap-8 md:grid-cols-3">
             {eslSystemSection[language].cards.map((card) => (
               <div
@@ -243,9 +239,9 @@ export default function ZkongShieldRebuilt() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <div className="container mx-auto px-4 max-w-7xl relative w-full mt-24">
+        <div className="container mx-auto px-4 max-w-7xl relative w-full">
           <div className="text-center">
             <h2 className="text-3xl 2lg:text-4xl font-semibold text-slate-600 dark:text-blue-200">
               {gallerysection[language].title}
@@ -255,18 +251,6 @@ export default function ZkongShieldRebuilt() {
           <InfiniteMarquee />
         </div>
       </section>
-
-      {/* <section className="secondary-background relative w-full py-24">
-        <div className="container mx-auto px-4 max-w-7xl relative w-full">
-          <div className="text-center">
-            <h2 className="text-3xl font-semibold text-slate-600 dark:text-blue-200 md:text-4xl">
-              {gallerysection[language].title}
-            </h2>
-          </div>
-
-          <InfiniteMarquee />
-        </div>
-      </section> */}
 
       <section className="relative w-full py-24">
         <div className="container mx-auto px-4 max-w-7xl relative w-full">
@@ -322,18 +306,18 @@ export default function ZkongShieldRebuilt() {
 const hero = {
   en: {
     title: "Advanced Electronic Shelf Labels",
-    subtitle1: "ZKONG -Leading the Digital Revolution of New Retail Industry",
-    cta: "Contact Us",
+    // subtitle1: "ZKONG -Leading the Digital Revolution of New Retail Industry",
+    // cta: "Contact Us",
   },
   ru: {
-    title: "Advanced Electronic Shelf Labels",
-    subtitle1: "ZKONG -Leading the Digital Revolution of New Retail Industry",
-    cta: "Связаться с нами",
+    title: "Продвинутые электронные ценники",
+    // subtitle1: "ZKONG -Leading the Digital Revolution of New Retail Industry",
+    // cta: "Связаться с нами",
   },
   uz: {
-    title: "Advanced Electronic Shelf Labels",
-    subtitle1: "ZKONG -Leading the Digital Revolution of New Retail Industry",
-    cta: "Biz bilan bog'laning",
+    title: "Rivojlangan elektron narx yorliqlari",
+    // subtitle1: "ZKONG -Leading the Digital Revolution of New Retail Industry",
+    // cta: "Biz bilan bog'laning",
   },
 };
 
@@ -341,20 +325,20 @@ const videoData = {
   en: {
     title: "Electronic Shelf Label Technology",
     description:
-      "The new generation of electronic shelf label system, applying the technology of ZKONG ESL Communication, Wi-Fi and IOT system, enable stores to achieve all digital functions without installing servers.",
-    cta: "Get More Info",
+      " The new generation of electronic shelf label system, applying the technology of ZKONG ESL Communication, Wi-Fi and IoT system, enable stores to achieve all digital functions without installing servers.",
+    // cta: "Get More Info",
   },
   ru: {
-    title: "Electronic Shelf Label Technology",
+    title: "Технология электронных ценников",
     description:
-      "The new generation of electronic shelf label system, applying the technology of ZKONG ESL Communication, Wi-Fi and IOT system, enable stores to achieve all digital functions without installing servers.",
-    cta: "Get More Info",
+      "Новое поколение системы электронных ценников, использующее технологию ZKONG ESL, Wi-Fi и IoT, позволяет магазинам реализовать все цифровые функции без установки локальных серверов.",
+    // cta: "Get More Info",
   },
   uz: {
-    title: "Electronic Shelf Label Technology",
+    title: "Elektron narx yorlig‘i texnologiyasi",
     description:
-      "The new generation of electronic shelf label system, applying the technology of ZKONG ESL Communication, Wi-Fi and IOT system, enable stores to achieve all digital functions without installing servers.",
-    cta: "Get More Info",
+      "ZKONG ESL, Wi-Fi va IoT texnologiyalariga asoslangan yangi avlod elektron narx yorlig‘i tizimi do‘konlarga mahalliy serverlarni o‘rnatmasdan barcha raqamli funksiyalarni amalga oshirish imkonini beradi.",
+    // cta: "Get More Info",
   },
 };
 
@@ -365,7 +349,7 @@ const eslFunctionSection = {
       {
         id: "f1",
         title: "Change Page Automatically",
-        body: "The ESL will automatically and regularly switch the page and display the promotion content to meet the needs of daily marketing activities, especially frequent price changes.",
+        body: " Install large-size electronic shelf labels in shelves, central areas and entrances to ensure the coverage and exposure of brand advertising in shops.",
         img: "/ESL/EslFunction/automatically.webp",
       },
       {
@@ -377,7 +361,7 @@ const eslFunctionSection = {
       {
         id: "f3",
         title: "Update Stock Automatically",
-        body: "The inventory data on the electronic shelf label screen will be updated simultaneously with the inventory system when the user's management system is connected with the ZKONG cloud ESL system.",
+        body: "The inventory data on the electronic shelf label screen will be updated simultaneously with the inventory system when the user's management system is connected to the cloud system.",
         img: "/ESL/EslFunction/update-stock.webp",
       },
       {
@@ -431,52 +415,60 @@ const eslFunctionSection = {
       },
       {
         id: "f2",
-        title: "Advertising	",
-        body: "Install ZKONG large-size electronic shelf labels in shelves, central areas and entrances to ensure the coverage and exposure of brand advertising in shops.",
+        title: "Reklama",
+        body: "Do‘konlarda brend reklamalarining keng qamrovini va yuqori ko‘rinishini ta’minlash uchun katta o‘lchamdagi elektron narx yorliqlarini javonlarga, markaziy hududlarga va kirish joylariga o‘rnating.",
         img: "/ESL/EslFunction/advertising.webp",
       },
       {
         id: "f3",
-        title: "Update Stock Automatically",
-        body: "The inventory data on the electronic shelf label screen will be updated simultaneously with the inventory system when the user's management system is connected with the ZKONG cloud ESL system.",
+        title: "Zaxirani avtomatik yangilash",
+        body: "Foydalanuvchi boshqaruv tizimi bulut tizimiga ulanganida, elektron narx yorlig‘i ekranidagi zaxira ma’lumotlari inventar tizimi bilan bir vaqtda avtomatik yangilanadi.",
         img: "/ESL/EslFunction/update-stock.webp",
       },
       {
         id: "f4",
-        title: "Out of Stock Alert",
-        body: "When the number of products on the shelf is lower than the set quantity, the LED lights on electronic shelf label will flash to inform the staff.",
+        title: "Tovar tugashi haqida ogohlantirisht",
+        body: "Agar polkadagi mahsulotlar soni belgilangan miqdordan kamaysa, elektron narx yorlig‘idagi LED chiroqlar xodimlarni ogohlantirish uchun yonib-o‘chadi.",
         img: "/ESL/EslFunction/automatically.webp",
       },
     ],
     data2: [
       {
         id: "f1",
-        title: "Product Positioning",
-        body: "The LED on the ESL will flash to provide the product position and a product picking route for staffs.",
+        title: "Mahsulot joylashuvini aniqlash",
+        body: `Elektron narx yorlig‘idagi LED chiroq mahsulot joylashuvini va xodimlar uchun
+mahsulotni topish yo‘nalishini ko‘rsatish uchun yonib-o‘chadi.
+`,
         img: "/ESL/EslFunction/positioning.webp",
       },
       {
         id: "f2",
-        title: "Shopping Navigation",
-        body: "When consumers click the product on the app, the app will provide the best route from the consumer's current location to the located product",
+        title: "Xaridlar bo‘yicha navigatsiya",
+        body: `Mijoz ilovada mahsulotni tanlaganda, ilova mijozning joriy joylashuvdan kerakli
+mahsulotgacha eng qulay yo‘lni ko‘rsatib beradi.`,
         img: "/ESL/EslFunction/navigation.webp",
       },
       {
         id: "f3",
-        title: "Consumer Interaction",
-        body: "The customers can enter the online store and comment on the app easily when they scan the QR code on the electronic shelf label or hold the smart phone close to the ESL",
+        title: "Mijozlar bilan o‘zaro aloqalar",
+        body: `Xaridorlar elektron narx yorlig‘idagi QR-kodni skanerlab yoki smartfonni ESL
+qurilmasiga yaqin tutib, onlayn do‘konga kirishlari va ilovada fikr-mulohaza qoldirishlari
+mumkin.`,
         img: "/ESL/EslFunction/interaction.webp",
       },
       {
         id: "f4",
-        title: "Display Management",
-        body: "Combine the ZKONG cloud ESLs with the shelf facilitate to manage the shelf, allowing staff to display goods in a quick, efficient and standardized manner.",
+        title: "Tovarlarni joylashtirishni boshqarish",
+        body: `Bulut tizimini savdo stendlari bilan birlashtirish orqali xodimlar mahsulotlarni tez,
+samarali va standart usulda joylashtirishni boshqarishi mumkin.
+`,
         img: "/ESL/EslFunction/management.webp",
       },
       {
         id: "f5",
-        title: "Brand Upgrading",
-        body: "The ZKONG ESL improve the overall visual impact of the store, which also enhance the brand image.",
+        title: "Brendni yangilash",
+        body: `Elektron narx yorliqlari do‘konning umumiy vizual ko‘rinishini yaxshilaydi va brend
+imidjini mustahkamlaydi.`,
         img: "/ESL/EslFunction/upgrading.webp",
       },
     ],
@@ -492,52 +484,65 @@ const eslFunctionSection = {
       },
       {
         id: "f2",
-        title: "Advertising	",
-        body: "Install ZKONG large-size electronic shelf labels in shelves, central areas and entrances to ensure the coverage and exposure of brand advertising in shops.",
+        title: "Реклама",
+        body: " Устанавливайте крупные электронные ценники на полках, в центральных зонах и у входов, чтобы обеспечить широкое покрытие и высокую видимость брендовой рекламы в магазинах.",
         img: "/ESL/EslFunction/advertising.webp",
       },
       {
         id: "f3",
-        title: "Update Stock Automatically",
-        body: "The inventory data on the electronic shelf label screen will be updated simultaneously with the inventory system when the user's management system is connected with the ZKONG cloud ESL system.",
+        title: "Автоматическое обновление остатков",
+        body: ` Данные об остатках на экранах электронных ценников будут автоматически
+обновляться одновременно с системой инвентаризации при подключении системы
+управления пользователя к облачной системе.
+`,
         img: "/ESL/EslFunction/update-stock.webp",
       },
       {
         id: "f4",
-        title: "Out of Stock Alert",
-        body: "When the number of products on the shelf is lower than the set quantity, the LED lights on electronic shelf label will flash to inform the staff.",
+        title: "Оповещение об отсутствии товара",
+        body: `Когда количество товаров на полке становится ниже установленного уровня,
+светодиоды на электронных ценниках начинают мигать, уведомляя сотрудников.`,
         img: "/ESL/EslFunction/automatically.webp",
       },
     ],
     data2: [
       {
         id: "f1",
-        title: "Product Positioning",
-        body: "The LED on the ESL will flash to provide the product position and a product picking route for staffs.",
+        title: "Определение расположения товара",
+        body: ` Светодиод на электронном ценнике будет мигать, указывая точное
+расположение товара и маршрут его подбора для сотрудников.
+`,
         img: "/ESL/EslFunction/positioning.webp",
       },
       {
         id: "f2",
-        title: "Shopping Navigation",
-        body: "When consumers click the product on the app, the app will provide the best route from the consumer's current location to the located product",
+        title: "Навигация по покупка",
+        body: ` Когда покупатель выбирает товар в приложении, система прокладывает
+оптимальный маршрут от текущего местоположения покупателя до выбранного
+товара.`,
         img: "/ESL/EslFunction/navigation.webp",
       },
       {
         id: "f3",
-        title: "Consumer Interaction",
-        body: "The customers can enter the online store and comment on the app easily when they scan the QR code on the electronic shelf label or hold the smart phone close to the ESL",
+        title: "Взаимодействие с покупателями",
+        body: `Покупатели могут легко зайти в онлайн-магазин и оставлять комментарии в
+приложении, отсканировав QR-код на электронном ценнике или поднеся смартфон к
+ESL-устройству.
+`,
         img: "/ESL/EslFunction/interaction.webp",
       },
       {
         id: "f4",
-        title: "Display Management",
-        body: "Combine the ZKONG cloud ESLs with the shelf facilitate to manage the shelf, allowing staff to display goods in a quick, efficient and standardized manner.",
+        title: "Управление выкладкой товара",
+        body: `Интеграция облачной системы с торговыми стеллажами помогает персоналу
+быстро, эффективно и стандартизированно управлять выкладкой товаров.`,
         img: "/ESL/EslFunction/management.webp",
       },
       {
         id: "f5",
-        title: "Brand Upgrading",
-        body: "The ZKONG ESL improve the overall visual impact of the store, which also enhance the brand image.",
+        title: " Улучшение бренда",
+        body: `Электронные ценники улучшают общий визуальный облик магазина, что также
+усиливает имидж бренда.`,
         img: "/ESL/EslFunction/upgrading.webp",
       },
     ],
@@ -546,7 +551,7 @@ const eslFunctionSection = {
 
 const modalsSection = {
   en: {
-    title: "Models of ZKONG Shield Digital Retail Price Tags",
+    title: "Electronic Shelf Labels Lineup",
     allModels: [
       {
         name: "Shield",
@@ -962,7 +967,7 @@ const modalsSection = {
     ],
   },
   uz: {
-    title: "Models of ZKONG Shield Digital Retail Price Tags",
+    title: "Elektron narx yorliqlari liniyasi",
     allModels: [
       {
         name: "Shield",
@@ -1378,7 +1383,7 @@ const modalsSection = {
     ],
   },
   ru: {
-    title: "Models of ZKONG Shield Digital Retail Price Tags",
+    title: "Линейка электронных ценников",
     allModels: [
       {
         name: "Shield",
@@ -1801,27 +1806,27 @@ const advantagesSection = {
       {
         id: 1,
         title: "Integration of Multiple Systems",
-        description: `ZKONG electronic pricing labels can simply connect retailer's ERP or POS system for smarter store management.`,
+        description: `Electronic shelf labels can simply connect retailer's ERP or POS system for smarter store management.`,
       },
       {
         id: 2,
         title: "Smart Pricing, One-Click Updates",
-        description: `One-click price changes, ZKONG electronic shelf label update in seconds, supports bulk pricing changes, reducing human errors; Scheduled updates for promotional events.`,
+        description: `One-click price changes — electronic shelf labels update in seconds, support bulk price changes, reduce human errors, and allow scheduled updates for promotional events.`,
       },
       {
         id: 3,
         title: "Superior Information Display Quality",
-        description: `Multi-Color E-Ink Price Tags and Full-Color LCD price tags, a better way of store displays.`,
+        description: `Multi-color E-Ink price tags and full-color LCD price tags provide a better, clearer, and more attractive way of displaying information in stores.`,
       },
       {
         id: 4,
         title: "Uniform Pricing for All Outlets",
-        description: `Wth ZKONG electronic shelf price tags, the headquarters can centrally control pricing, assign permissions to different outlets, and manage product display and promotions in all outlets.`,
+        description: `Headquarters can centrally control pricing, assign permissions to different outlets, and manage product display and promotions across all stores`,
       },
       {
         id: 5,
         title: "Traffic Analytics for Collaborative Decision-Making",
-        description: `Deploy millimeter-wave radars to precisely track the number of daily visitors. Produce regular reports to aid in formulating marketing strategies.`,
+        description: `Use millimeter-wave radars to accurately track daily visitor numbers. Generate regular reports to support effective marketing strategy planning.`,
       },
     ],
   },
@@ -1829,28 +1834,29 @@ const advantagesSection = {
     cards: [
       {
         id: 1,
-        title: "Integration of Multiple Systems",
-        description: `ZKONG electronic pricing labels can simply connect retailer's ERP or POS system for smarter store management.`,
+        title: "Bir nechta tizimlarni integratsiya qilish",
+        description: `Elektron narx yorliqlari do‘konning ERP yoki POS tizimiga oson ulanib, do‘kon boshqaruvini yanada aqlli qiladi`,
       },
       {
         id: 2,
-        title: "Smart Pricing, One-Click Updates",
-        description: `One-click price changes, ZKONG electronic shelf label update in seconds, supports bulk pricing changes, reducing human errors; Scheduled updates for promotional events.`,
+        title: "Aqlli narxlash, bir bosishda yangilanish",
+        description: `Bir bosishda narxlarni o‘zgartirish — elektron narx yorliqlari soniyalar ichida yangilanadi, ommaviy narx o‘zgarishlarini qo‘llab-quvvatlaydi va inson xatolarini kamaytiradi. Shuningdek, aksiyalar uchun rejalashtirilgan yangilash imkoniyati mavjud.
+`,
       },
       {
         id: 3,
-        title: "Superior Information Display Quality",
-        description: `Multi-Color E-Ink Price Tags and Full-Color LCD price tags, a better way of store displays.`,
+        title: "Axborotni ko‘rsatishning yuqori sifati",
+        description: `Ko‘p rangli E-Ink narx yorliqlari va to‘liq rangli LCD narx yorliqlari do‘konlarda ma’lumotlarni yanada aniq, ravshan va jozibali tarzda ko‘rsatishni ta’minlaydi.`,
       },
       {
         id: 4,
-        title: "Uniform Pricing for All Outlets",
-        description: `Wth ZKONG electronic shelf price tags, the headquarters can centrally control pricing, assign permissions to different outlets, and manage product display and promotions in all outlets.`,
+        title: "Barcha filiallar uchun yagona narx siyosati",
+        description: `Bosh ofis narxlarni markazlashgan holda boshqarishi, turli filiallarga ruxsatlarni taqsimlashi hamda barcha do‘konlarda mahsulot joylashuvi va aksiyalarni nazorat qilishi mumkin.`,
       },
       {
         id: 5,
-        title: "Traffic Analytics for Collaborative Decision-Making",
-        description: `Deploy millimeter-wave radars to precisely track the number of daily visitors. Produce regular reports to aid in formulating marketing strategies.`,
+        title: "Hamkorlikda qaror qabul qilish uchun trafik tahlili",
+        description: `Millimetr-to‘lqinli radarlar yordamida har kuni do‘konga kiruvchi mijozlar sonini aniq kuzatish mumkin. Doimiy hisobotlar marketing strategiyalarini samarali rejalashtirishga yordam beradi.`,
       },
     ],
   },
@@ -1858,28 +1864,29 @@ const advantagesSection = {
     cards: [
       {
         id: 1,
-        title: "Integration of Multiple Systems",
-        description: `ZKONG electronic pricing labels can simply connect retailer's ERP or POS system for smarter store management.`,
+        title: "Интеграция нескольких систем",
+        description: `Электронные ценники легко подключаются к ERP- или POS-системе ритейлера для более умного управления магазином.`,
       },
       {
         id: 2,
-        title: "Smart Pricing, One-Click Updates",
-        description: `One-click price changes, ZKONG electronic shelf label update in seconds, supports bulk pricing changes, reducing human errors; Scheduled updates for promotional events.`,
+        title: "Умное ценообразование, обновление в один клик",
+        description: `секунды, поддерживается массовое изменение цен, что снижает риск человеческих ошибок. Также доступны запланированные обновления для промо-акций.`,
       },
       {
         id: 3,
-        title: "Superior Information Display Quality",
-        description: `Multi-Color E-Ink Price Tags and Full-Color LCD price tags, a better way of store displays.`,
+        title: "Высокое качество отображения информации",
+        description: `Многоцветные E-Ink ценники и полноцветные LCD ценники обеспечивают более чёткий, наглядный и привлекательный способ отображения информации в магазине.
+`,
       },
       {
         id: 4,
-        title: "Uniform Pricing for All Outlets",
-        description: `Wth ZKONG electronic shelf price tags, the headquarters can centrally control pricing, assign permissions to different outlets, and manage product display and promotions in all outlets.`,
+        title: "Единые цены для всех магазинов",
+        description: `Головной офис может централизованно управлять ценами, назначать права доступа для разных магазинов, а также контролировать выкладку товаров и промо-акции во всех точках.`,
       },
       {
         id: 5,
-        title: "Traffic Analytics for Collaborative Decision-Making",
-        description: `Deploy millimeter-wave radars to precisely track the number of daily visitors. Produce regular reports to aid in formulating marketing strategies.`,
+        title: "Аналитика трафика для совместного принятия решений",
+        description: `Использование миллиметровых радаров позволяет точно отслеживать количество ежедневных посетителей. Регулярные отчеты помогают разрабатывать эффективные маркетинговые стратегии.`,
       },
     ],
   },
@@ -1887,96 +1894,115 @@ const advantagesSection = {
 
 const whyChooseSection = {
   en: {
-    heading: "Why Choose Electronic Price Labels From ZKONG?",
-    subheading: "ZKONG Electronic Price Labels – Boost Efficiency & Accuracy",
+    heading: "Why Choose Electronic Price Labels?",
+    subheading: "Electronic price labels – boost efficiency & accuracy",
     description:
-      "Experience the future of retail with ZKONG’s electronic price labels. Real-time updates and easy integration.",
+      "Experience the future of retail with electronic price labels. Real-time updates and easy integration.",
     cards: [
       {
         title: "Industry Leader",
-        text: "ZKONG has 18 years of experience in the IoT wireless communication industry and specializes in ESL and LCD smart hardware for the retail sector. With over 220 domestic and international patents, ZKONG continuously expands its global business, establishing professional localized teams in North America, Hong Kong, Japan, and Europe to provide industry-leading electronic shelf label products to customers.",
+        text: "With 18 years of experience in IoT wireless communication, ZKONG specializes in ESL and LCD smart retail hardware. With over 220 domestic and international patents, ZKONG continues expanding globally, establishing professional teams in North America, Hong Kong, Japan, and Europe to deliver industry-leading electronic shelf label solutions.",
         index: "01",
         icon: Wrench,
       },
       {
         title: "Product Advantages",
-        text: "ZKONG offers over 50 models of electronic price labels, ensuring flexible use in multiple industries. Our products are renowned for their high-definition display, instant price updates, and long-lasting battery life. ZKONG electronic price labels feature e-ink screens, and the smart pricing feature enables updates of prices, QR codes even product images within 3 seconds. The 5-10 year long battery life ensures reliable long-term performance.",
+        text: "ZKONG offers over 50 models of electronic price labels for flexible use across multiple industries. Our labels feature high-definition displays, instant price updates, long battery life (5–10 years), e-ink technology, fast QR code and content updates (within 3 seconds), ensuring reliable long-term performance.",
         index: "02",
         icon: Users,
       },
       {
         title: "Advanced Manufacturing",
-        text: "ZKONG possesses a self-owned manufacturing base of over 40,000㎡, with an annual production capacity exceeding 50 million units, effortlessly meeting global market demands for electronic price labels. Our in-house production lines allow ZKONG to offer any level of product customization, fulfilling flexible customer needs. The MES + ERP digital management system ensures the quality of every component leaving our facility.",
+        text: "ZKONG owns a 40,000㎡ manufacturing base with annual production exceeding 50 million units, meeting global market demand. Our in-house production supports customized solutions. MES + ERP management ensures strict quality control for every product.",
         index: "03",
         icon: Factory,
       },
       {
         title: "Custom Service",
-        text: "ZKONG provides tailored software and hardware product solutions. The ZKONG cloud platform offers open interfaces, supporting various types of ERP, API, and customized development for specific requirements. The platform features a visual design, allowing for highly customizable screen templates. It also supports personalized customization of product shells, frames, colors, and corporate logos, creating exclusive electronic price labels tailored to your brand image and products.",
+        text: "ZKONG delivers tailored hardware and software solutions. Our cloud platform offers open ERP & API integration, custom development, flexible visual templates, personalized product shells, frames, colors, and corporate branding — delivering exclusive electronic price labels aligned with your brand.",
         index: "04",
         icon: Headphones,
       },
     ],
   },
   uz: {
-    heading: "Why Choose Electronic Price Labels From ZKONG?",
-    subheading: "ZKONG Electronic Price Labels – Boost Efficiency & Accuracy",
+    heading: "Nega elektron narx yorliqlarini tanlash kerak?",
+    subheading: "Elektron narx yorliqlari – samaradorlik va aniqlikni oshiradi.",
     description:
-      "Experience the future of retail with ZKONG’s electronic price labels. Real-time updates and easy integration.",
+      "Elektron narx yorliqlari bilan savdoning kelajagini his eting: real vaqt rejimida yangilanish va oson integratsiya.",
     cards: [
       {
-        title: "Industry Leader",
-        text: "ZKONG has 18 years of experience in the IoT wireless communication industry and specializes in ESL and LCD smart hardware for the retail sector. With over 220 domestic and international patents, ZKONG continuously expands its global business, establishing professional localized teams in North America, Hong Kong, Japan, and Europe to provide industry-leading electronic shelf label products to customers.",
+        title: "Sanoat yetakchisi",
+        text: "ZKONG 18 yillik IoT simsiz texnologiya tajribasiga ega bo‘lib, ESL va LCD aqlli chakana savdo uskunalariga ixtisoslashgan. 220+ patent va global jamoalar bilan kompaniya AQSh, Yevropa, Yaponiya va Gonkongda muvaffaqiyatli faoliyat yuritmoqda.",
         index: "01",
         icon: Wrench,
       },
       {
-        title: "Product Advantages",
-        text: "ZKONG offers over 50 models of electronic price labels, ensuring flexible use in multiple industries. Our products are renowned for their high-definition display, instant price updates, and long-lasting battery life. ZKONG electronic price labels feature e-ink screens, and the smart pricing feature enables updates of prices, QR codes even product images within 3 seconds. The 5-10 year long battery life ensures reliable long-term performance.",
+        title: "Mahsulot afzalliklari",
+        text: `ZKONG 50 dan ortiq turdagi elektron narx yorliqlarini taklif etadi.
+Ular yuqori aniqlikdagi displey, tezkor narx yangilanishi, 5–10 yilgacha batareya ishlash
+muddati, e-ink texnologiyasi va 3 soniya ichida ma’lumot yangilash imkoniyatiga ega.`,
         index: "02",
         icon: Users,
       },
       {
-        title: "Advanced Manufacturing",
-        text: "ZKONG possesses a self-owned manufacturing base of over 40,000㎡, with an annual production capacity exceeding 50 million units, effortlessly meeting global market demands for electronic price labels. Our in-house production lines allow ZKONG to offer any level of product customization, fulfilling flexible customer needs. The MES + ERP digital management system ensures the quality of every component leaving our facility.",
+        title: "Rivojlangan ishlab chiqarish",
+        text: `ZKONG 40 000㎡ maydonga ega ishlab chiqarish bazasiga ega bo‘lib, yiliga 50 milliondan
+ortiq mahsulot ishlab chiqaradi.
+Ichki ishlab chiqarish jarayoni va MES + ERP tizimlari yuqori sifat nazoratini ta’minlaydi.`,
         index: "03",
         icon: Factory,
       },
       {
-        title: "Custom Service",
-        text: "ZKONG provides tailored software and hardware product solutions. The ZKONG cloud platform offers open interfaces, supporting various types of ERP, API, and customized development for specific requirements. The platform features a visual design, allowing for highly customizable screen templates. It also supports personalized customization of product shells, frames, colors, and corporate logos, creating exclusive electronic price labels tailored to your brand image and products.",
+        title: "Maxsus xizmatlar",
+        text: `ZKONG mijozlarga moslashtirilgan dasturiy va apparat yechimlarini taqdim etadi.
+Bulut platformasi ERP, API integratsiyasi, moslashtiriladigan dizayn shablonlari, korporativ
+rang va logotiplarni qo‘llab-quvvatlaydi.`,
         index: "04",
         icon: Headphones,
       },
     ],
   },
   ru: {
-    heading: "Why Choose Electronic Price Labels From ZKONG?",
-    subheading: "ZKONG Electronic Price Labels – Boost Efficiency & Accuracy",
+    heading: "Почему стоит выбрать электронные ценники?",
+    subheading: "Электронные ценники — повышение эффективности и точности.",
     description:
-      "Experience the future of retail with ZKONG’s electronic price labels. Real-time updates and easy integration.",
+      "Ощутите будущее ритейла с электронными ценниками: обновления в реальном времени и простая интеграция.",
     cards: [
       {
-        title: "Industry Leader",
-        text: "ZKONG has 18 years of experience in the IoT wireless communication industry and specializes in ESL and LCD smart hardware for the retail sector. With over 220 domestic and international patents, ZKONG continuously expands its global business, establishing professional localized teams in North America, Hong Kong, Japan, and Europe to provide industry-leading electronic shelf label products to customers.",
+        title: "Лидер отрасли",
+        text: `ZKONG обладает 18-летним опытом в области IoT-коммуникаций и специализируется
+на электронных ценниках и умном LCD-оборудовании для ритейла.
+Компания имеет более 220 патентов и продолжает расширять присутствие по всему
+миру, создавая профессиональные команды в Северной Америке, Гонконге, Японии и
+Европе.`,
         index: "01",
         icon: Wrench,
       },
       {
-        title: "Product Advantages",
-        text: "ZKONG offers over 50 models of electronic price labels, ensuring flexible use in multiple industries. Our products are renowned for their high-definition display, instant price updates, and long-lasting battery life. ZKONG electronic price labels feature e-ink screens, and the smart pricing feature enables updates of prices, QR codes even product images within 3 seconds. The 5-10 year long battery life ensures reliable long-term performance.",
+        title: "Преимущества продукта",
+        text: `ZKONG предлагает более 50 моделей электронных ценников для различных отраслей.
+Наши решения отличаются высоким качеством изображения, мгновенным
+обновлением цен, длительным сроком службы батареи (5–10 лет), поддержкой e-ink
+экранов и быстрым обновлением контента в течение 3 секунд.`,
         index: "02",
         icon: Users,
       },
       {
-        title: "Advanced Manufacturing",
-        text: "ZKONG possesses a self-owned manufacturing base of over 40,000㎡, with an annual production capacity exceeding 50 million units, effortlessly meeting global market demands for electronic price labels. Our in-house production lines allow ZKONG to offer any level of product customization, fulfilling flexible customer needs. The MES + ERP digital management system ensures the quality of every component leaving our facility.",
+        title: "Передовое производство",
+        text: `ZKONG владеет собственной производственной базой площадью 40 000㎡, с годовой
+мощностью более 50 миллионов единиц.
+Внутреннее производство позволяет реализовывать гибкую кастомизацию и
+контролировать качество каждого продукта благодаря системам MES + ERP.
+`,
         index: "03",
         icon: Factory,
       },
       {
-        title: "Custom Service",
-        text: "ZKONG provides tailored software and hardware product solutions. The ZKONG cloud platform offers open interfaces, supporting various types of ERP, API, and customized development for specific requirements. The platform features a visual design, allowing for highly customizable screen templates. It also supports personalized customization of product shells, frames, colors, and corporate logos, creating exclusive electronic price labels tailored to your brand image and products.",
+        title: "Индивидуальные решения",
+        text: `ZKONG предоставляет программно-аппаратные решения под ключ.
+Облачная платформа поддерживает интеграцию ERP, API, кастомизацию интерфейсов,
+дизайн шаблонов, персонализацию корпусов, рамок и корпоративной символики.`,
         index: "04",
         icon: Headphones,
       },
@@ -2050,144 +2076,210 @@ const eslSystemSection = {
   },
 };
 
-const carouselData = {
+const gallerysection = {
   en: {
-    title: "Electronic Shelf Labels Application Scenarios",
-    description1: `1. suitable for environment which requires perfect display of products' details`,
-    description2: `2. large-size versions perfectly for poster display, promotion notification and other scenarios`,
-    imageData: [
-      {
-        name: "Fresh Food",
-        description: `Keep your fresh food section up-to-date with ZKONG electronic shelf tags. These digital shelf edge labels allow for quick price adjustments and real-time updates, ensuring compliance with market changes. The electronic price tag display helps maintain freshness and transparency, improving customer confidence in your products.`,
-        src: "/ESL/carouselmages/fresh-food.webp",
-      },
-      {
-        name: "Pharmacy",
-        description: `Streamline your pharmacy operations with ZKONG electronic pricing labels. These digital shelf edge labels offer accurate and timely price updates, reducing manual errors. The LCD price tag ensures that customers receive the most current information on medications and health products, enhancing their shopping experience.`,
-        src: "/ESL/carouselmages/pharmacy.webp",
-      },
-      {
-        name: "Smart Office",
-        description: `Transform your smart office with ZKONG Digital Name Plate. The E-ink Nameplate saves time, money and manual labor by replacing paper nameplates thanks to the E Ink technology for optimal legibility and minimal eye strain.`,
-        src: "/ESL/carouselmages/smart-office.webp",
-      },
-      {
-        name: "Supermarket",
-        description: `Enhance your supermarket's efficiency with ZKONG electronic shelf labels. These digital shelf edge labels provide real-time pricing updates, ensuring accuracy and saving labor costs. With electronic price tag displays, you can easily manage promotions and stock levels, offering a seamless shopping experience for your customers.`,
-        src: "/ESL/carouselmages/supermarket.webp",
-      },
-      {
-        name: "Warehouse",
-        description: `Improve your warehouse management with ZKONG electronic shelf labels and digital signage warehouse. These digital shelf edge labels offer real-time inventory tracking and dynamic pricing updates, streamlining operations and reducing errors. The digital shelf label ensures accurate stock information, enhancing efficiency and productivity in your warehouse environment.`,
-        src: "/ESL/carouselmages/warehouse.webp",
-      },
-      {
-        name: "Cosmetics",
-        description: `Upgrade your cosmetics section with ZKONG electronic shelf edge labels. These digital price labels offer dynamic pricing and instant updates, perfect for fast-paced retail environments. The sleek electronic price tag display complements the aesthetic of your products, while ensuring accurate and up-to-date information for shoppers.`,
-        src: "/ESL/carouselmages/cosmetics.webp",
-      },
-      {
-        name: "Electronics",
-        description: `Optimize your electronics store with ZKONG electronic shelf price tags. These digital shelf labelling solutions provide precise and real-time pricing, enhancing customer trust and satisfaction. The electronic price tag display is ideal for showcasing detailed product information, helping customers make informed purchasing decisions.`,
-        src: "/ESL/carouselmages/electronics.webp",
-      },
-    ],
+    title: "Gallery of Electronic Shelf Labels",
   },
   uz: {
-    title: "Electronic Shelf Labels Application Scenarios",
-    description1: `1. suitable for environment which requires perfect display of products' details`,
-    description2: `2. large-size versions perfectly for poster display, promotion notification and other scenarios`,
-    imageData: [
-      {
-        name: "Fresh Food",
-        description: `Keep your fresh food section up-to-date with ZKONG electronic shelf tags. These digital shelf edge labels allow for quick price adjustments and real-time updates, ensuring compliance with market changes. The electronic price tag display helps maintain freshness and transparency, improving customer confidence in your products.`,
-        src: "/ESL/carouselmages/fresh-food.webp",
-      },
-      {
-        name: "Pharmacy",
-        description: `Streamline your pharmacy operations with ZKONG electronic pricing labels. These digital shelf edge labels offer accurate and timely price updates, reducing manual errors. The LCD price tag ensures that customers receive the most current information on medications and health products, enhancing their shopping experience.`,
-        src: "/ESL/carouselmages/pharmacy.webp",
-      },
-      {
-        name: "Smart Office",
-        description: `Transform your smart office with ZKONG Digital Name Plate. The E-ink Nameplate saves time, money and manual labor by replacing paper nameplates thanks to the E Ink technology for optimal legibility and minimal eye strain.`,
-        src: "/ESL/carouselmages/smart-office.webp",
-      },
-      {
-        name: "Supermarket",
-        description: `Enhance your supermarket's efficiency with ZKONG electronic shelf labels. These digital shelf edge labels provide real-time pricing updates, ensuring accuracy and saving labor costs. With electronic price tag displays, you can easily manage promotions and stock levels, offering a seamless shopping experience for your customers.`,
-        src: "/ESL/carouselmages/supermarket.webp",
-      },
-      {
-        name: "Warehouse",
-        description: `Improve your warehouse management with ZKONG electronic shelf labels and digital signage warehouse. These digital shelf edge labels offer real-time inventory tracking and dynamic pricing updates, streamlining operations and reducing errors. The digital shelf label ensures accurate stock information, enhancing efficiency and productivity in your warehouse environment.`,
-        src: "/ESL/carouselmages/warehouse.webp",
-      },
-      {
-        name: "Cosmetics",
-        description: `Upgrade your cosmetics section with ZKONG electronic shelf edge labels. These digital price labels offer dynamic pricing and instant updates, perfect for fast-paced retail environments. The sleek electronic price tag display complements the aesthetic of your products, while ensuring accurate and up-to-date information for shoppers.`,
-        src: "/ESL/carouselmages/cosmetics.webp",
-      },
-      {
-        name: "Electronics",
-        description: `Optimize your electronics store with ZKONG electronic shelf price tags. These digital shelf labelling solutions provide precise and real-time pricing, enhancing customer trust and satisfaction. The electronic price tag display is ideal for showcasing detailed product information, helping customers make informed purchasing decisions.`,
-        src: "/ESL/carouselmages/electronics.webp",
-      },
-    ],
+    title: "Elektron narx yorliqlari galereyasi",
   },
   ru: {
-    title: "Electronic Shelf Labels Application Scenarios",
-    description1: `1. suitable for environment which requires perfect display of products' details`,
-    description2: `2. large-size versions perfectly for poster display, promotion notification and other scenarios`,
-    imageData: [
-      {
-        name: "Fresh Food",
-        description: `Keep your fresh food section up-to-date with ZKONG electronic shelf tags. These digital shelf edge labels allow for quick price adjustments and real-time updates, ensuring compliance with market changes. The electronic price tag display helps maintain freshness and transparency, improving customer confidence in your products.`,
-        src: "/ESL/carouselmages/fresh-food.webp",
-      },
-      {
-        name: "Pharmacy",
-        description: `Streamline your pharmacy operations with ZKONG electronic pricing labels. These digital shelf edge labels offer accurate and timely price updates, reducing manual errors. The LCD price tag ensures that customers receive the most current information on medications and health products, enhancing their shopping experience.`,
-        src: "/ESL/carouselmages/pharmacy.webp",
-      },
-      {
-        name: "Smart Office",
-        description: `Transform your smart office with ZKONG Digital Name Plate. The E-ink Nameplate saves time, money and manual labor by replacing paper nameplates thanks to the E Ink technology for optimal legibility and minimal eye strain.`,
-        src: "/ESL/carouselmages/smart-office.webp",
-      },
-      {
-        name: "Supermarket",
-        description: `Enhance your supermarket's efficiency with ZKONG electronic shelf labels. These digital shelf edge labels provide real-time pricing updates, ensuring accuracy and saving labor costs. With electronic price tag displays, you can easily manage promotions and stock levels, offering a seamless shopping experience for your customers.`,
-        src: "/ESL/carouselmages/supermarket.webp",
-      },
-      {
-        name: "Warehouse",
-        description: `Improve your warehouse management with ZKONG electronic shelf labels and digital signage warehouse. These digital shelf edge labels offer real-time inventory tracking and dynamic pricing updates, streamlining operations and reducing errors. The digital shelf label ensures accurate stock information, enhancing efficiency and productivity in your warehouse environment.`,
-        src: "/ESL/carouselmages/warehouse.webp",
-      },
-      {
-        name: "Cosmetics",
-        description: `Upgrade your cosmetics section with ZKONG electronic shelf edge labels. These digital price labels offer dynamic pricing and instant updates, perfect for fast-paced retail environments. The sleek electronic price tag display complements the aesthetic of your products, while ensuring accurate and up-to-date information for shoppers.`,
-        src: "/ESL/carouselmages/cosmetics.webp",
-      },
-      {
-        name: "Electronics",
-        description: `Optimize your electronics store with ZKONG electronic shelf price tags. These digital shelf labelling solutions provide precise and real-time pricing, enhancing customer trust and satisfaction. The electronic price tag display is ideal for showcasing detailed product information, helping customers make informed purchasing decisions.`,
-        src: "/ESL/carouselmages/electronics.webp",
-      },
-    ],
+    title: "Галерея электронных ценников",
   },
 };
 
-const gallerysection = {
+const carouselData = {
   en: {
-    title: "Gallery of ZKONG Electronic Shelf Labels",
+    title: "Electronic Shelf Labels Application Scenarios",
+    description1: `1. Suitable for environments that require a clear and detailed product display.`,
+    description2: `2. Large-size versions are perfect for poster displays, promotion notifications, and other scenarios.`,
+    imageData: [
+      {
+        name: "Fresh Food",
+        description: `Keep your fresh food section up-to-date with electronic shelf tags. These digital shelf edge labels allow for quick price adjustments and real-time updates, ensuring compliance with market changes. The electronic price tag display helps maintain freshness and transparency, improving customer confidence in your products.`,
+        src: "/ESL/carouselmages/fresh-food.webp",
+      },
+      {
+        name: "Pharmacy",
+        description: `Streamline your pharmacy operations with electronic pricing labels. These digital shelf edge
+labels offer accurate and timely price updates, reducing manual errors. LCD price tags
+ensure that customers receive the most current information on medications and health
+products, enhancing their shopping experience.`,
+        src: "/ESL/carouselmages/pharmacy.webp",
+      },
+      {
+        name: "Smart Office",
+        description: `Transform your smart office with Digital Name Plates.
+The E-ink Nameplate saves time, money, and manual labor by replacing paper nameplates
+with modern E-Ink technology, ensuring optimal readability and minimal eye strain.`,
+        src: "/ESL/carouselmages/smart-office.webp",
+      },
+      {
+        name: "Supermarket",
+        description: `Enhance your supermarket’s efficiency with electronic shelf labels. These digital shelf labels
+provide real-time pricing updates, ensuring accuracy and reducing labor costs. With
+electronic price tag displays, you can easily manage promotions and stock levels, offering a
+seamless shopping experience for your customers.`,
+        src: "/ESL/carouselmages/supermarket.webp",
+      },
+      {
+        name: "Warehouse",
+        description: `Improve your warehouse management with electronic shelf labels and digital signage. These
+digital shelf labels offer real-time inventory tracking and dynamic pricing updates,
+streamlining operations and reducing errors. Electronic labels ensure accurate stock
+information, increasing efficiency and productivity in your warehouse.
+`,
+        src: "/ESL/carouselmages/warehouse.webp",
+      },
+      {
+        name: "Cosmetics",
+        description: `Upgrade your cosmetics section with electronic shelf edge labels. These digital price labels
+offer dynamic pricing and instant updates, perfect for fast-paced retail environments. The
+sleek digital display complements the aesthetic of your products while ensuring accurate
+and up-to-date information for shoppers.
+`,
+        src: "/ESL/carouselmages/cosmetics.webp",
+      },
+      {
+        name: "Electronics",
+        description: `Optimize your electronics store with electronic shelf price tags. These digital shelf labelling
+solutions provide precise and real-time pricing, increasing customer trust and satisfaction.
+The electronic price tag display is perfect for showcasing detailed product information,
+helping customers make informed purchasing decisions.
+`,
+        src: "/ESL/carouselmages/electronics.webp",
+      },
+    ],
   },
   uz: {
-    title: "Gallery of ZKONG Electronic Shelf Labels",
+    title: "Elektron narx yorliqlarining qo‘llanilish sohalari",
+    description1: `1. Mahsulot tafsilotlarini aniq va to‘liq ko‘rsatish talab etiladigan muhitlar uchun mos.`,
+    description2: `2. Katta o‘lchamdagi modellari poster ko‘rsatish, aksiyalar haqida xabarnoma va boshqa holatlar uchun juda qulay.`,
+    imageData: [
+      {
+        name: "Yangi mahsulotlar",
+        description: `Yangi oziq-ovqat bo‘limingizni elektron narx yorliqlari yordamida doimo yangilang. Ushbu raqamli yorliqlar tezkor narx o‘zgarishlari va real vaqt yangilanishlarini ta’minlab, bozordagi o‘zgarishlarga moslashishni osonlashtiradi. Elektron narx displeylari mahsulotlarning yangiligi va shaffofligini saqlashga yordam beradi, mijozlar ishonchini oshiradi.`,
+        src: "/ESL/carouselmages/fresh-food.webp",
+      },
+      {
+        name: "Dorixona",
+        description: `Dorixonangiz ish jarayonlarini elektron narx yorliqlari bilan optimallashtiring. Ushbu raqamli
+yorliqlar aniq va o‘z vaqtida narx yangilanishini ta’minlab, qo‘lda xatolarni kamaytiradi. LCD
+narx displeylari dorilar va sog‘liq mahsulotlari haqida eng so‘nggi ma’lumotlarni taqdim
+etadi, xarid tajribasini yaxshilaydi.`,
+        src: "/ESL/carouselmages/pharmacy.webp",
+      },
+      {
+        name: "Aqlli ofis",
+        description: `Raqamli ism lavhalari bilan ofisingizni yanada aqlli qiling.
+E-Ink texnologiyasiga ega ism lavhalari qog‘oz yorliqlarni almashtirib, vaqt, mablag‘ va qo‘l
+mehnatini tejaydi, yuqori o‘qilishi va ko‘zning charchamasligini ta’minlaydi.`,
+        src: "/ESL/carouselmages/smart-office.webp",
+      },
+      {
+        name: "Supermarket",
+        description: `Elektron narx yorliqlari yordamida supermarket samaradorligini oshiring. Raqamli yorliqlar
+narxlarni real vaqt rejimida yangilaydi, aniqlikni ta’minlaydi va mehnat xarajatlarini
+kamaytiradi. Elektron narx ekranlari orqali aksiyalar va zaxiralarni oson boshqarib, mijozlar
+uchun qulay xarid tajribasini ta’minlaysiz.`,
+        src: "/ESL/carouselmages/supermarket.webp",
+      },
+      {
+name: "Ombor",
+        description: `Elektron narx yorliqlari va raqamli belgilash yordamida ombor boshqaruvini yaxshilang.
+Bunday raqamli yorliqlar zaxiralarni real vaqt rejimida kuzatish va narxlarni dinamik
+yangilash imkonini beradi, jarayonlarni soddalashtiradi va xatoliklarni kamaytiradi. Elektron
+yorliqlar aniq zaxira ma’lumotlarini ta’minlab, ombor samaradorligi va unumdorligini
+oshiradi.`,
+        src: "/ESL/carouselmages/warehouse.webp",
+      },
+      {
+       name: "Kosmetika",
+        description: `Kosmetika bo‘limingizni elektron narx yorliqlari bilan yangilang. Ushbu raqamli yorliqlar
+tezkor narx o‘zgarishlari va darhol yangilanishlarni ta’minlaydi, tezkor savdo muhiti uchun
+juda qulay. Zamonaviy displey mahsulotlaringiz ko‘rinishini to‘ldirib, xaridorlar uchun aniq va
+yangilangan ma’lumot beradi.`,
+        src: "/ESL/carouselmages/cosmetics.webp",
+      },
+      {
+        name: "Elektronika",
+        description: `Elektron narx yorliqlari yordamida elektronika do‘koningizni optimallashtiring. Ushbu
+raqamli yorliqlar aniq va real vaqt narx yangilanishlarini ta’minlab, mijozlar ishonchini va
+qoniqishini oshiradi. Elektron narx displeylari mahsulot haqida batafsil ma’lumot ko‘rsatish
+uchun juda qulay bo‘lib, xaridorlarga ongli xarid qilishda yordam beradi.`,
+        src: "/ESL/carouselmages/electronics.webp",
+      },
+    ],
   },
   ru: {
-    title: "Gallery of ZKONG Electronic Shelf Labels",
+    title: "Сферы применения электронных ценников",
+    description1: `1. Подходят для помещений, где необходим четкий и детальный показ информации о товарах.`,
+    description2: `2. Крупноформатные модели идеально подходят для постеров, рекламных уведомлений и других задач.`,
+    imageData: [
+      {
+        name: "Свежие продукты",
+        description: `Поддерживайте отдел свежих продуктов в актуальном состоянии с помощью
+электронных ценников. Эти цифровые ценники позволяют быстро менять цены и
+обновлять информацию в реальном времени, обеспечивая соответствие рыночным
+изменениям. Электронные ценники помогают сохранять свежесть, прозрачность и
+повышают доверие покупателей к вашим продуктам.`,
+        src: "/ESL/carouselmages/fresh-food.webp",
+      },
+      {
+        name: "Аптека",
+        description: `Оптимизируйте работу аптеки с помощью электронных ценников. Цифровые ценники
+обеспечивают точные и своевременные обновления цен, снижая количество ручных
+ошибок. LCD-ценники предоставляют покупателям актуальную информацию о
+лекарствах и товарах для здоровья, улучшая их покупательский опыт.
+`,
+        src: "/ESL/carouselmages/pharmacy.webp",
+      },
+      {
+        name: "Умный офис",
+        description: `Преобразуйте свой умный офис с помощью цифровых табличек с именами.
+E-Ink таблички экономят время, деньги и ручной труд, заменяя бумажные таблички
+современной E-Ink технологией, обеспечивая отличную читаемость и минимальную
+нагрузку на глаза.`,
+        src: "/ESL/carouselmages/smart-office.webp",
+      },
+      {
+        name: "Супермаркет",
+        description: `Повышайте эффективность вашего супермаркета с помощью электронных ценников.
+Цифровые ценники обеспечивают обновление цен в режиме реального времени,
+повышают точность и сокращают затраты на труд. С электронными ценниками удобно
+управлять акциями и остатками товаров, обеспечивая покупателям комфортный и
+современный опыт покупок.
+`,
+        src: "/ESL/carouselmages/supermarket.webp",
+      },
+      {
+         name: "Склад",
+        description: `Улучшите управление складом с помощью электронных ценников и цифровой
+навигации. Такие цифровые ценники обеспечивают отслеживание запасов в реальном
+времени и динамическое обновление цен, оптимизируя процессы и снижая
+количество ошибок. Электронные этикетки гарантируют точность складской
+информации, повышая эффективность и производительность склада.`,
+        src: "/ESL/carouselmages/warehouse.webp",
+      },
+      {
+        name: "Косметика",
+        description: `Обновите косметический отдел с помощью электронных ценников. Эти цифровые
+ярлыки обеспечивают динамическое изменение цен и мгновенные обновления, что
+идеально подходит для быстрого ритейла. Стильные электронные дисплеи
+гармонично дополняют внешний вид продукции и обеспечивают точную и актуальную
+информацию для покупателей.`,
+        src: "/ESL/carouselmages/cosmetics.webp",
+      },
+      {
+        name: "Электроника",
+        description: `Оптимизируйте ваш магазин электроники с помощью электронных ценников. Эти
+цифровые решения обеспечивают точное и актуальное отображение цен в реальном
+времени, повышая доверие и удовлетворённость покупателей. Электронные ценники
+идеально подходят для демонстрации подробной информации о товарах и помогают
+клиентам принимать взвешенные решения о покупке.`,
+        src: "/ESL/carouselmages/electronics.webp",
+      },
+    ],
   },
 };
 

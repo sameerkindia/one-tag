@@ -261,35 +261,35 @@ import SubHeading from "./SubHeading";
 const productsText = {
   en: {
     title: `Our Product Line`,
-    description: `Choose the perfect smart tag for your retail needs`
+    description: `Choose the perfect smart tag for your retail needs`,
   },
   uz: {
     title: `Mahsulotlarimiz liniyasi`,
-    description: `Chakana savdo ehtiyojlaringiz uchun mukammal aqlli narx belgisini tanlang`
+    description: `Chakana savdo ehtiyojlaringiz uchun mukammal aqlli narx belgisini tanlang`,
   },
   ru: {
     title: `Наша линейка продуктов`,
-    description: `Выберите идеальный умный ценник для нужд вашего магазина.`
+    description: `Выберите идеальный умный ценник для нужд вашего магазина.`,
   },
-}
+};
 
 const products = [
   {
-    name: "OneTag Mini",
+    name: "Essential",
     description: "Compact design for small items and shelves",
     image: "/compact-electronic-price-tag-small-white-modern.jpg",
     specs: ['2.9" E-Ink Display', "Bluetooth 5.0", "5-year battery"],
     linear: "from-blue-400 to-cyan-500",
   },
   {
-    name: "OneTag Standard",
+    name: "Shield",
     description: "Perfect for most retail applications",
     image: "/medium-electronic-price-tag-modern-retail-display.jpg",
     specs: ['4.2" E-Ink Display', "Wi-Fi + Bluetooth", "7-year battery"],
     linear: "from-purple-400 to-pink-500",
   },
   {
-    name: "OneTag Pro",
+    name: "Perfomance",
     description: "Large display for premium products",
     image: "/large-premium-electronic-price-tag-display-screen.jpg",
     specs: ['7.5" E-Ink Display', "Wi-Fi + Bluetooth", "10-year battery"],
@@ -297,8 +297,86 @@ const products = [
   },
 ];
 
+const productsSection = {
+  en: {
+    products: [
+      {
+        name: "Essential series",
+        description: "Compact & Efficien",
+        image: "/Essential.png",
+        specs: ['Compact electronic shelf labels for everyday tasks.', "Ideal for small products and shelves. Display size up to 2.9 inches, energy-efficient, and equipped with essential features for standard retail."],
+        linear: "from-blue-400 to-cyan-500",
+      },
+      {
+        name: "Shield series",
+        description: "Rugged & Cold-Ready",
+        image: "/Shield.png",
+        specs: ["Rugged ESLs for challenging operating conditions.", "They operate reliably at low temperatures and under heavy load. Reinforced housing, protection against moisture and dust, and stable performance in refrigerated and freezer environments."],
+        linear: "from-purple-400 to-pink-500",
+      },
+      {
+        name: "Perfomance series",
+        description: "Large Display & Maximum Impact",
+        image: "/Perfomance.png",
+        specs: ["Large-format electronic shelf labels for maximum visibility.", "Designed for premium products and promotional areas. Display sizes range from 3.5 to 7.5 inches, offering excellent readability with a strong focus on marketing and dynamic pricing."],
+        linear: "from-orange-400 to-red-500",
+      },
+    ],
+  },
+  ru: {
+    products: [
+      {
+        name: "Essential серия",
+        description: "Компактный и эффективный",
+        image: "/Essential.png",
+        specs: ['Компактные электронные ценники для повседневных задач.', "Идеальны для небольших товаров и полок. Диагональ до 2.9 inch энергоэффективность и базовый функционал для стандартного ритейла."],
+        linear: "from-blue-400 to-cyan-500",
+      },
+      {
+        name: "Shield серия",
+        description: "Прочный и готовый к работе в холоде",
+        image: "/Shield.png",
+        specs: ["Защищённые ESL для сложных условий эксплуатации.", "Работают при низких температурах и высокой нагрузке. Усиленный корпус, защита от влаги и пыли, стабильная работа в холодильных и морозильных зонах."],
+        linear: "from-purple-400 to-pink-500",
+      },
+      {
+        name: "Perfomance серия",
+        description: "Большой дисплей и максимальный эффект",
+        image: "/Perfomance.png",
+        specs: ["Крупноформатные электронные ценники для максимальной видимости.", "Созданы для премиальных товаров и промо-зон. Диагональ от 3.5 до 7.5, высокая читаемость, акцент на маркетинг и динамичные цены."],
+        linear: "from-orange-400 to-red-500",
+      },
+    ],
+  },
+  uz: {
+    products: [
+      {
+        name: "Essential seriya",
+        description: " Kompakt va samarali",
+        image: "/Essential.png",
+        specs: ['Kundalik vazifalar uchun kompakt elektron narx belgilar.', "Kichik mahsulotlar va javonlar uchun juda mos. 2.9 dyuymgacha bo‘lgan diagonal, energiya tejamkor va oddiy retail uchun zarur asosiy funksiyalarga ega."],
+        linear: "from-blue-400 to-cyan-500",
+      },
+      {
+        name: "Shield seriya",
+        description: "Mustahkam va sovuqqa tayyor",
+        image: "/Shield.png",
+        specs: ["Murakkab sharoitlarda ishlash uchun himoyalangan ESL lar.", "Past haroratlarda va yuqori yuklama ostida ham ishlaydi. Mustahkamlangan korpus, namlik va changdan himoya, sovitkich va muzlatkich zonalarida barqaror ishlash."],
+        linear: "from-purple-400 to-pink-500",
+      },
+      {
+        name: "Perfomance seriya",
+        description: "Katta displey va maksimal ta’sir",
+        image: "/Perfomance.png",
+        specs: ["Maksimal ko‘rinish uchun yirik formatli elektron narx belgilar.", "Premium mahsulotlar va promo zonalar uchun yaratilgan. Diagonal 3.5 dan 7.5 dyuymgacha, yuqori o‘qilish darajasi, marketing va dinamik narxlarga yo‘naltirilgan."],
+        linear: "from-orange-400 to-red-500",
+      },
+    ],
+  },
+};
+
 export function ProductShowcase() {
-  const {t, language} = useLanguage()
+  const { t, language } = useLanguage();
   return (
     <section className="py-16 2md:py-20 relative overflow-hidden">
       {/* Background ambient motion */}
@@ -339,9 +417,12 @@ export function ProductShowcase() {
               {t("ourProduct").split(" ").slice(1).join(" ")}
             </span>
           </h2> */}
-          <SubHeading headingText={productsText[language].title} lastIndex={1} />
+          <SubHeading
+            headingText={productsText[language].title}
+            lastIndex={1}
+          />
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-             {productsText[language].description}
+            {productsText[language].description}
           </p>
         </FadeAnimation>
 
@@ -351,10 +432,14 @@ export function ProductShowcase() {
           staggerChildren={0.5}
           className="grid sm:grid-cols-2 3md:grid-cols-3! gap-6 xl:gap-10"
         >
-          {products.map((product, index) => (
+          {productsSection[language].products.map((product, index) => (
             <div
               key={product.name}
-              className={`flex flex-col group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl bg-white/5 backdrop-blur-md border border-white/10 transition-all duration-300 hover:-translate-y-1.5 cursor-pointer h-full ${index === products.length -1 ? 'sm:col-span-2 3md:col-span-1' : ''}`}
+              className={`flex flex-col group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl bg-white/5 backdrop-blur-md border border-white/10 transition-all duration-300 hover:-translate-y-1.5 cursor-pointer h-full ${
+                index === products.length - 1
+                  ? "sm:col-span-2 3md:col-span-1"
+                  : ""
+              }`}
             >
               {/* Hover overlay */}
               <motion.div
@@ -391,12 +476,12 @@ export function ProductShowcase() {
                 </motion.div>
 
                 {/* Floating Badge */}
-                <motion.div
+                {/* <motion.div
                   className={`absolute top-4 right-4 px-4 py-2 rounded-full bg-linear-to-r ${product.linear} text-white text-xs font-semibold shadow-md`}
                 >
                   <Sparkles className="w-3 h-3 inline mr-1" />
                   Premium
-                </motion.div>
+                </motion.div> */}
 
                 {/* linear overlay fade on hover */}
                 <motion.div
@@ -418,10 +503,10 @@ export function ProductShowcase() {
                   {product.specs.map((spec, i) => (
                     <motion.div
                       key={spec}
-                      className="flex items-center text-base group/item"
+                      className="flex items-baseline text-base group/item"
                     >
                       <motion.div
-                        className={`w-2 h-2 rounded-full bg-linear-to-r ${product.linear} mr-4 shadow-md`}
+                        className={`w-2 h-2 min-w-2 rounded-full bg-linear-to-r ${product.linear} mr-4 shadow-md`}
                       />
                       <span className="text-muted-foreground group-hover/item:text-foreground transition-colors">
                         {spec}
