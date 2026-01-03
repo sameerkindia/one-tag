@@ -13,6 +13,7 @@ import InfiniteMarquee from "@/src/components/InfiniteRunningMarquee";
 import GradientBackground from "@/src/motion-animations/GradientBackground";
 import FloatingParticles from "@/src/components/FloatingParticles";
 import SubHeading from "@/src/components/SubHeading";
+import MobileTabletInfiniteMarquee from "@/src/components/MobileTabletInfiniteMarquee";
 
 export default function ZkongShieldRebuilt() {
   const { language } = useLanguage(); // en, ru, uz
@@ -248,7 +249,9 @@ export default function ZkongShieldRebuilt() {
             </h2>
           </div>
 
-          <InfiniteMarquee />
+          {/* <InfiniteMarquee /> */}
+          <InfiniteMarquee/>
+          {/* <MobileTabletInfiniteMarquee /> */}
         </div>
       </section>
 
@@ -272,7 +275,7 @@ export default function ZkongShieldRebuilt() {
           <SliderCarousel
             data={carouselData[language].imageData}
             renderCard={(item, i) => (
-              <div className="group relative h-[500px] rounded-lg flex flex-col items-center justify-center overflow-hidden shadow-lg">
+              <div key={i} className="group relative h-[500px] rounded-lg flex flex-col items-center justify-center overflow-hidden shadow-lg">
                 <Image
                   src={item.src}
                   alt={item.name}
@@ -280,7 +283,7 @@ export default function ZkongShieldRebuilt() {
                   className="opacity-75"
                 />
                 <div className="z-1 flex flex-col justify-between h-full w-full">
-                  <div className="bg-white dark:bg-slate-700 h-1/2 w-full p-2 opacity-0 group-hover:opacity-100">
+                  <div className="bg-white dark:bg-slate-700 min-h-1/2 w-full p-2 md:opacity-0 group-hover:opacity-100">
                     <p className="text-slate-600 dark:text-slate-300 select-none">
                       {item.description}
                     </p>
@@ -295,6 +298,9 @@ export default function ZkongShieldRebuilt() {
               </div>
             )}
             columns={3}
+             responsive={{ 
+             base: 1,
+             md: 3 }}  
             infinite
           />
         </div>

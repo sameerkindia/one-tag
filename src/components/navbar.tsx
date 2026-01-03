@@ -552,7 +552,7 @@ function NavItem({ item, level = 1, t, scrolled, theme }: any) {
               level === 1
                 ? "left-0 min-w-[200px]"
                 : "left-full top-0 ml-2 min-w-[200px]"
-            } absolute right-0 mt-3.5 w-52 glass rounded-2xl shadow-xl border border-border/50 overflow-hidden backdrop-blur-x l z-50 p-4 backdrop-blur-md! ${
+            } absolute right-0 mt-3.5 w-52 glass rounded-2xl shadow-xl border border-border/50 overflow-hidden backdrop-blur-xl z-50 p-4 ${
               scrolled
                 ? "md-glass shadow-lg backdrop-blur-md"
                 : theme === "dark"
