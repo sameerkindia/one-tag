@@ -471,3 +471,23 @@ xl	80rem (1280px)	@media (width >= 80rem) { ... }
 .secondary-background {
   @apply bg-linear-to-b from-slate-100/50 to-white/50 dark:from-[#0b1320]/50 dark:to-[#020617]/50
 }
+
+/* .esl-accessories-slider {
+  
+} */
+.esl-accessories-slider-container{
+  /* max-width: calc(100% - 14rem); */
+  
+  @media (max-width: 500px) {
+    max-width: calc(100% - 7rem);
+
+    .sliderButton {
+      @apply p-1.5;
+      svg {
+        @apply size-4;
+      }
+    }
+  }
+
+  /* @apply w-56 2lg:w-64; */
+}
