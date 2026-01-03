@@ -300,7 +300,8 @@ export default function ZkongShieldRebuilt() {
             columns={3}
              responsive={{ 
              base: 1,
-             md: 3 }}  
+             md: 3 }}
+             bottomButton={true}  
             infinite
           />
         </div>

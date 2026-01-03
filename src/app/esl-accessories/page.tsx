@@ -296,7 +296,8 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "Devor o‘rnatish to‘plami / rels uch qopqog‘i / rels burchak moslamasi",
+        title:
+          "Devor o‘rnatish to‘plami / rels uch qopqog‘i / rels burchak moslamasi",
         decs: "",
         products: [
           {
@@ -322,7 +323,8 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "Muzlatkich vitrinasi uchun mahkamlash pinni / pol stendi / karta ushlagichi",
+        title:
+          "Muzlatkich vitrinasi uchun mahkamlash pinni / pol stendi / karta ushlagichi",
         decs: "",
         products: [
           {
@@ -533,7 +535,8 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "Набор для настенного крепления / торцевая заглушка рейки / наклонный адаптер рейки",
+        title:
+          "Набор для настенного крепления / торцевая заглушка рейки / наклонный адаптер рейки",
         decs: "",
         products: [
           {
@@ -559,7 +562,8 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "Крепёж для морозильных витрин / напольная стойка / держатель карточек",
+        title:
+          "Крепёж для морозильных витрин / напольная стойка / держатель карточек",
         decs: "",
         products: [
           {
@@ -713,7 +717,8 @@ const accessoriesSection = {
         ],
       },
       {
-        title: "Вертикальный зажим / Т-крепление / инструмент для установки и снятия",
+        title:
+          "Вертикальный зажим / Т-крепление / инструмент для установки и снятия",
         decs: "",
         products: [
           {
@@ -1140,35 +1145,45 @@ export default function ESLAccessoriesPage() {
             (accessorie, index) => (
               <div
                 key={index}
-                className="flex even:flex-row-reverse bg-white dark:bg-gray-800 p-0 rounded-xl shadow overflow-hidden"
+                className="esl-accessories-slider flex even:flex-row-reverse bg-white dark:bg-gray-800 p-0 rounded-xl shadow overflow-hidden"
               >
-                <div className="col-span-3 bg-blue-600 text-white p-4 sm:p-6 font-semibold min-h-[140px] flex flex-col items-center justify-center w-56 2lg:w-64">
-                  <p className="text-center text-sm sm:text-base">{accessorie.title}</p>
+                <div className="col-span-3 bg-blue-600 text-white p-4 sm:p-6 font-semibold min-h-[140px] flex flex-col items-center justify-center text-center w-56 2lg:w-64">
+                  <p className="text-center text-xs sm:text-base">
+                    {accessorie.title}
+                  </p>
                   {accessorie.decs && (
-                    <p className="text-xs">{accessorie.decs}</p>
+                    <p className="text-[10px] sm:text-xs">{accessorie.decs}</p>
                   )}
                 </div>
 
                 <SliderCarousel
                   data={accessorie.products}
                   sliderCardClass="!px-0"
-                  containerClass="!p-0"
-                  responsive={{lg: 3 , md: 2, sm: 1}}
+                  containerClass="!p-0 esl-accessories-slider-container"
+                  columns={4}
+                  responsive={{
+                    base: 1,
+                    md: 3,
+                  }}
+                  // responsive={{lg: 3 , md: 2, sm: 1}}
                   renderCard={(item: any, i) => (
                     <div className="h-52 2lg:h-60 flex flex-col items-center justify-between p-4 gap-6 transition-all duration-300 hover:bg-neutral-800">
                       <h3 className="text-sm font-bold text-center text-white">
                         {item.name}
                       </h3>
-                      <Image
+                      {/* <Image
                         src={item.src}
                         alt={item.name}
                         height={60}
                         width={40}
                         // quality={100}
                         className="max-h-34 2lg:max-h-40 w-24 2lg:w-30 h-full"
+                      /> */}
+                      <img
+                        src={item.src}
+                        alt={item.name}
+                        className="max-h-34 2lg:max-h-40 h-full w-fit 2lg:w- 30 object-cover"
                       />
-                      {/* <img src={item.src}
-                        alt={item.name} className="max-h-34 2lg:max-h-40 h-full w-24 2lg:w-30 object-contain" /> */}
                       {/* <p>{item.price}</p>
                     <span className="text-sm text-gray-600">{item.color}</span> */}
                     </div>
@@ -1204,31 +1219,34 @@ export default function ESLAccessoriesPage() {
         </div>
 
         <div className="space-y-18 2lg:space-y-24">
-        {wirelessSection[language].equipmentData.map((data, index) => (
-          <div
-            key={index}
-            className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-2.5 2lg:gap-10 items-center"
-          >
-            <div className="relative w-68 2lg:w-80 mx-auto aspect-square bg-gray-200 dark:bg-gray-700 rounded-xl">
-              <Image
-                src={data.imgSrc}
-                alt={data.heading}
-                fill
-                className="aspect-square"
-              />
+          {wirelessSection[language].equipmentData.map((data, index) => (
+            <div
+              key={index}
+              className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-2.5 2lg:gap-10 items-center"
+            >
+              <div className="relative w-68 2lg:w-80 mx-auto aspect-square bg-gray-200 dark:bg-gray-700 rounded-xl">
+                <Image
+                  src={data.imgSrc}
+                  alt={data.heading}
+                  fill
+                  className="aspect-square"
+                />
+              </div>
+              <div className="space-y-2 text-left">
+                <h3 className="text-xl 2md:text-2xl font-semibold">
+                  {data.heading}
+                </h3>
+                <p className="text-base 2md:text-lg font-medium">
+                  {data.subHeading}
+                </p>
+                {data.features.map((feature, index) => (
+                  <p key={index}>{feature}</p>
+                ))}
+              </div>
             </div>
-            <div className="space-y-2 text-left">
-              <h3 className="text-xl 2md:text-2xl font-semibold">{data.heading}</h3>
-              <p className="text-base 2md:text-lg font-medium">{data.subHeading}</p>
-              {data.features.map((feature, index) => (
-                <p key={index}>{feature}</p>
-              ))}
-            </div>
-          </div>
-        ))}
+          ))}
         </div>
 
-        
         {/* <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-24">
           <div className="relative w-80 mx-auto aspect-square bg-gray-200 dark:bg-gray-700 rounded-xl">
             <Image

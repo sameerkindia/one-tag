@@ -295,6 +295,7 @@ interface SliderCarouselProps<T> {
   infinite?: boolean;
   containerClass?: string;
   sliderCardClass?: string;
+  bottomButton ? : boolean;
 }
 
 function SliderCarousel<T>({
@@ -305,6 +306,7 @@ function SliderCarousel<T>({
   infinite = false,
   containerClass = "",
   sliderCardClass = "",
+  bottomButton = false
 }: SliderCarouselProps<T>) {
   const holderRef = useRef<HTMLDivElement>(null);
   const isJumpingRef = useRef(false);
@@ -458,7 +460,7 @@ function SliderCarousel<T>({
       {showLeft && (
         <button
           onClick={() => scrollByCard("left")}
-          className="absolute max-2md:top-[105%] max-2md:left-[30%] left-2 w-fit z-10 bg-blue-500 text-white p-2 rounded-full"
+          className={`sliderButton absolute left-2 w-fit z-10 bg-blue-500 text-white p-2 rounded-full ${bottomButton ? 'max-2md:top-[105%] max-2md:left-[30%]' : '' }`}
         >
           <ChevronLeft />
         </button>
@@ -482,7 +484,7 @@ function SliderCarousel<T>({
       {showRight && (
         <button
           onClick={() => scrollByCard("right")}
-          className="absolute max-2md:top-[105%] max-2md:right-[30%] right-2 w-fit z-10 bg-blue-500 text-white p-2 rounded-full"
+          className={`sliderButton absolute right-2 w-fit z-10 bg-blue-500 text-white p-2 rounded-full ${bottomButton ? 'max-2md:top-[105%] max-2md:right-[30%]' : ''}`}
         >
           <ChevronRight />
         </button>
