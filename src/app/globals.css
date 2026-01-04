@@ -57,7 +57,7 @@
 
 @theme {
   /* YOUR CUSTOM BREAKPOINTS HERE */
-  --z-index-2: "2";
+  --z-index-2: 2;
 
 /* 
   sm	40rem (640px)	@media (width >= 40rem) { ... }
@@ -490,4 +490,8 @@ xl	80rem (1280px)	@media (width >= 80rem) { ... }
   }
 
   /* @apply w-56 2lg:w-64; */
+}
+
+.blur-2px {
+  backdrop-filter: blur(2px);
 }

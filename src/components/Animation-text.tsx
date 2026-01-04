@@ -54,9 +54,11 @@ import { useTheme } from "../contexts/theme-context";
 export default function AnimationText({
   children,
   onRepeat = false,
+  modeReverse = false
 }: {
   children: React.ReactNode;
   onRepeat?: boolean;
+  modeReverse ?: boolean;
 }) {
   const { theme } = useTheme();
   const ref = useRef<HTMLSpanElement>(null);
@@ -95,7 +97,8 @@ export default function AnimationText({
         chroma-text
         ${active ? "chroma-text-animate" : ""}
         ${onRepeat ? "repeat" : ""}
-        ${theme === "dark" ? "bg-gradient-dark" : "bg-gradient-light"}
+        ${modeReverse ? (theme === "dark" ? "bg-gradient-light" : "bg-gradient-dark" ): (theme === "dark" ? "bg-gradient-dark" : "bg-gradient-light")}
+        // ${theme === "dark" ? "bg-gradient-dark" : "bg-gradient-light"}
       `}
     >
       {children}
