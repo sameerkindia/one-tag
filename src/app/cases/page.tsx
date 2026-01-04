@@ -278,7 +278,7 @@ export default function CasesPage() {
           {/* Enhanced Header */}
           <FadeAnimation className="text-center mb-16 3md:mb-20">
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold leading-tight mb-6 text-black dark:text-white text-balance max-w-[1400px] mx-auto">
-              <AnimationText onRepeat={true}>
+              <AnimationText>
                 {bannerSection[language].title.split(" ").slice(0, 2).join(" ")}
               </AnimationText>{" "}
               <span className="block">

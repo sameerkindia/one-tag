@@ -526,7 +526,7 @@ export default function AboutPage() {
           {/* Heading Section */}
           <FadeAnimation className="text-center mb-20">
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold leading-tight mb-6 text-black dark:text-white text-balance max-w-[1400px] mx-auto">
-              <AnimationText onRepeat={true}>
+              <AnimationText>
                 {heroSectionData[language].title}
               </AnimationText>{" "}
               <span className="block">

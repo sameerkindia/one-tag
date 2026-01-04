@@ -48,7 +48,7 @@ function SaasSection() {
           staggerChildren={0.5}
           className="flex flex-col items-center gap-6 gap-y-10 3md:gap-y-16"
         >
-          <div className="grid sm:grid-cols-2 justify-between items-center gap-8">
+          <div className="grid sm:grid-cols-2 justify-between gap-8">
             <div>
               <SubHeading headingText={sassSection[language].esl.heading} lastIndex={3} customHeadingClass="!leading-[1.3] !text-[26px] 3md:!text-[28px] xxl:!text-3xl !mb-4 2lg:!mb-6 text-pretty" />
               <p className="text-base 2md:text-lg 2lg:text-xl leading-relaxed text-gray-600 dark:text-gray-300">
@@ -63,13 +63,13 @@ function SaasSection() {
                 alt="one tag solution saas"
                 className="rounded-3xl aspect-6/3"
                 // quality={80}
-                height={600}
+                height={300}
                 width={600}
               />
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-2 justify-between items-center gap-8">
+          <div className="grid sm:grid-cols-2 justify-between gap-8">
             <div className="sm:order-1">
               <SubHeading headingText={sassSection[language].smartRetail.heading} lastIndex={2} customHeadingClass="!leading-[1.3] !text-[26px] 3md:!text-[28px] xxl:!text-3xl !mb-4 2lg:!mb-6 text-pretty" />
               <p className="text-base 2md:text-lg 2lg:text-xl leading-relaxed text-gray-600 dark:text-gray-300">
@@ -83,7 +83,7 @@ function SaasSection() {
                 alt="one tag solution saas"
                 className="rounded-3xl aspect-6/3"
                 // quality={80}
-                height={600}
+                height={300}
                 width={600}
               />
             </div>

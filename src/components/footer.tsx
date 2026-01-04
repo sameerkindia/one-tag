@@ -177,7 +177,7 @@ const footerLinks: FooterLinks = [
     },
     children: [
       {
-        key: "privacyPolicy",
+        key: "legal/privacy",
         translations: {
           en: { title: "Privacy Policy" },
           ru: { title: "Политика конфиденциальности" },
@@ -185,7 +185,7 @@ const footerLinks: FooterLinks = [
         },
       },
       {
-        key: "termsOfService",
+        key: "legal/terms-of-service",
         translations: {
           en: { title: "Terms of Service" },
           ru: { title: "Условия обслуживания" },
@@ -285,7 +285,7 @@ const footerText = {
   text: {
     en: `Pioneering smart retail technology in Uzbekistan. Transform your store with intelligent price tags.`,
     ru: `Мы — пионеры смарт-ретейл технологий в Узбекистане. Преобразуйте свой магазин с помощью интеллектуальных электронных ценников.`,
-    uz: `Biz — O‘zbekistonda smart retail texnologiyalarining yetakchisiz. Do‘koningizni aqlli elektron narx belgilar bilan zamonaviylashtiring.`,
+    uz: `Biz — Oʻzbekistonda smart retail texnologiyalarining yetakchimiz. Doʻkoningizni aqlli elektron narx belgilari bilan zamonaviylashtiring.`,
   },
 };
 

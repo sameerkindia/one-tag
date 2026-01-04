@@ -53,6 +53,7 @@ import { ArrowRight } from "lucide-react";
 import { FadeAnimation } from "../motion-animations/FadeAnimation";
 import { useLanguage } from "../contexts/language-context";
 import AnimationText from "./Animation-text";
+import SubHeading from "./SubHeading";
 
 // const ctaContent = [{ heading: { en: ``, ru: ``, uz: `` },
 //  text: { en: ``, ru: ``, uz: `` },
@@ -108,19 +109,17 @@ export function CTASection() {
             staggerChildren={0.3}
             className="relative z-10"
           >
-            <h2
-              className="
-                text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 leading-tight
-                text-gray-900 dark:text-white
-              "
-            >
+            {/* <h2
+              className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 leading-tight
+              text-gray-900 dark:text-white">
               <AnimationText>
                 {ctaContent.heading[language].split(" ").slice(0, -2).join(" ")}
               </AnimationText>{" "}
               <span className="block text-blue-600 dark:text-blue-400 font-semibold">
                 {ctaContent.heading[language].split(" ").slice(-2).join(" ")}
               </span>
-            </h2>
+            </h2> */}
+            <SubHeading headingText={ctaContent.heading[language]} lastIndex={4} customHeadingClass="max-w-[600px] mx-auto text-pretty" />
 
             <p
               className="

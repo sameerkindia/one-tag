@@ -100,8 +100,8 @@ export default function ZkongShieldRebuilt() {
               ))}
             </div>
             {modalsSection[language].allModels.map(
-              (tab) =>
-                activeTab === tab.name && <EslHorizontalTab sectionData={tab} />
+              (tab, index) =>
+                activeTab === tab.name && <EslHorizontalTab key={index} sectionData={tab} />
             )}
           </div>
         </div>
@@ -149,7 +149,7 @@ export default function ZkongShieldRebuilt() {
                     </div>
                   </div>
                   <div
-                    key={index * 10}
+                    key={(index + 10) * 100}
                     className={`flex 3md:hidden relative items-center justify-center transition-all cursor-pointer bg-white`}
                   >
 
