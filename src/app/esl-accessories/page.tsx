@@ -1188,7 +1188,7 @@ export default function ESLAccessoriesPage() {
                         // width={40}
                         quality={100}
                         fill
-                        className="object-cover"
+                        className="object-contain"
                         // className="max-h-34 2lg:max-h-40 w-24 2lg:w-30 h-full"
                       />
                       </div>
