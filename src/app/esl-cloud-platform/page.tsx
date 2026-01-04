@@ -419,20 +419,33 @@ export default function ZKONGPlatform() {
   return (
     <div className="min-h-screen text-gray-900 transition-colors duration-300 dark:text-white">
       {/* Hero Section */}
-      <section className="min-h-[60vh] sm:min-h-[70vh] flex items-center relative px-6 pt-12 pb-6 sm:py-16 2m:py-20 overflow-hidden bg-linear-to-r from-gray-200 to-gray-500 dark:from-gray-800 dark:to-gray-700">
-        {/* subtle light/dark background shapes */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -left-20 -top-32 w-96 h-96 rounded-full blur-3xl bg-linear-to-br from-blue-200/30 to-purple-300/30 dark:from-blue-900/20 dark:to-purple-900/20"></div>
-        </div>
 
-        <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10">
-          <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty mb-6">
+      <section className="min-h-[500px] sm:min-h-[70vh] flex items-center relative px-6 pt-12 pb-6 sm:py-16 2m:py-20 overflow-hidden bg-linear-to-r from-gray-200 to-gray-500 dark:from-gray-800 dark:to-gray-700">
+      <div
+        className={`absolute inset-0 w-full h-full`}
+      >
+        <video
+          preload="auto"
+          autoPlay
+          muted
+          loop
+          className="inset-0 w-full h-full object-fill"
+        >
+          <source src={"/esl-cloud-platform/Cloud platform BG.mp4"} type="video/mp4" />
+        </video>
+      </div>
+      <div className="absolute h-full w-full blur-2px bg-[#3a3a3a75] z-1 inset-0 pointer-events-none">
+        {/* <div className="absolute h-full w-full blur-3xl bg-[#3a3a3a75]"></div> */}
+      </div>
+        {/* subtle light/dark background shapes */}
+        <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10 p-6 sm:p-8 2md:p-12 rounded-2xl glass">
+          <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty">
             <AnimationText onRepeat>
               {bannerSection[language].title.split(" ").slice(0, 1).join(" ")}
             </AnimationText>{" "}
             {bannerSection[language].title.split(" ").slice(1).join(" ")}
           </h1>
-          <p className="text-base sm:text-lg 2md:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-4xl mx-auto">
+          <p className="text-base sm:text-lg 2md:text-xl text-gray-700 dark:text-gray-300 2md:mb-8 max-w-4xl mx-auto">
             {bannerSection[language].description}
           </p>
           {/* <button

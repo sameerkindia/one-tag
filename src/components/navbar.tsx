@@ -60,9 +60,19 @@ export function Navbar() {
   const langRef = useRef<HTMLDivElement>(null);
   const accessRef = useRef<HTMLDivElement>(null);
 
-  const pathname = usePathname();
   const { language, setLanguage, t } = useLanguage();
   const { theme, toggleTheme } = useTheme();
+
+  const pathname = usePathname();
+  let customNavbar = false;
+
+  if (
+    pathname === "/esl-accessories" ||
+    pathname === "/esl-cloud-platform" ||
+    pathname === "/electronic-shelf-labels"
+  ) {
+    customNavbar = true;
+  }
 
   useEffect(() => setMounted(true), []);
 
@@ -134,7 +144,8 @@ export function Navbar() {
               : theme === "dark"
               ? "bg-fill-tertiary"
               : "md-glass"
-          } ${isOpen ? "rounded-b-none md:rounded-b-sm" : ""}`}
+          } ${isOpen ? "rounded-b-none md:rounded-b-sm" : ""}
+          `}
         >
           {/* Mobile Logo */}
           <div
@@ -163,7 +174,9 @@ export function Navbar() {
                 : theme === "dark"
                 ? "bg-fill-tertiary"
                 : "bg-fill-tertiary"
-            }`}
+            }
+            ${customNavbar ? "glass" : ""}
+            `}
           >
             <Link href="/" className={`flex items-center gap-3 group`}>
               <motion.div className="relative w-30 2lg:w-32 xxl:w-36 aspect-40/10">
@@ -183,7 +196,7 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <div
             className={`hidden md:flex items-center gap-4 lg:gap-6 px-4 rounded-sm py-1.5 3md:py-2 border bg-fill-tertiary border-transparent ${
-              scrolled
+              scrolled || customNavbar
                 ? "glass bg-fill-tertiary shadow-lg backdrop-blur-md"
                 : theme === "dark"
                 ? "bg-fill-tertiary"
