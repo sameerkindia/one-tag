@@ -58,7 +58,7 @@ export function Hero() {
             className="flex flex-col"
           >
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold leading-tight mb-6 text-black dark:text-white text-balance max-w-[1400px] mx-auto">
-              <AnimationText onRepeat={true}>
+              <AnimationText>
                 {t("hero.title.line1").split(" ").slice(0, 2).join(" ")}
               </AnimationText>{" "}
               {t("hero.title.line1").split(" ").slice(2).join(" ")}

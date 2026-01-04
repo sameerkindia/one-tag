@@ -1085,7 +1085,7 @@ export default function ContactPage() {
           className="text-center mb-10 sm:mb-20"
         >
           <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold leading-tight mb-6 text-black dark:text-white text-balance max-w-[1400px] mx-auto">
-            <AnimationText onRepeat={true}>
+            <AnimationText>
               {heroSection[language].title.split(" ").slice(0, 2).join(" ")}
             </AnimationText>{" "}
             {heroSection[language].title.split(" ").slice(2).join(" ")}

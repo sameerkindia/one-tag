@@ -471,7 +471,7 @@ export function ProductShowcase() {
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-contain p-6 group-hover:brightness-110 transition-all duration-700"
+                    className="object-cover group-hover:brightness-110 transition-all duration-700"
                   />
                 </motion.div>
 

@@ -67,7 +67,7 @@ network and displays the latest price information of the items accurately in rea
     "hero.title.line1":
       "Aqlli elektron narx belgilar va avtomatlashtirilgan savdo.",
     "hero.title.line2": "Sizning biznesingiz uchun.",
-    "hero.moreInfo": "Batafsil ma'lumo",
+    "hero.moreInfo": "Batafsil ma’lumot",
     "hero.description":
       "Bluetooth va Wi-Fi bilan ishlaydigan aqlli narx teglari bilan savdo operatsiyalaringizni o'zgartiring. Real vaqtda yangilanishlar, xatolar yo'q, maksimal samaradorlik.",
     "hero.cta.primary": "Boshlash",
