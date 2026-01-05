@@ -1095,12 +1095,12 @@ export default function ESLAccessoriesPage() {
       <GradientBackground />
       <FloatingParticles />
       {/* HERO SECTION */}
-      <section className="min-h-[500px] sm:min-h-[70vh] relative w-full flex items-center justify-center bg-linear-to-r from-gray-200 to-gray-500 dark:from-gray-800 dark:to-gray-700 overflow-hidden py-28">
+      <section className="min-h-[500px] sm:min-h-[70vh] relative w-full flex items-center justify-center bg-linear-to-r from-gray-200 to-gray-500 dark:from-gray-800 dark:to-gray-700 overflow-hidden px-6 pt-12 pb-6 sm:py-16 2md:py-20 sm:rounded-b-4xl">
         {/* <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -left-20 -top-32 w-96 h-96 rounded-full blur-3xl bg-linear-to-br from-blue-200/30 to-purple-300/30 dark:from-blue-900/20 dark:to-purple-900/20"></div>
         </div> */}
 
-        <Image src='/esl-accessories/ESL-accessories-bg.png' alt="ESL background image" fill />
+        <Image src='/esl-accessories/ESL-accessories-bg.png' alt="ESL background image" fill objectFit="cover" />
               
         <div className="absolute z-1 inset-0 pointer-events-none">
           {/* <div className="absolute -left-20 -top-32 w-96 h-96 rounded-full blur-3xl bg-linear-to-br from-blue-200/30 to-purple-300/30 dark:from-blue-900/20 dark:to-purple-900/20"></div> */}
@@ -1133,7 +1133,7 @@ export default function ESLAccessoriesPage() {
       </div> */}
 
       <section className="max-w-7xl mx-auto py-16 px-6 space-y-20">
-        <div className="text-center mb-10 2md:mb-16">
+        <FadeAnimation className="text-center mb-10 2md:mb-16">
           {/* <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center mx-auto mb-6">
             <AnimationText onRepeat>
               {accessoriesSection[language].title
@@ -1147,7 +1147,7 @@ export default function ESLAccessoriesPage() {
             headingText={accessoriesSection[language].title}
             lastIndex={1}
           />
-        </div>
+        </FadeAnimation>
 
         <div className="flex flex-col gap-6">
           {accessoriesSection[language].accessoriesData.map(
@@ -1176,11 +1176,11 @@ export default function ESLAccessoriesPage() {
                   }}
                   // responsive={{lg: 3 , md: 2, sm: 1}}
                   renderCard={(item: any, i) => (
-                    <div className="h-52 2lg:h-60 flex flex-col items-center justify-between p-4 gap-6 transition-all duration-300 hover:bg-neutral-800">
-                      <h3 className="text-sm font-bold text-center text-white">
+                    <div className="group h-52 2lg:h-60 flex flex-col items-center justify-center p-4 gap-6 transition-all duration-300 hover:bg-neutral-800">
+                      {/* <h3 className="text-sm font-bold text-center text-white">
                         {item.name}
-                      </h3>
-                      <div className="relative max-h-34 2lg:max-h-40 h-full w-full">
+                      </h3> */}
+                      <div className="group-hover:scale-110 relative max-h-34 2lg:max-h-40 h-full w-full transition-all duration-300">
                       <Image
                         src={item.src}
                         alt={item.name}
@@ -1221,7 +1221,7 @@ export default function ESLAccessoriesPage() {
 
       {/* WIRELESS BASE STATION */}
       <section className="max-w-7xl mx-auto py-10 2lg:py-16 px-6 space-y-20">
-        <div className="text-center mb-10 2lg:mb-16">
+        <FadeAnimation className="text-center mb-10 2lg:mb-16">
           <SubHeading
             headingText={wirelessSection[language].title}
             lastIndex={1}
@@ -1229,9 +1229,9 @@ export default function ESLAccessoriesPage() {
           <p className="text-base 2md:text-lg 2lg:text-xl leading-relaxed">
             {wirelessSection[language].description}
           </p>
-        </div>
+        </FadeAnimation>
 
-        <div className="space-y-18 2lg:space-y-24">
+        <FadeAnimation className="space-y-18 2lg:space-y-24">
           {wirelessSection[language].equipmentData.map((data, index) => (
             <div
               key={index}
@@ -1258,7 +1258,7 @@ export default function ESLAccessoriesPage() {
               </div>
             </div>
           ))}
-        </div>
+        </FadeAnimation>
 
         {/* <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-24">
           <div className="relative w-80 mx-auto aspect-square bg-gray-200 dark:bg-gray-700 rounded-xl">

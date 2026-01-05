@@ -175,7 +175,7 @@ const advantagesSection = {
         heading: "Ochiq interfeys",
         data: [
           "200+ ta API interfeyslari (eng ochiq integratsiya imkoniyatlari)",
-          "Turli ERP tizimlari, API va maxsus ehtiyojlar uchun moslashtirilgan ishlab chiqishni qo‘llabquvvatlaydi",
+          "Turli ERP tizimlari, API va maxsus ehtiyojlar uchun moslashtirilgan ishlab chiqishni qo‘llab quvvatlaydi",
         ],
       },
       {
@@ -416,11 +416,13 @@ export default function ZKONGPlatform() {
   // const { theme } = useTheme();
   const { language } = useLanguage();
 
+  // console.log("Unlimited expansion".length / 2)
+
   return (
-    <div className="min-h-screen text-gray-900 transition-colors duration-300 dark:text-white">
+    <div className="min-h-screen text-gray-900 transition-colors duration-300 dark:text-white bg-slate-200 dark:bg-[#3b434c]">
       {/* Hero Section */}
 
-      <section className="min-h-[500px] sm:min-h-[70vh] flex items-center relative px-6 pt-12 pb-6 sm:py-16 2m:py-20 overflow-hidden bg-linear-to-r from-gray-200 to-gray-500 dark:from-gray-800 dark:to-gray-700">
+      <section className="min-h-[500px] sm:min-h-[70vh] flex items-center relative overflow-hidden px-6 pt-12 pb-6 sm:py-16 2md:py-20 sm:rounded-b-4xl">
       <div
         className={`absolute inset-0 w-full h-full`}
       >
@@ -429,7 +431,7 @@ export default function ZKONGPlatform() {
           autoPlay
           muted
           loop
-          className="inset-0 w-full h-full object-fill"
+          className="inset-0 w-full h-full object-cover object-top"
         >
           <source src={"/esl-cloud-platform/Cloud platform BG.mp4"} type="video/mp4" />
         </video>
@@ -439,7 +441,7 @@ export default function ZKONGPlatform() {
       </div>
         {/* subtle light/dark background shapes */}
         <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10 p-6 sm:p-8 2md:p-12 rounded-2xl glass">
-          <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty">
+          <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty mb-6">
             <AnimationText onRepeat>
               {bannerSection[language].title.split(" ").slice(0, 1).join(" ")}
             </AnimationText>{" "}
@@ -500,6 +502,74 @@ export default function ZKONGPlatform() {
           </FadeAnimation>
         </div>
       </section>
+
+      {/* Platform Advantages */}
+      <section className="px-6 py-12 sm:py-16 2m:py-20 max-w-7xl mx-auto bg-white dark:bg-[#020a15]">
+        <FadeAnimation>
+          <SubHeading
+            headingText={advantagesSection[language].title}
+            lastIndex={4}
+            customHeadingClass="text-center mb-10 sm:mb-16"
+          />
+          {/* <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+            <AnimationText>
+              {advantagesSection[language].title
+                .split(" ")
+                .slice(0, 4)
+                .join(" ")}
+            </AnimationText>{" "}
+            <span className="text-blue-600 dark:text-blue-400">
+              {advantagesSection[language].title.split(" ").slice(4).join(" ")}
+            </span>
+          </h2> */}
+        </FadeAnimation>
+
+        <FadeAnimation>
+          <div className="space-y-12">
+            {advantagesSection[language].advantages.map((advantage, index) => (
+              <div
+                key={index}
+                className="grid md:grid-cols-2 gap-4 sm:gap-8 items-center"
+              >
+                {/* Image Section */}
+                <div
+                  className={`rounded-2xl border dark:border-gray-700 bg-linear-to-br 
+                from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 
+                  overflow-hidden 
+                  ${index % 2 === 1 ? "md:order-2" : "md:order-1"}`}
+                >
+                  <div className="relative flex items-center justify-center h-48">
+                    <Image
+                      src={advantage.imgSrc}
+                      alt={advantage.heading}
+                      fill
+                    />
+                  </div>
+                </div>
+
+                {/* Text Section */}
+                <div
+                  className={`${index % 2 === 1 ? "md:order-1" : "md:order-2"}`}
+                >
+                  {/* <h3 className="text-lg sm:text-xl 2md:text-2xl font-bold mb-2.5 sm:mb-4 text-blue-600 dark:text-blue-300">
+                    {advantage.heading}
+                  </h3> */}
+                  <SubHeading headingText={advantage.heading} lastIndex={Math.ceil(advantage.heading.split(" ").length / 2)} textSize="md" customHeadingClass="text-lg! sm:text-xl! 2md:text-2xl! mb-2.5! sm:mb-4!" />
+                  <ul className="cloud-platform-ul">
+                    {advantage.data.map((item, i) => (
+                      <li key={i}>- {item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </FadeAnimation>
+      </section>
+    </div>
+  );
+}
+
 
       {/* Platform Architecture Diagram */}
       {/* <section className="px-6 py-16 max-w-7xl mx-auto">
@@ -577,68 +647,7 @@ export default function ZKONGPlatform() {
         </div>
       </section> */}
 
-      {/* Platform Advantages */}
-      <section className="px-6 py-12 sm:py-16 2m:py-20 max-w-7xl mx-auto">
-        <FadeAnimation>
-          <SubHeading
-            headingText={advantagesSection[language].title}
-            lastIndex={4}
-            customHeadingClass="text-center mb-10 sm:mb-16"
-          />
-          {/* <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
-            <AnimationText>
-              {advantagesSection[language].title
-                .split(" ")
-                .slice(0, 4)
-                .join(" ")}
-            </AnimationText>{" "}
-            <span className="text-blue-600 dark:text-blue-400">
-              {advantagesSection[language].title.split(" ").slice(4).join(" ")}
-            </span>
-          </h2> */}
-        </FadeAnimation>
 
-        <FadeAnimation>
-          <div className="space-y-12">
-            {advantagesSection[language].advantages.map((advantage, index) => (
-              <div
-                key={index}
-                className="grid md:grid-cols-2 gap-4 sm:gap-8 items-center"
-              >
-                {/* Image Section */}
-                <div
-                  className={`rounded-2xl border dark:border-gray-700 bg-linear-to-br 
-        from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 
-        overflow-hidden 
-        ${index % 2 === 1 ? "md:order-2" : "md:order-1"}`}
-                >
-                  <div className="relative flex items-center justify-center h-48">
-                    <Image
-                      src={advantage.imgSrc}
-                      alt={advantage.heading}
-                      fill
-                    />
-                  </div>
-                </div>
-
-                {/* Text Section */}
-                <div
-                  className={`${index % 2 === 1 ? "md:order-1" : "md:order-2"}`}
-                >
-                  <h3 className="text-lg sm:text-xl 2md:text-2xl font-bold mb-2.5 sm:mb-4 text-blue-600 dark:text-blue-300">
-                    {advantage.heading}
-                  </h3>
-                  <ul className="cloud-platform-ul">
-                    {advantage.data.map((item, i) => (
-                      <li key={i}>- {item}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </FadeAnimation>
-      </section>
 
       {/* ESL Platform Superior System */}
       {/* <section className="px-6 py-12 sm:py-16 2m:py-20 max-w-7xl mx-auto">
@@ -747,6 +756,3 @@ export default function ZKONGPlatform() {
           </div>
         </div>
       </section> */}
-    </div>
-  );
-}
