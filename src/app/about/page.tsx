@@ -289,18 +289,18 @@ import SubHeading from "@/src/components/SubHeading";
 const heroSectionData = {
   en: {
     title: "About",
-    subTitle: "Onetag Smart Solutions",
+    subTitle: "Onetag",
     description:
       "We are pioneering the digital transformation of retail in Uzbekistan, bringing smart price tag technology to stores across the nation.",
   },
   uz: {
     title: "Kompaniya haqida",
-    subTitle: "Onetag Smart Solutions",
+    subTitle: "Onetag",
     description: `Biz O‘zbekistonda chakana savdoni raqamlashtirishda yetakchimiz va butun mamlakat bo‘ylab do‘konlarga aqlli narx yorliqlari texnologiyasini joriy etmoqdamiz`,
   },
   ru: {
     title: "О компании",
-    subTitle: "Onetag Smart Solutions",
+    subTitle: "Onetag",
     description: `Мы являемся пионерами в цифровой трансформации розничной торговли в Узбекистане внедряя технологию умных ценников в магазинах по всей стране`,
   },
 };
@@ -529,7 +529,7 @@ export default function AboutPage() {
               <AnimationText>
                 {heroSectionData[language].title}
               </AnimationText>{" "}
-              <span className="block">
+              <span>
               {heroSectionData[language].subTitle}
               </span>
             </h1>

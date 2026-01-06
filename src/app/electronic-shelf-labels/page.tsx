@@ -351,18 +351,18 @@ const videoData = {
 
 const eslFunctionSection = {
   en: {
-    title: "Electronic Shelf Labels Function",
+    title: "Electronic Shelf Label Features",
     data1: [
       {
         id: "f1",
         title: "Change Page Automatically",
-        body: " Install large-size electronic shelf labels in shelves, central areas and entrances to ensure the coverage and exposure of brand advertising in shops.",
+        body: "The ESL automatically and regularly switches pages and displays promotional content to support daily marketing activities, especially in cases of frequent price changes.",
         img: "/ESL/EslFunction/automatically.webp",
       },
       {
         id: "f2",
         title: "Advertising	",
-        body: "Install ZKONG large-size electronic shelf labels in shelves, central areas and entrances to ensure the coverage and exposure of brand advertising in shops.",
+        body: " Install large-size electronic shelf labels in shelves, central areas and entrances to ensure the coverage and exposure of brand advertising in shops.",
         img: "/ESL/EslFunction/advertising.webp",
       },
       {
@@ -374,7 +374,7 @@ const eslFunctionSection = {
       {
         id: "f4",
         title: "Out of Stock Alert",
-        body: "When the number of products on the shelf is lower than the set quantity, the LED lights on electronic shelf label will flash to inform the staff.",
+        body: " When the number of products on the shelf is lower than the set quantity, the LED lights on the electronic shelf label will flash to inform the staff.",
         img: "/ESL/EslFunction/automatically.webp",
       },
     ],
@@ -382,42 +382,42 @@ const eslFunctionSection = {
       {
         id: "f1",
         title: "Product Positioning",
-        body: "The LED on the ESL will flash to provide the product position and a product picking route for staffs.",
+        body: "The LED on the ESL will flash to provide the product position and a product picking route for staff.",
         img: "/ESL/EslFunction/positioning.webp",
       },
       {
         id: "f2",
         title: "Shopping Navigation",
-        body: "When consumers click the product on the app, the app will provide the best route from the consumer's current location to the located product",
+        body: "When consumers click the product in the app, the app will provide the best route from the consumer’s current location to the selected product.",
         img: "/ESL/EslFunction/navigation.webp",
       },
       {
         id: "f3",
         title: "Consumer Interaction",
-        body: "The customers can enter the online store and comment on the app easily when they scan the QR code on the electronic shelf label or hold the smart phone close to the ESL",
+        body: "Customers can easily enter the online store and leave comments in the app by scanning the QR code on the electronic shelf label or by bringing their smartphone close to the ESL.",
         img: "/ESL/EslFunction/interaction.webp",
       },
       {
         id: "f4",
         title: "Display Management",
-        body: "Combine the ZKONG cloud ESLs with the shelf facilitate to manage the shelf, allowing staff to display goods in a quick, efficient and standardized manner.",
+        body: "Combine the cloud with the shelf system to help staff manage product displays in a quick, efficient, and standardized way.",
         img: "/ESL/EslFunction/management.webp",
       },
       {
         id: "f5",
         title: "Brand Upgrading",
-        body: "The ZKONG ESL improve the overall visual impact of the store, which also enhance the brand image.",
+        body: " The electronic shelf label improves the overall visual impact of the store, which also enhances the brand image.",
         img: "/ESL/EslFunction/upgrading.webp",
       },
     ],
   },
   uz: {
-    title: "Electronic Shelf Labels Function",
+    title: "Elektron narx yorliqlarining imkoniyatlari",
     data1: [
       {
         id: "f1",
-        title: "Change Page Automatically",
-        body: "The ESL will automatically and regularly switch the page and display the promotion content to meet the needs of daily marketing activities, especially frequent price changes.",
+        title: "Sahifani avtomatik almashtirish",
+        body: "Elektron narx yorliqlari sahifalarni avtomatik va muntazam ravishda almashtirib, reklama kontentini namoyish etadi. Bu kundalik marketing faoliyatini qo‘llab-quvvatlaydi, ayniqsa narxlar tez-tez o‘zgaradigan holatlarda.",
         img: "/ESL/EslFunction/automatically.webp",
       },
       {
@@ -481,12 +481,12 @@ imidjini mustahkamlaydi.`,
     ],
   },
   ru: {
-    title: "Electronic Shelf Labels Function",
+    title: "Возможности электронных ценников",
     data1: [
       {
         id: "f1",
-        title: "Change Page Automatically",
-        body: "The ESL will automatically and regularly switch the page and display the promotion content to meet the needs of daily marketing activities, especially frequent price changes.",
+        title: " Автоматическая смена страниц",
+        body: "Электронные ценники автоматически и регулярно переключают страницы и отображают рекламный контент, поддерживая ежедневные маркетинговые активности, особенно при частых изменениях цен.",
         img: "/ESL/EslFunction/automatically.webp",
       },
       {
@@ -697,7 +697,7 @@ const modalsSection = {
           {
             id: "m1",
             name: "ZKC15V-E4",
-            title: "ZKC15V-E4 | 1.54 ″Screen Lightweight Store Shelf Labels",
+            title: "ZKC15V-E4 | 1.54″ Lightweight Store Shelf Labels",
             desc: "Dot Matrix EPD Black/White/Red (Yellow)",
             img: "/ESL/Essential/ZKC15V-NE4.jpg",
             ind: {
@@ -727,7 +727,7 @@ const modalsSection = {
           {
             id: "m2",
             name: "ZKC18V-E4",
-            title: "ZKC18V-E4 | 1.8 ″Screen Lightweight Store Shelf Labels",
+            title: "ZKC18V-E4 | 1.8″ Lightweight Store Shelf Labels",
             desc: "Dot Matrix EPD Black/White/Red (Yellow)",
             img: "/ESL/Essential/ZKC18V-NE4.jpg",
             ind: {
@@ -757,7 +757,7 @@ const modalsSection = {
           {
             id: "m3",
             name: "ZKC21V-E4",
-            title: "ZKC21V-E4 | 2.13 ″Screen Lightweight Store Shelf Labels",
+            title: "ZKC21V-E4 | 2.13″ Lightweight Store Shelf Labels",
             desc: "Dot Matrix EPD Black/White/Red (Yellow)",
             img: "/ESL/Essential/ZKC21V-NE4.jpg",
             ind: {
@@ -787,7 +787,7 @@ const modalsSection = {
           {
             id: "m4",
             name: "ZKC26V-E4",
-            title: "ZKC26V-E4 | 2.66 ″Screen Lightweight Store Shelf Labels",
+            title: "ZKC26V-E4 | 2.66″ Lightweight Store Shelf Labels",
             desc: "Dot Matrix EPD Black/White/Red (Yellow)",
             img: "/ESL/Essential/ZKC26V-NE4.jpg",
             ind: {
@@ -817,7 +817,7 @@ const modalsSection = {
           {
             id: "m5",
             name: "ZKC29V-E4",
-            title: "ZKC29V-E4 | 2.9 ″Screen Lightweight Store Shelf Labels",
+            title: "ZKC29V-E4 | 2.9″ Lightweight Store Shelf Labels",
             desc: "Dot Matrix EPD Black/White/Red (Yellow)",
             img: "/ESL/Essential/ZKC29V-NE4.jpg",
             ind: {
@@ -852,7 +852,7 @@ const modalsSection = {
           {
             id: "m6",
             name: "ZKC37V-E4",
-            title: "ZKC37V-E4 | 3.7 ″Screen Lightweight Store Shelf Labels",
+            title: "ZKC37V-E4 | 3.7″ Lightweight Store Shelf Labels",
             desc: "Dot Matrix EPD Black/White/Red (Yellow)",
             img: "/ESL/Perfomance/ZKC37V-NE4.png",
             ind: {
@@ -882,7 +882,7 @@ const modalsSection = {
           {
             id: "m7",
             name: "ZKC42V-E4",
-            title: "ZKC42V-E4 | 4.2 ″Screen Lightweight Store Shelf Labels",
+            title: "ZKC42V-E4 | 4.2″ Lightweight Store Shelf Labels",
             desc: "Dot Matrix EPD Black/White/Red (Yellow)",
             img: "/ESL/Perfomance/ZKC42V-NE4.jpg",
             ind: {
@@ -912,7 +912,7 @@ const modalsSection = {
           {
             id: "m8",
             name: "ZKC58V-E4",
-            title: "ZKC58V-E4 | 5.8 ″Screen Lightweight Store Shelf Labels",
+            title: "ZKC58V-E4 | 5.8″ Lightweight Store Shelf Labels",
             desc: "Dot Matrix EPD Black/White/Red (Yellow)",
             img: "/ESL/Perfomance/ZKC58V-NE4.png",
             ind: {
@@ -942,7 +942,7 @@ const modalsSection = {
           {
             id: "m9",
             name: "ZKC75V-E4",
-            title: "ZKC75V-E4 | 7.5 ″Screen Lightweight Store Shelf Labels",
+            title: "ZKC75V-E4 | 7.5″ Lightweight Store Shelf Labels",
             desc: "Dot Matrix EPD Black/White/Red (Yellow)",
             img: "/ESL/Perfomance/ZKC75V-NE4.png",
             ind: {
@@ -982,8 +982,8 @@ const modalsSection = {
           {
             id: "m1",
             name: "ZKC15S-E4",
-            title: "ZKC15S-E4 | 1.54 ″ Screen Retail Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC15S-E4 | 1.54″ ekranli chakana savdo narx yorliqlari",
+            desc: "Dot Matrix EPD Qora / Oq / Qizil (Sariq)",
             img: "/ESL/Shield/ZKC15S-E4.gif",
             ind: {
               nfc: true,
@@ -991,17 +991,17 @@ const modalsSection = {
               led: true,
             },
             specs: [
-              { k: "Size", v: "44.5*35.9*13.7mm" },
-              { k: "Screen", v: "27*27mm" },
-              { k: "Operate temperature", v: "0~40℃" },
-              { k: "Battery", v: "600mAh" },
+              { k: "O‘lchami", v: "44.5*35.9*13.7mm" },
+              { k: "Ekran", v: "27*27mm" },
+              { k: "Ishlash harorati", v: "0~40℃" },
+              { k: "Batareya", v: "600mAh" },
             ],
           },
           {
             id: "m2",
             name: "ZKC21S-E4",
-            title: "ZKC21S-E4 | 2.13 ″ Screen Retail Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC21S-E4 | 2.13″ ekranli chakana savdo narx yorliqlari",
+            desc: "Dot Matrix EPD Qora / Oq / Qizil (Sariq)",
             img: "/ESL/Shield/ZKC21S-E4.gif",
             ind: {
               nfc: true,
@@ -1009,17 +1009,17 @@ const modalsSection = {
               led: true,
             },
             specs: [
-              { k: "Size", v: "70*36*14.3mm" },
-              { k: "Screen", v: "48.6*23.7mm" },
-              { k: "Operate temperature", v: "0~40℃" },
-              { k: "Battery", v: "1200mAh" },
+              { k: "O‘lchami", v: "70*36*14.3mm" },
+              { k: "Ekran", v: "48.6*23.7mm" },
+              { k: "Ishlash harorati", v: "0~40℃" },
+              { k: "Batareya", v: "1200mAh" },
             ],
           },
           {
             id: "m3",
             name: "ZK21SF",
-            title: "ZK21SF | 2.13 ″ Screen Retail Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White",
+            title: "ZK21SF | 2.13″ ekranli chakana savdo narx yorliqlari",
+            desc: "Dot Matrix EPD Qora / Oq",
             img: "/ESL/Shield/ZK21SF.gif",
             ind: {
               nfc: true,
@@ -1027,16 +1027,16 @@ const modalsSection = {
               led: true,
             },
             specs: [
-              { k: "Size", v: "70*36*14.3mm" },
-              { k: "Screen", v: "48.6*23.7mm" },
-              { k: "Operate temperature", v: "-25°~25℃" },
-              { k: "Battery", v: "1000mAh" },
+              { k: "O‘lchami", v: "70*36*14.3mm" },
+              { k: "Ekran", v: "48.6*23.7mm" },
+              { k: "Ishlash harorati", v: "-25°~25℃" },
+              { k: "Batareya", v: "1000mAh" },
             ],
           },
           {
             id: "m4",
             name: "ZKC26S-E4",
-            title: "ZKC26S-E4 | 2.66 ″ Screen Retail Store Shelf Labels",
+            title: "ZKC26S-E4 | 2.66″ ekranli chakana savdo narx yorliqlari",
             desc: "",
             img: "/ESL/Shield/ZKC26S-E4.gif",
             ind: {
@@ -1045,17 +1045,17 @@ const modalsSection = {
               led: true,
             },
             specs: [
-              { k: "Size", v: "83*41*14.3mm" },
-              { k: "Screen", v: "60.1*30.7mm" },
-              { k: "Operate temperature", v: "0~40℃" },
-              { k: "Battery", v: "1200mAh" },
+              { k: "O‘lchami", v: "83*41*14.3mm" },
+              { k: "Ekran", v: "60.1*30.7mm" },
+              { k: "Ishlash harorati", v: "0~40℃" },
+              { k: "Batareya", v: "1200mAh" },
             ],
           },
           {
             id: "m5",
             name: "ZK26SF",
-            title: "ZK26SF | 2.66 ″ Screen Retail Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White",
+            title: "ZK26SF | 2.66″ ekranli chakana savdo narx yorliqlari",
+            desc: "Dot Matrix EPD Qora / Oq",
             img: "/ESL/Shield/ZK26SF.gif",
             ind: {
               nfc: true,
@@ -1063,17 +1063,17 @@ const modalsSection = {
               led: true,
             },
             specs: [
-              { k: "Size", v: "83*41*14.3mm" },
-              { k: "Screen", v: "60.1*30.7mm" },
-              { k: "Operate temperature", v: "-25~25℃" },
-              { k: "Battery", v: "1000mAh" },
+              { k: "O‘lchami", v: "83*41*14.3mm" },
+              { k: "Ekran", v: "60.1*30.7mm" },
+              { k: "Ishlash harorati", v: "-25~25℃" },
+              { k: "Batareya", v: "1000mAh" },
             ],
           },
           {
             id: "m6",
             name: "ZKC29S-E4",
-            title: "ZKC29S-E4 | 2.9 ″ Screen Retail Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC29S-E4 | 2.9″ ekranli chakana savdo narx yorliqlari",
+            desc: "Dot Matrix EPD Qora / Oq / Qizil (Sariq)",
             img: "/ESL/Shield/ZKC29S-E4.gif",
             ind: {
               nfc: true,
@@ -1081,17 +1081,17 @@ const modalsSection = {
               led: true,
             },
             specs: [
-              { k: "Size", v: "90.41*41*14.3mm" },
-              { k: "Screen", v: "66.9*29.1mm" },
-              { k: "Operate temperature", v: "0~40℃" },
-              { k: "Battery", v: "1200mAh" },
+              { k: "O‘lchami", v: "90.41*41*14.3mm" },
+              { k: "Ekran", v: "66.9*29.1mm" },
+              { k: "Ishlash harorati", v: "0~40℃" },
+              { k: "Batareya", v: "1200mAh" },
             ],
           },
           {
             id: "m7",
             name: "ZKC37S-E4",
-            title: "ZKC37S-E4 | 3.7 ″ Screen Retail Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC37S-E4 | 3.7″ ekranli chakana savdo narx yorliqlari",
+            desc: "Dot Matrix EPD Qora / Oq / Qizil (Sariq)",
             img: "/ESL/Shield/ZKC37S-E4.gif",
             ind: {
               nfc: true,
@@ -1099,10 +1099,10 @@ const modalsSection = {
               led: true,
             },
             specs: [
-              { k: "Size", v: "104*56.4*11.2mm" },
-              { k: "Screen", v: "81.54*47.04mm" },
-              { k: "Operate temperature", v: "0~40℃" },
-              { k: "Battery", v: "1200mAh" },
+              { k: "O‘lchami", v: "104*56.4*11.2mm" },
+              { k: "Ekran", v: "81.54*47.04mm" },
+              { k: "Ishlash harorati", v: "0~40℃" },
+              { k: "Batareya", v: "1200mAh" },
             ],
           },
         ],
@@ -1113,8 +1113,8 @@ const modalsSection = {
           {
             id: "m1",
             name: "ZKC15V-E4",
-            title: "ZKC15V-E4 | 1.54 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC15V-E4 | 1.54″ Yengil elektron narx belgilari",
+            desc: "Dot Matrix EPD Qora / Oq / Qizil (Sariq)",
             img: "/ESL/Essential/ZKC15V-NE4.jpg",
             ind: {
               nfc: false,
@@ -1123,19 +1123,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "O‘lchami",
                 v: "44.2*35.9*12.1mm",
               },
               {
-                k: "Screen",
+                k: "Ekran",
                 v: "27*27mm",
               },
               {
-                k: "Operate temperature",
+                k: "Ishlash harorati",
                 v: "0°~40℃",
               },
               {
-                k: "Battery",
+                k: "Batareya",
                 v: "600mAh",
               },
             ],
@@ -1143,8 +1143,8 @@ const modalsSection = {
           {
             id: "m2",
             name: "ZKC18V-E4",
-            title: "ZKC18V-E4 | 1.8 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC18V-E4 | 1.8″ Yengil elektron narx belgilari",
+            desc: "Dot Matrix EPD Qora / Oq / Qizil (Sariq)",
             img: "/ESL/Essential/ZKC18V-NE4.jpg",
             ind: {
               nfc: false,
@@ -1153,19 +1153,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "O‘lchami",
                 v: "52.5*35.9*12.1mm",
               },
               {
-                k: "Screen",
+                k: "Ekran",
                 v: "36.06*27.05mm",
               },
               {
-                k: "Operate temperature",
+                k: "Ishlash harorati",
                 v: "0°~40℃",
               },
               {
-                k: "Battery",
+                k: "Batareya",
                 v: "600mAh",
               },
             ],
@@ -1173,8 +1173,8 @@ const modalsSection = {
           {
             id: "m3",
             name: "ZKC21V-E4",
-            title: "ZKC21V-E4 | 2.13 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC21V-E4 | 2.13″ Yengil elektron narx belgilari",
+            desc: "Dot Matrix EPD Qora / Oq / Qizil (Sariq)",
             img: "/ESL/Essential/ZKC21V-NE4.jpg",
             ind: {
               nfc: false,
@@ -1183,19 +1183,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "O‘lchami",
                 v: "70*34.5*12.1mm",
               },
               {
-                k: "Screen",
+                k: "Ekran",
                 v: "48.55*23.7mm",
               },
               {
-                k: "Operate temperature",
+                k: "Ishlash harorati",
                 v: "0°~40℃",
               },
               {
-                k: "Battery",
+                k: "Batareya",
                 v: "1200mAh",
               },
             ],
@@ -1203,8 +1203,8 @@ const modalsSection = {
           {
             id: "m4",
             name: "ZKC26V-E4",
-            title: "ZKC26V-E4 | 2.66 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC26V-E4 | 2.66″ Yengil elektron narx belgilari",
+            desc: "Dot Matrix EPD Qora / Oq / Qizil (Sariq)",
             img: "/ESL/Essential/ZKC26V-NE4.jpg",
             ind: {
               nfc: false,
@@ -1213,19 +1213,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "O‘lchami",
                 v: "83*41*12.1mm",
               },
               {
-                k: "Screen",
+                k: "Ekran",
                 v: "60.09*30.7mm",
               },
               {
-                k: "Operate temperature",
+                k: "Ishlash harorati",
                 v: "0°~40℃",
               },
               {
-                k: "Battery",
+                k: "Batareya",
                 v: "1200mAh",
               },
             ],
@@ -1233,8 +1233,8 @@ const modalsSection = {
           {
             id: "m5",
             name: "ZKC29V-E4",
-            title: "ZKC29V-E4 | 2.9 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC29V-E4 | 2.9″ Yengil elektron narx belgilari",
+            desc: "Dot Matrix EPD Qora / Oq / Qizil (Sariq)",
             img: "/ESL/Essential/ZKC29V-NE4.jpg",
             ind: {
               nfc: false,
@@ -1243,19 +1243,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "O‘lchami",
                 v: "90*41*12.1mm",
               },
               {
-                k: "Screen",
+                k: "Ekran",
                 v: "66.9*29.1mm",
               },
               {
-                k: "Operate temperature",
+                k: "Ishlash harorati",
                 v: "0~40℃",
               },
               {
-                k: "Battery",
+                k: "Batareya",
                 v: "1200mAh",
               },
             ],
@@ -1268,8 +1268,8 @@ const modalsSection = {
           {
             id: "m6",
             name: "ZKC37V-E4",
-            title: "ZKC37V-E4 | 3.7 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC37V-E4 | 3.7″ Yengil elektron narx belgilari",
+            desc: "Dot Matrix EPD Qora / Oq / Qizil (Sariq)",
             img: "/ESL/Perfomance/ZKC37V-NE4.png",
             ind: {
               nfc: false,
@@ -1278,19 +1278,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "O‘lchami",
                 v: "103.6*57*11.2mm",
               },
               {
-                k: "Screen",
+                k: "Ekran",
                 v: "81.54*47.04mm",
               },
               {
-                k: "Operate temperature",
+                k: "Ishlash harorati",
                 v: "0°~40℃",
               },
               {
-                k: "Battery",
+                k: "Batareya",
                 v: "1200mAh",
               },
             ],
@@ -1298,8 +1298,8 @@ const modalsSection = {
           {
             id: "m7",
             name: "ZKC42V-E4",
-            title: "ZKC42V-E4 | 4.2 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC42V-E4 | 4.2″ Yengil elektron narx belgilari",
+            desc: "Dot Matrix EPD Qora / Oq / Qizil (Sariq)",
             img: "/ESL/Perfomance/ZKC42V-NE4.jpg",
             ind: {
               nfc: false,
@@ -1308,19 +1308,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "O‘lchami",
                 v: "104.8*87*12.8mm",
               },
               {
-                k: "Screen",
+                k: "Ekran",
                 v: "84.8*63.6mm",
               },
               {
-                k: "Operate temperature",
+                k: "Ishlash harorati",
                 v: "0~40℃",
               },
               {
-                k: "Battery",
+                k: "Batareya",
                 v: "1200mAh",
               },
             ],
@@ -1328,8 +1328,8 @@ const modalsSection = {
           {
             id: "m8",
             name: "ZKC58V-E4",
-            title: "ZKC58V-E4 | 5.8 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC58V-E4 | 5.8″ Yengil elektron narx belgilari",
+            desc: "Dot Matrix EPD Qora / Oq / Qizil (Sariq)",
             img: "/ESL/Perfomance/ZKC58V-NE4.png",
             ind: {
               nfc: false,
@@ -1338,19 +1338,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "O‘lchami",
                 v: "135.4*110*9mm",
               },
               {
-                k: "Screen",
+                k: "Ekran",
                 v: "118.8*88.2mm",
               },
               {
-                k: "Operate temperature",
+                k: "Ishlash harorati",
                 v: "0°~40℃",
               },
               {
-                k: "Battery",
+                k: "Batareya",
                 v: "2400mAh",
               },
             ],
@@ -1358,8 +1358,8 @@ const modalsSection = {
           {
             id: "m9",
             name: "ZKC75V-E4",
-            title: "ZKC75V-E4 | 7.5 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC75V-E4 | 7.5″ Yengil elektron narx belgilari",
+            desc: "Dot Matrix EPD Qora / Oq / Qizil (Sariq)",
             img: "/ESL/Perfomance/ZKC75V-NE4.png",
             ind: {
               nfc: false,
@@ -1368,19 +1368,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "O‘lchami",
                 v: "180.8*121.8*9mm",
               },
               {
-                k: "Screen",
+                k: "Ekran",
                 v: "163.2*97.9mm",
               },
               {
-                k: "Operate temperature",
+                k: "Ishlash harorati",
                 v: "0°~40℃",
               },
               {
-                k: "Battery",
+                k: "Batareya",
                 v: "2400mAh",
               },
             ],
@@ -1398,8 +1398,8 @@ const modalsSection = {
           {
             id: "m1",
             name: "ZKC15S-E4",
-            title: "ZKC15S-E4 | 1.54 ″ Screen Retail Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC15S-E4 | 1.54″ электронные ценники для магазинов",
+            desc: "Dot Matrix EPD Черный / Белый / Красный (Жёлтый)",
             img: "/ESL/Shield/ZKC15S-E4.gif",
             ind: {
               nfc: true,
@@ -1407,17 +1407,17 @@ const modalsSection = {
               led: true,
             },
             specs: [
-              { k: "Size", v: "44.5*35.9*13.7mm" },
-              { k: "Screen", v: "27*27mm" },
-              { k: "Operate temperature", v: "0~40℃" },
-              { k: "Battery", v: "600mAh" },
+              { k: "Размер", v: "44.5*35.9*13.7mm" },
+              { k: "Экран", v: "27*27mm" },
+              { k: "Рабочая температура", v: "0~40℃" },
+              { k: "Батарея", v: "600mAh" },
             ],
           },
           {
             id: "m2",
             name: "ZKC21S-E4",
-            title: "ZKC21S-E4 | 2.13 ″ Screen Retail Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC21S-E4 | 2.13″ электронные ценники для магазинов",
+            desc: "Dot Matrix EPD Черный / Белый / Красный (Жёлтый)",
             img: "/ESL/Shield/ZKC21S-E4.gif",
             ind: {
               nfc: true,
@@ -1425,17 +1425,17 @@ const modalsSection = {
               led: true,
             },
             specs: [
-              { k: "Size", v: "70*36*14.3mm" },
-              { k: "Screen", v: "48.6*23.7mm" },
-              { k: "Operate temperature", v: "0~40℃" },
-              { k: "Battery", v: "1200mAh" },
+              { k: "Размер", v: "70*36*14.3mm" },
+              { k: "Экран", v: "48.6*23.7mm" },
+              { k: "Рабочая температура", v: "0~40℃" },
+              { k: "Батарея", v: "1200mAh" },
             ],
           },
           {
             id: "m3",
             name: "ZK21SF",
-            title: "ZK21SF | 2.13 ″ Screen Retail Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White",
+            title: "ZK21SF | 2.13″ электронные ценники для магазинов",
+            desc: "Dot Matrix EPD Черный / Белый",
             img: "/ESL/Shield/ZK21SF.gif",
             ind: {
               nfc: true,
@@ -1443,16 +1443,16 @@ const modalsSection = {
               led: true,
             },
             specs: [
-              { k: "Size", v: "70*36*14.3mm" },
-              { k: "Screen", v: "48.6*23.7mm" },
-              { k: "Operate temperature", v: "-25°~25℃" },
-              { k: "Battery", v: "1000mAh" },
+              { k: "Размер", v: "70*36*14.3mm" },
+              { k: "Экран", v: "48.6*23.7mm" },
+              { k: "Рабочая температура", v: "-25°~25℃" },
+              { k: "Батарея", v: "1000mAh" },
             ],
           },
           {
             id: "m4",
             name: "ZKC26S-E4",
-            title: "ZKC26S-E4 | 2.66 ″ Screen Retail Store Shelf Labels",
+            title: "ZKC26S-E4 | 2.66″ электронные ценники для магазинов",
             desc: "",
             img: "/ESL/Shield/ZKC26S-E4.gif",
             ind: {
@@ -1461,17 +1461,17 @@ const modalsSection = {
               led: true,
             },
             specs: [
-              { k: "Size", v: "83*41*14.3mm" },
-              { k: "Screen", v: "60.1*30.7mm" },
-              { k: "Operate temperature", v: "0~40℃" },
-              { k: "Battery", v: "1200mAh" },
+              { k: "Размер", v: "83*41*14.3mm" },
+              { k: "Экран", v: "60.1*30.7mm" },
+              { k: "Рабочая температура", v: "0~40℃" },
+              { k: "Батарея", v: "1200mAh" },
             ],
           },
           {
             id: "m5",
             name: "ZK26SF",
-            title: "ZK26SF | 2.66 ″ Screen Retail Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White",
+            title: "ZK26SF | 2.66″ электронные ценники для магазинов",
+            desc: "Dot Matrix EPD Черный / Белый",
             img: "/ESL/Shield/ZK26SF.gif",
             ind: {
               nfc: true,
@@ -1479,17 +1479,17 @@ const modalsSection = {
               led: true,
             },
             specs: [
-              { k: "Size", v: "83*41*14.3mm" },
-              { k: "Screen", v: "60.1*30.7mm" },
-              { k: "Operate temperature", v: "-25~25℃" },
-              { k: "Battery", v: "1000mAh" },
+              { k: "Размер", v: "83*41*14.3mm" },
+              { k: "Экран", v: "60.1*30.7mm" },
+              { k: "Рабочая температура", v: "-25~25℃" },
+              { k: "Батарея", v: "1000mAh" },
             ],
           },
           {
             id: "m6",
             name: "ZKC29S-E4",
-            title: "ZKC29S-E4 | 2.9 ″ Screen Retail Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC29S-E4 | 2.9″ электронные ценники для магазинов",
+            desc: "Dot Matrix EPD Черный / Белый / Красный (Жёлтый)",
             img: "/ESL/Shield/ZKC29S-E4.gif",
             ind: {
               nfc: true,
@@ -1497,17 +1497,17 @@ const modalsSection = {
               led: true,
             },
             specs: [
-              { k: "Size", v: "90.41*41*14.3mm" },
-              { k: "Screen", v: "66.9*29.1mm" },
-              { k: "Operate temperature", v: "0~40℃" },
-              { k: "Battery", v: "1200mAh" },
+              { k: "Размер", v: "90.41*41*14.3mm" },
+              { k: "Экран", v: "66.9*29.1mm" },
+              { k: "Рабочая температура", v: "0~40℃" },
+              { k: "Батарея", v: "1200mAh" },
             ],
           },
           {
             id: "m7",
             name: "ZKC37S-E4",
-            title: "ZKC37S-E4 | 3.7 ″ Screen Retail Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC37S-E4 | 3.7″ электронные ценники для магазинов",
+            desc: "Dot Matrix EPD Черный / Белый / Красный (Жёлтый)",
             img: "/ESL/Shield/ZKC37S-E4.gif",
             ind: {
               nfc: true,
@@ -1515,10 +1515,10 @@ const modalsSection = {
               led: true,
             },
             specs: [
-              { k: "Size", v: "104*56.4*11.2mm" },
-              { k: "Screen", v: "81.54*47.04mm" },
-              { k: "Operate temperature", v: "0~40℃" },
-              { k: "Battery", v: "1200mAh" },
+              { k: "Размер", v: "104*56.4*11.2mm" },
+              { k: "Экран", v: "81.54*47.04mm" },
+              { k: "Рабочая температура", v: "0~40℃" },
+              { k: "Батарея", v: "1200mAh" },
             ],
           },
         ],
@@ -1529,8 +1529,8 @@ const modalsSection = {
           {
             id: "m1",
             name: "ZKC15V-E4",
-            title: "ZKC15V-E4 | 1.54 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC15V-E4 | 1.54″ Лёгкие электронные ценники для магазинов",
+            desc: "Dot Matrix EPD Черный / Белый / Красный (Жёлтый)",
             img: "/ESL/Essential/ZKC15V-NE4.jpg",
             ind: {
               nfc: false,
@@ -1539,19 +1539,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "Размер",
                 v: "44.2*35.9*12.1mm",
               },
               {
-                k: "Screen",
+                k: "Экран",
                 v: "27*27mm",
               },
               {
-                k: "Operate temperature",
+                k: "Рабочая температура",
                 v: "0°~40℃",
               },
               {
-                k: "Battery",
+                k: "Батарея",
                 v: "600mAh",
               },
             ],
@@ -1559,8 +1559,8 @@ const modalsSection = {
           {
             id: "m2",
             name: "ZKC18V-E4",
-            title: "ZKC18V-E4 | 1.8 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC18V-E4 | 1.8″ Лёгкие электронные ценники для магазинов",
+            desc: "Dot Matrix EPD Черный / Белый / Красный (Жёлтый)",
             img: "/ESL/Essential/ZKC18V-NE4.jpg",
             ind: {
               nfc: false,
@@ -1569,19 +1569,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "Размер",
                 v: "52.5*35.9*12.1mm",
               },
               {
-                k: "Screen",
+                k: "Экран",
                 v: "36.06*27.05mm",
               },
               {
-                k: "Operate temperature",
+                k: "Рабочая температура",
                 v: "0°~40℃",
               },
               {
-                k: "Battery",
+                k: "Батарея",
                 v: "600mAh",
               },
             ],
@@ -1589,8 +1589,8 @@ const modalsSection = {
           {
             id: "m3",
             name: "ZKC21V-E4",
-            title: "ZKC21V-E4 | 2.13 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC21V-E4 | 2.13″ Лёгкие электронные ценники для магазинов",
+            desc: "Dot Matrix EPD Черный / Белый / Красный (Жёлтый)",
             img: "/ESL/Essential/ZKC21V-NE4.jpg",
             ind: {
               nfc: false,
@@ -1599,19 +1599,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "Размер",
                 v: "70*34.5*12.1mm",
               },
               {
-                k: "Screen",
+                k: "Экран",
                 v: "48.55*23.7mm",
               },
               {
-                k: "Operate temperature",
+                k: "Рабочая температура",
                 v: "0°~40℃",
               },
               {
-                k: "Battery",
+                k: "Батарея",
                 v: "1200mAh",
               },
             ],
@@ -1619,8 +1619,8 @@ const modalsSection = {
           {
             id: "m4",
             name: "ZKC26V-E4",
-            title: "ZKC26V-E4 | 2.66 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC26V-E4 | 2.66″ Лёгкие электронные ценники для магазинов",
+            desc: "Dot Matrix EPD Черный / Белый / Красный (Жёлтый)",
             img: "/ESL/Essential/ZKC26V-NE4.jpg",
             ind: {
               nfc: false,
@@ -1629,19 +1629,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "Размер",
                 v: "83*41*12.1mm",
               },
               {
-                k: "Screen",
+                k: "Экран",
                 v: "60.09*30.7mm",
               },
               {
-                k: "Operate temperature",
+                k: "Рабочая температура",
                 v: "0°~40℃",
               },
               {
-                k: "Battery",
+                k: "Батарея",
                 v: "1200mAh",
               },
             ],
@@ -1649,8 +1649,8 @@ const modalsSection = {
           {
             id: "m5",
             name: "ZKC29V-E4",
-            title: "ZKC29V-E4 | 2.9 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC29V-E4 | 2.9″ Лёгкие электронные ценники для магазинов",
+            desc: "Dot Matrix EPD Черный / Белый / Красный (Жёлтый)",
             img: "/ESL/Essential/ZKC29V-NE4.jpg",
             ind: {
               nfc: false,
@@ -1659,19 +1659,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "Размер",
                 v: "90*41*12.1mm",
               },
               {
-                k: "Screen",
+                k: "Экран",
                 v: "66.9*29.1mm",
               },
               {
-                k: "Operate temperature",
+                k: "Рабочая температура",
                 v: "0~40℃",
               },
               {
-                k: "Battery",
+                k: "Батарея",
                 v: "1200mAh",
               },
             ],
@@ -1684,8 +1684,8 @@ const modalsSection = {
           {
             id: "m6",
             name: "ZKC37V-E4",
-            title: "ZKC37V-E4 | 3.7 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC37V-E4 | 3.7″ Лёгкие электронные ценники для магазинов",
+            desc: "Dot Matrix EPD Черный / Белый / Красный (Жёлтый)",
             img: "/ESL/Perfomance/ZKC37V-NE4.png",
             ind: {
               nfc: false,
@@ -1694,19 +1694,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "Размер",
                 v: "103.6*57*11.2mm",
               },
               {
-                k: "Screen",
+                k: "Экран",
                 v: "81.54*47.04mm",
               },
               {
-                k: "Operate temperature",
+                k: "Рабочая температура",
                 v: "0°~40℃",
               },
               {
-                k: "Battery",
+                k: "Батарея",
                 v: "1200mAh",
               },
             ],
@@ -1714,8 +1714,8 @@ const modalsSection = {
           {
             id: "m7",
             name: "ZKC42V-E4",
-            title: "ZKC42V-E4 | 4.2 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC42V-E4 | 4.2″ Лёгкие электронные ценники для магазинов",
+            desc: "Dot Matrix EPD Черный / Белый / Красный (Жёлтый)",
             img: "/ESL/Perfomance/ZKC42V-NE4.jpg",
             ind: {
               nfc: false,
@@ -1724,19 +1724,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "Размер",
                 v: "104.8*87*12.8mm",
               },
               {
-                k: "Screen",
+                k: "Экран",
                 v: "84.8*63.6mm",
               },
               {
-                k: "Operate temperature",
+                k: "Рабочая температура",
                 v: "0~40℃",
               },
               {
-                k: "Battery",
+                k: "Батарея",
                 v: "1200mAh",
               },
             ],
@@ -1744,8 +1744,8 @@ const modalsSection = {
           {
             id: "m8",
             name: "ZKC58V-E4",
-            title: "ZKC58V-E4 | 5.8 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC58V-E4 | 5.8″ Лёгкие электронные ценники для магазинов",
+            desc: "Dot Matrix EPD Черный / Белый / Красный (Жёлтый)",
             img: "/ESL/Perfomance/ZKC58V-NE4.png",
             ind: {
               nfc: false,
@@ -1754,19 +1754,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "Размер",
                 v: "135.4*110*9mm",
               },
               {
-                k: "Screen",
+                k: "Экран",
                 v: "118.8*88.2mm",
               },
               {
-                k: "Operate temperature",
+                k: "Рабочая температура",
                 v: "0°~40℃",
               },
               {
-                k: "Battery",
+                k: "Батарея",
                 v: "2400mAh",
               },
             ],
@@ -1774,8 +1774,8 @@ const modalsSection = {
           {
             id: "m9",
             name: "ZKC75V-E4",
-            title: "ZKC75V-E4 | 7.5 ″Screen Lightweight Store Shelf Labels",
-            desc: "Dot Matrix EPD Black/White/Red (Yellow)",
+            title: "ZKC75V-E4 | 7.5″ SЛёгкие электронные ценники для магазинов",
+            desc: "Dot Matrix EPD Черный / Белый / Красный (Жёлтый)",
             img: "/ESL/Perfomance/ZKC75V-NE4.png",
             ind: {
               nfc: false,
@@ -1784,19 +1784,19 @@ const modalsSection = {
             },
             specs: [
               {
-                k: "Size",
+                k: "Размер",
                 v: "180.8*121.8*9mm",
               },
               {
-                k: "Screen",
+                k: "Экран",
                 v: "163.2*97.9mm",
               },
               {
-                k: "Operate temperature",
+                k: "Рабочая температура",
                 v: "0°~40℃",
               },
               {
-                k: "Battery",
+                k: "Батарея",
                 v: "2400mAh",
               },
             ],

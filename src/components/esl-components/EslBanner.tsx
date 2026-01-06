@@ -12,8 +12,8 @@ function EslBanner({ hero, language }: EslHero) {
     // <section
     //   className={`relative pt-30 pb-16 sm:py-24 bg-linear-to-r from-gray-200 to-gray-500 dark:from-gray-800 dark:to-gray-700`}
     // >
-    <section className="min-h-[500px] sm:min-h-[70vh] relative w-full flex items-center justify-center bg-linear-to-r from-gray-200 to-gray-500 dark:from-gray-800 dark:to-gray-700 overflow-hidden py-28">
-      <Image src='/ESL/ESL-banner.jpeg' alt="ESL background image" fill />
+    <section className="min-h-[500px] sm:min-h-[70vh] relative w-full flex items-center justify-center px-6 pt-12 pb-6 sm:py-16 2md:py-20 sm:rounded-b-4xl overflow-hidden">
+      <Image src='/ESL/ESL-banner.jpeg' alt="ESL background image" fill objectFit="cover" />
       
       <div className="absolute z-1 inset-0 pointer-events-none">
         {/* <div className="absolute -left-20 -top-32 w-96 h-96 rounded-full blur-3xl bg-linear-to-br from-blue-200/30 to-purple-300/30 dark:from-blue-900/20 dark:to-purple-900/20"></div> */}

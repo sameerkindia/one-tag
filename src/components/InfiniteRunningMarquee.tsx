@@ -257,7 +257,7 @@ export default function InfiniteMarquee({
   };
 
   return (
-    <div className="w-full overflow-hidden pt-8 sm:pt-10">
+    <div className="w-full overflow-hidden pt-8 sm:pt-10 pb-2">
       {/* Marquee */}
       <div className="relative">
         <div
