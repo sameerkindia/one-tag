@@ -76,7 +76,7 @@ export function AccessibilityToolbar({ onClose }: AccessibilityToolbarProps) {
           aria-label="Decrease font size"
         >
           <Minus className="w-4 h-4" />
-          <span>{accessibilityModal[language].reduceText}</span>
+          <span className="block w-full text-center">{accessibilityModal[language].reduceText}</span>
         </button>
 
           <button
@@ -85,7 +85,7 @@ export function AccessibilityToolbar({ onClose }: AccessibilityToolbarProps) {
             aria-label="Increase font size"
           >
             <Plus className="w-4 h-4" />
-            <span>{accessibilityModal[language].enlargeText}</span>
+            <span className="block w-full text-center">{accessibilityModal[language].enlargeText}</span>
           </button>
 
         {/* Theme Toggle */}
@@ -99,12 +99,12 @@ export function AccessibilityToolbar({ onClose }: AccessibilityToolbarProps) {
           {theme === "light" ? (
             <>
               <Moon className="w-4 h-4 text-muted-foreground" />
-              <span className="text-sm">{accessibilityModal[language].darkMode}</span>
+              <span className="text-sm block w-full text-center">{accessibilityModal[language].darkMode}</span>
             </>
           ) : (
             <>
               <Sun className="w-4 h-4 text-muted-foreground" />
-              <span className="text-sm">{accessibilityModal[language].lightMode}</span>
+              <span className="text-sm block w-full text-center">{accessibilityModal[language].lightMode}</span>
             </>
           )}
         </button>
