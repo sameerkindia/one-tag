@@ -90,6 +90,7 @@ export default function TermsOfServicePage() {
           <SubHeading
             headingText={termsOfServiceSection[language].title}
             lastIndex={1}
+            customHeadingClass="leading-normal!"
           />
           <motion.p
             initial={{ opacity: 0 }}

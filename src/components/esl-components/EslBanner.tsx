@@ -21,7 +21,7 @@ function EslBanner({ hero, language }: EslHero) {
       </div>
       <div className="max-w-5xl flex items-center justify-center flex-col mx-auto px-4 sm:px-6 text-center z-1 p-6 sm:p-8 2md:p-12 rounded-2xl glass">
         <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty">
-          <AnimationText onRepeat>
+          <AnimationText>
             {hero.title.split(" ").slice(0, 2).join(" ")}
           </AnimationText>{" "}
           {hero.title.split(" ").slice(2).join(" ")}

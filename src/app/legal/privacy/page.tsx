@@ -16,6 +16,8 @@ import {
 import { useLanguage } from "@/src/contexts/language-context";
 import { FadeAnimation } from "@/src/motion-animations/FadeAnimation";
 import SubHeading from "@/src/components/SubHeading";
+import GradientBackground from "@/src/motion-animations/GradientBackground";
+import FloatingParticles from "@/src/components/FloatingParticles";
 
 export default function PrivacyPolicyPage() {
   const { theme } = useTheme();
@@ -41,7 +43,7 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="relative min-h-screen pt-32 pb-20 overflow-hidden">
       {/* Enhanced animated background */}
-      <motion.div
+      {/* <motion.div
         animate={{
           background:
             theme === "dark"
@@ -62,10 +64,11 @@ export default function PrivacyPolicyPage() {
           ease: "easeInOut",
         }}
         className="fixed inset-0 -z-10"
-      />
+      /> */}
+      <GradientBackground />
 
       {/* Floating particles */}
-      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+      {/* <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         {[...Array(18)].map((_, i) => (
           <motion.div
             key={i}
@@ -89,7 +92,8 @@ export default function PrivacyPolicyPage() {
             }}
           />
         ))}
-      </div>
+      </div> */}
+      <FloatingParticles />
 
       {/* Background decorations */}
       <motion.div
@@ -128,6 +132,7 @@ export default function PrivacyPolicyPage() {
           <SubHeading
             headingText={privacyPolicySection[language].mainHeading}
             lastIndex={1}
+            customHeadingClass="leading-normal!"
           />
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             {privacyPolicySection[language].description}
@@ -285,7 +290,7 @@ const privacyPolicySection = {
     description: `Onetag (“we”, “our”, “us”) respects your privacy and is committed to protecting your personal data.`,
   },
   ru: {
-    mainHeading: "политика конфиденциальности",
+    mainHeading: "Политика конфиденциальности",
     description: `Onetag («мы», «наш», «нас») уважает вашу конфиденциальность и обязуется защищать
 ваши персональные данные.`,
   },

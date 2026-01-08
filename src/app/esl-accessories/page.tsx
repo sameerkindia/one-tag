@@ -1112,7 +1112,7 @@ export default function ESLAccessoriesPage() {
         <div className="max-w-6xl mx-auto text-center relative z-10 p-6 sm:p-8 2md:p-12 rounded-2xl glass">
           <FadeAnimation staggerChildren={0.3}>
             <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] mb-4 font-bold">
-              <AnimationText onRepeat>
+              <AnimationText>
                 {bannerSection[language].title.split(" ").slice(0, 2).join(" ")}
               </AnimationText>{" "}
               {bannerSection[language].title.split(" ").slice(2).join(" ")}

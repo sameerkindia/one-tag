@@ -11,7 +11,7 @@ import AnimationText from "@/src/components/Animation-text";
 
 const heroSection = {
   en: {
-    title: " Get in Touch",
+    title: "Get in Touch",
     description: `Ready to transform your retail operations? Let’s discuss how we can meet your needs.`,
   },
   ru: {
@@ -31,6 +31,7 @@ const formSection = {
       fullName: 'Full Name',
       emailAddress: 'Email Address',
       companyName: 'Company Name',
+      yourCompany: 'Your Company'
     },
     message: "Message",
     messagePlaceholder: "Tell us about your project...",
@@ -42,6 +43,7 @@ const formSection = {
       fullName: 'Полное имя',
       emailAddress: 'Адрес электронной почты',
       companyName: 'Название компании',
+      yourCompany: 'Ваша компания'
     },
     message: "Сообщение",
     messagePlaceholder: "Расскажите нам о вашем проекте…",
@@ -53,6 +55,7 @@ const formSection = {
       fullName: 'To‘liq ism',
       emailAddress: 'Elektron pochta manzili',
       companyName: 'Kompaniya nomi',
+      yourCompany: 'Sizning kompaniyangiz'
     },
     message: "Xabar",
     messagePlaceholder: "Loyihangiz haqida bizga aytib bering…",
@@ -562,7 +565,7 @@ export default function ContactPage() {
                           ? "bg-gray-800/50 backdrop-blur-sm border border-primary/20"
                           : "bg-white/80 backdrop-blur-sm border border-primary/20"
                       } focus:ring-2 focus:ring-primary/50 focus:border-primary/50 outline-none transition-all shadow-lg hover:shadow-xl group-hover/input:border-primary/30`}
-                      placeholder={"Your Company"}
+                      placeholder={formSection[language].fields.yourCompany}
                     />
                   </motion.div>
 

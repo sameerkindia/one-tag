@@ -83,7 +83,7 @@ function EslHorizontalTab({ sectionData }: EslHorizontalTab) {
                 {sectionData.models[activeModelIndex].specs.map((s, idx) => (
                   <li
                     key={idx}
-                    className="flex gap-6 bg-gray-50 dark:bg-gray-700 py-0.5 px-2 rounded"
+                    className="flex gap-6 bg-gray-50 dark:bg-gray-700 py-0.5 rounded"
                   >
                     <span className="text-gray-600 dark:text-gray-300">
                       {s.k}

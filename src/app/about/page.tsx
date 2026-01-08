@@ -1,271 +1,3 @@
-// // "use client"
-
-// // import { useEffect } from "react"
-// // import AOS from "aos"
-// // import "aos/dist/aos.css"
-// // import { Users, Target, Award, Globe } from "lucide-react"
-
-// // const values = [
-// //   {
-// //     icon: Target,
-// //     title: "Innovation First",
-// //     description: "We bring cutting-edge technology to traditional retail environments.",
-// //   },
-// //   {
-// //     icon: Users,
-// //     title: "Customer Focus",
-// //     description: "Your success is our priority. We provide dedicated support and training.",
-// //   },
-// //   {
-// //     icon: Award,
-// //     title: "Quality Assured",
-// //     description: "Premium hardware and software built to last in demanding retail conditions.",
-// //   },
-// //   {
-// //     icon: Globe,
-// //     title: "Local Expertise",
-// //     description: "Understanding Uzbekistan market needs with global technology standards.",
-// //   },
-// // ]
-
-// // export default function AboutPage() {
-// //   useEffect(() => {
-// //     AOS.init({
-// //       duration: 1000,
-// //       once: true,
-// //       offset: 120,
-// //       easing: "ease-in-out",
-// //     })
-// //   }, [])
-
-// //   return (
-// //     <div className="relative min-h-screen pt-32 pb-20">
-// //       <div className="fixed inset-0 -z-10 bg-linear-to-br from-slate-50 via-blue-50/30 to-slate-100" />
-
-// //       <div className="container mx-auto px-4 max-w-7xl">
-// //         {/* Heading Section */}
-// //         <div data-aos="fade-up" className="text-center mb-16">
-// //           <h1 className="text-5xl md:text-7xl font-light mb-6 text-balance">
-// //             About
-// //             <span className="block text-blue-500">OneTag Smart Solutions</span>
-// //           </h1>
-// //           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-// //             We are pioneering the digital transformation of retail in Uzbekistan, bringing smart price tag technology to
-// //             stores across the nation.
-// //           </p>
-// //         </div>
-
-// //         {/* Mission Section */}
-// //         <div data-aos="fade-up" data-aos-delay="100" className="glass rounded-3xl p-12 mb-16 shadow-xl">
-// //           <h2 className="text-3xl font-light mb-6">Our Mission</h2>
-// //           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-// //             OneTag Smart Solutions is dedicated to revolutionizing retail operations through innovative smart price tag
-// //             technology. We empower retailers with real-time pricing control, operational efficiency, and enhanced
-// //             customer experiences.
-// //           </p>
-// //           <p className="text-lg text-muted-foreground leading-relaxed">
-// //             Our Bluetooth and Wi-Fi enabled smart tags eliminate manual price changes, reduce errors, and enable dynamic
-// //             pricing strategies that help retailers stay competitive in today's fast-paced market.
-// //           </p>
-// //         </div>
-
-// //         {/* Values Section */}
-// //         <div className="grid md:grid-cols-2 gap-6 mb-16">
-// //           {values.map((value, index) => (
-// //             <div
-// //               key={value.title}
-// //               data-aos="fade-up"
-// //               data-aos-delay={index * 150}
-// //               className="glass rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all"
-// //             >
-// //               <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4">
-// //                 <value.icon className="w-6 h-6 text-blue-500" />
-// //               </div>
-// //               <h3 className="text-2xl font-light mb-3">{value.title}</h3>
-// //               <p className="text-muted-foreground leading-relaxed">{value.description}</p>
-// //             </div>
-// //           ))}
-// //         </div>
-
-// //         {/* CTA Section */}
-// //         <div data-aos="zoom-in" data-aos-delay="200" className="glass rounded-3xl p-12 text-center shadow-xl">
-// //           <h2 className="text-3xl font-light mb-4">Join the Smart Retail Revolution</h2>
-// //           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-// //             Partner with OneTag to transform your retail operations and stay ahead of the competition.
-// //           </p>
-// //           <a
-// //             href="/contact"
-// //             className="inline-block px-8 py-4 bg-blue-500 text-white rounded-xl font-medium hover:bg-blue-600 transition-colors"
-// //           >
-// //             Get Started Today
-// //           </a>
-// //         </div>
-// //       </div>
-// //     </div>
-// //   )
-// // }
-
-// "use client"
-
-// import { useEffect } from "react"
-// import AOS from "aos"
-// import "aos/dist/aos.css"
-// import { Users, Target, Award, Globe } from "lucide-react"
-
-// const values = [
-//   {
-//     icon: Target,
-//     title: "Innovation First",
-//     description: "We bring cutting-edge technology to traditional retail environments.",
-//   },
-//   {
-//     icon: Users,
-//     title: "Customer Focus",
-//     description: "Your success is our priority. We provide dedicated support and training.",
-//   },
-//   {
-//     icon: Award,
-//     title: "Quality Assured",
-//     description: "Premium hardware and software built to last in demanding retail conditions.",
-//   },
-//   {
-//     icon: Globe,
-//     title: "Local Expertise",
-//     description: "Understanding Uzbekistan market needs with global technology standards.",
-//   },
-// ]
-
-// export default function AboutPage() {
-//   useEffect(() => {
-//     AOS.init({
-//       duration: 1000,
-//       once: true,
-//       offset: 120,
-//       easing: "ease-in-out",
-//     })
-//   }, [])
-
-//   return (
-//     <div
-//       className="
-//         relative min-h-screen pt-32 pb-20
-//         bg-linear-to-br from-slate-50 via-white to-slate-100
-//         dark:from-slate-950 dark:via-slate-900 dark:to-slate-950
-//       "
-//     >
-//       {/* Background Glow */}
-//       <div className="absolute inset-0 -z-10 overflow-hidden">
-//         <div className="absolute -top-32 -right-32 w-96 h-96 bg-blue-500/10 dark:bg-blue-400/10 rounded-full blur-3xl" />
-//         <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-indigo-400/10 dark:bg-indigo-600/10 rounded-full blur-3xl" />
-//       </div>
-
-//       <div className="container mx-auto px-4 max-w-7xl">
-//         {/* 🔹 Heading Section */}
-//         <div data-aos="fade-up" className="text-center mb-20">
-//           <h1 className="text-5xl md:text-7xl font-light mb-6">
-//             About{" "}
-//             <span className="block text-blue-500 dark:text-blue-400 font-medium">
-//               OneTag Smart Solutions
-//             </span>
-//           </h1>
-//           <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-//             We are pioneering the digital transformation of retail in Uzbekistan, bringing smart price tag technology
-//             to stores across the nation.
-//           </p>
-//         </div>
-
-//         {/* 🔹 Mission Section */}
-//         <div
-//           data-aos="fade-up"
-//           data-aos-delay="100"
-//           className="
-//             rounded-3xl p-12 mb-20 shadow-xl backdrop-blur-2xl
-//             bg-linear-to-br from-white/80 to-white/50
-//             dark:from-slate-900/90 dark:to-slate-800/70
-//             border border-slate-200/50 dark:border-slate-700/60
-//             transition-all duration-300 hover:shadow-blue-500/20
-//           "
-//         >
-//           <h2 className="text-3xl font-light mb-6 text-blue-500 dark:text-blue-400">
-//             Our Mission
-//           </h2>
-//           <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-//             OneTag Smart Solutions is dedicated to revolutionizing retail operations through innovative smart price tag
-//             technology. We empower retailers with real-time pricing control, operational efficiency, and enhanced
-//             customer experiences.
-//           </p>
-//           <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-//             Our Bluetooth and Wi-Fi enabled smart tags eliminate manual price changes, reduce errors, and enable dynamic
-//             pricing strategies that help retailers stay competitive in today's fast-paced market.
-//           </p>
-//         </div>
-
-//         {/* 🔹 Core Values Section */}
-//         <div className="grid md:grid-cols-2 gap-8 mb-20">
-//           {values.map((value, index) => (
-//             <div
-//               key={value.title}
-//               data-aos="fade-up"
-//               data-aos-delay={index * 150}
-//               className="
-//                 group rounded-2xl p-8 shadow-lg backdrop-blur-xl
-//                 bg-linear-to-br from-white/80 to-white/60
-//                 dark:from-slate-900/80 dark:to-slate-800/60
-//                 border border-slate-200/50 dark:border-slate-700/50
-//                 transition-all duration-300
-//                 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2
-//               "
-//             >
-//               <div
-//                 className="
-//                   w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-5
-//                   group-hover:bg-blue-500/20 transition-all duration-300
-//                 "
-//               >
-//                 <value.icon className="w-7 h-7 text-blue-500" />
-//               </div>
-//               <h3 className="text-2xl font-light mb-3">{value.title}</h3>
-//               <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-//                 {value.description}
-//               </p>
-//             </div>
-//           ))}
-//         </div>
-
-//         {/* 🔹 CTA Section */}
-//         <div
-//           data-aos="zoom-in"
-//           data-aos-delay="200"
-//           className="
-//             text-center rounded-3xl p-14 shadow-xl backdrop-blur-2xl
-//             bg-linear-to-br from-blue-50/60 via-white/70 to-blue-100/50
-//             dark:from-slate-900/80 dark:via-slate-800/70 dark:to-slate-900/60
-//             border border-slate-200/50 dark:border-slate-700/50
-//           "
-//         >
-//           <h2 className="text-3xl font-light mb-4 text-blue-500 dark:text-blue-400">
-//             Join the Smart Retail Revolution
-//           </h2>
-//           <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-//             Partner with OneTag to transform your retail operations and stay ahead of the competition.
-//           </p>
-//           <a
-//             href="/contact"
-//             className="
-//               inline-block px-10 py-4 text-lg font-medium
-//               bg-blue-500 text-white rounded-2xl shadow-md
-//               hover:bg-blue-600 dark:hover:bg-blue-500/90
-//               transition-all hover:shadow-blue-500/30
-//             "
-//           >
-//             Get Started Today
-//           </a>
-//         </div>
-//       </div>
-//     </div>
-//   )
-// }
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -288,18 +20,18 @@ import SubHeading from "@/src/components/SubHeading";
 
 const heroSectionData = {
   en: {
-    title: "About",
+    title: "About Onetag",
     subTitle: "Onetag",
     description:
       "We are pioneering the digital transformation of retail in Uzbekistan, bringing smart price tag technology to stores across the nation.",
   },
   uz: {
-    title: "Kompaniya haqida",
+    title: "Onetag kompaniya haqida",
     subTitle: "Onetag",
     description: `Biz O‘zbekistonda chakana savdoni raqamlashtirishda yetakchimiz va butun mamlakat bo‘ylab do‘konlarga aqlli narx yorliqlari texnologiyasini joriy etmoqdamiz`,
   },
   ru: {
-    title: "О компании",
+    title: "О компании Onetag",
     subTitle: "Onetag",
     description: `Мы являемся пионерами в цифровой трансформации розничной торговли в Узбекистане внедряя технологию умных ценников в магазинах по всей стране`,
   },
@@ -527,10 +259,10 @@ export default function AboutPage() {
           <FadeAnimation className="text-center mb-20">
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold leading-tight mb-6 text-black dark:text-white text-balance max-w-[1400px] mx-auto">
               <AnimationText>
-                {heroSectionData[language].title}
+                {heroSectionData[language].title.split(" ").slice(0,1).join(" ")}
               </AnimationText>{" "}
               <span>
-              {heroSectionData[language].subTitle}
+              {heroSectionData[language].title.split(" ").slice(1).join(" ")}
               </span>
             </h1>
 
