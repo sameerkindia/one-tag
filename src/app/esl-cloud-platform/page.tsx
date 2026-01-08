@@ -419,10 +419,11 @@ export default function ZKONGPlatform() {
   // console.log("Unlimited expansion".length / 2)
 
   return (
-    <div className="min-h-screen text-gray-900 transition-colors duration-300 dark:text-white bg-slate-200 dark:bg-[#3b434c]">
+    <div className="min-h-screen text-gray-900 transition-colors duration-300 dark:text-white">
       {/* Hero Section */}
 
-      <section className="min-h-[500px] sm:min-h-[70vh] flex items-center relative overflow-hidden px-6 pt-12 pb-6 sm:py-16 2md:py-20 sm:rounded-b-4xl">
+      <section className="bg-slate-200 dark:bg-[#3b434c]">
+        <div className="min-h-[500px] sm:min-h-[70vh] flex items-center relative overflow-hidden px-6 sm:rounded-b-4xl pt-12 pb-6 sm:py-16 2md:py-20 ">
       <div
         className={`absolute inset-0 w-full h-full`}
       >
@@ -442,7 +443,7 @@ export default function ZKONGPlatform() {
         {/* subtle light/dark background shapes */}
         <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10 p-6 sm:p-8 2md:p-12 rounded-2xl glass">
           <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty mb-6">
-            <AnimationText onRepeat>
+            <AnimationText>
               {bannerSection[language].title.split(" ").slice(0, 1).join(" ")}
             </AnimationText>{" "}
             {bannerSection[language].title.split(" ").slice(1).join(" ")}
@@ -457,6 +458,7 @@ export default function ZKONGPlatform() {
             {bannerSection[language].cta}
           </button> */}
         </FadeAnimation>
+        </div>
       </section>
 
       <section className="py-12 sm:py-16 2m:py-20 bg-slate-200 dark:bg-[#3b434c]">
@@ -467,30 +469,9 @@ export default function ZKONGPlatform() {
               lastIndex={2}
               customHeadingClass="text-center mb-6"
             />
-            {/* <h2 className="text-black dark:text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6">
-              <AnimationText>
-                {revolutionarySection[language].title
-                  .split(" ")
-                  .slice(0, 2)
-                  .join(" ")}
-              </AnimationText>{" "}
-              <span className="text-blue-600 dark:text-blue-400">
-                {revolutionarySection[language].title
-                  .split(" ")
-                  .slice(2)
-                  .join(" ")}
-              </span>
-            </h2> */}
             <p className="text-base sm:text-lg 2md:text-xl text-gray-700 dark:text-gray-300 mb-4 sm:mb-8 max-w-4xl mx-auto text-pretty">
               {revolutionarySection[language].description}
             </p>
-            {/* <a
-              href="/"
-              aria-label="Get More Info about our product us"
-              className="inline-block mt-4 px-6 py-3 border-2 border-black dark:border-white hover:bg-black dark:hover:bg-white text-black dark:text-white hover:text-white dark:hover:text-black rounded-lg transition-all duration-300 min-w-[170px] cursor-pointer"
-            >
-              {revolutionarySection[language].cta}
-            </a> */}
           </FadeAnimation>
           <FadeAnimation className="dark:bg-white p-4">
             <Image
@@ -498,6 +479,7 @@ export default function ZKONGPlatform() {
               alt="cloud platform"
               width={1200}
               height={800}
+              className="mx-auto"
             />
           </FadeAnimation>
         </div>

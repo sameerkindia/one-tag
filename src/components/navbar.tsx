@@ -122,9 +122,9 @@ export function Navbar() {
   if (!mounted) return null;
 
   const languages = [
-    { code: "en" as const, label: "English", flag: "/gb.svg" },
     { code: "uz" as const, label: "O'zbek", flag: "/uz.svg" },
     { code: "ru" as const, label: "Русский", flag: "/ru.svg" },
+    { code: "en" as const, label: "English", flag: "/gb.svg" },
   ];
 
   const currentLang = languages.find((lang) => lang.code === language);

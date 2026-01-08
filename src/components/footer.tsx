@@ -158,14 +158,14 @@ const footerLinks: FooterLinks = [
           uz: { title: "Aloqa" },
         },
       },
-      {
-        key: "careers",
-        translations: {
-          en: { title: "Careers" },
-          ru: { title: "Вакансии" },
-          uz: { title: "Ish o‘rinlari" },
-        },
-      },
+      // {
+      //   key: "careers",
+      //   translations: {
+      //     en: { title: "Careers" },
+      //     ru: { title: "Вакансии" },
+      //     uz: { title: "Ish o‘rinlari" },
+      //   },
+      // },
     ],
   },
   {
