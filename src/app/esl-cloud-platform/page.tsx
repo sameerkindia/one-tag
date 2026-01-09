@@ -6,6 +6,8 @@ import { FadeAnimation } from "@/src/motion-animations/FadeAnimation";
 import Image from "next/image";
 import { useLanguage } from "@/src/contexts/language-context";
 import SubHeading from "@/src/components/SubHeading";
+import GradientBackground from "@/src/motion-animations/GradientBackground";
+import FloatingParticles from "@/src/components/FloatingParticles";
 
 const bannerSection = {
   en: {
@@ -421,8 +423,10 @@ export default function ZKONGPlatform() {
   return (
     <div className="min-h-screen text-gray-900 transition-colors duration-300 dark:text-white">
       {/* Hero Section */}
+      <GradientBackground />
+      <FloatingParticles />
 
-      <section className="bg-slate-200 dark:bg-[#3b434c]">
+      <section>
         <div className="min-h-[500px] sm:min-h-[70vh] flex items-center relative overflow-hidden px-6 sm:rounded-b-4xl pt-12 pb-6 sm:py-16 2md:py-20 ">
       <div
         className={`absolute inset-0 w-full h-full`}
@@ -437,7 +441,7 @@ export default function ZKONGPlatform() {
           <source src={"/esl-cloud-platform/Cloud platform BG.mp4"} type="video/mp4" />
         </video>
       </div>
-      <div className="absolute h-full w-full blur-2px bg-[#3a3a3a75] z-1 inset-0 pointer-events-none">
+      <div className="absolute h-full w-full blur-2px bg-(--black-white-fade) b g-[#3a3a3a75] z-1 inset-0 pointer-events-none">
         {/* <div className="absolute h-full w-full blur-3xl bg-[#3a3a3a75]"></div> */}
       </div>
         {/* subtle light/dark background shapes */}
@@ -461,7 +465,7 @@ export default function ZKONGPlatform() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 2m:py-20 bg-slate-200 dark:bg-[#3b434c]">
+      <section className="py-12 sm:py-16 2m:py-20">
         <div className="container mx-auto px-4 max-w-7xl relative">
           <FadeAnimation className="text-center relative z-10 mb-10">
             <SubHeading
@@ -486,7 +490,8 @@ export default function ZKONGPlatform() {
       </section>
 
       {/* Platform Advantages */}
-      <section className="px-6 py-12 sm:py-16 2m:py-20 max-w-7xl mx-auto bg-white dark:bg-[#020a15]">
+      <section className="py-12 sm:py-16 2m:py-20">
+        <div className="max-w-7xl px-6 mx-auto">
         <FadeAnimation>
           <SubHeading
             headingText={advantagesSection[language].title}
@@ -547,6 +552,7 @@ export default function ZKONGPlatform() {
             ))}
           </div>
         </FadeAnimation>
+        </div>
       </section>
     </div>
   );
