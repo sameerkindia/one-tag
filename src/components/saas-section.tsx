@@ -59,7 +59,7 @@ function SaasSection() {
             <div>
               <Image
                 // src="/electronics-shelf.webp"
-                src="/tags-bg.webp"
+                src="/ESL-bg.png"
                 alt="one tag solution saas"
                 className="rounded-3xl aspect-6/3"
                 // quality={80}
