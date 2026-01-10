@@ -122,7 +122,7 @@ export default function ZkongShieldRebuilt() {
                 const isCurrent = index === current;
 
                 return (
-                  <>
+                  <React.Fragment key={index}>
                   <div
                     key={index}
                     onMouseEnter={() => setHover(index)}
@@ -162,7 +162,7 @@ export default function ZkongShieldRebuilt() {
                       <p className="font-normal">{item.description}</p>
                     </div>
                   </div>
-                  </>
+                  </React.Fragment>
                 );
               })}
           </div>

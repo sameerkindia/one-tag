@@ -98,9 +98,9 @@ export default function AnimationText({
         ${active ? "chroma-text-animate" : ""}
         ${onRepeat ? "repeat" : ""}
         ${modeReverse ? (theme === "dark" ? "bg-gradient-light" : "bg-gradient-dark" ): (theme === "dark" ? "bg-gradient-dark" : "bg-gradient-light")}
-        // ${theme === "dark" ? "bg-gradient-dark" : "bg-gradient-light"}
-      `}
-    >
+        `}
+        >
+      {/* ${theme === "dark" ? "bg-gradient-dark" : "bg-gradient-light"} */}
       {children}
     </span>
   );
