@@ -1095,35 +1095,37 @@ export default function ESLAccessoriesPage() {
       <GradientBackground />
       <FloatingParticles />
       {/* HERO SECTION */}
-      <section className="min-h-[500px] sm:min-h-[70vh] relative w-full flex items-center justify-center bg-linear-to-r from-gray-200 to-gray-500 dark:from-gray-800 dark:to-gray-700 overflow-hidden px-6 pt-12 pb-6 sm:py-16 2md:py-20 sm:rounded-b-4xl">
+      <section className="relative">
         {/* <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -left-20 -top-32 w-96 h-96 rounded-full blur-3xl bg-linear-to-br from-blue-200/30 to-purple-300/30 dark:from-blue-900/20 dark:to-purple-900/20"></div>
         </div> */}
+        <div className="relative min-h-[500px] sm:min-h-[70vh] w-full h-full flex items-center justify-center overflow-hidden px-6 pt-12 pb-6 sm:py-16 2md:py-20 rounded-b-4xl">
 
         <Image src='/esl-accessories/ESL-accessories-bg.png' alt="ESL background image" fill objectFit="cover" />
               
-        <div className="absolute z-1 inset-0 pointer-events-none">
-          {/* <div className="absolute -left-20 -top-32 w-96 h-96 rounded-full blur-3xl bg-linear-to-br from-blue-200/30 to-purple-300/30 dark:from-blue-900/20 dark:to-purple-900/20"></div> */}
+        <div className="absolute z-1 inset-0 pointer-events-none h-full w-full black-white-fade blur-1px"></div>
+        {/* <div className="absolute z-1 inset-0 pointer-events-none">
           <div className="absolute h-full w-full blur-2px bg-[#3a3a3a75]"></div>
-        </div>
+        </div> */}
 
         {/* ESL-accessories-bg.png */}
 
-        <div className="max-w-6xl mx-auto text-center relative z-10 p-6 sm:p-8 2md:p-12 rounded-2xl glass">
+        <div className="max-w-6xl mx-auto text-center relative z-10 p-6 sm:p-8 2md:p-12 rounded-2xl">
           <FadeAnimation staggerChildren={0.3}>
-            <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] mb-4 font-bold">
-              <AnimationText>
+            <h1 className="text-white dark:text-black text-3xl md:text-4xl lg:text-5xl xl:text-[56px] mb-4 font-bold">
+              <AnimationText modeReverse>
                 {bannerSection[language].title.split(" ").slice(0, 2).join(" ")}
               </AnimationText>{" "}
               {bannerSection[language].title.split(" ").slice(2).join(" ")}
             </h1>
-            <p className="text-base md:text-lg xl:text-xl">
+            <p className="text-white dark:text-black text-base md:text-lg xl:text-xl">
               {bannerSection[language].subtext}
             </p>
             {/* <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
               {bannerSection[language].ctaText}
             </button> */}
           </FadeAnimation>
+        </div>
         </div>
       </section>
 

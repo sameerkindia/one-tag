@@ -495,6 +495,9 @@ xl	80rem (1280px)	@media (width >= 80rem) { ... }
 .blur-2px {
   backdrop-filter: blur(2px);
 }
+.blur-1px {
+  backdrop-filter: blur(1px) !important;
+}
 
 
 .black-white-fade{
@@ -505,5 +508,5 @@ xl	80rem (1280px)	@media (width >= 80rem) { ... }
 .dark .black-white-fade {
   /* background: linear-gradient(180deg,rgba(255, 255, 255, 0.7) 20%, rgba(0, 0, 0, 0.1) 90%); */
   background: linear-gradient(rgba(200, 200, 200, 0.761) 40%, rgba(0, 0, 0, 0.302) 100%);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(2px);
 }

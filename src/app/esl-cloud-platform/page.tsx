@@ -427,7 +427,7 @@ export default function ZKONGPlatform() {
       <FloatingParticles />
 
       <section>
-        <div className="min-h-[500px] sm:min-h-[70vh] flex items-center relative overflow-hidden px-6 sm:rounded-b-4xl pt-12 pb-6 sm:py-16 2md:py-20 ">
+        <div className="min-h-[500px] sm:min-h-[70vh] flex items-center relative overflow-hidden px-6 rounded-b-4xl pt-12 pb-6 sm:py-16 2md:py-20">
       <div
         className={`absolute inset-0 w-full h-full`}
       >
@@ -441,18 +441,19 @@ export default function ZKONGPlatform() {
           <source src={"/esl-cloud-platform/Cloud platform BG.mp4"} type="video/mp4" />
         </video>
       </div>
-      <div className="absolute h-full w-full blur-2px bg-(--black-white-fade) b g-[#3a3a3a75] z-1 inset-0 pointer-events-none">
-        {/* <div className="absolute h-full w-full blur-3xl bg-[#3a3a3a75]"></div> */}
-      </div>
+      <div className="absolute z-1 inset-0 pointer-events-none h-full w-full black-white-fade blur-1px"></div>
+      {/* <div className="absolute h-full w-full blur-2px bg-(--black-white-fade) b g-[#3a3a3a75] z-1 inset-0 pointer-events-none">
+        <div className="absolute h-full w-full blur-3xl bg-[#3a3a3a75]"></div>
+      </div> */}
         {/* subtle light/dark background shapes */}
-        <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10 p-6 sm:p-8 2md:p-12 rounded-2xl glass">
-          <h1 className="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty mb-6">
-            <AnimationText>
+        <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10 p-6 sm:p-8 2md:p-12 rounded-2xl gla ss">
+          <h1 className="text-white dark:text-black text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty mb-6">
+            <AnimationText modeReverse>
               {bannerSection[language].title.split(" ").slice(0, 1).join(" ")}
             </AnimationText>{" "}
             {bannerSection[language].title.split(" ").slice(1).join(" ")}
           </h1>
-          <p className="text-base sm:text-lg 2md:text-xl text-gray-700 dark:text-gray-300 2md:mb-8 max-w-4xl mx-auto">
+          <p className="text-base sm:text-lg 2md:text-xl text-white dark:text-black 2md:mb-8 max-w-4xl mx-auto">
             {bannerSection[language].description}
           </p>
           {/* <button
