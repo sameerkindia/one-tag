@@ -150,7 +150,7 @@ export default function ZkongShieldRebuilt() {
                   </div>
                   <div
                     key={(index + 10) * 100}
-                    className={`flex 3md:hidden relative items-center justify-center transition-all cursor-pointer bg-white`}
+                    className={`flex 3md:hidden relative items-center justify-center transition-all cursor-pointer bg-white rounded-lg`}
                   >
 
                     {/* Extra text appears when current (hover or active) */}
@@ -255,7 +255,7 @@ export default function ZkongShieldRebuilt() {
         </div>
       </section>
 
-      <section className="relative w-full py-24">
+      <section className="relative w-full py-18 sm:py-24">
         <div className="container mx-auto px-4 max-w-7xl relative w-full">
           <div className="mb-6 text-center">
             <SubHeading
@@ -301,7 +301,7 @@ export default function ZkongShieldRebuilt() {
              responsive={{ 
              base: 1,
              md: 3 }}
-             bottomButton={true}  
+            //  bottomButton={true}
             infinite
           />
         </div>

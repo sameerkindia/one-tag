@@ -15,7 +15,7 @@ function EslVideoComponent({ videoData, videoId }: EslVideoComponent) {
             <SubHeading headingText={videoData.title} lastIndex={3} customHeadingClass="!hidden 3md:!block !mb-2.5 2lg:!mb-4 2xl:!mb-6 text-pretty" />
             <SubHeading headingText={videoData.title} lastIndex={3} customHeadingClass="!block 3md:!hidden !mb-2.5 2lg:!mb-4 2xl:!mb-6 text-pretty" textSize="md" />
             {/* !hidden md:!block */}
-            <p className="text-base 2lg:text-lg xxl:text-xl leading-relaxed text-gray-600 dark:text-gray-300 mb-5 2xl:mb-6 text-pretty">
+            <p className="text-base 2lg:text-lg xxl:text-xl leading-relaxed text-gray-600 dark:text-gray-300 sm:mb-5 2xl:mb-6 text-pretty">
               {videoData.description}
             </p>
 
@@ -31,9 +31,9 @@ function EslVideoComponent({ videoData, videoId }: EslVideoComponent) {
 
           <div className="mb-4 md:mb-0">
             {/* <SubHeading headingText={videoData.title} lastIndex={3} textSize="md" customHeadingClass="!block md:!hidden !leading-[1.3] !mb-4 md:!mb-2.5 2lg:!mb-4 2xl:!mb-6 text-pretty" /> */}
-          <div className="w-full px-4 md:px-0">
+          <div className="w-full px-0">
             <figure className="flex h-full w-full rounded-xl overflow-hidden">
-              <video autoPlay muted loop>
+              <video autoPlay muted loop className="max-sm:h-56 max-sm:object-[inherit]">
                 <source src="/tag-video.mp4" type="video/mp4"></source>
               </video>
             </figure>

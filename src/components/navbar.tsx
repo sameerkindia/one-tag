@@ -33,7 +33,7 @@ import { AccessibilityToolbar } from "./accessibility-toolbar";
 
 const navLinks = [
   {
-    href: "/solutions",
+    // href: "/solutions",
     label: "nav.solutions",
     subLinks: [
       {
@@ -143,7 +143,7 @@ export function Navbar() {
               ? "md-glass max-mmd:shadow-lg max-mmd:backdrop-blur-md"
               : theme === "dark"
               ? "bg-fill-tertiary"
-              : "md-glass"
+              : "bg-fill-tertiary md-gla ss"
           } ${isOpen ? "rounded-b-none md:rounded-b-sm" : ""}
           `}
         >
@@ -156,6 +156,7 @@ export function Navbar() {
                 <motion.div>
                   <Image
                     src={theme === "dark" ? "/logo2.svg" : "/logo1.svg"}
+                    key={theme}
                     alt="Logo"
                     fill
                     priority
@@ -183,6 +184,7 @@ export function Navbar() {
                 <motion.div>
                   <Image
                     src={theme === "dark" ? "/logo2.svg" : "/logo1.svg"}
+                    key={theme}
                     alt="Logo"
                     fill
                     priority
@@ -372,15 +374,16 @@ export function Navbar() {
       </div>
 
       {/*Fixed Mobile Navigation */}
-      <AnimatePresence>
+      {/* <AnimatePresence> */}
+      <div>
         {isOpen && (
           <motion.div
             ref={menuRef}
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
-            className={`md:hidden glass backdrop-blur-md border-t-0! border-border/50 rounded-b-sm mx-4 ${
+            // initial={{ opacity: 0, height: 0 }}
+            // animate={{ opacity: 1, height: "auto" }}
+            // exit={{ opacity: 0, height: 0 }}
+            // transition={{ duration: 0.35, ease: "easeInOut" }}
+            className={`md:hidden glass backdrop-blur border-t-0! border-border/50 rounded-b-sm mx-4 ${
               theme === "dark" ? "bg-gray-900/80" : "bg-white/70"
             }`}
           >
@@ -403,17 +406,30 @@ export function Navbar() {
               <ul>
                 {navLinks.map((link) => (
                   <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className={`block py-2 text-base font-medium transition-colors duration-300 ${
-                        pathname === link.href
-                          ? "text-primary"
-                          : "text-foreground/70 hover:text-foreground"
-                      }`}
-                    >
-                      {t(link.label)}
-                    </Link>
+                    {link.href ? (
+                      <Link
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                          pathname === link.href
+                            ? "text-primary"
+                            : "text-foreground/70 hover:text-foreground"
+                        }`}
+                      >
+                        {t(link.label)}
+                      </Link>
+                    ) : (
+                      <p
+                        onClick={() => setIsOpen(false)}
+                        className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                          pathname === link.href
+                            ? "text-primary"
+                            : "text-foreground/70 hover:text-foreground"
+                        }`}
+                      >
+                        {t(link.label)}
+                      </p>
+                    )}
 
                     {/* Render subLinks if they exist */}
                     {link.subLinks && (
@@ -492,7 +508,8 @@ export function Navbar() {
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </div>
+      {/* </AnimatePresence> */}
     </motion.nav>
   );
 }
