@@ -16,7 +16,8 @@ export function Hero() {
   // if (!theme) return null;
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden sm:rounded-b-4xl">
+    <section className="">
+      <div className="relative min-h-screen flex items-center justify-center overflow-hidden sm:rounded-b-4xl">
       <div
         className={`absolute inset-0 w-full h-full opacity-0 dark:opacity-100`}
       >
@@ -74,6 +75,7 @@ export function Hero() {
             {t("hero.moreInfo")} <span className="sr-only"> about one tag </span>
           </a>
         </FadeAnimation>
+      </div>
       </div>
     </section>
   );
