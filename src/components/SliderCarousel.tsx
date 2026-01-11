@@ -90,7 +90,7 @@
 //     if (isJumpingRef.current) return; // avoid recursion while jumping
 
 //     const el = holderRef.current;
-//     const cardWidth = el.clientWidth / currentCols;
+//     const cardWidth = cardWidthRef.current;
 //     const chunkWidth = cardWidth * data.length;
 
 //     // left boundary: if we've scrolled into the left duplicated chunk too far, jump forward
@@ -173,7 +173,7 @@
 
 //     // use requestAnimationFrame so we set after layout
 //     requestAnimationFrame(() => {
-//       const cardWidth = el.clientWidth / currentCols;
+//       const cardWidth = cardWidthRef.current;
 //       el.scrollLeft = middleIndex * cardWidth;
 
 //       // force reflow
@@ -195,7 +195,7 @@
 //   const el = holderRef.current;
 //   if (!el) return;
 
-//   const cardWidth = el.clientWidth / currentCols;
+//   const cardWidth = cardWidthRef.current;
 //   const chunkWidth = cardWidth * data.length;
 
 //   if (infinite) {
@@ -276,11 +276,11 @@
 
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
-import { ChevronRight, ChevronLeft } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ResponsiveConfig {
-  base?: number; // mobile
+  base?: number;
   sm?: number;
   md?: number;
   lg?: number;
@@ -295,38 +295,34 @@ interface SliderCarouselProps<T> {
   infinite?: boolean;
   containerClass?: string;
   sliderCardClass?: string;
-  bottomButton ? : boolean;
+  bottomButton?: boolean;
 }
 
 function SliderCarousel<T>({
   data,
   renderCard,
-  columns = 4,
+  columns = 1,
   responsive,
   infinite = false,
   containerClass = "",
   sliderCardClass = "",
-  bottomButton = false
+  bottomButton = false,
 }: SliderCarouselProps<T>) {
-  const holderRef = useRef<HTMLDivElement>(null);
-  const isJumpingRef = useRef(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  const offsetRef = useRef(0);
+  const animRef = useRef<number | null>(null);
 
   const [currentCols, setCurrentCols] = useState(columns);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(false);
+  const [cardWidth, setCardWidth] = useState(0);
 
-  const finalData = infinite ? [...data, ...data, ...data] : data;
-  const middleIndex = infinite ? data.length : 0;
-
-  // ---------------------------------------
-  // RESPONSIVE COLUMN RESOLVER (FIXED)
-  // ---------------------------------------
+  // -------------------------
+  // RESPONSIVE COLUMNS
+  // -------------------------
   const resolveColumns = () => {
-    if (typeof window === "undefined") return columns;
-
-    const w = window.innerWidth;
-
     if (!responsive) return columns;
+    const w = window.innerWidth;
 
     if (w >= 1280 && responsive.xl) return responsive.xl;
     if (w >= 1024 && responsive.lg) return responsive.lg;
@@ -337,158 +333,150 @@ function SliderCarousel<T>({
   };
 
   useEffect(() => {
-    const update = () => {
-      setCurrentCols(resolveColumns());
-    };
-
+    const update = () => setCurrentCols(resolveColumns());
     update();
     window.addEventListener("resize", update);
-
     return () => window.removeEventListener("resize", update);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [responsive, columns]);
 
-  // ---------------------------------------
-  // SCROLL BUTTON VISIBILITY (NON-INFINITE)
-  // ---------------------------------------
-  const updateScrollButtons = () => {
-    if (!holderRef.current || infinite) return;
-
-    const el = holderRef.current;
-    const max = el.scrollWidth - el.clientWidth;
-
-    setCanScrollLeft(el.scrollLeft > 0);
-    setCanScrollRight(el.scrollLeft < max - 1);
-  };
-
-  // ---------------------------------------
-  // INFINITE SCROLL HANDLER (SEAMLESS)
-  // ---------------------------------------
-  const handleInfiniteScroll = () => {
-    if (!holderRef.current || !infinite || isJumpingRef.current) return;
-
-    const el = holderRef.current;
-    const cardWidth = el.clientWidth / currentCols;
-    const chunkWidth = cardWidth * data.length;
-
-    if (el.scrollLeft < chunkWidth * 0.5) {
-      jumpScroll(el.scrollLeft + chunkWidth);
-    }
-
-    if (el.scrollLeft > chunkWidth * 1.5) {
-      jumpScroll(el.scrollLeft - chunkWidth);
-    }
-  };
-
-  const jumpScroll = (value: number) => {
-    const el = holderRef.current;
-    if (!el) return;
-
-    isJumpingRef.current = true;
-    const prev = el.style.scrollBehavior;
-
-    el.style.scrollBehavior = "auto";
-    el.scrollLeft = value;
-    el.offsetHeight;
-
-    requestAnimationFrame(() => {
-      el.style.scrollBehavior = prev || "";
-      isJumpingRef.current = false;
-    });
-  };
-
-  // ---------------------------------------
-  // INIT INFINITE POSITION
-  // ---------------------------------------
+  // -------------------------
+  // MEASURE CARD WIDTH
+  // -------------------------
   useEffect(() => {
-    if (!infinite || !holderRef.current) return;
+    if (!wrapperRef.current) return;
 
-    const el = holderRef.current;
-    const prev = el.style.scrollBehavior;
-
-    el.style.scrollBehavior = "auto";
-
-    requestAnimationFrame(() => {
-      const cardWidth = el.clientWidth / currentCols;
-      el.scrollLeft = middleIndex * cardWidth;
-      el.offsetHeight;
-
-      el.style.scrollBehavior = prev || "";
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [infinite, currentCols, data.length]);
-
-  // ---------------------------------------
-  // LISTENERS
-  // ---------------------------------------
-  useEffect(() => {
-    const el = holderRef.current;
-    if (!el) return;
-
-    updateScrollButtons();
-    el.addEventListener("scroll", handleInfiniteScroll);
-    el.addEventListener("scroll", updateScrollButtons);
-    window.addEventListener("resize", updateScrollButtons);
-
-    return () => {
-      el.removeEventListener("scroll", handleInfiniteScroll);
-      el.removeEventListener("scroll", updateScrollButtons);
-      window.removeEventListener("resize", updateScrollButtons);
+    const measure = () => {
+      setCardWidth(wrapperRef.current!.clientWidth / currentCols);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentCols, infinite]);
 
-  // ---------------------------------------
-  // SCROLL CONTROLS
-  // ---------------------------------------
-  const scrollByCard = (dir: "left" | "right") => {
-    const el = holderRef.current;
-    if (!el) return;
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [currentCols]);
 
-    const cardWidth = el.clientWidth / currentCols;
-    el.scrollBy({
-      left: dir === "left" ? -cardWidth : cardWidth,
-      behavior: "smooth",
-    });
+  // -------------------------
+  // DATA FOR INFINITE
+  // -------------------------
+  const items = infinite ? [...data, ...data, ...data] : data;
+  const middleOffset = infinite ? data.length * cardWidth : 0;
+
+  // -------------------------
+  // APPLY TRANSFORM
+  // -------------------------
+  const applyTransform = (value: number, animate = true) => {
+    if (!trackRef.current) return;
+
+    trackRef.current.style.transition = animate
+      ? "transform 450ms ease"
+      : "none";
+
+    trackRef.current.style.transform = `translateX(-${value}px)`;
   };
 
-  const showLeft = infinite || canScrollLeft;
-  const showRight = infinite || canScrollRight;
+  // -------------------------
+  // INIT POSITION
+  // -------------------------
+  useEffect(() => {
+    offsetRef.current = middleOffset;
+    applyTransform(offsetRef.current, false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cardWidth]);
 
+  // -------------------------
+  // MOVE LOGIC
+  // -------------------------
+  const move = (dir: "left" | "right") => {
+  if (!cardWidth || !trackRef.current) return;
+
+  const step = cardWidth;
+  const max = data.length * cardWidth;
+
+  // 1️⃣ Move normally with animation
+  offsetRef.current += dir === "left" ? -step : step;
+  applyTransform(offsetRef.current, true);
+
+  // 2️⃣ AFTER animation ends → silently normalize position
+  const handleTransitionEnd = () => {
+    trackRef.current?.removeEventListener(
+      "transitionend",
+      handleTransitionEnd
+    );
+
+    if (!infinite) return;
+
+    // too far left
+    if (offsetRef.current < max * 0.5) {
+      offsetRef.current += max;
+      applyTransform(offsetRef.current, false);
+    }
+
+    // too far right
+    if (offsetRef.current > max * 1.5) {
+      offsetRef.current -= max;
+      applyTransform(offsetRef.current, false);
+    }
+  };
+
+  trackRef.current.addEventListener(
+    "transitionend",
+    handleTransitionEnd
+  );
+};
+
+
+  // -------------------------
+  // CLEANUP
+  // -------------------------
+  useEffect(() => {
+    return () => {
+      if (animRef.current) cancelAnimationFrame(animRef.current);
+    };
+  }, []);
+
+  // -------------------------
+  // RENDER
+  // -------------------------
   return (
-    <div className={`relative w-full flex items-center ${containerClass}`}>
-      {showLeft && (
-        <button
-          onClick={() => scrollByCard("left")}
-          className={`sliderButton absolute left-2 w-fit z-10 bg-blue-500 text-white p-2 rounded-full ${bottomButton ? 'max-2md:top-[105%] max-2md:left-[30%]' : '' }`}
-        >
-          <ChevronLeft />
-        </button>
-      )}
-
+    <div
+      ref={wrapperRef}
+      className={`relative w-full overflow-hidden ${containerClass}`}
+    >
+      {/* TRACK */}
       <div
-        ref={holderRef}
-        className="flex w-full overflow-x-auto no-scrollbar snap-x snap-mandatory"
+        ref={trackRef}
+        className="flex will-change-transform"
+        style={{ width: items.length * cardWidth }}
       >
-        {finalData.map((item, i) => (
+        {items.map((item, i) => (
           <div
             key={i}
-            className={`shrink-0 snap-start px-2 ${sliderCardClass}`}
-            style={{ width: `${100 / currentCols}%` }}
+            className={`shrink-0 px-2 ${sliderCardClass}`}
+            style={{ width: cardWidth }}
           >
             {renderCard(item, i % data.length)}
           </div>
         ))}
       </div>
 
-      {showRight && (
-        <button
-          onClick={() => scrollByCard("right")}
-          className={`sliderButton absolute right-2 w-fit z-10 bg-blue-500 text-white p-2 rounded-full ${bottomButton ? 'max-2md:top-[105%] max-2md:right-[30%]' : ''}`}
-        >
-          <ChevronRight />
-        </button>
-      )}
+      {/* LEFT BUTTON */}
+      <button
+        onClick={() => move("left")}
+        className={`absolute z-10 bg-blue-500 text-white p-2 rounded-full
+          ${bottomButton ? "-bottom-14 left-[30%]" : "top-1/2 -translate-y-1/2 left-3"}
+        `}
+      >
+        <ChevronLeft />
+      </button>
+
+      {/* RIGHT BUTTON */}
+      <button
+        onClick={() => move("right")}
+        className={`absolute z-10 bg-blue-500 text-white p-2 rounded-full
+          ${bottomButton ? "-bottom-14 right-[30%]" : "top-1/2 -translate-y-1/2 right-3"}
+        `}
+      >
+        <ChevronRight />
+      </button>
     </div>
   );
 }

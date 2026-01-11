@@ -526,7 +526,7 @@ export default function ZKONGPlatform() {
                   overflow-hidden 
                   ${index % 2 === 1 ? "md:order-2" : "md:order-1"}`}
                 >
-                  <div className="relative flex items-center justify-center h-48">
+                  <div className="relative flex items-center justify-center h-42 sm:h-48">
                     <Image
                       src={advantage.imgSrc}
                       alt={advantage.heading}
