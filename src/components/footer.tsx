@@ -108,12 +108,36 @@ const footerLinks: FooterLinks = [
       uz: { title: "Mahsulot" },
     },
     children: [
+      // {
+      //   key: "solutions",
+      //   translations: {
+      //     en: { title: "Solutions" },
+      //     ru: { title: "Решения" },
+      //     uz: { title: "Yechimlar" },
+      //   },
+      // },
       {
-        key: "solutions",
+        key: "electronic-shelf-labels",
         translations: {
-          en: { title: "Solutions" },
-          ru: { title: "Решения" },
-          uz: { title: "Yechimlar" },
+          en: { title: "Electronic Shelf Labels" },
+          ru: { title: "Elektron narx yorliqlari (ESL)" },
+          uz: { title: "Elektron narx yorliqlari (ESL)" },
+        },
+      },
+      {
+        key: "esl-cloud-platform",
+        translations: {
+          en: { title: "Cloud Platform" },
+          ru: { title: "Облачная платформа" },
+          uz: { title: "Bulutli platforma" },
+        },
+      },
+      {
+        key: "esl-accessories",
+        translations: {
+          en: { title: "ESL Accessories" },
+          ru: { title: "Аксессуары для ESL" },
+          uz: { title: "ESL aksessuarlari" },
         },
       },
       {
@@ -124,14 +148,14 @@ const footerLinks: FooterLinks = [
           uz: { title: "Muvaffaqiyat hikoyalari" },
         },
       },
-      {
-        key: "pricing",
-        translations: {
-          en: { title: "Pricing" },
-          ru: { title: "Цены" },
-          uz: { title: "Narxlar" },
-        },
-      },
+      // {
+      //   key: "pricing",
+      //   translations: {
+      //     en: { title: "Pricing" },
+      //     ru: { title: "Цены" },
+      //     uz: { title: "Narxlar" },
+      //   },
+      // },
     ],
   },
   {
