@@ -186,7 +186,7 @@ export default function PrivacyPolicyPage() {
                     </motion.div>
                     <div className="flex-1">
                       <motion.h2
-                        className={`text-[22px] sm:text-2xl 2md:text-[26px] xxl:text-3xl leading-7! 2md:leading-8! font-bold mb-2.5 2md:mb-4 bg-linear-to-r ${section.gradient} bg-clip-text text-transparent`}
+                        className={`text-[22px] sm:text-2xl 2md:text-[26px] xxl:text-3xl leading-normal! font-bold mb-2.5 2md:mb-4 bg-linear-to-r ${section.gradient} bg-clip-text text-transparent`}
                         // initial={{ opacity: 0, y: -10 }}
                         // whileInView={{ opacity: 1, y: 0 }}
                         // viewport={{ once: true }}

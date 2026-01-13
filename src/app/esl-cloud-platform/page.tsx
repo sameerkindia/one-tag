@@ -62,7 +62,7 @@ const advantagesSection = {
     title: "Cloud Platform Advantages",
     advantages: [
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-sass.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-sass.jpg",
         heading: "SaaS system, no local installation required",
         data: [
           "Support unlimited accounts on the same server",
@@ -71,7 +71,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-template.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-template.jpg",
         heading: "Comes with a template editor",
         data: [
           "Cloud-based templates, browser operation",
@@ -81,7 +81,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-expansion.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-expansion.jpg",
         heading: "Unlimited expansion",
         data: [
           "integrated a variety of intelligent devices such as EPD, LCD and AI cameras with one system",
@@ -90,7 +90,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-deployment.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-deployment.jpg",
         heading: "Flexible deployment",
         data: [
           "Flexible options for SaaS public, private and local deployments",
@@ -98,7 +98,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-interface.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-interface.jpg",
         heading: "Interface opened",
         data: [
           "200+ API interfaces (the most open interface)",
@@ -106,7 +106,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-extensiveness.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-extensiveness.jpg",
         heading: "Extensiveness",
         data: [
           "Supports Windows / Mac OS / Android / iOS and many other major system",
@@ -114,7 +114,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-security.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-security.jpg",
         heading: "Data security",
         data: [
           "Data storage records in the cloud",
@@ -123,7 +123,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-plans.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-plans.jpg",
         heading: "Second development",
         data: [
           "Secondary development gives new features to software and hardware",
@@ -137,7 +137,7 @@ const advantagesSection = {
     title: "Bulut platformasining afzalliklari",
     advantages: [
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-sass.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-sass.jpg",
         heading: "SaaS tizimi — mahalliy o‘rnatish talab qilinmaydi",
         data: [
           "Bitta serverda cheksiz hisoblarni qo‘llab-quvvatlaydi",
@@ -146,7 +146,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-template.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-template.jpg",
         heading: " Shablon muharriri bilan birga keladi",
         data: [
           "Bulut asosidagi shablonlar, brauzer orqali boshqaruv",
@@ -156,7 +156,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-expansion.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-expansion.jpg",
         heading: "Cheksiz kengaytirish imkoniyati",
         data: [
           "EPD, LCD va AI kameralar kabi turli aqlli qurilmalarni bitta tizimga integratsiya qilish",
@@ -165,7 +165,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-deployment.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-deployment.jpg",
         heading: "Moslashuvchan joriy etish (deploy) imkoniyati",
         data: [
           "SaaS’ni umumiy (public), xususiy (private) va lokal shaklda joriy etish uchun moslashuvchan variantlar",
@@ -173,7 +173,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-interface.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-interface.jpg",
         heading: "Ochiq interfeys",
         data: [
           "200+ ta API interfeyslari (eng ochiq integratsiya imkoniyatlari)",
@@ -181,7 +181,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-extensiveness.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-extensiveness.jpg",
         heading: "Keng qamrovli imkoniyatlar",
         data: [
           "Windows / Mac OS / Android / iOS va boshqa ko‘plab asosiy tizimlarni qo‘llab-quvvatlaydi",
@@ -189,7 +189,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-security.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-security.jpg",
         heading: "Ma’lumotlar xavfsizlig",
         data: [
           "Ma’lumotlarni bulutda saqlash",
@@ -198,7 +198,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-plans.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-plans.jpg",
         heading: "Ikkinchi darajali rivojlantirish",
         data: [
           "Ikkinchi darajali rivojlantirish dasturiy ta’minot va uskuna uchun yangi funksiyalar qo‘shadi",
@@ -212,7 +212,7 @@ const advantagesSection = {
     title: "Преимущества облачной платформы",
     advantages: [
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-sass.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-sass.jpg",
         heading: "SaaS-система, не требует локальной установки",
         data: [
           "Поддержка неограниченного количества аккаунтов на одном сервере",
@@ -221,7 +221,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-template.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-template.jpg",
         heading: "Встроенный редактор шаблонов",
         data: [
           "Облачные шаблоны, работа через браузер",
@@ -231,7 +231,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-expansion.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-expansion.jpg",
         heading: "Неограниченное масштабирование",
         data: [
           "Интеграция различных интеллектуальных устройств (EPD, LCD, AI-камеры) в единую систему",
@@ -240,7 +240,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-deployment.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-deployment.jpg",
         heading: "Гибкое развертывание",
         data: [
           "Гибкие варианты публичного, частного и локального развертывания SaaS",
@@ -248,7 +248,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-interface.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-interface.jpg",
         heading: "Открытый интерфейс",
         data: [
           "Более 200 API-интерфейсов (максимально открытая интеграция)",
@@ -256,7 +256,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-extensiveness.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-extensiveness.jpg",
         heading: " Широкие возможности",
         data: [
           "Поддерживает Windows / Mac OS / Android / iOS и многие другие основные системы",
@@ -264,7 +264,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-security.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-security.jpg",
         heading: "Безопасность данных",
         data: [
           "Хранение данных в облаке",
@@ -273,7 +273,7 @@ const advantagesSection = {
         ],
       },
       {
-        imgSrc: "/esl-cloud-platform/esl-cloud-plans.webp",
+        imgSrc: "/esl-cloud-platform/esl-cloud-plans.jpg",
         heading: "Вторичная разработка",
         data: [
           "Вторичная разработка добавляет новые функции программному обеспечению и оборудованию",
@@ -526,7 +526,7 @@ export default function ZKONGPlatform() {
                   overflow-hidden 
                   ${index % 2 === 1 ? "md:order-2" : "md:order-1"}`}
                 >
-                  <div className="relative flex items-center justify-center h-42 sm:h-48">
+                  <div className="relative flex items-center justify-center h-37 sm:h-48">
                     <Image
                       src={advantage.imgSrc}
                       alt={advantage.heading}
