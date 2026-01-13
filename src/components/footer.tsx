@@ -120,7 +120,7 @@ const footerLinks: FooterLinks = [
         key: "electronic-shelf-labels",
         translations: {
           en: { title: "Electronic Shelf Labels" },
-          ru: { title: "Elektron narx yorliqlari (ESL)" },
+          ru: { title: "Электронные ценники (ESL)" },
           uz: { title: "Elektron narx yorliqlari (ESL)" },
         },
       },
@@ -141,7 +141,7 @@ const footerLinks: FooterLinks = [
         },
       },
       {
-        key: "caseStudies",
+        key: "cases",
         translations: {
           en: { title: "Case Studies" },
           ru: { title: "Кейсы" },
@@ -167,7 +167,7 @@ const footerLinks: FooterLinks = [
     },
     children: [
       {
-        key: "aboutUs",
+        key: "about",
         translations: {
           en: { title: "About Us" },
           ru: { title: "О компании" },
