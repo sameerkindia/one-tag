@@ -284,7 +284,7 @@ export function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.25, ease: "easeInOut" }}
-                      className="absolute right-0 mt-2 w-44 glass rounded-2xl shadow-xl border border-border/50 overflow-hidden backdrop-blur-xl"
+                      className="absolute right-0 mt-2 w-44 glass bg-[#fffffff5]! dark:bg-[#141c30f0]! rounded-2xl shadow-xl border border-border/50 overflow-hidden backdrop-blur-xl"
                     >
                       {languages.map((lang) => (
                         <button
@@ -582,7 +582,7 @@ function NavItem({ item, level = 1, t, scrolled, theme }: any) {
               level === 1
                 ? "left-0 min-w-[200px]"
                 : "left-full top-0 ml-2 min-w-[200px]"
-            } absolute right-0 mt-3.5 w-52 glass rounded-2xl shadow-xl border border-border/50 overflow-hidden backdrop-blur-xl z-50 p-4 ${
+            } absolute right-0 mt-3.5 w-52 glass bg-[#fffffff5]! dark:bg-[#141c30f0]! rounded-2xl shadow-xl border border-border/50 overflow-hidden backdrop-blur-xl z-50 p-4 ${
               scrolled
                 ? "md-glass shadow-lg backdrop-blur-md"
                 : theme === "dark"

@@ -273,14 +273,13 @@
 // export default SliderCarousel;
 
 
-
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useRef, useState, useEffect } from "react";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 
 interface ResponsiveConfig {
-  base?: number;
+  base?: number; // mobile
   sm?: number;
   md?: number;
   lg?: number;
@@ -295,34 +294,36 @@ interface SliderCarouselProps<T> {
   infinite?: boolean;
   containerClass?: string;
   sliderCardClass?: string;
-  bottomButton?: boolean;
 }
 
 function SliderCarousel<T>({
   data,
   renderCard,
-  columns = 1,
+  columns = 4,
   responsive,
   infinite = false,
   containerClass = "",
   sliderCardClass = "",
-  bottomButton = false,
 }: SliderCarouselProps<T>) {
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  const offsetRef = useRef(0);
-  const animRef = useRef<number | null>(null);
+  const holderRef = useRef<HTMLDivElement>(null);
+  const isJumpingRef = useRef(false);
 
   const [currentCols, setCurrentCols] = useState(columns);
-  const [cardWidth, setCardWidth] = useState(0);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
 
-  // -------------------------
-  // RESPONSIVE COLUMNS
-  // -------------------------
+  const finalData = infinite ? [...data, ...data, ...data] : data;
+  const middleIndex = infinite ? data.length : 0;
+
+  // ---------------------------------------
+  // RESPONSIVE COLUMN RESOLVER (FIXED)
+  // ---------------------------------------
   const resolveColumns = () => {
-    if (!responsive) return columns;
+    if (typeof window === "undefined") return columns;
+
     const w = window.innerWidth;
+
+    if (!responsive) return columns;
 
     if (w >= 1280 && responsive.xl) return responsive.xl;
     if (w >= 1024 && responsive.lg) return responsive.lg;
@@ -333,150 +334,158 @@ function SliderCarousel<T>({
   };
 
   useEffect(() => {
-    const update = () => setCurrentCols(resolveColumns());
+    const update = () => {
+      setCurrentCols(resolveColumns());
+    };
+
     update();
     window.addEventListener("resize", update);
+
     return () => window.removeEventListener("resize", update);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [responsive, columns]);
 
-  // -------------------------
-  // MEASURE CARD WIDTH
-  // -------------------------
-  useEffect(() => {
-    if (!wrapperRef.current) return;
+  // ---------------------------------------
+  // SCROLL BUTTON VISIBILITY (NON-INFINITE)
+  // ---------------------------------------
+  const updateScrollButtons = () => {
+    if (!holderRef.current || infinite) return;
 
-    const measure = () => {
-      setCardWidth(wrapperRef.current!.clientWidth / currentCols);
-    };
+    const el = holderRef.current;
+    const max = el.scrollWidth - el.clientWidth;
 
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, [currentCols]);
-
-  // -------------------------
-  // DATA FOR INFINITE
-  // -------------------------
-  const items = infinite ? [...data, ...data, ...data] : data;
-  const middleOffset = infinite ? data.length * cardWidth : 0;
-
-  // -------------------------
-  // APPLY TRANSFORM
-  // -------------------------
-  const applyTransform = (value: number, animate = true) => {
-    if (!trackRef.current) return;
-
-    trackRef.current.style.transition = animate
-      ? "transform 450ms ease"
-      : "none";
-
-    trackRef.current.style.transform = `translateX(-${value}px)`;
+    setCanScrollLeft(el.scrollLeft > 0);
+    setCanScrollRight(el.scrollLeft < max - 1);
   };
 
-  // -------------------------
-  // INIT POSITION
-  // -------------------------
+  // ---------------------------------------
+  // INFINITE SCROLL HANDLER (SEAMLESS)
+  // ---------------------------------------
+  const handleInfiniteScroll = () => {
+    if (!holderRef.current || !infinite || isJumpingRef.current) return;
+
+    const el = holderRef.current;
+    const cardWidth = el.clientWidth / currentCols;
+    const chunkWidth = cardWidth * data.length;
+
+    if (el.scrollLeft < chunkWidth * 0.5) {
+      jumpScroll(el.scrollLeft + chunkWidth);
+    }
+
+    if (el.scrollLeft > chunkWidth * 1.5) {
+      jumpScroll(el.scrollLeft - chunkWidth);
+    }
+  };
+
+  const jumpScroll = (value: number) => {
+    const el = holderRef.current;
+    if (!el) return;
+
+    isJumpingRef.current = true;
+    const prev = el.style.scrollBehavior;
+
+    el.style.scrollBehavior = "auto";
+    el.scrollLeft = value;
+    el.offsetHeight;
+
+    requestAnimationFrame(() => {
+      el.style.scrollBehavior = prev || "";
+      isJumpingRef.current = false;
+    });
+  };
+
+  // ---------------------------------------
+  // INIT INFINITE POSITION
+  // ---------------------------------------
   useEffect(() => {
-    offsetRef.current = middleOffset;
-    applyTransform(offsetRef.current, false);
+    if (!infinite || !holderRef.current) return;
+
+    const el = holderRef.current;
+    const prev = el.style.scrollBehavior;
+
+    el.style.scrollBehavior = "auto";
+
+    requestAnimationFrame(() => {
+      const cardWidth = el.clientWidth / currentCols;
+      el.scrollLeft = middleIndex * cardWidth;
+      el.offsetHeight;
+
+      el.style.scrollBehavior = prev || "";
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cardWidth]);
+  }, [infinite, currentCols, data.length]);
 
-  // -------------------------
-  // MOVE LOGIC
-  // -------------------------
-  const move = (dir: "left" | "right") => {
-  if (!cardWidth || !trackRef.current) return;
+  // ---------------------------------------
+  // LISTENERS
+  // ---------------------------------------
+  useEffect(() => {
+    const el = holderRef.current;
+    if (!el) return;
 
-  const step = cardWidth;
-  const max = data.length * cardWidth;
+    updateScrollButtons();
+    el.addEventListener("scroll", handleInfiniteScroll);
+    el.addEventListener("scroll", updateScrollButtons);
+    window.addEventListener("resize", updateScrollButtons);
 
-  // 1️⃣ Move normally with animation
-  offsetRef.current += dir === "left" ? -step : step;
-  applyTransform(offsetRef.current, true);
+    return () => {
+      el.removeEventListener("scroll", handleInfiniteScroll);
+      el.removeEventListener("scroll", updateScrollButtons);
+      window.removeEventListener("resize", updateScrollButtons);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentCols, infinite]);
 
-  // 2️⃣ AFTER animation ends → silently normalize position
-  const handleTransitionEnd = () => {
-    trackRef.current?.removeEventListener(
-      "transitionend",
-      handleTransitionEnd
-    );
+  // ---------------------------------------
+  // SCROLL CONTROLS
+  // ---------------------------------------
+  const scrollByCard = (dir: "left" | "right") => {
+    const el = holderRef.current;
+    if (!el) return;
 
-    if (!infinite) return;
-
-    // too far left
-    if (offsetRef.current < max * 0.5) {
-      offsetRef.current += max;
-      applyTransform(offsetRef.current, false);
-    }
-
-    // too far right
-    if (offsetRef.current > max * 1.5) {
-      offsetRef.current -= max;
-      applyTransform(offsetRef.current, false);
-    }
+    const cardWidth = el.clientWidth / currentCols;
+    el.scrollBy({
+      left: dir === "left" ? -cardWidth : cardWidth,
+      behavior: "smooth",
+    });
   };
 
-  trackRef.current.addEventListener(
-    "transitionend",
-    handleTransitionEnd
-  );
-};
+  const showLeft = infinite || canScrollLeft;
+  const showRight = infinite || canScrollRight;
 
-
-  // -------------------------
-  // CLEANUP
-  // -------------------------
-  useEffect(() => {
-    return () => {
-      if (animRef.current) cancelAnimationFrame(animRef.current);
-    };
-  }, []);
-
-  // -------------------------
-  // RENDER
-  // -------------------------
   return (
-    <div
-      ref={wrapperRef}
-      className={`relative w-full overflow-hidden ${containerClass}`}
-    >
-      {/* TRACK */}
+    <div className={`relative w-full flex items-center ${containerClass}`}>
+      {showLeft && (
+        <button
+          onClick={() => scrollByCard("left")}
+          className="absolute left-2 z-10 bg-blue-500 text-white p-2 rounded-full"
+        >
+          <ChevronLeft />
+        </button>
+      )}
+
       <div
-        ref={trackRef}
-        className="flex will-change-transform"
-        style={{ width: items.length * cardWidth }}
+        ref={holderRef}
+        className="flex w-full overflow-x-auto no-scrollbar snap-x snap-mandatory"
       >
-        {items.map((item, i) => (
+        {finalData.map((item, i) => (
           <div
             key={i}
-            className={`shrink-0 px-2 ${sliderCardClass}`}
-            style={{ width: cardWidth }}
+            className={`shrink-0 snap-start px-2 ${sliderCardClass}`}
+            style={{ width: `${100 / currentCols}%` }}
           >
             {renderCard(item, i % data.length)}
           </div>
         ))}
       </div>
 
-      {/* LEFT BUTTON */}
-      <button
-        onClick={() => move("left")}
-        className={`absolute z-10 bg-blue-500 text-white p-2 rounded-full
-          ${bottomButton ? "-bottom-14 left-[30%]" : "top-1/2 -translate-y-1/2 left-3"}
-        `}
-      >
-        <ChevronLeft />
-      </button>
-
-      {/* RIGHT BUTTON */}
-      <button
-        onClick={() => move("right")}
-        className={`absolute z-10 bg-blue-500 text-white p-2 rounded-full
-          ${bottomButton ? "-bottom-14 right-[30%]" : "top-1/2 -translate-y-1/2 right-3"}
-        `}
-      >
-        <ChevronRight />
-      </button>
+      {showRight && (
+        <button
+          onClick={() => scrollByCard("right")}
+          className="absolute right-2 z-10 bg-blue-500 text-white p-2 rounded-full"
+        >
+          <ChevronRight />
+        </button>
+      )}
     </div>
   );
 }

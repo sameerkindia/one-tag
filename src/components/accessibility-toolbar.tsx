@@ -61,7 +61,7 @@ export function AccessibilityToolbar({ onClose }: AccessibilityToolbarProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.25, ease: "easeInOut" }}
-      className="absolute right-0 mt-2.5 w-52 glass rounded-2xl shadow-xl border border-border/50 overflow-hidden backdrop-blur-xl z-50 p-4"
+      className="absolute right-0 mt-2.5 w-52 glass bg-[#fffffff5]! dark:bg-[#141c30f0]! rounded-2xl shadow-xl border border-border/50 overflow-hidden backdrop-blur-xl z-50 p-4"
     >
       <h3 className="font-medium mb-4 text-center">{accessibilityModal[language].title}</h3>
 
