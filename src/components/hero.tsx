@@ -17,7 +17,7 @@ export function Hero() {
 
   return (
     <section className="">
-      <div className="relative min-h-screen flex items-center justify-center overflow-hidden sm:rounded-b-4xl">
+      <div className="relative min-h-screen flex items-center justify-center overflow-hidden rounded-b-4xl">
       <div
         className={`absolute inset-0 w-full h-full opacity-0 dark:opacity-100`}
       >

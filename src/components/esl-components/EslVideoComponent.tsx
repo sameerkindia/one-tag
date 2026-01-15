@@ -1,5 +1,6 @@
 import React from "react";
 import SubHeading from "../SubHeading";
+import { FadeAnimation } from "@/src/motion-animations/FadeAnimation";
 
 type EslVideoComponent = {
   videoData: { title: string; description: string; cta?: string };
@@ -11,7 +12,7 @@ function EslVideoComponent({ videoData, videoId }: EslVideoComponent) {
     <section className="py-20">
       <div className="container mx-auto px-4 max-w-7xl relative">
         <div className="grid grid-cols-1 3md:grid-cols-2 gap-8 items-center">
-          <div className="text-center 3md:text-left">
+          <FadeAnimation staggerChildren={0.3} className="text-center 3md:text-left">
             <SubHeading headingText={videoData.title} lastIndex={3} customHeadingClass="!hidden 3md:!block !mb-2.5 2lg:!mb-4 2xl:!mb-6 text-pretty" />
             <SubHeading headingText={videoData.title} lastIndex={3} customHeadingClass="!block 3md:!hidden !mb-2.5 2lg:!mb-4 2xl:!mb-6 text-pretty" textSize="md" />
             {/* !hidden md:!block */}
@@ -27,18 +28,17 @@ function EslVideoComponent({ videoData, videoId }: EslVideoComponent) {
                 {videoData.cta}
               </a>
             )}
-          </div>
+          </FadeAnimation>
 
-          <div className="mb-4 md:mb-0">
-            {/* <SubHeading headingText={videoData.title} lastIndex={3} textSize="md" customHeadingClass="!block md:!hidden !leading-[1.3] !mb-4 md:!mb-2.5 2lg:!mb-4 2xl:!mb-6 text-pretty" /> */}
+          <FadeAnimation className="mb-4 md:mb-0">
           <div className="w-full px-0">
             <figure className="flex h-full w-full rounded-xl overflow-hidden">
-              <video autoPlay muted loop className="max-sm:h-56 max-sm:object-[inherit]">
+              <video autoPlay muted loop className="max-sm:h-56 max-sm:object-fill">
                 <source src="/tag-video.mp4" type="video/mp4"></source>
               </video>
             </figure>
           </div>
-          </div>
+          </FadeAnimation>
 
             {/* YouTube embed */}
           {/* <div className="w-full aspect-video rounded-xl overflow-hidden shadow">

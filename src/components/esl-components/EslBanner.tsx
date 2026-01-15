@@ -1,13 +1,14 @@
 import React from "react";
 import AnimationText from "../Animation-text";
 import Image from "next/image";
+import { FadeAnimation } from "@/src/motion-animations/FadeAnimation";
 
 type EslHero = {
   hero: { title: string; subtitle1?: string; subtitle2?: string; cta?: string };
-  language?: string;
+  language?: string; theme ?: string;
 };
 
-function EslBanner({ hero, language }: EslHero) {
+function EslBanner({ hero, language, theme}: EslHero) {
   return (
     // <section
     //   className={`relative pt-30 pb-16 sm:py-24 bg-linear-to-r from-gray-200 to-gray-500 dark:from-gray-800 dark:to-gray-700`}
@@ -21,13 +22,18 @@ function EslBanner({ hero, language }: EslHero) {
           objectFit="cover"
         />
 
-        <div className="absolute z-1 inset-0 pointer-events-none h-full w-full black-white-fade">
-          {/* <div className="absolute -left-20 -top-32 w-96 h-96 rounded-full blur-3xl bg-linear-to-br from-blue-200/30 to-purple-300/30 dark:from-blue-900/20 dark:to-purple-900/20"></div> */}
-          {/* <div className="absolute h-full w-full blur-2px black-white-fade bg -[#3a3a3a75]"></div> */}
-        </div>
-        <div className="max-w-5xl flex items-center justify-center flex-col mx-auto px-4 sm:px-6 text-center z-1 p-6 sm:p-8 2md:p-12 rounded-2xl gl ass">
-          <h1 className="text-white dark:text-black text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty">
-            <AnimationText modeReverse>
+        {/* <div className="absolute z-1 inset-0 pointer-events-none h-full w-full black-white-fade">
+          <div className="absolute -left-20 -top-32 w-96 h-96 rounded-full blur-3xl bg-linear-to-br from-blue-200/30 to-purple-300/30 dark:from-blue-900/20 dark:to-purple-900/20"></div>
+          <div className="absolute h-full w-full blur-2px black-white-fade bg -[#3a3a3a75]"></div>
+        </div> */}
+        <div className={`absolute inset-0 ${
+        theme === 'dark'
+          ? 'bg-linear-to-br from-slate-950/90 via-slate-900/85 to-slate-800/90' 
+          : 'bg-linear-to-br from-gray-600/60 via-gray-500/70 to-gray-700/60 blur-2px'
+      }`} />
+        <FadeAnimation className="max-w-5xl flex items-center justify-center flex-col mx-auto px-4 sm:px-6 text-center z-1 p-0 sm:p-8 2md:p-12 rounded-2xl gl ass">
+          <h1 className="dark:text-white text-black text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty">
+            <AnimationText>
               {hero.title.split(" ").slice(0, 2).join(" ")}
             </AnimationText>{" "}
             {hero.title.split(" ").slice(2).join(" ")}
@@ -52,7 +58,7 @@ function EslBanner({ hero, language }: EslHero) {
               </a>
             </div>
           )}
-        </div>
+        </FadeAnimation>
       </div>
     </section>
   );

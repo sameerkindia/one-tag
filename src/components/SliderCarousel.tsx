@@ -457,9 +457,9 @@ function SliderCarousel<T>({
       {showLeft && (
         <button
           onClick={() => scrollByCard("left")}
-          className="absolute left-2 z-10 bg-blue-500 text-white p-2 rounded-full"
+          className="absolute left-2 z-10 bg-blue-500 text-white p-1.5 sm:p-2 rounded-full max-sm:bottom-4"
         >
-          <ChevronLeft />
+          <ChevronLeft className="max-sm:size-4" />
         </button>
       )}
 
@@ -481,9 +481,9 @@ function SliderCarousel<T>({
       {showRight && (
         <button
           onClick={() => scrollByCard("right")}
-          className="absolute right-2 z-10 bg-blue-500 text-white p-2 rounded-full"
+          className="absolute right-2 z-10 bg-blue-500 text-white p-1.5 sm:p-2 rounded-full max-sm:bottom-4"
         >
-          <ChevronRight />
+          <ChevronRight className="max-sm:size-4" />
         </button>
       )}
     </div>

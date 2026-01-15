@@ -309,7 +309,7 @@ const footerText = {
   text: {
     en: `Pioneering smart retail technology in Uzbekistan. Transform your store with intelligent price tags.`,
     ru: `Мы — пионеры смарт-ретейл технологий в Узбекистане. Преобразуйте свой магазин с помощью интеллектуальных электронных ценников.`,
-    uz: `Biz — Oʻzbekistonda smart retail texnologiyalarining yetakchimiz. Doʻkoningizni aqlli elektron narx belgilari bilan zamonaviylashtiring.`,
+    uz: `Biz — Oʻzbekistonda smart retail tehnologiyalarida yetakchimiz. Doʻkoningizni aqlli elektron narx belgilari bilan zamonaviylashtiring.`,
   },
 };
 

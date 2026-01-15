@@ -209,18 +209,32 @@ xl	80rem (1280px)	@media (width >= 80rem) { ... }
 }
 
 /* Enhanced glassmorphism with premium dark mode translucent panels */
-.glass {
+/* .glass {
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(24px) saturate(180%);
+  isolation: isolate;
+  will-change: backdrop-filter;
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow: 0 8px 32px rgba(76, 158, 255, 0.08);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+} */
+
+.glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px rgba(76, 158, 255, 0.08);
+  isolation: isolate;
+  will-change: backdrop-filter;
 }
 
 .dark .glass {
   background: rgba(20, 28, 48, 0.55);
   backdrop-filter: blur(28px) saturate(180%);
+  isolation: isolate;
+  will-change: backdrop-filter;
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   border: 1px solid rgba(120, 160, 255, 0.15);
   box-shadow: 0 8px 40px rgba(76, 158, 255, 0.25),
@@ -231,6 +245,8 @@ xl	80rem (1280px)	@media (width >= 80rem) { ... }
 .glass-dark {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(24px) saturate(180%);
+  isolation: isolate;
+  will-change: backdrop-filter;
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -472,9 +488,10 @@ xl	80rem (1280px)	@media (width >= 80rem) { ... }
   @apply bg-linear-to-b from-slate-100/50 to-white/50 dark:from-[#0b1320]/50 dark:to-[#020617]/50
 }
 
-/* .esl-accessories-slider {
-  
+/* .esl-accessories-slider:first-child {
+  @apply flex-row-reverse
 } */
+
 .esl-accessories-slider-container{
   /* max-width: calc(100% - 14rem); */
   
@@ -501,7 +518,7 @@ xl	80rem (1280px)	@media (width >= 80rem) { ... }
 
 
 .black-white-fade{
-  background: linear-gradient(180deg,rgba(0, 0, 0, 0.7) 30%, rgba(255, 255, 255, 0.1) 100%);
+  background: linear-gradient(180deg,rgba(0, 0, 0, 0.7) 50%, rgba(255, 255, 255, 0.1) 100%);
   /* @apply bg-[linear-gradient(180deg,rgba(0,0,0,.5)70%,rgba(255,255,255,.5))] dark:bg-[linear-gradient(180deg,rgba(255,255,255,.5),rgba(0,0,0,.5))]; */
 }
 
