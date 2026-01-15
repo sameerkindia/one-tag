@@ -143,8 +143,9 @@ export function Navbar() {
               ? "md-glass max-mmd:shadow-lg max-mmd:backdrop-blur-md"
               : theme === "dark"
               ? "bg-fill-tertiary"
-              : "bg-fill-tertiary md-gla ss"
+              : "bg-fill-tertiary"
           } ${isOpen ? "rounded-b-none md:rounded-b-sm" : ""}
+          ${customNavbar && 'md-glass'}
           `}
         >
           {/* Mobile Logo */}

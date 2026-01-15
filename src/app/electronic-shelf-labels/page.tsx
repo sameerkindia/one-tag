@@ -8,15 +8,19 @@ import EslVideoComponent from "@/src/components/esl-components/EslVideoComponent
 import EslHorizontalTab from "@/src/components/esl-components/EslhorizontalTab";
 import EslVerticalTab from "@/src/components/esl-components/EslVerticalTab";
 import EslCarousel from "@/src/components/esl-components/EslCarousel";
-import SliderCarousel from "@/src/components/SliderCarousel";
+// import SliderCarousel from "@/src/components/SliderCarousel";
 import InfiniteMarquee from "@/src/components/InfiniteRunningMarquee";
 import GradientBackground from "@/src/motion-animations/GradientBackground";
 import FloatingParticles from "@/src/components/FloatingParticles";
 import SubHeading from "@/src/components/SubHeading";
 import MobileTabletInfiniteMarquee from "@/src/components/MobileTabletInfiniteMarquee";
+import { useTheme } from "@/src/contexts/theme-context";
+import InfiniteSliderCarousel from "@/src/components/InfiniteSliderCarousel";
+import { FadeAnimation } from "@/src/motion-animations/FadeAnimation";
 
 export default function ZkongShieldRebuilt() {
   const { language } = useLanguage(); // en, ru, uz
+  const { theme } = useTheme();
 
   const [activeTab, setActiveTab] = useState(
     modalsSection[language].allModels[0].name
@@ -47,11 +51,14 @@ export default function ZkongShieldRebuilt() {
       <GradientBackground />
       <FloatingParticles />
 
-      <EslBanner hero={hero[language]} />
+      <EslBanner hero={hero[language]} theme={theme} />
       <EslVideoComponent videoData={videoData[language]} />
 
       <section className="secondary-background py-20">
-        <div className="container mx-auto px-4 max-w-7xl relative">
+        <FadeAnimation
+          staggerChildren={0.3}
+          className="container mx-auto px-4 max-w-7xl relative"
+        >
           <SubHeading
             headingText={eslFunctionSection[language].title}
             lastIndex={3}
@@ -69,11 +76,14 @@ export default function ZkongShieldRebuilt() {
               position="right"
             />
           </div>
-        </div>
+        </FadeAnimation>
       </section>
 
       <section className="py-20">
-        <div className="container mx-auto px-4 max-w-7xl relative">
+        <FadeAnimation
+          staggerChildren={0.3}
+          className="container mx-auto px-4 max-w-7xl relative"
+        >
           <SubHeading
             headingText={modalsSection[language].title}
             lastIndex={3}
@@ -101,21 +111,24 @@ export default function ZkongShieldRebuilt() {
             </div>
             {modalsSection[language].allModels.map(
               (tab, index) =>
-                activeTab === tab.name && <EslHorizontalTab key={index} sectionData={tab} />
+                activeTab === tab.name && (
+                  <EslHorizontalTab key={index} sectionData={tab} />
+                )
             )}
           </div>
-        </div>
+        </FadeAnimation>
       </section>
 
       <section className="secondary-background py-20">
-        <div className="container mx-auto px-4 max-w-7xl relative w-full flex items-center justify-center bg-cover bg-center">
-          <div className="grid sm:grid-cols-2 3md:flex gap-4 3md:gap-0 max-sm:py-10 p-4 3md:p-0 relative w-full 3md:aspect-5/2 overflow-hidden rounded">
-            <Image
-              src={"/ESL/zkong-electronic-shelf-labels-advantage.webp"}
-              alt="zkong-electronic-shelf-labels-advantage"
-              fill
-              className="max-sm:object-cover"
-            />
+        <FadeAnimation staggerChildren={0.3}>
+          <div className="container mx-auto px-4 max-w-7xl relative w-full flex items-center justify-center bg-cover bg-center">
+            <div className="grid sm:grid-cols-2 3md:flex gap-4 3md:gap-0 max-sm:py-10 p-4 3md:p-0 relative w-full 3md:aspect-5/2 overflow-hidden rounded">
+              <Image
+                src={"/ESL/zkong-electronic-shelf-labels-advantage.webp"}
+                alt="zkong-electronic-shelf-labels-advantage"
+                fill
+                className="max-sm:object-cover"
+              />
 
               {advantagesSection[language].cards.map((item, index) => {
                 const current = hover ?? active; // single source of truth for visuals
@@ -123,61 +136,58 @@ export default function ZkongShieldRebuilt() {
 
                 return (
                   <React.Fragment key={index}>
-                  <div
-                    key={index}
-                    onMouseEnter={() => setHover(index)}
-                    onMouseLeave={() => setHover(null)} // clear hover, DON'T set active here
-                    onClick={() => setActive(index)} // set active only on click
-                    className={`hidden 3md:flex relative items-center justify-center
+                    <div
+                      key={index}
+                      onMouseEnter={() => setHover(index)}
+                      onMouseLeave={() => setHover(null)} // clear hover, DON'T set active here
+                      onClick={() => setActive(index)} // set active only on click
+                      className={`hidden 3md:flex relative items-center justify-center
           transition-all duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] cursor-pointer
           ${getWidth(index)} ${isCurrent ? "bg-white" : "bg-transparent"}`}
-                  >
-                    <span
-                      className={`size-6 bg-white rounded-full text-base font-bold transition-colors duration-300 text-black text-center
+                    >
+                      <span
+                        className={`size-6 bg-white rounded-full text-base font-bold transition-colors duration-300 text-black text-center
                     ${isCurrent ? "hidden" : "block"}`}
-                    >
-                      {index + 1}
-                    </span>
+                      >
+                        {index + 1}
+                      </span>
 
-                    {/* Extra text appears when current (hover or active) */}
-                    <div
-                      className={`absolute bottom-4 flex flex-col items-center justify-center w-full text-base 2lg:text-lg font-medium transition-opacity duration-300 p-4 text-center h-full overflow-hidden
+                      {/* Extra text appears when current (hover or active) */}
+                      <div
+                        className={`absolute bottom-4 flex flex-col items-center justify-center w-full text-base 2lg:text-lg font-medium transition-opacity duration-300 p-4 text-center h-full overflow-hidden
                     ${isCurrent ? "opacity-100 text-gray-500" : "opacity-0"}`}
-                    >
-                      <h6 className="font-semibold">{item.title}</h6>
-                      <p className="font-normal">{item.description}</p>
+                      >
+                        <h6 className="font-semibold">{item.title}</h6>
+                        <p className="font-normal">{item.description}</p>
+                      </div>
                     </div>
-                  </div>
-                  <div
-                    key={(index + 10) * 100}
-                    className={`flex 3md:hidden relative items-center justify-center transition-all cursor-pointer bg-white rounded-lg`}
-                  >
-
-                    {/* Extra text appears when current (hover or active) */}
                     <div
-                      className={`w-full text-base font-medium transition-opacity duration-300 p-4 pb-6 h-full overflow-hidden text-gray-500
-                    `}
+                      key={(index + 10) * 100}
+                      className={`flex 3md:hidden relative items-center justify-center transition-all cursor-pointer bg-white rounded-lg`}
                     >
-                      <h6 className="font-semibold mb-2">{item.title}</h6>
-                      <p className="font-normal">{item.description}</p>
+                      {/* Extra text appears when current (hover or active) */}
+                      <div
+                        className={`w-full text-base font-medium transition-opacity duration-300 p-4 pb-6 h-full overflow-hidden text-gray-500
+                    `}
+                      >
+                        <h6 className="font-semibold mb-2">{item.title}</h6>
+                        <p className="font-normal">{item.description}</p>
+                      </div>
                     </div>
-                  </div>
                   </React.Fragment>
                 );
               })}
+            </div>
           </div>
-        </div>
+        </FadeAnimation>
       </section>
 
       <section className="py-20 overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
+        <FadeAnimation staggerChildren={0.3} className="relative max-w-7xl mx-auto px-6 text-center">
           <SubHeading
             headingText={whyChooseSection[language].heading}
             lastIndex={2}
           />
-          {/* <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-            {whyChooseSection[language].heading}
-          </h2> */}
           <p className="text-base 2lg:text-lg xxl:text-xl leading-relaxed text-slate-600 dark:text-blue-200 mb-2">
             {whyChooseSection[language].subheading}
           </p>
@@ -204,7 +214,7 @@ export default function ZkongShieldRebuilt() {
               </div>
             ))}
           </div>
-        </div>
+        </FadeAnimation>
       </section>
 
       <section className="secondary-background relative w-full py-20">
@@ -242,7 +252,7 @@ export default function ZkongShieldRebuilt() {
           </div>
         </div> */}
 
-        <div className="container mx-auto px-4 max-w-7xl relative w-full">
+        <FadeAnimation staggerChildren={0.3} className="container mx-auto px-4 max-w-7xl relative w-full">
           <div className="text-center">
             <h2 className="text-3xl 2lg:text-4xl font-semibold text-slate-600 dark:text-blue-200">
               {gallerysection[language].title}
@@ -250,13 +260,13 @@ export default function ZkongShieldRebuilt() {
           </div>
 
           {/* <InfiniteMarquee /> */}
-          <InfiniteMarquee/>
+          <InfiniteMarquee />
           {/* <MobileTabletInfiniteMarquee /> */}
-        </div>
+        </FadeAnimation>
       </section>
 
       <section className="relative w-full py-18 sm:py-24">
-        <div className="container mx-auto px-4 max-w-7xl relative w-full">
+        <FadeAnimation staggerChildren={0.3} className="container mx-auto px-4 max-w-7xl relative w-full">
           <div className="mb-6 text-center">
             <SubHeading
               headingText={carouselData[language].title}
@@ -272,10 +282,13 @@ export default function ZkongShieldRebuilt() {
               {carouselData[language].description2}
             </p>
           </div>
-          <SliderCarousel
+          <InfiniteSliderCarousel
             data={carouselData[language].imageData}
             renderCard={(item, i) => (
-              <div key={i} className="group relative h-[500px] rounded-lg flex flex-col items-center justify-center overflow-hidden shadow-lg">
+              <div
+                key={i}
+                className="group relative h-[500px] rounded-lg flex flex-col items-center justify-center overflow-hidden shadow-lg"
+              >
                 <Image
                   src={item.src}
                   alt={item.name}
@@ -298,13 +311,14 @@ export default function ZkongShieldRebuilt() {
               </div>
             )}
             columns={3}
-             responsive={{ 
-             base: 1,
-             md: 3 }}
+            responsive={{
+              base: 1,
+              md: 3,
+            }}
             //  bottomButton={true}
             infinite
           />
-        </div>
+        </FadeAnimation>
       </section>
     </div>
   );
@@ -434,7 +448,7 @@ const eslFunctionSection = {
       },
       {
         id: "f4",
-        title: "Tovar tugashi haqida ogohlantirisht",
+        title: "Tovar tugashi haqida ogohlantirish",
         body: "Agar polkadagi mahsulotlar soni belgilangan miqdordan kamaysa, elektron narx yorlig‘idagi LED chiroqlar xodimlarni ogohlantirish uchun yonib-o‘chadi.",
         img: "/ESL/EslFunction/automatically.webp",
       },
@@ -1934,7 +1948,8 @@ const whyChooseSection = {
   },
   uz: {
     heading: "Nega elektron narx yorliqlarini tanlash kerak?",
-    subheading: "Elektron narx yorliqlari – samaradorlik va aniqlikni oshiradi.",
+    subheading:
+      "Elektron narx yorliqlari – samaradorlik va aniqlikni oshiradi.",
     description:
       "Elektron narx yorliqlari bilan savdoning kelajagini his eting: real vaqt rejimida yangilanish va oson integratsiya.",
     cards: [
@@ -2192,7 +2207,7 @@ uchun qulay xarid tajribasini ta’minlaysiz.`,
         src: "/ESL/carouselmages/supermarket.webp",
       },
       {
-name: "Ombor",
+        name: "Ombor",
         description: `Elektron narx yorliqlari va raqamli belgilash yordamida ombor boshqaruvini yaxshilang.
 Bunday raqamli yorliqlar zaxiralarni real vaqt rejimida kuzatish va narxlarni dinamik
 yangilash imkonini beradi, jarayonlarni soddalashtiradi va xatoliklarni kamaytiradi. Elektron
@@ -2201,7 +2216,7 @@ oshiradi.`,
         src: "/ESL/carouselmages/warehouse.webp",
       },
       {
-       name: "Kosmetika",
+        name: "Kosmetika",
         description: `Kosmetika bo‘limingizni elektron narx yorliqlari bilan yangilang. Ushbu raqamli yorliqlar
 tezkor narx o‘zgarishlari va darhol yangilanishlarni ta’minlaydi, tezkor savdo muhiti uchun
 juda qulay. Zamonaviy displey mahsulotlaringiz ko‘rinishini to‘ldirib, xaridorlar uchun aniq va
@@ -2260,7 +2275,7 @@ E-Ink таблички экономят время, деньги и ручной
         src: "/ESL/carouselmages/supermarket.webp",
       },
       {
-         name: "Склад",
+        name: "Склад",
         description: `Улучшите управление складом с помощью электронных ценников и цифровой
 навигации. Такие цифровые ценники обеспечивают отслеживание запасов в реальном
 времени и динамическое обновление цен, оптимизируя процессы и снижая

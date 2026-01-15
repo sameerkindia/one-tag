@@ -8,6 +8,7 @@ import { useLanguage } from "@/src/contexts/language-context";
 import SubHeading from "@/src/components/SubHeading";
 import GradientBackground from "@/src/motion-animations/GradientBackground";
 import FloatingParticles from "@/src/components/FloatingParticles";
+import { useTheme } from "@/src/contexts/theme-context";
 
 const bannerSection = {
   en: {
@@ -160,7 +161,7 @@ const advantagesSection = {
         heading: "Cheksiz kengaytirish imkoniyati",
         data: [
           "EPD, LCD va AI kameralar kabi turli aqlli qurilmalarni bitta tizimga integratsiya qilish",
-          "Milliardlab ma’lumotlarni qayta ishlash imkoniyat",
+          "Milliardlab ma’lumotlarni qayta ishlash imkoniyati",
           "Bitta tizim millionlab elektron narx yorliqlarini qo‘llab-quvvatlay oladi",
         ],
       },
@@ -190,7 +191,7 @@ const advantagesSection = {
       },
       {
         imgSrc: "/esl-cloud-platform/esl-cloud-security.jpg",
-        heading: "Ma’lumotlar xavfsizlig",
+        heading: "Ma’lumotlar xavfsizligi",
         data: [
           "Ma’lumotlarni bulutda saqlash",
           "Bulutda professional AES 128-bit shifrlash",
@@ -415,7 +416,7 @@ const superiorSystemSection = {
 };
 
 export default function ZKONGPlatform() {
-  // const { theme } = useTheme();
+  const { theme } = useTheme();
   const { language } = useLanguage();
 
   // console.log("Unlimited expansion".length / 2)
@@ -441,19 +442,30 @@ export default function ZKONGPlatform() {
           <source src={"/esl-cloud-platform/Cloud platform BG.mp4"} type="video/mp4" />
         </video>
       </div>
-      <div className="absolute z-1 inset-0 pointer-events-none h-full w-full black-white-fade blur-1px"></div>
+      <div className={`absolute inset-0 ${
+        theme === 'dark' 
+          ? 'bg-linear-to-b from-slate-900/80 via-blue-900/70 to-slate-800/85 blur-2px' 
+          : 'bg-linear-to-b from-slate-700/75 via-blue-800/65 to-slate-600/80 blur-2px'
+      }`} />
+      {/* <div className="absolute z-1 inset-0 pointer-events-none h-full w-full black-white-fade blur-1px"></div> */}
       {/* <div className="absolute h-full w-full blur-2px bg-(--black-white-fade) b g-[#3a3a3a75] z-1 inset-0 pointer-events-none">
         <div className="absolute h-full w-full blur-3xl bg-[#3a3a3a75]"></div>
       </div> */}
         {/* subtle light/dark background shapes */}
-        <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10 p-6 sm:p-8 2md:p-12 rounded-2xl gla ss">
-          <h1 className="text-white dark:text-black text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty mb-6">
+        <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10 p-0 sm:p-8 2md:p-12 rounded-2xl gla ss">
+          <h1 className="text-white dark:text-black text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty mb-6 dark:hidden">
             <AnimationText modeReverse>
               {bannerSection[language].title.split(" ").slice(0, 1).join(" ")}
             </AnimationText>{" "}
             {bannerSection[language].title.split(" ").slice(1).join(" ")}
           </h1>
-          <p className="text-base sm:text-lg 2md:text-xl text-white dark:text-black 2md:mb-8 max-w-4xl mx-auto">
+          <h1 className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty mb-6 hidden dark:block">
+            <AnimationText>
+              {bannerSection[language].title.split(" ").slice(0, 1).join(" ")}
+            </AnimationText>{" "}
+            {bannerSection[language].title.split(" ").slice(1).join(" ")}
+          </h1>
+          <p className="text-base sm:text-lg 2md:text-xl text-white 2md:mb-8 max-w-4xl mx-auto">
             {bannerSection[language].description}
           </p>
           {/* <button
@@ -468,7 +480,7 @@ export default function ZKONGPlatform() {
 
       <section className="py-12 sm:py-16 2m:py-20">
         <div className="container mx-auto px-4 max-w-7xl relative">
-          <FadeAnimation className="text-center relative z-10 mb-10">
+          <FadeAnimation staggerChildren={0.3} className="text-center relative z-10 mb-10">
             <SubHeading
               headingText={revolutionarySection[language].title}
               lastIndex={2}
@@ -526,7 +538,8 @@ export default function ZKONGPlatform() {
                   overflow-hidden 
                   ${index % 2 === 1 ? "md:order-2" : "md:order-1"}`}
                 >
-                  <div className="relative flex items-center justify-center h-37 sm:h-48">
+                  <div className="relative flex items-center justify-center aspect-828/265">
+                  {/* sm:h-48 */}
                     <Image
                       src={advantage.imgSrc}
                       alt={advantage.heading}
