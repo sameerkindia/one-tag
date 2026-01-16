@@ -502,7 +502,7 @@ export function ProductShowcase() {
                 <div className="space-y-3">
                   {product.specs.map((spec, i) => (
                     <motion.div
-                      key={spec}
+                      key={i}
                       className="flex items-baseline text-base group/item"
                     >
                       <motion.div

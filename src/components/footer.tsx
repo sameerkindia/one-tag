@@ -143,9 +143,9 @@ const footerLinks: FooterLinks = [
       {
         key: "cases",
         translations: {
-          en: { title: "Case Studies" },
+          en: { title: "Cases" },
           ru: { title: "Кейсы" },
-          uz: { title: "Muvaffaqiyat hikoyalari" },
+          uz: { title: "Misollar" },
         },
       },
       // {

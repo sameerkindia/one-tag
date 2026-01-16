@@ -442,10 +442,15 @@ export default function ZKONGPlatform() {
           <source src={"/esl-cloud-platform/Cloud platform BG.mp4"} type="video/mp4" />
         </video>
       </div>
-      <div className={`absolute inset-0 ${
+      {/* <div className={`absolute inset-0 ${
         theme === 'dark' 
           ? 'bg-linear-to-b from-slate-900/80 via-blue-900/70 to-slate-800/85 blur-2px' 
           : 'bg-linear-to-b from-slate-700/75 via-blue-800/65 to-slate-600/80 blur-2px'
+      }`} /> */}
+      <div className={`absolute inset-0 ${
+        theme === 'dark'
+          ? 'bg-linear-to-br from-slate-950/90 via-slate-900/85 to-slate-800/90' 
+          : 'bg-linear-to-br from-gray-600/60 via-gray-500/70 to-gray-700/60 blur-2px'
       }`} />
       {/* <div className="absolute z-1 inset-0 pointer-events-none h-full w-full black-white-fade blur-1px"></div> */}
       {/* <div className="absolute h-full w-full blur-2px bg-(--black-white-fade) b g-[#3a3a3a75] z-1 inset-0 pointer-events-none">

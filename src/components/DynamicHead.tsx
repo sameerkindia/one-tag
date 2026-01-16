@@ -7,9 +7,9 @@ export function DynamicHead() {
   const { language, t } = useLanguage()
 
   const titles: Record<string, string> = {
-    en: "OneTag Smart Solutions - Smart Retail Technology",
-    uz: "OneTag Smart Solutions - Aqlli Chakana Texnologiya",
-    ru: "OneTag Smart Solutions - Умные Розничные Технологии",
+    en: "Electronic Shelf Labels (ESL) for Retail | Onetag Smart Solutions",
+    uz: "sameer Smart Solutions - Aqlli Chakana Texnologiya",
+    ru: "sameer Smart Solutions - Умные Розничные Технологии",
   }
 
   const descriptions: Record<string, string> = {
