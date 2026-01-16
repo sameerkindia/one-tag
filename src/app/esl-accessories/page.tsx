@@ -268,7 +268,7 @@ export default function ESLAccessoriesPage() {
           />
 
           {/* <div className="absolute z-1 inset-0 pointer-events-none h-full w-full black-white-fade blur-1px"></div> */}
-          <div
+          {/* <div
             className={`absolute inset-0 ${
               theme === "dark"
                 ? // ? 'bg-linear-to-br from-slate-950/90 via-slate-900/85 to-slate-800/90'
@@ -276,7 +276,12 @@ export default function ESLAccessoriesPage() {
                   "bg-linear-to-br from-slate-950/80 via-slate-900/75 to-slate-800/80"
                 : "bg-linear-to-tr from-gray-700/65 via-gray-600/55 to-gray-800/70 blur-2px"
             }`}
-          />
+          /> */}
+          <div className={`absolute inset-0 ${
+        theme === 'dark'
+          ? 'bg-linear-to-br from-slate-950/90 via-slate-900/85 to-slate-800/90' 
+          : 'bg-linear-to-br from-gray-600/60 via-gray-500/70 to-gray-700/60 blur-2px'
+      }`} />
           {/* <div className="absolute z-1 inset-0 pointer-events-none">
           <div className="absolute h-full w-full blur-2px bg-[#3a3a3a75]"></div>
         </div> */}
@@ -285,7 +290,16 @@ export default function ESLAccessoriesPage() {
 
           <div className="max-w-6xl mx-auto text-center relative z-10 p-0 sm:p-8 2md:p-12 rounded-2xl">
             <FadeAnimation staggerChildren={0.3}>
-              <h1 className="dark:text-white text-black text-3xl md:text-4xl lg:text-5xl xl:text-[56px] mb-4 font-bold">
+              <h1 className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] mb-4 font-bold dark:hidden">
+                <AnimationText modeReverse>
+                  {bannerSection[language].title
+                    .split(" ")
+                    .slice(0, 2)
+                    .join(" ")}
+                </AnimationText>{" "}
+                {bannerSection[language].title.split(" ").slice(2).join(" ")}
+              </h1>
+              <h1 className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] mb-4 font-bold hidden dark:block">
                 <AnimationText>
                   {bannerSection[language].title
                     .split(" ")
@@ -294,12 +308,9 @@ export default function ESLAccessoriesPage() {
                 </AnimationText>{" "}
                 {bannerSection[language].title.split(" ").slice(2).join(" ")}
               </h1>
-              <p className="dark:text-white text-black text-base md:text-lg xl:text-xl">
+              <p className="text-white text-base md:text-lg xl:text-xl">
                 {bannerSection[language].subtext}
               </p>
-              {/* <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-              {bannerSection[language].ctaText}
-            </button> */}
             </FadeAnimation>
           </div>
         </div>

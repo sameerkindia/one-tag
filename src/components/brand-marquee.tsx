@@ -162,9 +162,9 @@ function BrandMarquee() {
               </div>
             </div> */}
             <div className="flex items-center justify-center flex-wrap gap-y-4 gap-4 2md:gap-8">
-              {brands.map((brand) => (
+              {brands.map((brand, index) => (
                 <div
-                  key={brand.name}
+                  key={index}
                   className="group relative overflow-hidden rounded-2xl transition-all duration-500 bg-white p-3 2md:p-4"
                 >
                   <Image

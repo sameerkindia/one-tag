@@ -30,10 +30,10 @@ function EslVideoComponent({ videoData, videoId }: EslVideoComponent) {
             )}
           </FadeAnimation>
 
-          <FadeAnimation className="mb-4 md:mb-0">
+          <FadeAnimation className="mb-0">
           <div className="w-full px-0">
             <figure className="flex h-full w-full rounded-xl overflow-hidden">
-              <video autoPlay muted loop className="max-sm:h-56 max-sm:object-fill">
+              <video autoPlay muted loop className="max-sm:aspect-608/260">
                 <source src="/tag-video.mp4" type="video/mp4"></source>
               </video>
             </figure>

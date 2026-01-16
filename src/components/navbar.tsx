@@ -478,9 +478,9 @@ export function Navbar() {
 
                 {/* Language Selector */}
                 <div className="flex items-center gap-3">
-                  {languages.map((lang) => (
+                  {languages.map((lang, index) => (
                     <motion.button
-                      key={lang.code}
+                      key={index}
                       whileHover={{ scale: 1.08 }}
                       whileTap={{ scale: 0.95 }}
                       transition={{ duration: 0.25, ease: "easeInOut" }}
