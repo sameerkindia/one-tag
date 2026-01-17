@@ -9,417 +9,15 @@ import SubHeading from "@/src/components/SubHeading";
 import GradientBackground from "@/src/motion-animations/GradientBackground";
 import FloatingParticles from "@/src/components/FloatingParticles";
 import { useTheme } from "@/src/contexts/theme-context";
-
-const bannerSection = {
-  en: {
-    // title: "ZKONG ESL Retail Cloud Platform",
-    title: "Cloud Platform",
-    description:
-      "The leading retail IoT Cloud platform to manage your IoT, access your store and manage your labels as well as your items anytime, anywhere, thanks to our web interface available through a simple internet connection from your PC, Smartphone or Tablet",
-    // cta: "Contact Us",
-  },
-  uz: {
-    title: "Bulut platformasi",
-    description: `
-    Yetakchi IoT bulut platformasi bo‘lib, u IoT qurilmalarini boshqarish, do‘konga masofadan
-kirish, elektron narx yorliqlari va mahsulotlarni istalgan payt va istalgan joydan boshqarish imkonini
-beradi. Buning barchasi oddiy internet ulanishi orqali kompyuter, smartfon yoki planshetdan webinterfeys yordamida amalga oshiriladi.`,
-    // cta: "Contact Us",
-  },
-  ru: {
-    title: "Облачная платформа",
-    description: `
-    Передовая облачная IoT-платформа для розничной торговли, которая позволяет
-управлять IoT-устройствами, получать доступ к магазину, управлять электронными ценниками
-и товарами в любое время и из любого места благодаря веб-интерфейсу через простое
-интернет-подключение с ПК, смартфона или планшета.`,
-    // cta: "Contact Us",
-  },
-};
-
-const revolutionarySection = {
-  en: {
-    title: "The Revolutionary Retail Cloud Platform",
-    description:
-      "Renew Your Business Model with the Revolutionary Cloud Electronic Shelf Labels System",
-    cta: "Get More Info",
-  },
-  uz: {
-    title: "Inqilobiy chakana savdo uchun bulut platformasi",
-    description:
-      "Bulut texnologiyasiga asoslangan inqilobiy elektron narx yorliqlari tizimi bilan biznes modelingizni yangilang",
-    cta: "Get More Info",
-  },
-  ru: {
-    title: "Революционная облачная платформа для ритейла",
-    description:
-      "Обновите свою бизнес-модель с помощью революционной облачной системы электронных ценников",
-    cta: "Get More Info",
-  },
-};
-
-const advantagesSection = {
-  en: {
-    title: "Cloud Platform Advantages",
-    advantages: [
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-sass.jpg",
-        heading: "SaaS system, no local installation required",
-        data: [
-          "Support unlimited accounts on the same server",
-          "Computing capacity can be infinitely superimposed through server expansion",
-          "Reduce the cost of software and hardware due to the increasement of local server",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-template.jpg",
-        heading: "Comes with a template editor",
-        data: [
-          "Cloud-based templates, browser operation",
-          "Visual and free editing, real-time preview",
-          "huge template library, unlimited fonts, multi-language text",
-          "Flexible triggering",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-expansion.jpg",
-        heading: "Unlimited expansion",
-        data: [
-          "integrated a variety of intelligent devices such as EPD, LCD and AI cameras with one system",
-          "Billions of information processing",
-          "A single system supports millions of electronic shelf labels",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-deployment.jpg",
-        heading: "Flexible deployment",
-        data: [
-          "Flexible options for SaaS public, private and local deployments",
-          " Support globally distributed deployment and cluster deployment",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-interface.jpg",
-        heading: "Interface opened",
-        data: [
-          "200+ API interfaces (the most open interface)",
-          "Support different types of ERP, API and customized development with specific needs",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-extensiveness.jpg",
-        heading: "Extensiveness",
-        data: [
-          "Supports Windows / Mac OS / Android / iOS and many other major system",
-          "Built on a wide area network with global reach",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-security.jpg",
-        heading: "Data security",
-        data: [
-          "Data storage records in the cloud",
-          "Professional AES 128-bit encryption in the cloud",
-          "Automatic detection and early warning mechanism",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-plans.jpg",
-        heading: "Second development",
-        data: [
-          "Secondary development gives new features to software and hardware",
-          "Private server build",
-          "APP/mini app development",
-        ],
-      },
-    ],
-  },
-  uz: {
-    title: "Bulut platformasining afzalliklari",
-    advantages: [
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-sass.jpg",
-        heading: "SaaS tizimi — mahalliy o‘rnatish talab qilinmaydi",
-        data: [
-          "Bitta serverda cheksiz hisoblarni qo‘llab-quvvatlaydi",
-          "Serverlarni kengaytirish orqali hisoblash quvvati cheksiz oshirilishi mumkin",
-          "Mahalliy serverlarni kengaytirishga ehtiyoj qolmagani sabab dasturiy ta’minot va uskuna xarajatlari kamayadi",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-template.jpg",
-        heading: " Shablon muharriri bilan birga keladi",
-        data: [
-          "Bulut asosidagi shablonlar, brauzer orqali boshqaruv",
-          "Vizual va erkin tahrirlash, real vaqt rejimida ko‘rish",
-          "Katta shablon kutubxonasi, cheksiz shriftlar, ko‘p tilli matn qo‘llab-quvvatlashi",
-          "Moslashuvchan ishga tushirish imkoniyatlari",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-expansion.jpg",
-        heading: "Cheksiz kengaytirish imkoniyati",
-        data: [
-          "EPD, LCD va AI kameralar kabi turli aqlli qurilmalarni bitta tizimga integratsiya qilish",
-          "Milliardlab ma’lumotlarni qayta ishlash imkoniyati",
-          "Bitta tizim millionlab elektron narx yorliqlarini qo‘llab-quvvatlay oladi",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-deployment.jpg",
-        heading: "Moslashuvchan joriy etish (deploy) imkoniyati",
-        data: [
-          "SaaS’ni umumiy (public), xususiy (private) va lokal shaklda joriy etish uchun moslashuvchan variantlar",
-          "Global miqyosda taqsimlangan tizimlarni va klasterli joriy etishni qo‘llab-quvvatlaydi",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-interface.jpg",
-        heading: "Ochiq interfeys",
-        data: [
-          "200+ ta API interfeyslari (eng ochiq integratsiya imkoniyatlari)",
-          "Turli ERP tizimlari, API va maxsus ehtiyojlar uchun moslashtirilgan ishlab chiqishni qo‘llab quvvatlaydi",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-extensiveness.jpg",
-        heading: "Keng qamrovli imkoniyatlar",
-        data: [
-          "Windows / Mac OS / Android / iOS va boshqa ko‘plab asosiy tizimlarni qo‘llab-quvvatlaydi",
-          "Keng qamrovli global tarmoq asosida qurilgan",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-security.jpg",
-        heading: "Ma’lumotlar xavfsizligi",
-        data: [
-          "Ma’lumotlarni bulutda saqlash",
-          "Bulutda professional AES 128-bit shifrlash",
-          "Avtomatik aniqlash va erta ogohlantirish mexanizmi",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-plans.jpg",
-        heading: "Ikkinchi darajali rivojlantirish",
-        data: [
-          "Ikkinchi darajali rivojlantirish dasturiy ta’minot va uskuna uchun yangi funksiyalar qo‘shadi",
-          "Shaxsiy serverni yaratish",
-          "Ilova / mini-ilova ishlab chiqish",
-        ],
-      },
-    ],
-  },
-  ru: {
-    title: "Преимущества облачной платформы",
-    advantages: [
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-sass.jpg",
-        heading: "SaaS-система, не требует локальной установки",
-        data: [
-          "Поддержка неограниченного количества аккаунтов на одном сервере",
-          "Вычислительные мощности могут бесконечно расширяться за счет масштабирования серверов",
-          "Снижение затрат на ПО и оборудование за счет отсутствия необходимости увеличиватьлокальные серверы",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-template.jpg",
-        heading: "Встроенный редактор шаблонов",
-        data: [
-          "Облачные шаблоны, работа через браузер",
-          "Визуальное и свободное редактирование, предпросмотр в реальном времени",
-          "Огромная библиотека шаблонов, неограниченные шрифты, поддержка многоязычного текста",
-          "Гибкие варианты запуска и применения",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-expansion.jpg",
-        heading: "Неограниченное масштабирование",
-        data: [
-          "Интеграция различных интеллектуальных устройств (EPD, LCD, AI-камеры) в единую систему",
-          "Обработка миллиардов информационных операций",
-          "Одна система может поддерживать миллионы электронных ценников",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-deployment.jpg",
-        heading: "Гибкое развертывание",
-        data: [
-          "Гибкие варианты публичного, частного и локального развертывания SaaS",
-          "Поддержка глобально распределенного развертывания и кластерных решений",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-interface.jpg",
-        heading: "Открытый интерфейс",
-        data: [
-          "Более 200 API-интерфейсов (максимально открытая интеграция)",
-          "Поддержка различных типов ERP, API и кастомной разработки под конкретные требования",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-extensiveness.jpg",
-        heading: " Широкие возможности",
-        data: [
-          "Поддерживает Windows / Mac OS / Android / iOS и многие другие основные системы",
-          "Построена на глобальной сети с широким покрытием по всему миру",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-security.jpg",
-        heading: "Безопасность данных",
-        data: [
-          "Хранение данных в облаке",
-          "Профессиональное облачное шифрование AES 128-бит",
-          "Автоматическое обнаружение и ранняя система предупреждений",
-        ],
-      },
-      {
-        imgSrc: "/esl-cloud-platform/esl-cloud-plans.jpg",
-        heading: "Вторичная разработка",
-        data: [
-          "Вторичная разработка добавляет новые функции программному обеспечению и оборудованию",
-          "Развёртывание частного сервера",
-          "Разработка приложений / мини-приложений",
-        ],
-      },
-    ],
-  },
-};
-
-const superiorSystemSection = {
-  en: {
-    title: "ZKONG Retail Cloud ESL Platform Superior system",
-    cardData: [
-      {
-        heading: "Shop Management",
-        imgSrc: "/esl-cloud-platform/superior/shop-management.webp",
-        data: [
-          "Data interfacing",
-          "Staff account",
-          "Marketing management",
-          "Product binding management",
-          "Permission settings",
-        ],
-      },
-      {
-        heading: "Facilities Management",
-        imgSrc: "/esl-cloud-platform/superior/facilities-management.webp",
-        data: [
-          "Data upgrading",
-          "Task management",
-          "Equipment scheduling",
-          "People-Goods interaction",
-          "Data security",
-        ],
-      },
-      {
-        heading: "Tools Management",
-        imgSrc: "/esl-cloud-platform/superior/tools-management.webp",
-        data: ["Template", "Monitoring and warning", "Journal Management"],
-      },
-      {
-        heading: "Application Solutions",
-        imgSrc: "/esl-cloud-platform/superior/application-solutions.webp",
-        data: [
-          "Smart Picking",
-          "Passenger flow monitoring",
-          "Display/inventory monitoring",
-          "Analysis of consumer behavior",
-        ],
-      },
-    ],
-  },
-  uz: {
-    title: "ZKONG Retail Cloud ESL Platform Superior system",
-    cardData: [
-      {
-        heading: "Shop Management",
-        imgSrc: "/esl-cloud-platform/superior/shop-management.webp",
-        data: [
-          "Data interfacing",
-          "Staff account",
-          "Marketing management",
-          "Product binding management",
-          "Permission settings",
-        ],
-      },
-      {
-        heading: "Facilities Management",
-        imgSrc: "/esl-cloud-platform/superior/facilities-management.webp",
-        data: [
-          "Data upgrading",
-          "Task management",
-          "Equipment scheduling",
-          "People-Goods interaction",
-          "Data security",
-        ],
-      },
-      {
-        heading: "Tools Management",
-        imgSrc: "/esl-cloud-platform/superior/tools-management.webp",
-        data: ["Template", "Monitoring and warning", "Journal Management"],
-      },
-      {
-        heading: "Application Solutions",
-        imgSrc: "/esl-cloud-platform/superior/application-solutions.webp",
-        data: [
-          "Smart Picking",
-          "Passenger flow monitoring",
-          "Display/inventory monitoring",
-          "Analysis of consumer behavior",
-        ],
-      },
-    ],
-  },
-  ru: {
-    title: "ZKONG Retail Cloud ESL Platform Superior system",
-    cardData: [
-      {
-        heading: "Shop Management",
-        imgSrc: "/esl-cloud-platform/superior/shop-management.webp",
-        data: [
-          "Data interfacing",
-          "Staff account",
-          "Marketing management",
-          "Product binding management",
-          "Permission settings",
-        ],
-      },
-      {
-        heading: "Facilities Management",
-        imgSrc: "/esl-cloud-platform/superior/facilities-management.webp",
-        data: [
-          "Data upgrading",
-          "Task management",
-          "Equipment scheduling",
-          "People-Goods interaction",
-          "Data security",
-        ],
-      },
-      {
-        heading: "Tools Management",
-        imgSrc: "/esl-cloud-platform/superior/tools-management.webp",
-        data: ["Template", "Monitoring and warning", "Journal Management"],
-      },
-      {
-        heading: "Application Solutions",
-        imgSrc: "/esl-cloud-platform/superior/application-solutions.webp",
-        data: [
-          "Smart Picking",
-          "Passenger flow monitoring",
-          "Display/inventory monitoring",
-          "Analysis of consumer behavior",
-        ],
-      },
-    ],
-  },
-};
+import {
+  bannerSection,
+  revolutionarySection,
+  advantagesSection,
+} from "./cloudPlatformData";
 
 export default function ZKONGPlatform() {
   const { theme } = useTheme();
   const { language } = useLanguage();
-
-  // console.log("Unlimited expansion".length / 2)
 
   return (
     <div className="min-h-screen text-gray-900 transition-colors duration-300 dark:text-white">
@@ -429,63 +27,60 @@ export default function ZKONGPlatform() {
 
       <section>
         <div className="min-h-[500px] sm:min-h-[70vh] flex items-center relative overflow-hidden px-6 rounded-b-4xl pt-12 pb-6 sm:py-16 2md:py-20">
-      <div
-        className={`absolute inset-0 w-full h-full`}
-      >
-        <video
-          preload="auto"
-          autoPlay
-          muted
-          loop
-          className="inset-0 w-full h-full object-cover object-top"
-        >
-          <source src={"/esl-cloud-platform/Cloud platform BG.mp4"} type="video/mp4" />
-        </video>
-      </div>
-      {/* <div className={`absolute inset-0 ${
-        theme === 'dark' 
-          ? 'bg-linear-to-b from-slate-900/80 via-blue-900/70 to-slate-800/85 blur-2px' 
-          : 'bg-linear-to-b from-slate-700/75 via-blue-800/65 to-slate-600/80 blur-2px'
-      }`} /> */}
-      <div className={`absolute inset-0 ${
-        theme === 'dark'
-          ? 'bg-linear-to-br from-slate-950/90 via-slate-900/85 to-slate-800/90' 
-          : 'bg-linear-to-br from-gray-600/60 via-gray-500/70 to-gray-700/60 blur-2px'
-      }`} />
-      {/* <div className="absolute z-1 inset-0 pointer-events-none h-full w-full black-white-fade blur-1px"></div> */}
-      {/* <div className="absolute h-full w-full blur-2px bg-(--black-white-fade) b g-[#3a3a3a75] z-1 inset-0 pointer-events-none">
-        <div className="absolute h-full w-full blur-3xl bg-[#3a3a3a75]"></div>
-      </div> */}
-        {/* subtle light/dark background shapes */}
-        <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10 p-0 sm:p-8 2md:p-12 rounded-2xl gla ss">
-          <h1 className="text-white dark:text-black text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty mb-6 dark:hidden">
-            <AnimationText modeReverse>
-              {bannerSection[language].title.split(" ").slice(0, 1).join(" ")}
-            </AnimationText>{" "}
-            {bannerSection[language].title.split(" ").slice(1).join(" ")}
-          </h1>
-          <h1 className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty mb-6 hidden dark:block">
-            <AnimationText>
-              {bannerSection[language].title.split(" ").slice(0, 1).join(" ")}
-            </AnimationText>{" "}
-            {bannerSection[language].title.split(" ").slice(1).join(" ")}
-          </h1>
-          <p className="text-base sm:text-lg 2md:text-xl text-white 2md:mb-8 max-w-4xl mx-auto">
-            {bannerSection[language].description}
-          </p>
-          {/* <button
+          <div className={`absolute inset-0 w-full h-full`}>
+            <video
+              preload="auto"
+              autoPlay
+              muted
+              loop
+              className="inset-0 w-full h-full object-cover object-top"
+            >
+              <source
+                src={"/esl-cloud-platform/Cloud platform BG.mp4"}
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div
+            className={`absolute inset-0 ${
+              theme === "dark"
+                ? "bg-linear-to-br from-slate-950/90 via-slate-900/85 to-slate-800/90"
+                : "bg-linear-to-br from-gray-600/60 via-gray-500/70 to-gray-700/60 blur-2px"
+            }`}
+          />
+          {/* subtle light/dark background shapes */}
+          <FadeAnimation className="max-w-6xl mx-auto text-center relative z-10 p-0 sm:p-8 2md:p-12 rounded-2xl gla ss">
+            <h1 className="text-white dark:text-black text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty mb-6 dark:hidden">
+              <AnimationText modeReverse>
+                {bannerSection[language].title.split(" ").slice(0, 1).join(" ")}
+              </AnimationText>{" "}
+              {bannerSection[language].title.split(" ").slice(1).join(" ")}
+            </h1>
+            <h1 className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold text-pretty mb-6 hidden dark:block">
+              <AnimationText>
+                {bannerSection[language].title.split(" ").slice(0, 1).join(" ")}
+              </AnimationText>{" "}
+              {bannerSection[language].title.split(" ").slice(1).join(" ")}
+            </h1>
+            <p className="text-base sm:text-lg 2md:text-xl text-white 2md:mb-8 max-w-4xl mx-auto">
+              {bannerSection[language].description}
+            </p>
+            {/* <button
             aria-label="get started with us"
             className="inline-block mt-4 px-6 py-3 bg-black dark:bg-white hover:bg-black/80 dark:hover:bg-white/80 text-white dark:text-black rounded-2xl transition-all duration-300 min-w-[170px]"
           >
             {bannerSection[language].cta}
           </button> */}
-        </FadeAnimation>
+          </FadeAnimation>
         </div>
       </section>
 
       <section className="py-12 sm:py-16 2m:py-20">
         <div className="container mx-auto px-4 max-w-7xl relative">
-          <FadeAnimation staggerChildren={0.3} className="text-center relative z-10 mb-10">
+          <FadeAnimation
+            staggerChildren={0.3}
+            className="text-center relative z-10 mb-10"
+          >
             <SubHeading
               headingText={revolutionarySection[language].title}
               lastIndex={2}
@@ -510,76 +105,75 @@ export default function ZKONGPlatform() {
       {/* Platform Advantages */}
       <section className="py-12 sm:py-16 2m:py-20">
         <div className="max-w-7xl px-6 mx-auto">
-        <FadeAnimation>
-          <SubHeading
-            headingText={advantagesSection[language].title}
-            lastIndex={4}
-            customHeadingClass="text-center mb-10 sm:mb-16"
-          />
-          {/* <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
-            <AnimationText>
-              {advantagesSection[language].title
-                .split(" ")
-                .slice(0, 4)
-                .join(" ")}
-            </AnimationText>{" "}
-            <span className="text-blue-600 dark:text-blue-400">
-              {advantagesSection[language].title.split(" ").slice(4).join(" ")}
-            </span>
-          </h2> */}
-        </FadeAnimation>
+          <FadeAnimation>
+            <SubHeading
+              headingText={advantagesSection[language].title}
+              lastIndex={4}
+              customHeadingClass="text-center mb-10 sm:mb-16"
+            />
+          </FadeAnimation>
 
-        <FadeAnimation>
-          <div className="space-y-12">
-            {advantagesSection[language].advantages.map((advantage, index) => (
-              <div
-                key={index}
-                className="grid md:grid-cols-2 gap-4 sm:gap-8 items-center"
-              >
-                {/* Image Section */}
-                <div
-                  className={`rounded-2xl border dark:border-gray-700 bg-linear-to-br 
+          <FadeAnimation>
+            <div className="space-y-12">
+              {advantagesSection[language].advantages.map(
+                (advantage, index) => (
+                  <div
+                    key={index}
+                    className="grid md:grid-cols-2 gap-4 sm:gap-8 items-center"
+                  >
+                    {/* Image Section */}
+                    <div
+                      className={`rounded-2xl border dark:border-gray-700 bg-linear-to-br 
                 from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 
                   overflow-hidden 
                   ${index % 2 === 1 ? "md:order-2" : "md:order-1"}`}
-                >
-                  <div className="relative flex items-center justify-center aspect-828/265">
-                  {/* sm:h-48 */}
-                    <Image
-                      src={advantage.imgSrc}
-                      alt={advantage.heading}
-                      fill
-                    />
-                  </div>
-                </div>
+                    >
+                      <div className="relative flex items-center justify-center aspect-828/265">
+                        {/* sm:h-48 */}
+                        <Image
+                          src={advantage.imgSrc}
+                          alt={advantage.heading}
+                          fill
+                        />
+                      </div>
+                    </div>
 
-                {/* Text Section */}
-                <div
-                  className={`${index % 2 === 1 ? "md:order-1" : "md:order-2"}`}
-                >
-                  {/* <h3 className="text-lg sm:text-xl 2md:text-2xl font-bold mb-2.5 sm:mb-4 text-blue-600 dark:text-blue-300">
-                    {advantage.heading}
-                  </h3> */}
-                  <SubHeading headingText={advantage.heading} lastIndex={Math.ceil(advantage.heading.split(" ").length / 2)} textSize="md" customHeadingClass="text-lg! sm:text-xl! 2md:text-2xl! mb-2.5! sm:mb-4!" />
-                  <ul className="cloud-platform-ul">
-                    {advantage.data.map((item, i) => (
-                      <li key={i}>- {item}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </FadeAnimation>
+                    {/* Text Section */}
+                    <div
+                      className={`${
+                        index % 2 === 1 ? "md:order-1" : "md:order-2"
+                      }`}
+                    >
+                      <SubHeading
+                        headingText={advantage.heading}
+                        lastIndex={Math.ceil(
+                          advantage.heading.split(" ").length / 2
+                        )}
+                        textSize="md"
+                        customHeadingClass="text-lg! sm:text-xl! 2md:text-2xl! mb-2.5! sm:mb-4!"
+                      />
+                      <ul className="cloud-platform-ul">
+                        {advantage.data.map((item, i) => (
+                          <li key={i}>- {item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )
+              )}
+            </div>
+          </FadeAnimation>
         </div>
       </section>
     </div>
   );
 }
 
-
-      {/* Platform Architecture Diagram */}
-      {/* <section className="px-6 py-16 max-w-7xl mx-auto">
+{
+  /* Platform Architecture Diagram */
+}
+{
+  /* <section className="px-6 py-16 max-w-7xl mx-auto">
         <div className="rounded-2xl p-8 border bg-gray-50/60 border-gray-200 dark:bg-gray-800/60 dark:border-gray-700">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
             ESL Integration Architecture
@@ -652,12 +246,14 @@ export default function ZKONGPlatform() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section> */
+}
 
-
-
-      {/* ESL Platform Superior System */}
-      {/* <section className="px-6 py-12 sm:py-16 2m:py-20 max-w-7xl mx-auto">
+{
+  /* ESL Platform Superior System */
+}
+{
+  /* <section className="px-6 py-12 sm:py-16 2m:py-20 max-w-7xl mx-auto">
         <FadeAnimation>
           <SubHeading
             headingText={superiorSystemSection[language].title}
@@ -694,10 +290,14 @@ export default function ZKONGPlatform() {
             ))}
           </div>
         </FadeAnimation>
-      </section> */}
+      </section> */
+}
 
-      {/* CTA Section */}
-      {/* <section className="px-6 py-12 sm:py-16 2m:py-20 max-w-6xl mx-auto text-center">
+{
+  /* CTA Section */
+}
+{
+  /* <section className="px-6 py-12 sm:py-16 2m:py-20 max-w-6xl mx-auto text-center">
         <div className="p-12 rounded-3xl border dark:border-gray-700 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 shadow-lg">
           <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">
             Ready to Transform Your{" "}
@@ -713,10 +313,14 @@ export default function ZKONGPlatform() {
             Schedule a Demo
           </button>
         </div>
-      </section> */}
+      </section> */
+}
 
-      {/* Latest Innovations Section */}
-      {/* <section className="px-6 py-16 max-w-7xl mx-auto mb-20">
+{
+  /* Latest Innovations Section */
+}
+{
+  /* <section className="px-6 py-16 max-w-7xl mx-auto mb-20">
         <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
           Latest Innovations and Trends in the{" "}
           <span className="text-blue-600 dark:text-blue-400">Retail IoT</span>
@@ -762,4 +366,5 @@ export default function ZKONGPlatform() {
             </p>
           </div>
         </div>
-      </section> */}
+      </section> */
+}
