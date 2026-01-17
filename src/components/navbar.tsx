@@ -136,7 +136,7 @@ export function Navbar() {
       // transition={{ duration: 0.6, ease: "easeInOut" }}
       className={`fixed h-12 lg:h-16 top-0 left-0 right-0 z-50 transition-all duration-500 blue-nav mt-2`}
     >
-      <div className="container mx-auto max-w-344 h-full px-4">
+      <div className="container mx-auto max-w-344 h-full px-2 sm:px-4">
         <div
           className={`flex items-center justify-between h-full rounded-sm ${
             scrolled
@@ -144,13 +144,13 @@ export function Navbar() {
               : theme === "dark"
               ? "bg-fill-tertiary"
               : "bg-fill-tertiary"
-          } ${isOpen ? "rounded-b-none md:rounded-b-sm" : ""}
+          } ${isOpen ? "rounded-b-none md:rounded-b-sm md-glass" : ""}
           ${customNavbar && 'md-glass'}
           `}
         >
           {/* Mobile Logo */}
           <div
-            className={`md:hidden px-4 rounded-sm py-2 border border-transparent`}
+            className={`md:hidden px-2 sm:px-4 rounded-sm py-2 border border-transparent`}
           >
             <Link href="/" className={`flex items-center gap-3 group`}>
               <motion.div className="relative w-30 2lg:w-32 xxl:w-36 aspect-40/10">
@@ -384,7 +384,7 @@ export function Navbar() {
             // animate={{ opacity: 1, height: "auto" }}
             // exit={{ opacity: 0, height: 0 }}
             // transition={{ duration: 0.35, ease: "easeInOut" }}
-            className={`md:hidden glass backdrop-blur border-t-0! border-border/50 rounded-b-sm mx-4 ${
+            className={`md:hidden glass backdrop-blur border-t-0! border-border/50 rounded-b-sm mx-2 sm:mx-4 ${
               theme === "dark" ? "bg-gray-900/80" : "bg-white/70"
             }`}
           >
